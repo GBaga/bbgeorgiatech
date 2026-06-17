@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-primary: var(--base--bright-blue);
+  --color-secondary: var(--neutral--navy-50);
+  --color-background-deep: var(--base--navy);
+  --color-surface: var(--_color-themes---cards--gradient-bg-color-2);
+  --color-surface-bright: var(--_color-themes---cards--gradient-bg-color-1);
+  --color-border-main: var(--neutral--navy-800);
+  --color-border-glow: var(--_color-themes---cards--gradient-border-color-1);
+  --color-neutral-900: var(--neutral--navy-900);
+  --color-neutral-400: var(--neutral--navy-100);
+  --color-neutral-50: var(--base--white);
+  
+  --font-heading: var(--font-heading);
+  --font-inter: var(--font-body);
+  --font-mono: var(--font-mono);
+  --font-logo: var(--font-logo);
+}
+
+:root {
+  /* Lucien Core Variables */
+  --base--navy: #080d2c;
+  --base--bright-blue: #5c9cff;
+  --base--bright-red: #db4d4d;
+  --base--white: white;
+  --base--sand: #ece8e2;
+  
+  --neutral--navy-900: #151e41;
+  --neutral--navy-800: #3d5181;
+  --neutral--navy-100: #7089c0;
+  --neutral--navy-50: #ccd5e5;
+  --neutral--transparent: transparent;
+  
+  --_color-themes---cards--gradient-border-color-1: #505daa;
+  --_color-themes---cards--gradient-border-color-2: #0c133d;
+  --_color-themes---cards--gradient-bg-color-1: #1d2242;
+  --_color-themes---cards--gradient-bg-color-2: #090e2d;
+
+  --background: var(--base--navy);
+  --foreground: var(--base--white);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-primary);
+  color: #080d2c;
+}
+
+.lucien-blueprint {
+  background-image: 
+    linear-gradient(to right, rgba(80, 93, 170, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(80, 93, 170, 0.15) 1px, transparent 1px);
+  background-size: 60px 60px;
+  background-position: 0 0;
+}
+
+.lucien-card {
+  position: relative;
+  background: linear-gradient(180deg, #1d2242 0%, #090e2d 100%);
+  z-index: 1;
+}
+
+.lucien-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(180deg, #505daa 0%, #0c133d 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  pointer-events: none;
+  transition: background 0.3s ease;
+}
+
+.lucien-card:hover::before {
+  background: linear-gradient(180deg, #5c9cff 0%, #3d5181 100%);
+}
