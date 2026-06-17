@@ -1,8 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export function ParadoxOfScale() {
+  const t = useTranslations("ParadoxOfScale");
+
   return (
     <section className="relative py-32 px-6 bg-[#04081c] overflow-hidden">
       {/* Lucien-Style ASCII Matrix Background */}
@@ -30,25 +33,25 @@ export function ParadoxOfScale() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-neutral-50 mb-12">
-            The Paradox of Scale
+            {t("title")}
           </h2>
           
           <blockquote className="relative p-8 md:p-12 mb-12">
             <div className="absolute top-0 left-0 text-6xl text-primary/20 font-heading">"</div>
             <p className="font-heading text-2xl md:text-4xl text-neutral-200 font-light italic leading-snug relative z-10">
-              Simplicity is the key to brilliance.
+              {t("quote")}
             </p>
             <footer className="mt-6 text-primary font-mono text-sm tracking-widest uppercase">
-              — Bruce Lee
+              {t("author")}
             </footer>
           </blockquote>
 
           <div className="space-y-6 text-lg text-neutral-400 font-inter leading-relaxed max-w-3xl mx-auto">
             <p>
-              We reject brute-force volume in favor of specialized, high-fidelity execution. True digital excellence requires a surgical approach to architecture and design.
+              {t("p1")}
             </p>
             <p>
-              By ruthlessly eliminating the non-essential, we ensure every interaction feels snappy, fluid, and profoundly purposeful. Minimalism isn't an aesthetic choice; it is our operational mandate.
+              {t("p2")}
             </p>
           </div>
         </motion.div>

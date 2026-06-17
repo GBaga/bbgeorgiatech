@@ -2,42 +2,45 @@
 
 import { motion } from "framer-motion";
 import { Terminal, ExternalLink } from "lucide-react";
-
-const systems = [
-  {
-    id: "SYS.KC",
-    sector: "KC Legal",
-    architecture: "Next.js, Tailwind v4",
-    metric: "Engineered secure digital presence for high-trust premium client conversion.",
-    status: "ACTIVE",
-    url: "https://kc-legal.vercel.app/en"
-  },
-  {
-    id: "SYS.GZ",
-    sector: "Giza Remonti",
-    architecture: "Next.js, Sanity.io",
-    metric: "Implemented high-fidelity motion architecture with headless CMS content modeling.",
-    status: "ACTIVE",
-    url: "https://giza-remonti.vercel.app/"
-  },
-  {
-    id: "SYS.TR",
-    sector: "BBGeorgiaTravel",
-    architecture: "Next.js, MongoDB, Cloudinary",
-    metric: "Deployed scalable global routing with NoSQL data mapping and dynamic edge assets.",
-    status: "ACTIVE",
-    url: "https://bbgeorgiatravel.com/"
-  },
-  {
-    id: "SYS.VO",
-    sector: "VoriginGeorgia",
-    architecture: "NestJS, MongoDB Atlas",
-    metric: "Architected robust backend microservices for complex NoSQL data routing.",
-    status: "INACTIVE",
-  }
-];
+import { useTranslations } from "next-intl";
 
 export function DeployedSystems() {
+  const t = useTranslations("DeployedSystems");
+
+  const systems = [
+    {
+      id: "SYS.KC",
+      sector: "KC Legal",
+      architecture: "Next.js, Tailwind v4",
+      metric: t("m1"),
+      status: "ACTIVE",
+      url: "https://kc-legal.vercel.app/en"
+    },
+    {
+      id: "SYS.GZ",
+      sector: "Giza Remonti",
+      architecture: "Next.js, Sanity.io",
+      metric: t("m2"),
+      status: "ACTIVE",
+      url: "https://giza-remonti.vercel.app/"
+    },
+    {
+      id: "SYS.TR",
+      sector: "BBGeorgiaTravel",
+      architecture: "Next.js, MongoDB, Cloudinary",
+      metric: t("m3"),
+      status: "ACTIVE",
+      url: "https://bbgeorgiatravel.com/"
+    },
+    {
+      id: "SYS.VO",
+      sector: "VoriginGeorgia",
+      architecture: "NestJS, MongoDB Atlas",
+      metric: t("m4"),
+      status: "INACTIVE",
+    }
+  ];
+
   return (
     <section id="systems" className="py-32 relative bg-background border-t border-white/5 lucien-blueprint">
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -51,8 +54,8 @@ export function DeployedSystems() {
             </h2>
           </div>
           <h3 className="text-4xl md:text-6xl font-heading font-bold text-neutral-50 tracking-tight uppercase">
-            Deployed <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">Systems</span>
+            {t("title1")} <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">{t("title2")}</span>
           </h3>
         </div>
 

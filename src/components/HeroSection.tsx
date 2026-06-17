@@ -3,8 +3,9 @@
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 
-const GridLight = () => {
+export const GridLight = () => {
   const [pathData, setPathData] = useState<{ d: string, w: number, h: number } | null>(null);
 
   useEffect(() => {
@@ -78,47 +79,143 @@ const GridLight = () => {
   );
 };
 
+const typingContainer = {
+  hidden: { opacity: 1 },
+  visible: (customDelay: number) => ({
+    opacity: 1,
+    transition: { staggerChildren: 0.05, delayChildren: customDelay }
+  })
+};
+
+const typingChar = {
+  hidden: { display: "none", opacity: 0 },
+  visible: { display: "inline", opacity: 1 }
+};
+
 export function HeroSection() {
+  const t = useTranslations("Hero");
+
+  const title1 = t("title1");
+  const title2 = t("title2");
+  const title3 = t("title3");
+
+  const delay1 = 0.5; // Start after blueprint initializes
+  const delay2 = delay1 + title1.length * 0.05 + 0.2;
+  const delay3 = delay2 + title2.length * 0.05 + 0.2;
+  
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 pt-24 pb-12 lucien-blueprint">
+    <section className="relative min-h-screen flex items-center overflow-hidden px-6 pt-32 pb-12 lucien-blueprint">
       <GridLight />
 
-      <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8 mt-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+      <div className="relative z-10 max-w-7xl mx-auto w-full">
+        
+        <div className="max-w-3xl space-y-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-bold tracking-tighter text-neutral-50 leading-[1.1] uppercase">
+              <motion.span custom={delay1} variants={typingContainer} initial="hidden" animate="visible">
+                {title1.split("").map((char, i) => <motion.span key={i} variants={typingChar}>{char === " " ? "\u00A0" : char}</motion.span>)}
+              </motion.span>
+              <br />
+              <motion.span custom={delay2} variants={typingContainer} initial="hidden" animate="visible">
+                {title2.split("").map((char, i) => <motion.span key={i} variants={typingChar}>{char === " " ? "\u00A0" : char}</motion.span>)}
+              </motion.span>
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">
+                <motion.span custom={delay3} variants={typingContainer} initial="hidden" animate="visible">
+                  {title3.split("").map((char, i) => <motion.span key={i} variants={typingChar}>{char === " " ? "\u00A0" : char}</motion.span>)}
+                </motion.span>
+              </span>
+            </h1>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+            className="font-mono text-sm md:text-base text-neutral-400 space-y-4 border-l-2 border-primary/50 pl-6 py-2 bg-background-deep/30 backdrop-blur-sm"
+          >
+            <div className="flex items-start tracking-wider">
+              <span className="text-primary mr-3">{">"}</span>
+              <p><span className="text-neutral-600 mr-2">{t("stackLabel")}</span> {t("stackValue")}</p>
+            </div>
+            <div className="flex items-start tracking-wider">
+              <span className="text-primary mr-3">{">"}</span>
+              <p><span className="text-neutral-600 mr-2">{t("deploymentLabel")}</span> {t("deploymentValue")}</p>
+            </div>
+            <div className="flex items-start tracking-wider">
+              <span className="text-primary mr-3">{">"}</span>
+              <p><span className="text-neutral-600 mr-2">{t("targetLabel")}</span> {t("targetValue")}</p>
+            </div>
+            <div className="flex items-start tracking-wider pt-2">
+              <span className="text-primary mr-3">{">"}</span>
+              <span className="w-2 h-4 bg-primary animate-pulse" />
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+            className="flex pt-4"
+          >
+            <a href="#systems" className="group relative inline-flex items-center justify-center px-4 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-mono text-primary transition-all duration-300 bg-background-deep border border-primary/50 hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_20px_rgba(92,156,255,0.2)] focus:outline-none uppercase tracking-wider sm:tracking-widest overflow-hidden w-full sm:w-auto">
+              <span className="relative z-10 flex items-center gap-2 sm:gap-3">
+                {t("initializeDeployment")} <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-2" />
+              </span>
+              <div className="absolute inset-0 h-full w-0 bg-primary/10 transition-all duration-300 ease-out group-hover:w-full" />
+            </a>
+          </motion.div>
+        </div>
+
+        {/* Exponential Curve Quote */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 3, delay: delay3 + 1.5 }}
+          className="hidden lg:block absolute right-6 xl:right-12 top-1/2 -translate-y-1/2 pointer-events-none"
         >
-          <h1 className="font-heading text-5xl md:text-7xl font-bold tracking-tight text-neutral-50 leading-tight">
-            Engineering Next-Gen <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">
-              Digital Experiences
-            </span>
-          </h1>
+          <svg width="250" height="300" viewBox="0 0 250 300" className="overflow-visible opacity-70">
+            <defs>
+              <path id="curvePath" d="M 10 260 Q 230 260 230 10" fill="transparent" />
+            </defs>
+            
+            {/* The structural blueprint lines */}
+            <path
+              d="M 10 260 Q 230 260 230 10"
+              fill="transparent"
+              stroke="currentColor"
+              className="text-primary/20"
+              strokeWidth="1"
+            />
+            
+            <line
+              x1="10"
+              y1="260"
+              x2="250"
+              y2="260"
+              stroke="currentColor"
+              className="text-primary/30"
+              strokeWidth="1"
+            />
+
+            {/* The Text */}
+            <text className="font-mono text-xs fill-neutral-300 tracking-[0.2em] uppercase">
+              <textPath href="#curvePath" startOffset="5%">
+                {t("lessIsMore")}
+              </textPath>
+            </text>
+
+            {/* The X-Axis Author */}
+            <text x="10" y="280" className="font-mono text-[10px] fill-primary tracking-[0.2em] uppercase">
+              {t("quoteAuthor")}
+            </text>
+          </svg>
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-lg md:text-xl text-neutral-400 font-inter max-w-2xl mx-auto"
-        >
-          High-tech, futuristic, precise, and professional. We build scalable
-          digital ecosystems for sophisticated stakeholders.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
-        >
-          <button className="group relative inline-flex items-center justify-center px-8 py-3.5 text-base font-medium text-white transition-all duration-200 bg-primary border border-transparent rounded-none hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-background-deep overflow-hidden">
-            <span className="relative z-10 flex items-center gap-2">
-              Initiate Protocol <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </span>
-          </button>
-        </motion.div>
       </div>
     </section>
   );

@@ -3,13 +3,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Terminal } from "lucide-react";
-
-const navLinks = [
-  { label: "Competencies", href: "#competencies" },
-  { label: "The Engine", href: "#tech-stack" },
-  { label: "Systems", href: "#systems" },
-  { label: "Heritage", href: "#heritage" },
-];
+import { Link } from "../i18n/routing";
+import { useTranslations } from "next-intl";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const BrandIcon = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-neutral-50 transition-colors group flex-shrink-0">
@@ -23,6 +19,15 @@ const BrandIcon = () => (
 );
 
 export function NavigationBar() {
+  const t = useTranslations("Navigation");
+  
+  const navLinks = [
+    { label: t("competencies"), href: "/#competencies" },
+    { label: t("theEngine"), href: "/#tech-stack" },
+    { label: t("systems"), href: "/#systems" },
+    { label: t("heritage"), href: "/#heritage" },
+  ];
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -53,9 +58,9 @@ export function NavigationBar() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-8 xl:gap-12">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
                 href={link.href}
                 className="text-sm font-mono text-neutral-400 hover:text-white transition-colors relative group"
@@ -63,23 +68,24 @@ export function NavigationBar() {
                 <span className="opacity-0 group-hover:opacity-100 text-primary transition-opacity absolute -left-3">[</span>
                 {link.label}
                 <span className="opacity-0 group-hover:opacity-100 text-primary transition-opacity absolute -right-3">]</span>
-              </a>
+              </Link>
             ))}
           </nav>
 
-          {/* Execution Button */}
-          <div className="hidden md:flex items-center">
-            <a
-              href="#contact"
+          {/* Execution Button & Language */}
+          <div className="hidden lg:flex items-center">
+            <Link
+              href="/#contact"
               className="flex items-center gap-2 px-6 py-2 border-2 border-primary/50 text-primary hover:bg-primary hover:text-white font-mono text-sm uppercase tracking-wider transition-all"
             >
               <Terminal className="w-4 h-4" />
-              <span>Initiate Protocol</span>
-            </a>
+              <span>{t("initiateProtocol")}</span>
+            </Link>
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button className="md:hidden text-neutral-50 p-2" onClick={() => setIsMobileMenuOpen(true)}>
+          <button className="lg:hidden text-neutral-50 p-2" onClick={() => setIsMobileMenuOpen(true)}>
             <Menu className="w-6 h-6" />
           </button>
         </div>
@@ -92,7 +98,7 @@ export function NavigationBar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-background-deep/95 backdrop-blur-xl md:hidden"
+            className="fixed inset-0 z-[60] bg-background-deep/95 backdrop-blur-xl lg:hidden"
           >
             <div className="flex flex-col h-full p-6">
               <div className="flex items-center justify-between mb-16 border-b border-white/10 pb-6">
@@ -106,31 +112,44 @@ export function NavigationBar() {
 
               <nav className="flex flex-col gap-8">
                 {navLinks.map((link, i) => (
-                  <motion.a
+                  <Link
                     key={link.label}
                     href={link.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.1 }}
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="text-2xl font-mono text-neutral-400 hover:text-primary transition-colors flex items-center gap-4 group"
                   >
-                    <span className="text-primary opacity-0 group-hover:opacity-100 transition-opacity">/</span>
-                    {link.label}
-                  </motion.a>
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.1 }}
+                      className="flex items-center gap-4"
+                    >
+                      <span className="text-primary opacity-0 group-hover:opacity-100 transition-opacity">/</span>
+                      {link.label}
+                    </motion.div>
+                  </Link>
                 ))}
                 
-                <motion.a
-                  href="#contact"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.4 }}
+                <Link
+                  href="/#contact"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="mt-8 flex items-center justify-center gap-2 w-full py-4 border-2 border-primary text-primary hover:bg-primary hover:text-white font-mono text-lg uppercase tracking-wider transition-all"
                 >
-                  <Terminal className="w-5 h-5" />
-                  <span>Initiate Protocol</span>
-                </motion.a>
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.4 }}
+                    className="flex items-center gap-2"
+                  >
+                    <Terminal className="w-5 h-5" />
+                    <span>{t("initiateProtocol")}</span>
+                  </motion.div>
+                </Link>
+                
+                {/* Mobile Language Switcher */}
+                <div className="mt-4 flex justify-center pb-8 border-t border-white/5 pt-8">
+                  <LanguageSwitcher />
+                </div>
               </nav>
             </div>
           </motion.div>

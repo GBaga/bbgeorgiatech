@@ -2,26 +2,29 @@
 
 import { motion } from "framer-motion";
 import { Database, Server, Globe } from "lucide-react";
-
-const services = [
-  {
-    title: "Decoupled Architecture",
-    description: "We architect complex headless ecosystems. By separating front-end performance (Next.js) from backend logic, we build secure, infinitely scalable infrastructure.",
-    icon: Server,
-  },
-  {
-    title: "Global Edge Delivery",
-    description: "We deploy on the Edge. Utilizing Vercel and Cloudflare, your digital products load instantly worldwide, completely immune to localized server failures.",
-    icon: Globe,
-  },
-  {
-    title: "Data & Asset Pipelines",
-    description: "From serverless Postgres (Neon) to NoSQL scale (MongoDB Atlas) and dynamic asset optimization (Cloudinary), we build systems ready for enterprise data loads.",
-    icon: Database,
-  },
-];
+import { useTranslations } from "next-intl";
 
 export function CoreCompetencies() {
+  const t = useTranslations("CoreCompetencies");
+
+  const services = [
+    {
+      title: t("service1Title"),
+      description: t("service1Desc"),
+      icon: Server,
+    },
+    {
+      title: t("service2Title"),
+      description: t("service2Desc"),
+      icon: Globe,
+    },
+    {
+      title: t("service3Title"),
+      description: t("service3Desc"),
+      icon: Database,
+    },
+  ];
+
   return (
     <section className="relative py-24 px-6 bg-background-deep overflow-hidden">
       {/* Background blueprint texture */}
@@ -31,15 +34,15 @@ export function CoreCompetencies() {
         <div className="flex flex-col lg:flex-row border border-white/10 bg-surface/50 backdrop-blur-sm">
           
           {/* Mobile Header (Hidden on Desktop) */}
-          <div className="block lg:hidden border-b border-white/10 bg-surface p-8">
+          <div className="block lg:hidden border-b border-white/10 bg-surface p-6 sm:p-8">
             <div className="w-10 h-10 flex items-center justify-center border border-white/10 mb-6 bg-background-deep text-primary">
               <div className="w-1.5 h-1.5 bg-primary" />
             </div>
-            <h2 className="font-logo text-4xl font-bold text-neutral-50 mb-2 uppercase tracking-tighter">
-              Core <span className="text-primary">Competencies</span>
+            <h2 className="font-logo text-3xl sm:text-4xl font-bold text-neutral-50 mb-2 uppercase tracking-tighter break-words">
+              {t("core")} <span className="text-primary block sm:inline">{t("competencies")}</span>
             </h2>
             <p className="font-inter text-neutral-400 text-sm">
-              Precision engineering for the digital frontier.
+              {t("precisionEngineering")}
             </p>
           </div>
 
@@ -66,11 +69,11 @@ export function CoreCompetencies() {
                     transition: { staggerChildren: 0.08, delayChildren: 0.2 }
                   }
                 }}
-                className="font-logo text-[min(4vh,80px)] font-bold uppercase tracking-tighter whitespace-nowrap opacity-90 shrink-0 flex items-center" 
+                className="font-logo text-[clamp(1.25rem,2.5vh,3rem)] font-bold uppercase tracking-tighter whitespace-nowrap opacity-90 shrink-0 flex items-center" 
                 style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
               >
                 <span className="text-neutral-50 flex">
-                  {"Core".split("").map((char, i) => (
+                  {t("core").split("").map((char, i) => (
                     <motion.span
                       key={`core-${i}`}
                       variants={{
@@ -84,7 +87,7 @@ export function CoreCompetencies() {
                   ))}
                 </span>
                 <span className="mx-4 text-primary flex">
-                  {"Competencies".split("").map((char, i) => (
+                  {t("competencies").split("").map((char, i) => (
                     <motion.span
                       key={`comp-${i}`}
                       variants={{

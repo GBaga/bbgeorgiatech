@@ -2,17 +2,20 @@
 
 import { motion } from "framer-motion";
 import { Terminal } from "lucide-react";
-
-const technologies = [
-  { name: "Next.js & React 19", code: "Front-End Edge Engine" },
-  { name: "NestJS & Node", code: "Enterprise Backend Logic" },
-  { name: "MongoDB Atlas", code: "Distributed NoSQL Data" },
-  { name: "Neon (PostgreSQL)", code: "Serverless SQL Architecture" },
-  { name: "Vercel & Cloudflare", code: "Global Edge Infrastructure" },
-  { name: "Sanity.io & Cloudinary", code: "Decoupled Content Pipelines" },
-];
+import { useTranslations } from "next-intl";
 
 export function TechStack() {
+  const t = useTranslations("TechStack");
+
+  const technologies = [
+    { name: "Next.js & React 19", code: t("t1Code") },
+    { name: "NestJS & Node", code: t("t2Code") },
+    { name: "MongoDB Atlas", code: t("t3Code") },
+    { name: "Neon (PostgreSQL)", code: t("t4Code") },
+    { name: "Vercel & Cloudflare", code: t("t5Code") },
+    { name: "Sanity.io & Cloudinary", code: t("t6Code") },
+  ];
+
   return (
     <section className="relative py-24 px-6 bg-surface">
       <div className="max-w-7xl mx-auto">
@@ -25,14 +28,14 @@ export function TechStack() {
             className="md:w-1/3"
           >
             <h2 className="font-heading text-3xl md:text-5xl font-bold text-neutral-50 mb-6">
-              The Engine
+              {t("title")}
             </h2>
             <p className="font-inter text-neutral-400 leading-relaxed mb-8">
-              We operate exclusively on a modern, Headless Ecosystem. We don't build generic websites; we engineer highly distributed, decoupled applications ready for Enterprise scale.
+              {t("desc")}
             </p>
             <div className="flex items-center gap-3 text-primary font-mono text-sm">
               <Terminal className="w-5 h-5" />
-              <span>System architecture validated</span>
+              <span>{t("validated")}</span>
             </div>
           </motion.div>
 

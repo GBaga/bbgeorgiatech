@@ -2,8 +2,11 @@
 
 import { motion } from "framer-motion";
 import { Link2, ShieldCheck } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export function BrandHeritage() {
+  const t = useTranslations("BrandHeritage");
+
   return (
     <section className="relative py-32 px-6 bg-surface border-t border-white/5 overflow-hidden">
       {/* Background Brand Text */}
@@ -30,13 +33,13 @@ export function BrandHeritage() {
           className="text-center mb-16"
         >
           <span className="text-primary font-mono text-sm tracking-widest uppercase mb-4 block">
-            Bagauri Bonds Georgia Umbrella
+            {t("umbrella")}
           </span>
           <h2 className="font-heading text-3xl md:text-5xl font-bold text-neutral-50 mb-6">
-            The Human Core of High Tech
+            {t("title")}
           </h2>
           <p className="font-inter text-neutral-400 max-w-2xl mx-auto leading-relaxed">
-            BBGeorgiaTech is the dedicated technology division of Bagauri Bonds Georgia. We inherit our parent company's deeply human pillars and translate them for the digital frontier.
+            {t("description")}
           </p>
         </motion.div>
 
@@ -57,10 +60,10 @@ export function BrandHeritage() {
                 <div className="w-10 h-10 rounded-none bg-primary/10 flex items-center justify-center text-primary">
                   <Link2 className="w-5 h-5" />
                 </div>
-                <h3 className="font-heading text-2xl font-bold text-neutral-50">Bonds</h3>
+                <h3 className="font-heading text-2xl font-bold text-neutral-50">{t("bondsTitle")}</h3>
               </div>
               <p className="font-inter text-neutral-400 leading-relaxed">
-                Technology is not about code—it's about connection. Inheriting our parent company's focus on human ties, we engineer the invisible digital threads that connect businesses to their users, creating seamless interactions across the digital landscape.
+                {t("bondsDesc")}
               </p>
             </div>
           </motion.div>
@@ -81,10 +84,10 @@ export function BrandHeritage() {
                 <div className="w-10 h-10 rounded-none bg-secondary/10 flex items-center justify-center text-secondary">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
-                <h3 className="font-heading text-2xl font-bold text-neutral-50">Bagauri</h3>
+                <h3 className="font-heading text-2xl font-bold text-neutral-50">{t("bagauriTitle")}</h3>
               </div>
               <p className="font-inter text-neutral-400 leading-relaxed">
-                Roots matter, and digital experiences have architects. Bagauri represents the heritage and foundational integrity of our parent company. In a fast-moving digital world, BBGeorgiaTech builds on this legacy of craftsmanship, inviting you to engineer the next chapter of your digital history with us.
+                {t("bagauriDesc")}
               </p>
             </div>
           </motion.div>
