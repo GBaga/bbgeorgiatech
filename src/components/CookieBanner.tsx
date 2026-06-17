@@ -46,13 +46,13 @@ export function CookieBanner() {
             <div className="flex items-center gap-4 shrink-0 w-full md:w-auto">
               <button 
                 onClick={acceptCookies}
-                className="flex-1 md:flex-none px-6 py-3 bg-primary text-white font-mono text-sm uppercase tracking-wider hover:bg-primary/90 transition-colors"
+                className="flex-1 md:flex-none px-6 py-3 bg-primary text-white font-mono text-sm uppercase tracking-wider hover:bg-primary/90 transition-colors cursor-pointer"
               >
                 [ Accept Core ]
               </button>
               <button 
                 onClick={() => setIsVisible(false)}
-                className="p-3 text-neutral-500 hover:text-white transition-colors border border-transparent hover:border-white/10"
+                className="p-3 text-neutral-500 hover:text-white transition-colors border border-transparent hover:border-white/10 cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>

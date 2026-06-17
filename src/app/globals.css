@@ -88,3 +88,11 @@ body {
 .lucien-card:hover::before {
   background: linear-gradient(180deg, #5c9cff 0%, #3d5181 100%);
 }
+
+/* Ensure all buttons globally have a pointer cursor */
+button,
+[role="button"],
+input[type="submit"],
+input[type="button"] {
+  cursor: pointer;
+}

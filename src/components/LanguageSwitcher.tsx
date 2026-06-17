@@ -26,7 +26,7 @@ export function LanguageSwitcher() {
           <button
             key={l.code}
             onClick={() => handleLocaleChange(l.code)}
-            className={`relative group transition-colors duration-300 ${isActive ? "text-primary font-bold" : "text-neutral-500 hover:text-white"
+            className={`relative group cursor-pointer transition-colors duration-300 ${isActive ? "text-primary font-bold" : "text-neutral-500 hover:text-white"
               }`}
           >
             <span
