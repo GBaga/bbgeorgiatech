@@ -181,5 +181,12 @@
     "regards1": "საუკეთესო სურვილებით,",
     "regards2": "BBGeorgiaTech-ის გუნდი",
     "rightsReserved": "BBGeorgiaTech. ყველა უფლება დაცულია."
+  },
+  "CookieBanner": {
+    "title": "Sys_Compliance: GDPR",
+    "descStart": "ჩვენ ვიყენებთ მინიმალურ ანალიტიკურ ინსტრუმენტებს (Vercel Core Vitals, GA4) ინფრასტრუქტურის წარმადობის გასაუმჯობესებლად. ფარული პროფილირება გამორიცხულია. გაეცანით ჩვენს ",
+    "linkText": "ქუქი-ფაილების პოლიტიკას",
+    "descEnd": ".",
+    "acceptBtn": "[ დათანხმება ]"
   }
 }

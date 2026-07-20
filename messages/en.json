@@ -181,5 +181,12 @@
     "regards1": "Best regards,",
     "regards2": "The BBGeorgiaTech Team",
     "rightsReserved": "BBGeorgiaTech. All rights reserved."
+  },
+  "CookieBanner": {
+    "title": "Sys_Compliance: GDPR",
+    "descStart": "We utilize minimal tracking arrays (Vercel Core Vitals, GA4) to optimize infrastructure performance. No intrusive profiling. Review our ",
+    "linkText": "Cookie Policy",
+    "descEnd": ".",
+    "acceptBtn": "[ Accept Core ]"
   }
 }

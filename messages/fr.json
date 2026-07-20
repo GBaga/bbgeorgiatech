@@ -181,5 +181,12 @@
     "regards1": "Cordialement,",
     "regards2": "L'Équipe BBGeorgiaTech",
     "rightsReserved": "BBGeorgiaTech. Tous droits réservés."
+  },
+  "CookieBanner": {
+    "title": "Sys_Compliance: GDPR",
+    "descStart": "Nous utilisons des outils de suivi minimaux (Vercel Core Vitals, GA4) pour optimiser les performances de l'infrastructure. Aucun profilage intrusif. Consultez notre ",
+    "linkText": "Politique de cookies",
+    "descEnd": ".",
+    "acceptBtn": "[ Accepter ]"
   }
 }

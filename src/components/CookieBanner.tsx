@@ -3,8 +3,10 @@
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export function CookieBanner() {
+  const t = useTranslations("CookieBanner");
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -35,11 +37,10 @@ export function CookieBanner() {
             <div className="space-y-2 max-w-3xl">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-primary animate-pulse" />
-                <h3 className="font-mono text-sm tracking-widest text-primary uppercase">Sys_Compliance: GDPR</h3>
+                <h3 className="font-mono text-sm tracking-widest text-primary uppercase">{t("title")}</h3>
               </div>
               <p className="font-inter text-sm text-neutral-400">
-                We utilize minimal tracking arrays (Vercel Core Vitals, GA4) to optimize infrastructure performance. 
-                No intrusive profiling. Review our <a href="/cookie-policy" className="text-white hover:text-primary underline underline-offset-4 transition-colors">Cookie Policy</a>.
+                {t("descStart")}<a href="/cookie-policy" className="text-white hover:text-primary underline underline-offset-4 transition-colors">{t("linkText")}</a>{t("descEnd")}
               </p>
             </div>
             
@@ -48,7 +49,7 @@ export function CookieBanner() {
                 onClick={acceptCookies}
                 className="flex-1 md:flex-none px-6 py-3 bg-primary text-white font-mono text-sm uppercase tracking-wider hover:bg-primary/90 transition-colors cursor-pointer"
               >
-                [ Accept Core ]
+                {t("acceptBtn")}
               </button>
               <button 
                 onClick={() => setIsVisible(false)}
