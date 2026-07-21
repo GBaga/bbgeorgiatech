@@ -82,8 +82,12 @@ export default async function RootLayout({
           />
           {children}
           <CookieBanner />
-          <Analytics />
-          <SpeedInsights />
+          {process.env.NODE_ENV === "production" && (
+            <>
+              <Analytics />
+              <SpeedInsights />
+            </>
+          )}
           <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID as string} />
         </NextIntlClientProvider>
       </body>
