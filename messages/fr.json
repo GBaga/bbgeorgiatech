@@ -2,6 +2,13 @@
   "Index": {
     "title": "BBGeorgiaTech"
   },
+  "Metadata": {
+    "title": "BBGeorgiaTech | Création, Développement et Maintenance de Sites Web",
+    "description": "Création de sites web sur mesure, développement et maintenance continue. Sites web rapides et modernes pour les entreprises en France, en Géorgie et à l'international. Obtenez un devis gratuit.",
+    "keywords": "Création Site Web, Développement Web France, Site Web B2B, Développement Next.js, Agence Web, Sites Web Sur Mesure, Bagauri Bonds",
+    "ogTitle": "BBGeorgiaTech | Création et Développement de Sites Web sur Mesure",
+    "ogDescription": "Des sites web rapides et modernes conçus pour développer votre entreprise. Fièrement membre du groupe Bagauri Bonds Georgia."
+  },
   "Navigation": {
     "competencies": "Services",
     "theEngine": "Technologie",

@@ -6,7 +6,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { CookieBanner } from "../../components/CookieBanner";
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, getTranslations } from 'next-intl/server';
 
 const fontLogo = Michroma({
   variable: "--font-logo",
@@ -31,23 +31,37 @@ const fontMono = IBM_Plex_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "BBGeorgiaTech | Website Design, Development & Maintenance",
-  description: "Custom website design, development, and ongoing maintenance. Fast, modern websites for businesses in Georgia, France, and globally. Get a free quote today.",
-  keywords: ["Website Design Georgia", "Web Development France", "B2B Website", "Next.js Development", "Web Agency", "Custom Websites", "Bagauri Bonds"],
-  openGraph: {
-    title: "BBGeorgiaTech | Custom Website Design & Development",
-    description: "Fast, modern websites designed to grow your business. Proudly part of the Bagauri Bonds Georgia group.",
-    type: "website",
-    locale: "en_US",
-    alternateLocale: ["fr_FR", "ka_GE"],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "BBGeorgiaTech | Custom Websites",
-    description: "Fast, modern websites designed to grow your business.",
-  }
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const resolvedParams = await params;
+  const locale = resolvedParams.locale;
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  return {
+    title: t('title'),
+    description: t('description'),
+    keywords: t('keywords').split(', '),
+    alternates: {
+      languages: {
+        'en': '/en',
+        'fr': '/fr',
+        'ka': '/ka',
+        'x-default': '/en',
+      },
+    },
+    openGraph: {
+      title: t('ogTitle'),
+      description: t('ogDescription'),
+      type: "website",
+      locale: locale,
+      alternateLocale: ["en", "fr", "ka"].filter(l => l !== locale),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t('ogTitle'),
+      description: t('ogDescription'),
+    }
+  };
+}
 
 export default async function RootLayout({
   children,
