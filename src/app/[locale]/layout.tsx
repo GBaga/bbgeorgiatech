@@ -32,20 +32,20 @@ const fontMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "BBGeorgiaTech | Enterprise Full-Stack Architecture",
-  description: "Elite engineering firm specializing in Headless Next.js Ecosystems, Decoupled Data Pipelines, and Global Edge Infrastructure.",
-  keywords: ["Enterprise Architecture", "Next.js", "NestJS", "Headless CMS", "Software Engineering Georgia", "Tech Agency France", "B2B Infrastructure"],
+  title: "BBGeorgiaTech | Website Design, Development & Maintenance",
+  description: "Custom website design, development, and ongoing maintenance. Fast, modern websites for businesses in Georgia, France, and globally. Get a free quote today.",
+  keywords: ["Website Design Georgia", "Web Development France", "B2B Website", "Next.js Development", "Web Agency", "Custom Websites", "Bagauri Bonds"],
   openGraph: {
-    title: "BBGeorgiaTech | Enterprise Full-Stack Architecture",
-    description: "Decoupled. Scalable. Global. We build secure infrastructure for high-trust B2B operations.",
+    title: "BBGeorgiaTech | Custom Website Design & Development",
+    description: "Fast, modern websites designed to grow your business. Proudly part of the Bagauri Bonds Georgia group.",
     type: "website",
     locale: "en_US",
     alternateLocale: ["fr_FR", "ka_GE"],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BBGeorgiaTech | Enterprise Architecture",
-    description: "Decoupled. Scalable. Global.",
+    title: "BBGeorgiaTech | Custom Websites",
+    description: "Fast, modern websites designed to grow your business.",
   }
 };
 
@@ -63,9 +63,9 @@ export default async function RootLayout({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "BBGeorgiaTech",
-    "description": "Enterprise Full-Stack Architecture",
+    "description": "Website Design, Development & Maintenance",
     "areaServed": ["Georgia", "France", "Global"],
-    "knowsAbout": ["Software Architecture", "Next.js", "NestJS", "Cloud Infrastructure"],
+    "knowsAbout": ["Website Design", "Web Development", "E-Commerce", "Website Maintenance", "SEO"],
   };
 
   return (

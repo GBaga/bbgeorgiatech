@@ -104,7 +104,7 @@ export function ContactProtocol() {
               <div className="space-y-8">
                 <div className="group relative">
                   <label htmlFor="identifier" className="absolute -top-3 left-4 bg-background-deep px-2 text-[10px] font-mono text-neutral-400 group-focus-within:text-primary transition-colors tracking-widest z-10">
-                    [01] TARGET_ENTITY
+                    [01] YOUR_NAME
                   </label>
                   <input
                     type="text"
@@ -119,7 +119,7 @@ export function ContactProtocol() {
                 
                 <div className="group relative">
                   <label htmlFor="transmission" className="absolute -top-3 left-4 bg-background-deep px-2 text-[10px] font-mono text-neutral-400 group-focus-within:text-primary transition-colors tracking-widest z-10">
-                    [02] RETURN_VECTOR
+                    [02] YOUR_EMAIL
                   </label>
                   <input
                     type="email"
@@ -134,7 +134,7 @@ export function ContactProtocol() {
 
                 <div className="group relative">
                   <label htmlFor="payload" className="absolute -top-3 left-4 bg-background-deep px-2 text-[10px] font-mono text-neutral-400 group-focus-within:text-primary transition-colors tracking-widest z-10">
-                    [03] PAYLOAD_DATA
+                    [03] YOUR_PROJECT
                   </label>
                   <textarea
                     id="payload"

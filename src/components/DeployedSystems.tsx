@@ -14,7 +14,8 @@ export function DeployedSystems() {
       architecture: "Next.js, Tailwind v4",
       metric: t("m1"),
       status: "ACTIVE",
-      url: "https://kc-legal.vercel.app/en"
+      url: "https://kc-legal.vercel.app/en",
+      image: "/KC-legal.png"
     },
     {
       id: "SYS.GZ",
@@ -22,7 +23,8 @@ export function DeployedSystems() {
       architecture: "Next.js, Sanity.io",
       metric: t("m2"),
       status: "ACTIVE",
-      url: "https://giza-remonti.vercel.app/"
+      url: "https://giza-remonti.vercel.app/",
+      image: "/giza.remonti.png"
     },
     {
       id: "SYS.TR",
@@ -30,7 +32,8 @@ export function DeployedSystems() {
       architecture: "Next.js, MongoDB, Cloudinary",
       metric: t("m3"),
       status: "ACTIVE",
-      url: "https://bbgeorgiatravel.com/"
+      url: "https://bbgeorgiatravel.com/",
+      image: "/bbgeorgiatravel.png"
     },
     {
       id: "SYS.VO",
@@ -38,6 +41,7 @@ export function DeployedSystems() {
       architecture: "NestJS, MongoDB Atlas",
       metric: t("m4"),
       status: "INACTIVE",
+      image: "/vorigin-georgia.png"
     }
   ];
 
@@ -59,65 +63,65 @@ export function DeployedSystems() {
           </h3>
         </div>
 
-        {/* The Ledger */}
-        <div className="w-full overflow-x-auto border border-white/10 bg-background-deep/50 backdrop-blur-sm scrollbar-hide">
-          <table className="w-full text-left border-collapse min-w-[900px]">
-            <thead>
-              <tr className="border-b border-white/10 text-xs font-mono text-neutral-500 tracking-wider">
-                <th className="py-6 px-6 font-normal whitespace-nowrap">[ PROTOCOL_ID ]</th>
-                <th className="py-6 px-6 font-normal whitespace-nowrap">[ ECOSYSTEM ]</th>
-                <th className="py-6 px-6 font-normal whitespace-nowrap">[ ARCHITECTURE ]</th>
-                <th className="py-6 px-6 font-normal whitespace-nowrap">[ METRIC ]</th>
-                <th className="py-6 px-6 font-normal whitespace-nowrap">[ STATUS ]</th>
-              </tr>
-            </thead>
-            <tbody>
-              {systems.map((sys, idx) => (
-                <motion.tr 
-                  key={sys.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: idx * 0.1, duration: 0.5 }}
-                  className="border-b border-white/5 hover:bg-white/[0.02] transition-colors group cursor-crosshair"
-                >
-                  <td className="py-6 px-6 font-mono text-primary group-hover:text-white transition-colors">
-                    <span className="opacity-0 group-hover:opacity-100 transition-opacity mr-2 text-primary">{`>`}</span>
-                    {sys.id}
-                  </td>
-                  <td className="py-6 px-6 font-heading text-lg text-neutral-50">
-                    {sys.url ? (
-                      <a 
-                        href={sys.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 hover:text-primary transition-colors"
-                      >
-                        {sys.sector}
-                        <ExternalLink className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                      </a>
-                    ) : (
-                      <span>{sys.sector}</span>
-                    )}
-                  </td>
-                  <td className="py-6 px-6 font-mono text-sm text-neutral-400">
+        {/* The Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {systems.map((sys, idx) => (
+            <motion.div
+              key={sys.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1, duration: 0.5 }}
+              className="group border border-white/10 bg-background-deep hover:border-primary/50 transition-colors duration-500 overflow-hidden relative"
+            >
+              {/* Image Placeholder */}
+              <div className="aspect-video bg-white/5 relative border-b border-white/10 overflow-hidden flex items-center justify-center">
+                {sys.image ? (
+                  <img src={sys.image} alt={sys.sector} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-105 transform" />
+                ) : (
+                  <div className="font-mono text-neutral-600 text-sm tracking-widest uppercase text-center px-4">
+                    [ AWAITING_VISUAL_ASSET ]
+                  </div>
+                )}
+                {/* Overlay Accent */}
+                <div className="absolute inset-0 bg-gradient-to-t from-background-deep to-transparent opacity-50 pointer-events-none" />
+              </div>
+
+              {/* Content */}
+              <div className="p-8">
+                <div className="flex justify-between items-start mb-6">
+                  <div>
+                    <div className="font-mono text-xs text-primary tracking-widest mb-2">{sys.id}</div>
+                    <h4 className="font-logo text-2xl font-bold text-neutral-50">{sys.sector}</h4>
+                  </div>
+                  {sys.url && (
+                    <a href={sys.url} target="_blank" rel="noopener noreferrer" className="p-3 border border-white/10 bg-white/5 hover:bg-primary/10 hover:border-primary/50 text-neutral-400 hover:text-primary transition-all duration-300">
+                      <ExternalLink className="w-5 h-5" />
+                    </a>
+                  )}
+                </div>
+                
+                <p className="font-inter text-neutral-400 text-sm leading-relaxed mb-6">
+                  {sys.metric}
+                </p>
+
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between border-t border-white/10 pt-6 gap-4">
+                  <div className="font-mono text-xs text-neutral-500 tracking-wider">
                     {sys.architecture}
-                  </td>
-                  <td className="py-6 px-6 font-sans text-sm text-neutral-300">
-                    {sys.metric}
-                  </td>
-                  <td className="py-6 px-6">
-                    <div className="flex items-center gap-3">
-                      <div className={`w-2 h-2 rounded-none ${sys.status === 'ACTIVE' ? 'bg-primary shadow-[0_0_8px_rgba(92,156,255,0.8)]' : 'bg-neutral-600'}`} />
-                      <span className="font-mono text-xs tracking-widest text-neutral-500">
-                        {sys.status}
-                      </span>
-                    </div>
-                  </td>
-                </motion.tr>
-              ))}
-            </tbody>
-          </table>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className={`w-2 h-2 ${sys.status === 'ACTIVE' ? 'bg-primary shadow-[0_0_8px_rgba(92,156,255,0.8)]' : 'bg-neutral-600'}`} />
+                    <span className="font-mono text-[10px] tracking-widest text-neutral-500 uppercase">
+                      {sys.status}
+                    </span>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Hover effect lines */}
+              <div className="absolute top-0 left-0 w-full h-[2px] bg-primary scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            </motion.div>
+          ))}
         </div>
 
       </div>

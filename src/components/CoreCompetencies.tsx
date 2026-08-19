@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Database, Server, Globe } from "lucide-react";
+import { MonitorSmartphone, ShoppingCart, LifeBuoy } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export function CoreCompetencies() {
@@ -11,17 +11,17 @@ export function CoreCompetencies() {
     {
       title: t("service1Title"),
       description: t("service1Desc"),
-      icon: Server,
+      icon: MonitorSmartphone,
     },
     {
       title: t("service2Title"),
       description: t("service2Desc"),
-      icon: Globe,
+      icon: ShoppingCart,
     },
     {
       title: t("service3Title"),
       description: t("service3Desc"),
-      icon: Database,
+      icon: LifeBuoy,
     },
   ];
 
