@@ -26,15 +26,17 @@
   },
   "Hero": {
     "title1": "Nous Créons",
-    "title2": "Des Sites Qui",
-    "title3": "Font Grandir Votre Entreprise.",
-    "stackLabel": "SERVICES :",
-    "stackValue": "CRÉATION DE SITES // DÉVELOPPEMENT // E-COMMERCE",
-    "deploymentLabel": "LIVRAISON :",
+    "title2": "Des Sites Web Qui",
+    "title3": "Développent L'Entreprise.",
+    "stackLabel": "SERVICES:",
+    "stackValue": "CONCEPTION WEB // DÉVELOPPEMENT // E-COMMERCE",
+    "deploymentLabel": "LIVRAISON:",
     "deploymentValue": "RAPIDE. GLOBALE. FIABLE.",
-    "targetLabel": "SUPPORT :",
-    "targetValue": "MAINTENANCE CONTINUE & ASSISTANCE",
-    "initializeDeployment": "[ Voir Notre Travail ]",
+    "targetLabel": "SUPPORT:",
+    "targetValue": "MAINTENANCE & SOIN CONTINUS",
+    "getAQuote": "[ Obtenir un Devis Gratuit ]",
+    "initializeDeployment": "Voir Notre Travail →",
+    "pricingNote": "Projets à partir de 678$ · Maintenance à partir de 247$/an",
     "lessIsMore": "Parfois, moins c'est plus.",
     "quoteAuthor": "Robert Browning (1855)"
   },
@@ -80,7 +82,9 @@
     "q3": "Combien de temps faut-il pour créer un site web ?",
     "a3": "Un site web d'entreprise standard prend généralement 3 à 4 semaines de la découverte au lancement, tandis que les plateformes e-commerce complexes peuvent prendre plus de temps.",
     "q4": "Travaillez-vous avec des clients internationaux ?",
-    "a4": "Absolument. Bien que nous ayons des racines en Géorgie et opérions en France, nous servons des clients dans le monde entier avec une communication fluide."
+    "a4": "Absolument. Bien que nous ayons des racines profondes en Géorgie et opérions en France, nous servons des clients dans le monde entier avec une communication fluide.",
+    "q5": "Puis-je mettre à jour mon propre site web une fois qu'il est construit ?",
+    "a5": "Oui. Pour les clients qui souhaitent être indépendants, nous intégrons un CMS simple sans code (tel que Sanity.io) afin que vous puissiez mettre à jour du texte, des images, des articles de blog, et plus encore — aucune connaissance technique n'est nécessaire. Nous fournirons également une courte vidéo explicative pour que vous soyez confiant dès le premier jour."
   },
   "TestimonialsSection": {
     "title1": "Succès",
@@ -180,22 +184,31 @@
   "DeployedSystems": {
     "title1": "Notre",
     "title2": "Portfolio",
-    "m1": "Site web professionnel pour un cabinet juridique premium — conçu pour attirer et convertir des clients de grande valeur.",
-    "m2": "Site web d'entreprise de rénovation avec des animations fluides et un contenu facile à gérer.",
-    "m3": "Plateforme de voyage avec une portée mondiale, des galeries d'images dynamiques, et des capacités de réservation.",
-    "m4": "Système backend personnalisé pour des opérations commerciales complexes et la gestion des données."
+    "m1": "De la première conversation au site en ligne en seulement 2 semaines — KC Legal attire déjà des demandes de consultation qualifiées grâce à des temps de chargement plus rapides et une mise en page axée sur la conversion.",
+    "m2": "L'équipe de Giza Remonti peut mettre à jour les galeries de projets et le contenu de manière indépendante via Sanity CMS — sans une seule ligne de code ni appel à un développeur.",
+    "m3": "Moteur de réservation en direct, livraison d'images en temps réel via Cloudinary et annonces multi-devises — le tout en moins de 1,5s sur mobile. Le panneau de contrôle back-office permet aux propriétaires de créer des factures, de gérer les réservations et de gérer les opérations quotidiennes entièrement depuis un téléphone.",
+    "m4": "Backend API REST de niveau entreprise — NestJS, MongoDB Atlas, authentification JWT, stockage AWS S3 et limitation de débit. Construit comme une plateforme interne ; actuellement en attente pendant que le client réorganise ses opérations commerciales."
   },
   "ParadoxOfScale": {
     "title": "Notre Philosophie",
     "quote": "La simplicité est la clé de la brillance.",
     "p1": "Nous ne faisons pas de production de masse. Chaque projet reçoit toute notre attention, notre meilleure réflexion, et notre plus haut niveau de savoir-faire. La qualité plutôt que la quantité — toujours.",
     "p2": "En nous concentrant sur ce qui compte vraiment, nous créons des sites web qui semblent rapides, intuitifs, et utiles. Pas de superflus, pas de complexité inutile — juste des expériences numériques épurées et puissantes qui servent vos objectifs commerciaux.",
-    "author": "— Bruce Lee"
+    "author": "— Bruce Lee",
+    "stat1Label": "Service",
+    "stat1Val": "International",
+    "stat2Label": "Temps de Réponse",
+    "stat2Val": "< 60 min",
+    "stat3Label": "Satisfaction Client",
+    "stat3Val": "100%"
   },
   "ContactProtocol": {
-    "title1": "Démarrer un",
-    "title2": "Projet",
-    "desc": "Prêt à construire quelque chose d'exceptionnel ? Parlez-nous de votre projet ci-dessous. Notre équipe vous répondra dans les 24 heures pour une consultation gratuite.",
+    "title1": "Dites-Nous",
+    "title2": "Ce Dont Vous Avez Besoin",
+    "desc": "Prêt à construire quelque chose d'exceptionnel ? Parlez-nous de votre projet ci-dessous. Notre équipe vous répondra dans les 24 heures avec une consultation gratuite.",
+    "desc2": "Consultation gratuite. Sans engagement. Réponse sous 60 minutes.",
+    "emailLabel": "[ LIGNE_DIRECTE ]",
+    "emailValue": "bbgeorgiatech@gmail.com",
     "encryptTitle": "CHIFFREMENT",
     "privacyTitle": "CONFIDENTIALITÉ DES DONNÉES",
     "privacyVal": "Vos données sont en sécurité",
@@ -224,10 +237,10 @@
     "rightsReserved": "BBGeorgiaTech. Tous droits réservés."
   },
   "CookieBanner": {
-    "title": "Sys_Compliance: GDPR",
-    "descStart": "Nous utilisons des outils de suivi minimaux (Vercel Core Vitals, GA4) pour optimiser les performances de l'infrastructure. Aucun profilage intrusif. Consultez notre ",
-    "linkText": "Politique de cookies",
+    "title": "Sys_Compliance: RGPD",
+    "descStart": "Nous utilisons un minimum de matrices de suivi (Vercel Core Vitals, GA4) pour optimiser les performances de l'infrastructure. Pas de profilage intrusif. Consultez notre ",
+    "linkText": "Politique relative aux cookies",
     "descEnd": ".",
-    "acceptBtn": "[ Accepter ]"
+    "acceptBtn": "[ Accepter & Continuer ]"
   }
 }

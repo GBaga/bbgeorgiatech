@@ -54,6 +54,21 @@ export function ParadoxOfScale() {
               {t("p2")}
             </p>
           </div>
+
+          <div className="grid grid-cols-3 border-t border-white/10 mt-12 pt-8 font-mono text-center">
+            <div>
+              <div className="text-2xl md:text-4xl font-bold text-primary mb-2">{t("stat1Val")}</div>
+              <div className="text-[10px] md:text-xs text-neutral-500 uppercase tracking-widest">{t("stat1Label")}</div>
+            </div>
+            <div className="border-l border-white/10">
+              <div className="text-2xl md:text-4xl font-bold text-primary mb-2">{t("stat2Val")}</div>
+              <div className="text-[10px] md:text-xs text-neutral-500 uppercase tracking-widest">{t("stat2Label")}</div>
+            </div>
+            <div className="border-l border-white/10">
+              <div className="text-2xl md:text-4xl font-bold text-primary mb-2">{t("stat3Val")}</div>
+              <div className="text-[10px] md:text-xs text-neutral-500 uppercase tracking-widest">{t("stat3Label")}</div>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>

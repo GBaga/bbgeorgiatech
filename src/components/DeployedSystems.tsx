@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Terminal, ExternalLink } from "lucide-react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 export function DeployedSystems() {
@@ -77,7 +78,7 @@ export function DeployedSystems() {
               {/* Image Placeholder */}
               <div className="aspect-video bg-white/5 relative border-b border-white/10 overflow-hidden flex items-center justify-center">
                 {sys.image ? (
-                  <img src={sys.image} alt={sys.sector} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-105 transform" />
+                  <Image src={sys.image} alt={sys.sector} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 group-hover:scale-105 transform" />
                 ) : (
                   <div className="font-mono text-neutral-600 text-sm tracking-widest uppercase text-center px-4">
                     [ AWAITING_VISUAL_ASSET ]

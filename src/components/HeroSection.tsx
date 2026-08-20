@@ -160,14 +160,25 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="flex pt-4"
+            className="flex flex-col pt-4 gap-2"
           >
-            <a href="#systems" className="group relative inline-flex items-center justify-center px-4 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-mono text-primary transition-all duration-300 bg-background-deep border border-primary/50 hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_20px_rgba(92,156,255,0.2)] focus:outline-none uppercase tracking-wider sm:tracking-widest overflow-hidden w-full sm:w-auto">
-              <span className="relative z-10 flex items-center gap-2 sm:gap-3">
-                {t("initializeDeployment")} <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-2" />
-              </span>
-              <div className="absolute inset-0 h-full w-0 bg-primary/10 transition-all duration-300 ease-out group-hover:w-full" />
-            </a>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#contact" className="group relative inline-flex items-center justify-center px-4 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-mono text-background-deep transition-all duration-300 bg-primary border border-primary hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(92,156,255,0.4)] focus:outline-none uppercase tracking-wider sm:tracking-widest overflow-hidden w-full sm:w-auto font-bold">
+                <span className="relative z-10 flex items-center gap-2 sm:gap-3">
+                  {t("getAQuote")} <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 transition-transform duration-300 group-hover:translate-x-2" />
+                </span>
+                <div className="absolute inset-0 h-full w-0 bg-white/20 transition-all duration-300 ease-out group-hover:w-full" />
+              </a>
+              <a href="#systems" className="group relative inline-flex items-center justify-center px-4 sm:px-8 py-3 sm:py-4 text-xs sm:text-sm font-mono text-primary transition-all duration-300 bg-background-deep border border-primary/50 hover:bg-primary/10 hover:border-primary hover:shadow-[0_0_20px_rgba(92,156,255,0.2)] focus:outline-none uppercase tracking-wider sm:tracking-widest overflow-hidden w-full sm:w-auto">
+                <span className="relative z-10 flex items-center gap-2 sm:gap-3">
+                  {t("initializeDeployment")}
+                </span>
+                <div className="absolute inset-0 h-full w-0 bg-primary/10 transition-all duration-300 ease-out group-hover:w-full" />
+              </a>
+            </div>
+            <p className="font-mono text-xs text-neutral-500 mt-2 sm:ml-1">
+              {t("pricingNote")}
+            </p>
           </motion.div>
         </div>
 

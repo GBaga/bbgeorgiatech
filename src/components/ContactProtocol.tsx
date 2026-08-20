@@ -51,9 +51,18 @@ export function ContactProtocol() {
               {t("title1")} <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-b from-neutral-500 to-neutral-800">{t("title2")}</span>
             </h2>
-            <p className="font-mono text-neutral-400 text-sm md:text-base leading-relaxed border-l-2 border-primary/50 pl-6 py-2 bg-gradient-to-r from-primary/5 to-transparent">
-              {t("desc")}
-            </p>
+            <div className="border-l-2 border-primary/50 pl-6 py-2 bg-gradient-to-r from-primary/5 to-transparent">
+              <p className="font-mono text-neutral-400 text-sm md:text-base leading-relaxed">
+                {t("desc")}
+              </p>
+              <p className="font-mono text-neutral-500 text-xs md:text-sm leading-relaxed mt-2">
+                {t("desc2")}
+              </p>
+            </div>
+            
+            <a href={`mailto:${t("emailValue")}`} className="inline-block font-mono text-sm text-primary hover:underline mt-8 mb-4">
+              {t("emailLabel")} {t("emailValue")}
+            </a>
           </motion.div>
 
           <motion.div
