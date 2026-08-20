@@ -195,12 +195,14 @@
     "p1": "Nous ne faisons pas de production de masse. Chaque projet reçoit toute notre attention, notre meilleure réflexion, et notre plus haut niveau de savoir-faire. La qualité plutôt que la quantité — toujours.",
     "p2": "En nous concentrant sur ce qui compte vraiment, nous créons des sites web qui semblent rapides, intuitifs, et utiles. Pas de superflus, pas de complexité inutile — juste des expériences numériques épurées et puissantes qui servent vos objectifs commerciaux.",
     "author": "— Bruce Lee",
-    "stat1Label": "Service",
-    "stat1Val": "International",
-    "stat2Label": "Temps de Réponse",
-    "stat2Val": "< 60 min",
-    "stat3Label": "Satisfaction Client",
-    "stat3Val": "100%"
+    "badge1Title": "RSA-4096",
+    "badge1Val": "Crypté et Sécurisé",
+    "badge2Title": "24 Heures",
+    "badge2Val": "Réponse Rapide",
+    "badge3Title": "Bagauri Bonds",
+    "badge3Val": "Soutenu par le Groupe",
+    "badge4Title": "Sans Engagement",
+    "badge4Val": "Annulez à Tout Moment"
   },
   "ContactProtocol": {
     "title1": "Dites-Nous",

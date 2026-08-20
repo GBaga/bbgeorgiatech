@@ -195,12 +195,14 @@
     "p1": "We don't do mass production. Every project gets our full attention, our best thinking, and our highest standard of craftsmanship. Quality over quantity — always.",
     "p2": "By focusing on what truly matters, we create websites that feel fast, intuitive, and purposeful. No bloat, no unnecessary complexity — just clean, powerful digital experiences that serve your business goals.",
     "author": "— Bruce Lee",
-    "stat1Label": "Serving",
-    "stat1Val": "Internationally",
-    "stat2Label": "Avg. Response Time",
-    "stat2Val": "< 60 min",
-    "stat3Label": "Client Satisfaction",
-    "stat3Val": "100%"
+    "badge1Title": "RSA-4096",
+    "badge1Val": "Encrypted & Secure",
+    "badge2Title": "24 Hrs",
+    "badge2Val": "Consultation Reply",
+    "badge3Title": "Bagauri Bonds",
+    "badge3Val": "Group Backed",
+    "badge4Title": "No Contracts",
+    "badge4Val": "Cancel Anytime"
   },
   "ContactProtocol": {
     "title1": "Tell Us What",

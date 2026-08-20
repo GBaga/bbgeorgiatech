@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { ShieldCheck, Clock, Landmark, FileX } from "lucide-react";
 
 export function ParadoxOfScale() {
   const t = useTranslations("ParadoxOfScale");
@@ -55,18 +56,30 @@ export function ParadoxOfScale() {
             </p>
           </div>
 
-          <div className="grid grid-cols-3 border-t border-white/10 mt-12 pt-8 font-mono text-center">
-            <div>
-              <div className="text-2xl md:text-4xl font-bold text-primary mb-2">{t("stat1Val")}</div>
-              <div className="text-[10px] md:text-xs text-neutral-500 uppercase tracking-widest">{t("stat1Label")}</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 font-mono text-left">
+            <div className="p-4 sm:p-5 border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors relative overflow-hidden group">
+              <ShieldCheck className="w-5 h-5 text-primary mb-3 sm:mb-4 relative z-10" />
+              <div className="text-white text-xs sm:text-sm font-bold mb-1 relative z-10">{t("badge1Title")}</div>
+              <div className="text-neutral-500 text-[10px] sm:text-xs uppercase tracking-widest relative z-10">{t("badge1Val")}</div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
-            <div className="border-l border-white/10">
-              <div className="text-2xl md:text-4xl font-bold text-primary mb-2">{t("stat2Val")}</div>
-              <div className="text-[10px] md:text-xs text-neutral-500 uppercase tracking-widest">{t("stat2Label")}</div>
+            <div className="p-4 sm:p-5 border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors relative overflow-hidden group">
+              <Clock className="w-5 h-5 text-primary mb-3 sm:mb-4 relative z-10" />
+              <div className="text-white text-xs sm:text-sm font-bold mb-1 relative z-10">{t("badge2Title")}</div>
+              <div className="text-neutral-500 text-[10px] sm:text-xs uppercase tracking-widest relative z-10">{t("badge2Val")}</div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
-            <div className="border-l border-white/10">
-              <div className="text-2xl md:text-4xl font-bold text-primary mb-2">{t("stat3Val")}</div>
-              <div className="text-[10px] md:text-xs text-neutral-500 uppercase tracking-widest">{t("stat3Label")}</div>
+            <div className="p-4 sm:p-5 border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors relative overflow-hidden group">
+              <Landmark className="w-5 h-5 text-primary mb-3 sm:mb-4 relative z-10" />
+              <div className="text-white text-xs sm:text-sm font-bold mb-1 relative z-10">{t("badge3Title")}</div>
+              <div className="text-neutral-500 text-[10px] sm:text-xs uppercase tracking-widest relative z-10">{t("badge3Val")}</div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            </div>
+            <div className="p-4 sm:p-5 border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors relative overflow-hidden group">
+              <FileX className="w-5 h-5 text-primary mb-3 sm:mb-4 relative z-10" />
+              <div className="text-white text-xs sm:text-sm font-bold mb-1 relative z-10">{t("badge4Title")}</div>
+              <div className="text-neutral-500 text-[10px] sm:text-xs uppercase tracking-widest relative z-10">{t("badge4Val")}</div>
+              <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
           </div>
         </motion.div>
