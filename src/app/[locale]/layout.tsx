@@ -37,6 +37,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
   return {
+    metadataBase: new URL('https://bbgeorgiatech.com'),
     title: t('title'),
     description: t('description'),
     keywords: t('keywords').split(', '),
@@ -77,6 +78,8 @@ export default async function RootLayout({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "BBGeorgiaTech",
+    "url": "https://bbgeorgiatech.com",
+    "image": "https://bbgeorgiatech.com/icon.svg",
     "description": "Website Design, Development & Maintenance",
     "areaServed": ["Georgia", "France", "Global"],
     "knowsAbout": ["Website Design", "Web Development", "E-Commerce", "Website Maintenance", "SEO"],

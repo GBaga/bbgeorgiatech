@@ -3,6 +3,15 @@
 import nodemailer from "nodemailer";
 import { getTranslations } from "next-intl/server";
 
+function escapeHtml(unsafe: string) {
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 export async function transmitPayloadAction(formData: FormData) {
   const targetEntity = formData.get("identifier") as string;
   const returnVector = formData.get("transmission") as string;
@@ -43,8 +52,10 @@ export async function transmitPayloadAction(formData: FormData) {
       text: `You have received a new project inquiry from the website.\n\nName / Company: ${targetEntity}\nEmail Address: ${returnVector}\n\nProject Details:\n${payloadData}`,
     });
 
+    const safeTargetEntity = escapeHtml(targetEntity);
+    const safeReturnVector = escapeHtml(returnVector);
     // Create an HTML-safe version of the payload (replace newlines with <br>)
-    const safePayloadHtml = payloadData.replace(/\n/g, "<br>");
+    const safePayloadHtml = escapeHtml(payloadData).replace(/\n/g, "<br>");
 
     // 2. Auto-Reply to the User (HTML Template)
     const htmlEmailTemplate = `
@@ -84,7 +95,7 @@ export async function transmitPayloadAction(formData: FormData) {
             <td style="padding: 40px 30px; font-family: 'Courier New', Courier, monospace;">
               <h1 style="font-size: 20px; font-weight: normal; margin-top: 0; margin-bottom: 30px; text-transform: uppercase; letter-spacing: 1px; color: #FFFFFF;">${t("title")}</h1>
               <p style="font-size: 14px; line-height: 1.6; color: #A3A3A3; margin-top: 0; margin-bottom: 30px;">
-                ${t("greeting")} <strong style="color: #FFFFFF;">${targetEntity}</strong>,<br><br>
+                ${t("greeting")} <strong style="color: #FFFFFF;">${safeTargetEntity}</strong>,<br><br>
                 ${t("p1")}
               </p>
 
@@ -94,12 +105,12 @@ export async function transmitPayloadAction(formData: FormData) {
                 
                 <div style="margin-bottom: 15px;">
                   <strong style="color: #FFFFFF; font-size: 12px; text-transform: uppercase; display:block; margin-bottom:5px;">${t("entity")}</strong>
-                  <span style="color: #10B981; font-size: 14px;">${targetEntity}</span>
+                  <span style="color: #10B981; font-size: 14px;">${safeTargetEntity}</span>
                 </div>
                 
                 <div style="margin-bottom: 15px;">
                   <strong style="color: #FFFFFF; font-size: 12px; text-transform: uppercase; display:block; margin-bottom:5px;">${t("returnVector")}</strong>
-                  <span style="color: #10B981; font-size: 14px;">${returnVector}</span>
+                  <span style="color: #10B981; font-size: 14px;">${safeReturnVector}</span>
                 </div>
                 
                 <div style="margin-bottom: 0;">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Terminal, Lock, ArrowRight, ShieldCheck, CheckCircle2, AlertCircle } from "lucide-react";
 import { transmitPayloadAction } from "../actions/transmit-payload";
@@ -10,6 +10,15 @@ export function ContactProtocol() {
   const t = useTranslations("ContactProtocol");
   const [status, setStatus] = useState<"idle" | "transmitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -25,7 +34,11 @@ export function ContactProtocol() {
     } else {
       setStatus("success");
       (e.target as HTMLFormElement).reset();
-      setTimeout(() => setStatus("idle"), 10000);
+      
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+      timeoutRef.current = setTimeout(() => setStatus("idle"), 10000);
     }
   }
   return (
