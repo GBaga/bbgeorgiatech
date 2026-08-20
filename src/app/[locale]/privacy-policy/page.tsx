@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
               <div className="w-2 h-2 bg-primary" />
               <h3 className="font-mono text-sm tracking-widest text-primary uppercase">Sys_Compliance</h3>
             </div>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold tracking-tighter text-neutral-50 mb-6 uppercase">
+            <h1 className="font-heading text-4xl md:text-5xl font-bold tracking-tighter text-neutral-50 mb-6 uppercase break-words sm:break-normal">
               {t("title")}
             </h1>
             <p className="font-mono text-sm text-neutral-500">{t("lastUpdated")} {new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date()).toLowerCase()}</p>

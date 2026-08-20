@@ -50,12 +50,12 @@ export function NavigationBar() {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
           
           {/* Logo & Brand */}
-          <div className="flex items-center gap-4 cursor-pointer group" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+          <Link href="/" className="flex items-center gap-4 cursor-pointer group">
             <BrandIcon />
             <div className="font-heading font-bold text-xl text-neutral-50 tracking-tight hidden sm:block">
               BBGeorgia<span className="text-primary transition-colors group-hover:text-white">Tech</span>
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8 xl:gap-12">
@@ -102,9 +102,9 @@ export function NavigationBar() {
           >
             <div className="flex flex-col h-full p-6">
               <div className="flex items-center justify-between mb-16 border-b border-white/10 pb-6">
-                <div className="flex items-center gap-4">
+                <Link href="/" className="flex items-center gap-4 cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
                   <BrandIcon />
-                </div>
+                </Link>
                 <button className="text-neutral-50 p-2 border border-white/10 hover:bg-white/5 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
                   <X className="w-6 h-6" />
                 </button>

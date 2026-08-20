@@ -115,7 +115,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-bold tracking-tighter text-neutral-50 leading-[1.1] uppercase">
+            <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-[5rem] font-bold tracking-tighter text-neutral-50 leading-[1.1] uppercase break-words sm:break-normal">
               <motion.span custom={delay1} variants={typingContainer} initial="hidden" animate="visible">
                 {title1.split("").map((char, i) => <motion.span key={i} variants={typingChar}>{char === " " ? "\u00A0" : char}</motion.span>)}
               </motion.span>
