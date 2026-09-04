@@ -10,39 +10,48 @@ export function DeployedSystems() {
 
   const systems = [
     {
-      id: "SYS.KC",
-      sector: "KC Legal",
-      architecture: "Next.js, Tailwind v4",
-      metric: t("m1"),
-      status: "ACTIVE",
-      url: "https://kc-legal.vercel.app/en",
-      image: "/KC-legal.png"
-    },
-    {
-      id: "SYS.GZ",
-      sector: "Giza Remonti",
-      architecture: "Next.js, Sanity.io",
-      metric: t("m2"),
-      status: "ACTIVE",
-      url: "https://giza-remonti.vercel.app/",
-      image: "/giza.remonti.png"
-    },
-    {
       id: "SYS.TR",
       sector: "BBGeorgiaTravel",
       architecture: "Next.js, MongoDB, Cloudinary",
       metric: t("m3"),
       status: "ACTIVE",
       url: "https://bbgeorgiatravel.com/",
-      image: "/bbgeorgiatravel.png"
+      image: "/bbgeorgiatravel.webp"
     },
+    {
+      id: "SYS.PG",
+      sector: "POG League",
+      architecture: "Next.js 16, Sanity.io, NextAuth",
+      metric: t("m5"),
+      status: "ACTIVE",
+      url: "https://pog-football.vercel.app/",
+      image: "/pog-football.webp"
+    },
+    {
+      id: "SYS.KC",
+      sector: "KC Legal",
+      architecture: "Next.js, Tailwind v4",
+      metric: t("m1"),
+      status: "ACTIVE",
+      url: "https://kc-legal.vercel.app/en",
+      image: "/KC-legal.webp"
+    },
+    {
+      id: "SYS.GZ",
+      sector: "Giga's Remonti",
+      architecture: "Next.js, Sanity.io",
+      metric: t("m2"),
+      status: "ACTIVE",
+      url: "https://gigas-remonti.vercel.app/en",
+      image: "/gigas-remonti.webp"
+    },    
     {
       id: "SYS.VO",
       sector: "VoriginGeorgia",
       architecture: "NestJS, MongoDB Atlas",
       metric: t("m4"),
       status: "INACTIVE",
-      image: "/vorigin-georgia.png"
+      image: "/vorigin-georgia.webp"
     }
   ];
 

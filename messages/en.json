@@ -185,9 +185,10 @@
     "title1": "Our",
     "title2": "Portfolio",
     "m1": "From first conversation to live site in just 2 weeks — KC Legal is already attracting qualified consultation requests with faster load times and a conversion-focused layout.",
-    "m2": "Giza Remonti's client team can update project galleries and content independently via Sanity CMS — without a single line of code or a developer call.",
+    "m2": "A trilingual (GE/EN/RU) renovation platform for Giga's Remonti — serving Tbilisi, Batumi, and Akhmeta. Giga personally supervises every job on-site every day; a Sanity CMS back-office lets the team publish portfolio projects, service pages, and insights without touching code. Fixed-price contracts, full warranty, and zero hidden costs are baked into the brand — and the site communicates that trust at every scroll.",
     "m3": "Live booking engine, Cloudinary image delivery, and multi-currency listings — all under 1.5s on mobile. The back-office panel lets owners create invoices, manage bookings, and run daily operations entirely from a phone.",
-    "m4": "Enterprise-grade REST API backend — NestJS, MongoDB Atlas, JWT auth, AWS S3 storage, and rate limiting. Built as an internal platform; currently on hold while the client reorganizes their business operations."
+    "m4": "Enterprise-grade REST API backend — NestJS, MongoDB Atlas, JWT auth, AWS S3 storage, and rate limiting. Built as an internal platform; currently on hold while the client reorganizes their business operations.",
+    "m5": "A full-stack football championship management platform built for a private corporate league. Features real-time standings, a dynamic match calendar, top-scorer leaderboard, playoff bracket, live Sanity CMS content updates, and NextAuth-powered secure access — all under a sleek, sports-broadcast-inspired dark UI."
   },
   "ParadoxOfScale": {
     "title": "Our Philosophy",

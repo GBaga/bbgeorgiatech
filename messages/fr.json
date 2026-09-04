@@ -185,9 +185,10 @@
     "title1": "Notre",
     "title2": "Portfolio",
     "m1": "De la première conversation au site en ligne en seulement 2 semaines — KC Legal attire déjà des demandes de consultation qualifiées grâce à des temps de chargement plus rapides et une mise en page axée sur la conversion.",
-    "m2": "L'équipe de Giza Remonti peut mettre à jour les galeries de projets et le contenu de manière indépendante via Sanity CMS — sans une seule ligne de code ni appel à un développeur.",
+    "m2": "Une plateforme de rénovation trilingue (GE/EN/RU) pour Giga's Remonti — couvrant Tbilissi, Batoumi et Akhmeta. Giga supervise personnellement chaque chantier au quotidien ; le back-office Sanity CMS permet à son équipe de publier portfolios, pages de services et articles sans toucher au code. Contrats à prix fixe, garantie complète et zéro frais cachés — et le site communique cette confiance à chaque défilement.",
     "m3": "Moteur de réservation en direct, livraison d'images en temps réel via Cloudinary et annonces multi-devises — le tout en moins de 1,5s sur mobile. Le panneau de contrôle back-office permet aux propriétaires de créer des factures, de gérer les réservations et de gérer les opérations quotidiennes entièrement depuis un téléphone.",
-    "m4": "Backend API REST de niveau entreprise — NestJS, MongoDB Atlas, authentification JWT, stockage AWS S3 et limitation de débit. Construit comme une plateforme interne ; actuellement en attente pendant que le client réorganise ses opérations commerciales."
+    "m4": "Backend API REST de niveau entreprise — NestJS, MongoDB Atlas, authentification JWT, stockage AWS S3 et limitation de débit. Construit comme une plateforme interne ; actuellement en attente pendant que le client réorganise ses opérations commerciales.",
+    "m5": "Une plateforme complète de gestion de championnat de football créée pour une ligue d'entreprise privée. Elle comprend des classements en temps réel, un calendrier de matchs dynamique, un classement des meilleurs buteurs, un tableau de playoffs, des mises à jour de contenu en direct via Sanity CMS et un accès sécurisé via NextAuth — le tout dans une interface sombre élégante, d'inspiration broadcast sportif."
   },
   "ParadoxOfScale": {
     "title": "Notre Philosophie",
