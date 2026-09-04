@@ -44,7 +44,8 @@ export function DeployedSystems() {
       status: "ACTIVE",
       url: "https://gigas-remonti.vercel.app/en",
       image: "/gigas-remonti.webp"
-    },    
+    },
+    // Test change to trigger deployment
     {
       id: "SYS.VO",
       sector: "VoriginGeorgia",
