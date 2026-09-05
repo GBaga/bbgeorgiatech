@@ -85,7 +85,7 @@ export function NavigationBar() {
           </div>
 
           {/* Mobile Menu Toggle */}
-          <button className="lg:hidden text-neutral-50 p-2" onClick={() => setIsMobileMenuOpen(true)}>
+          <button className="lg:hidden text-neutral-50 p-2" onClick={() => setIsMobileMenuOpen(true)} aria-label="Open navigation menu">
             <Menu className="w-6 h-6" />
           </button>
         </div>
@@ -98,18 +98,23 @@ export function NavigationBar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[60] bg-background-deep/95 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 z-[60] bg-background-deep/95 backdrop-blur-xl lg:hidden flex flex-col"
           >
-            <div className="flex flex-col h-full p-6">
-              <div className="flex items-center justify-between mb-16 border-b border-white/10 pb-6">
-                <Link href="/" className="flex items-center gap-4 cursor-pointer" onClick={() => setIsMobileMenuOpen(false)}>
+            <div className={`flex-none transition-all duration-300 border-b border-white/10 ${isScrolled ? "py-4" : "py-6"}`}>
+              <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+                <Link href="/" className="flex items-center gap-4 cursor-pointer group" onClick={() => setIsMobileMenuOpen(false)}>
                   <BrandIcon />
+                  <div className="font-heading font-bold text-xl text-neutral-50 tracking-tight hidden sm:block">
+                    BBGeorgia<span className="text-primary transition-colors group-hover:text-white">Tech</span>
+                  </div>
                 </Link>
-                <button className="text-neutral-50 p-2 border border-white/10 hover:bg-white/5 transition-colors" onClick={() => setIsMobileMenuOpen(false)}>
+                <button className="text-neutral-50 p-2" onClick={() => setIsMobileMenuOpen(false)} aria-label="Close navigation menu">
                   <X className="w-6 h-6" />
                 </button>
               </div>
+            </div>
 
+            <div className="flex flex-col flex-1 px-6 pt-16 pb-6 overflow-y-auto">
               <nav className="flex flex-col gap-8">
                 {navLinks.map((link, i) => (
                   <Link

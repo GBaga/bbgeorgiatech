@@ -106,7 +106,7 @@ export function DeployedSystems() {
                     <h4 className="font-logo text-2xl font-bold text-neutral-50">{sys.sector}</h4>
                   </div>
                   {sys.url && (
-                    <a href={sys.url} target="_blank" rel="noopener noreferrer" className="p-3 border border-white/10 bg-white/5 hover:bg-primary/10 hover:border-primary/50 text-neutral-400 hover:text-primary transition-all duration-300">
+                    <a href={sys.url} target="_blank" rel="noopener noreferrer" className="p-3 border border-white/10 bg-white/5 hover:bg-primary/10 hover:border-primary/50 text-neutral-400 hover:text-primary transition-all duration-300" aria-label={`Visit ${sys.sector} website`}>
                       <ExternalLink className="w-5 h-5" />
                     </a>
                   )}

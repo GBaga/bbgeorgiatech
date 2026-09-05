@@ -47,15 +47,15 @@ export function Footer() {
 
           <div className="flex flex-col items-start md:items-end gap-6">
             <div className="flex items-center gap-6">
-              <a href="https://github.com/GBaga" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white transition-colors group">
+              <a href="https://github.com/GBaga" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white transition-colors group" aria-label="GitHub">
                 <GithubIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
-              <a href="https://www.linkedin.com/in/goga-bagauri" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white transition-colors group">
+              <a href="https://www.linkedin.com/in/goga-bagauri" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white transition-colors group" aria-label="LinkedIn">
                 <LinkedinIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
             </div>
             <div className="font-mono text-xs text-neutral-500">
-              © {new Date().getFullYear()} BBGeorgiaTech, Inc. {t("allRightsReserved")}
+              © {new Date().getFullYear()} BBGeorgiaTech. {t("allRightsReserved")}
             </div>
           </div>
         </div>

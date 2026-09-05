@@ -54,6 +54,7 @@ export function CookieBanner() {
               <button 
                 onClick={() => setIsVisible(false)}
                 className="p-3 text-neutral-500 hover:text-white transition-colors border border-transparent hover:border-white/10 cursor-pointer"
+                aria-label="Dismiss cookie banner"
               >
                 <X className="w-5 h-5" />
               </button>

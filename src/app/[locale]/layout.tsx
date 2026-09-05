@@ -81,7 +81,7 @@ export default async function RootLayout({
     "url": "https://bbgeorgiatech.com",
     "image": "https://bbgeorgiatech.com/icon.svg",
     "description": "Website Design, Development & Maintenance",
-    "areaServed": ["Georgia", "France", "Global"],
+    "areaServed": ["Georgia", "Europe", "Global"],
     "knowsAbout": ["Website Design", "Web Development", "E-Commerce", "Website Maintenance", "SEO"],
   };
 
@@ -105,7 +105,9 @@ export default async function RootLayout({
               <SpeedInsights />
             </>
           )}
-          <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID as string} />
+          {process.env.NEXT_PUBLIC_GA_ID && (
+            <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} />
+          )}
         </NextIntlClientProvider>
       </body>
     </html>

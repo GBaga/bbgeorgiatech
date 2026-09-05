@@ -14,8 +14,8 @@ export const GridLight = () => {
 
   const generateAndSetPath = () => {
     const gridSize = 60;
-    const w = window.innerWidth;
-    const h = window.innerHeight;
+    const w = document.documentElement.clientWidth;
+    const h = document.documentElement.clientHeight;
     const cols = Math.floor(w / gridSize);
     const rows = Math.floor(h / gridSize);
 

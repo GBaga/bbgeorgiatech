@@ -1,15 +1,17 @@
 import { NavigationBar } from "@/components/NavigationBar";
 import { HeroSection } from "@/components/HeroSection";
-import { CoreCompetencies } from "@/components/CoreCompetencies";
-import { TechStack } from "@/components/TechStack";
-import { DeployedSystems } from "@/components/DeployedSystems";
-import { ProcessSection } from "@/components/ProcessSection";
-import { ParadoxOfScale } from "@/components/ParadoxOfScale";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
-import { FAQSection } from "@/components/FAQSection";
-import { BrandHeritage } from "@/components/BrandHeritage";
-import { ContactProtocol } from "@/components/ContactProtocol";
-import { Footer } from "@/components/Footer";
+import dynamic from "next/dynamic";
+
+const CoreCompetencies = dynamic(() => import("@/components/CoreCompetencies").then(m => m.CoreCompetencies));
+const TechStack = dynamic(() => import("@/components/TechStack").then(m => m.TechStack));
+const ProcessSection = dynamic(() => import("@/components/ProcessSection").then(m => m.ProcessSection));
+const DeployedSystems = dynamic(() => import("@/components/DeployedSystems").then(m => m.DeployedSystems));
+const ParadoxOfScale = dynamic(() => import("@/components/ParadoxOfScale").then(m => m.ParadoxOfScale));
+const TestimonialsSection = dynamic(() => import("@/components/TestimonialsSection").then(m => m.TestimonialsSection));
+const FAQSection = dynamic(() => import("@/components/FAQSection").then(m => m.FAQSection));
+const BrandHeritage = dynamic(() => import("@/components/BrandHeritage").then(m => m.BrandHeritage));
+const ContactProtocol = dynamic(() => import("@/components/ContactProtocol").then(m => m.ContactProtocol));
+const Footer = dynamic(() => import("@/components/Footer").then(m => m.Footer));
 
 export default function Home() {
   return (

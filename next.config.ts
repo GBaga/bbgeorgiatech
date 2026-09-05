@@ -4,7 +4,9 @@ import createNextIntlPlugin from "next-intl/plugin";
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  experimental: {
+    optimizePackageImports: ['framer-motion'],
+  },
 };
 
 export default withNextIntl(nextConfig);

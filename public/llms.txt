@@ -1,0 +1,31 @@
+# BBGeorgiaTech
+
+> Professional web design, development, and maintenance services.
+
+## About
+
+BBGeorgiaTech builds modern, high-performance websites using Next.js, React, and other cutting-edge technologies. We serve clients in Georgia, Europe, and globally.
+
+## Services
+
+- [Web Design & Development](https://bbgeorgiatech.com/en#competencies)
+- [E-Commerce Solutions](https://bbgeorgiatech.com/en#competencies)
+- [Website Maintenance](https://bbgeorgiatech.com/en#competencies)
+
+## Portfolio
+
+- [BBGeorgiaTravel](https://bbgeorgiatravel.com/)
+- [POG League](https://pog-football.vercel.app/)
+- [KC Legal](https://kc-legal.vercel.app/en)
+- [Giga's Remonti](https://gigas-remonti.vercel.app/en)
+
+## Contact
+
+- [Contact Form](https://bbgeorgiatech.com/en#contact)
+- Email: bbgeorgiatech@gmail.com
+
+## Legal
+
+- [Privacy Policy](https://bbgeorgiatech.com/en/privacy-policy)
+- [Terms & Conditions](https://bbgeorgiatech.com/en/terms-and-conditions)
+- [Cookie Policy](https://bbgeorgiatech.com/en/cookie-policy)
