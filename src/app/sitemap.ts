@@ -1,20 +1,32 @@
 import { MetadataRoute } from 'next'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://bbgeorgiatech.com'
+const baseUrl = 'https://bbgeorgiatech.com'
+const locales = ['en', 'fr', 'ka'] as const
 
-  const locales = ['en', 'fr', 'ka']
-  const routes = ['', '/cookie-policy', '/privacy-policy', '/terms-and-conditions']
-  
+// Real last-modified dates per route — update the date here when a route's
+// content actually changes. A build-time `new Date()` tells crawlers every
+// page changed on every deploy, which trains them to ignore the signal.
+const routes: { path: string; lastModified: string; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
+  { path: '', lastModified: '2026-09-10', changeFrequency: 'monthly' },
+  { path: '/cookie-policy', lastModified: '2026-09-10', changeFrequency: 'yearly' },
+  { path: '/privacy-policy', lastModified: '2026-09-10', changeFrequency: 'yearly' },
+  { path: '/terms-and-conditions', lastModified: '2026-09-10', changeFrequency: 'yearly' },
+]
+
+export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = []
 
-  for (const locale of locales) {
-    for (const route of routes) {
+  for (const route of routes) {
+    for (const locale of locales) {
       entries.push({
-        url: `${baseUrl}/${locale}${route}`,
-        lastModified: new Date(),
-        changeFrequency: route === '' ? 'monthly' : 'yearly',
-        priority: route === '' ? 1 : 0.5,
+        url: `${baseUrl}/${locale}${route.path}`,
+        lastModified: route.lastModified,
+        changeFrequency: route.changeFrequency,
+        alternates: {
+          languages: Object.fromEntries(
+            locales.map((l) => [l, `${baseUrl}/${l}${route.path}`])
+          ),
+        },
       })
     }
   }

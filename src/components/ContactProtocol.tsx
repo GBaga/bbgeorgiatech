@@ -1,44 +1,39 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Terminal, Lock, ArrowRight, ShieldCheck, CheckCircle2, AlertCircle } from "lucide-react";
 import { transmitPayloadAction } from "../actions/transmit-payload";
 import { useTranslations } from "next-intl";
 
+const ERROR_MESSAGE_KEYS: Record<string, string> = {
+  ERR_MISSING_PARAMETERS: "errValidation",
+  ERR_VALIDATION: "errValidation",
+  ERR_RATE_LIMITED: "errRateLimited",
+  ERR_SMTP_OFFLINE: "errSmtpOffline",
+  ERR_TRANSMISSION_FAILED: "errTransmissionFailed",
+};
+
 export function ContactProtocol() {
   const t = useTranslations("ContactProtocol");
   const [status, setStatus] = useState<"idle" | "transmitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, []);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("transmitting");
     setErrorMessage("");
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const result = await transmitPayloadAction(formData);
 
     if (result.error) {
       setStatus("error");
-      setErrorMessage(result.error);
+      setErrorMessage(t(ERROR_MESSAGE_KEYS[result.error] ?? "errTransmissionFailed"));
     } else {
       setStatus("success");
-      (e.target as HTMLFormElement).reset();
-      
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-      timeoutRef.current = setTimeout(() => setStatus("idle"), 10000);
+      form.reset();
     }
   }
   return (
@@ -123,7 +118,14 @@ export function ContactProtocol() {
               className="p-6 sm:p-10 space-y-8"
               onSubmit={handleSubmit}
             >
-              <div className="space-y-8">
+              <fieldset disabled={status === "transmitting"} className="space-y-8 disabled:opacity-70">
+                {/* Honeypot: hidden from sighted users and keyboard tab order, but present
+                    in the DOM so naive bots fill it. Real visitors never touch this. */}
+                <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}>
+                  <label htmlFor="website">Leave this field empty</label>
+                  <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" />
+                </div>
+
                 <div className="group relative">
                   <label htmlFor="identifier" className="absolute -top-3 left-4 bg-background-deep px-2 text-[10px] font-mono text-neutral-400 group-focus-within:text-primary transition-colors tracking-widest z-10">
                     [01] YOUR_NAME
@@ -133,12 +135,13 @@ export function ContactProtocol() {
                     id="identifier"
                     name="identifier"
                     required
-                    className="w-full bg-transparent border border-white/10 px-5 py-5 text-neutral-50 focus:outline-none focus:border-primary transition-colors font-mono text-sm placeholder:text-neutral-600"
+                    maxLength={100}
+                    className="w-full bg-transparent border border-white/10 px-5 py-5 text-neutral-50 focus:outline-none focus:border-primary transition-colors font-mono text-sm placeholder:text-neutral-600 disabled:cursor-not-allowed"
                     placeholder={t("placeholder1")}
                   />
                   <div className="absolute top-0 left-0 w-[2px] h-0 bg-primary transition-all duration-300 group-focus-within:h-full" />
                 </div>
-                
+
                 <div className="group relative">
                   <label htmlFor="transmission" className="absolute -top-3 left-4 bg-background-deep px-2 text-[10px] font-mono text-neutral-400 group-focus-within:text-primary transition-colors tracking-widest z-10">
                     [02] YOUR_EMAIL
@@ -148,7 +151,8 @@ export function ContactProtocol() {
                     id="transmission"
                     name="transmission"
                     required
-                    className="w-full bg-transparent border border-white/10 px-5 py-5 text-neutral-50 focus:outline-none focus:border-primary transition-colors font-mono text-sm placeholder:text-neutral-600"
+                    maxLength={255}
+                    className="w-full bg-transparent border border-white/10 px-5 py-5 text-neutral-50 focus:outline-none focus:border-primary transition-colors font-mono text-sm placeholder:text-neutral-600 disabled:cursor-not-allowed"
                     placeholder={t("placeholder2")}
                   />
                   <div className="absolute top-0 left-0 w-[2px] h-0 bg-primary transition-all duration-300 group-focus-within:h-full" />
@@ -162,13 +166,14 @@ export function ContactProtocol() {
                     id="payload"
                     name="payload"
                     required
+                    maxLength={5000}
                     rows={5}
-                    className="w-full bg-transparent border border-white/10 px-5 py-5 text-neutral-50 focus:outline-none focus:border-primary transition-colors font-mono text-sm resize-none placeholder:text-neutral-600 leading-relaxed"
+                    className="w-full bg-transparent border border-white/10 px-5 py-5 text-neutral-50 focus:outline-none focus:border-primary transition-colors font-mono text-sm resize-none placeholder:text-neutral-600 leading-relaxed disabled:cursor-not-allowed"
                     placeholder={t("placeholder3")}
                   ></textarea>
                   <div className="absolute top-0 left-0 w-[2px] h-0 bg-primary transition-all duration-300 group-focus-within:h-full" />
                 </div>
-              </div>
+              </fieldset>
 
               {status === "error" && errorMessage && (
                 <div className="p-4 border border-red-500/20 bg-red-500/5 text-red-400 font-mono text-xs flex items-start gap-3">

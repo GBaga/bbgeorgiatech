@@ -1,27 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslations } from "next-intl";
+import { Link } from "../i18n/routing";
+import { useConsent, setConsent } from "../lib/consent";
 
 export function CookieBanner() {
   const t = useTranslations("CookieBanner");
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const consent = localStorage.getItem("bb_cookie_consent");
-    if (!consent) {
-      // Small delay for dramatic effect
-      const timer = setTimeout(() => setIsVisible(true), 1500);
-      return () => clearTimeout(timer);
-    }
-  }, []);
-
-  const acceptCookies = () => {
-    localStorage.setItem("bb_cookie_consent", "true");
-    setIsVisible(false);
-  };
+  const consent = useConsent();
+  const isVisible = consent === null;
 
   return (
     <AnimatePresence>
@@ -40,19 +28,25 @@ export function CookieBanner() {
                 <h3 className="font-mono text-sm tracking-widest text-primary uppercase">{t("title")}</h3>
               </div>
               <p className="font-inter text-sm text-neutral-400">
-                {t("descStart")}<a href="/cookie-policy" className="text-white hover:text-primary underline underline-offset-4 transition-colors">{t("linkText")}</a>{t("descEnd")}
+                {t("descStart")}<Link href="/cookie-policy" className="text-white hover:text-primary underline underline-offset-4 transition-colors">{t("linkText")}</Link>{t("descEnd")}
               </p>
             </div>
-            
+
             <div className="flex items-center gap-4 shrink-0 w-full md:w-auto">
-              <button 
-                onClick={acceptCookies}
+              <button
+                onClick={() => setConsent("denied")}
+                className="flex-1 md:flex-none px-6 py-3 border border-white/10 text-neutral-400 hover:text-white hover:border-white/30 font-mono text-sm uppercase tracking-wider transition-colors cursor-pointer"
+              >
+                {t("rejectBtn")}
+              </button>
+              <button
+                onClick={() => setConsent("granted")}
                 className="flex-1 md:flex-none px-6 py-3 bg-primary text-white font-mono text-sm uppercase tracking-wider hover:bg-primary/90 transition-colors cursor-pointer"
               >
                 {t("acceptBtn")}
               </button>
-              <button 
-                onClick={() => setIsVisible(false)}
+              <button
+                onClick={() => setConsent("denied")}
                 className="p-3 text-neutral-500 hover:text-white transition-colors border border-transparent hover:border-white/10 cursor-pointer"
                 aria-label="Dismiss cookie banner"
               >

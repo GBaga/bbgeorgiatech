@@ -219,8 +219,12 @@
     "placeholder2": "Email Address",
     "placeholder3": "Tell us about your project — what do you need?",
     "errorPrefix": "SOMETHING WENT WRONG:",
-    "success1": "MESSAGE SENT! We've sent a confirmation to your email. Our team will reach out within 24 hours.",
-    "success2": "IMPORTANT: Please check your spam or junk folder if you don't see our confirmation email.",
+    "errValidation": "Please check your name, email, and message and try again.",
+    "errRateLimited": "Too many submissions from this connection. Please wait a few minutes and try again.",
+    "errSmtpOffline": "Our inbox is temporarily unreachable. Please email us directly instead.",
+    "errTransmissionFailed": "Delivery failed. Please try again in a moment.",
+    "success1": "MESSAGE SENT! Our team will reach out within 24 hours.",
+    "success2": "In the meantime, feel free to reach us directly at the email above.",
     "btnIdle": "SEND_MESSAGE",
     "btnTx": "SENDING...",
     "btnSuccess": "MESSAGE_SENT",
@@ -244,6 +248,7 @@
     "descStart": "We utilize minimal tracking arrays (Vercel Core Vitals, GA4) to optimize infrastructure performance. No intrusive profiling. Review our ",
     "linkText": "Cookie Policy",
     "descEnd": ".",
-    "acceptBtn": "[ Accept & Continue ]"
+    "acceptBtn": "[ Accept & Continue ]",
+    "rejectBtn": "[ Reject ]"
   }
 }
