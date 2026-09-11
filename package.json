@@ -9,13 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "@next/third-parties": "^16.2.9",
+    "@next/third-parties": "^16.3.4",
     "@vercel/analytics": "^2.0.1",
     "@vercel/speed-insights": "^2.0.0",
     "clsx": "^2.1.1",
     "framer-motion": "^12.40.0",
     "lucide-react": "^1.20.0",
-    "next": "16.2.9",
+    "next": "16.3.4",
     "next-intl": "^4.13.0",
     "nodemailer": "^9.0.1",
     "react": "19.2.4",
@@ -30,7 +30,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "16.2.9",
+    "eslint-config-next": "16.3.4",
     "tailwindcss": "^4",
     "typescript": "^5",
     "wrangler": "^4.131.0"
