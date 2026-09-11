@@ -69,7 +69,6 @@ export function DeployedSystems() {
             </h2>
           </div>
           <h3 className="text-4xl md:text-6xl font-heading font-bold text-neutral-50 tracking-tight uppercase">
-            {t("title1")} <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">{t("title2")}</span>
           </h3>
         </div>
