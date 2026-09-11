@@ -98,6 +98,7 @@
   },
   "CookiePolicy": {
     "title": "Politique des Cookies",
+    "metaDescription": "Comment BBGeorgiaTech utilise les cookies et le stockage du navigateur — y compris Google Analytics — et comment gérer ou retirer votre consentement à tout moment.",
     "lastUpdated": "Dernière mise à jour :",
     "h1": "Comment nous utilisons les cookies",
     "p1": "Nous utilisons des cookies HTTP standard et le LocalStorage du navigateur pour améliorer votre expérience sur notre site web. Un \"cookie\" est un petit fichier texte téléchargé sur votre appareil lorsque vous visitez notre site, nous permettant de mémoriser vos préférences et de comprendre comment vous utilisez nos services.",
@@ -124,6 +125,7 @@
   },
   "PrivacyPolicy": {
     "title": "Politique de Confidentialité",
+    "metaDescription": "Politique de confidentialité de BBGeorgiaTech : les données personnelles que nous collectons, leur utilisation, vos droits RGPD et comment nous contacter.",
     "h1": "Collecte des données",
     "p1": "BBGeorgiaTech s'engage à protéger votre vie privée. Nous collectons un minimum de données personnelles, strictement nécessaires pour fournir nos services. Les types de données que nous collectons incluent :",
     "li1Title": "Informations de contact :",
@@ -151,6 +153,7 @@
   },
   "Terms": {
     "title": "Conditions Générales",
+    "metaDescription": "Conditions générales d'utilisation du site BBGeorgiaTech, incluant l'usage autorisé, la propriété intellectuelle et la limitation de responsabilité.",
     "lastUpdated": "Dernière mise à jour :",
     "h1": "Conditions d'utilisation",
     "p1": "En accédant au site web de BBGeorgiaTech, vous acceptez d'être lié par ces Conditions d'utilisation. Si vous n'acceptez pas l'une de ces conditions, il vous est interdit d'utiliser ou d'accéder à ce site.",

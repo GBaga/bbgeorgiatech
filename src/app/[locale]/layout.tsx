@@ -8,6 +8,7 @@ import { CookieBanner } from "../../components/CookieBanner";
 import { AnalyticsGate } from "../../components/AnalyticsGate";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
+import { buildAlternates } from '../../lib/seo';
 
 const fontLogo = Michroma({
   variable: "--font-logo",
@@ -42,15 +43,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     title: t('title'),
     description: t('description'),
     keywords: t('keywords').split(', '),
-    alternates: {
-      canonical: `/${locale}`,
-      languages: {
-        'en': '/en',
-        'fr': '/fr',
-        'ka': '/ka',
-        'x-default': '/en',
-      },
-    },
+    alternates: buildAlternates(locale, ''),
     openGraph: {
       title: t('ogTitle'),
       description: t('ogDescription'),

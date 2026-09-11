@@ -1,7 +1,21 @@
+import type { Metadata } from "next";
 import { GridLight } from "../../../components/HeroSection";
 import { NavigationBar } from "../../../components/NavigationBar";
 import { Footer } from "../../../components/Footer";
 import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { buildAlternates } from "../../../lib/seo";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Terms" });
+
+  return {
+    title: `${t("title")} | BBGeorgiaTech`,
+    description: t("metaDescription"),
+    alternates: buildAlternates(locale, "/terms-and-conditions"),
+  };
+}
 
 export default function TermsAndConditions() {
   const t = useTranslations("Terms");
