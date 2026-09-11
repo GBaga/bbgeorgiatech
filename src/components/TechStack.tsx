@@ -46,7 +46,7 @@ export function TechStack() {
             transition={{ duration: 0.6 }}
             className="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-4"
           >
-            {technologies.map((tech, i) => (
+            {technologies.map((tech) => (
               <div
                 key={tech.name}
                 className="group p-6 rounded-none lucien-card"

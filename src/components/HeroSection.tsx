@@ -8,10 +8,6 @@ import { useTranslations } from "next-intl";
 export const GridLight = () => {
   const [pathData, setPathData] = useState<{ d: string, w: number, h: number } | null>(null);
 
-  useEffect(() => {
-    generateAndSetPath();
-  }, []);
-
   const generateAndSetPath = () => {
     const gridSize = 60;
     const w = document.documentElement.clientWidth;
@@ -48,6 +44,13 @@ export const GridLight = () => {
     }
     setPathData({ d, w, h });
   };
+
+  useEffect(() => {
+    // Reads document.documentElement dimensions, so it can only run after
+    // mount — there is no way to compute this during render.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    generateAndSetPath();
+  }, []);
 
   if (!pathData) return null;
 

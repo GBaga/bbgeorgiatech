@@ -51,7 +51,7 @@ export function TestimonialsSection() {
               
               <div className="relative z-10">
                 <p className="font-inter text-lg md:text-xl text-neutral-300 leading-relaxed mb-8 italic">
-                  "{testimonial.quote}"
+                  &ldquo;{testimonial.quote}&rdquo;
                 </p>
                 
                 <div className="flex items-center gap-4 border-t border-white/10 pt-6">

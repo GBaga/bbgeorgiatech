@@ -38,7 +38,7 @@ export function ParadoxOfScale() {
           </h2>
           
           <blockquote className="relative p-8 md:p-12 mb-12">
-            <div className="absolute top-0 left-0 text-6xl text-primary/20 font-heading">"</div>
+            <div className="absolute top-0 left-0 text-6xl text-primary/20 font-heading">&ldquo;</div>
             <p className="font-heading text-2xl md:text-4xl text-neutral-200 font-light italic leading-snug relative z-10">
               {t("quote")}
             </p>

@@ -65,7 +65,7 @@ export function DeployedSystems() {
           <div className="flex items-center gap-3 mb-4">
             <Terminal className="w-5 h-5 text-primary" />
             <h2 className="text-sm font-mono tracking-[0.2em] text-primary uppercase">
-              // Execution Log
+              {"// Execution Log"}
             </h2>
           </div>
           <h3 className="text-4xl md:text-6xl font-heading font-bold text-neutral-50 tracking-tight uppercase">
