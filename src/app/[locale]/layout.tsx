@@ -126,6 +126,7 @@ export default async function RootLayout({
   return (
     <html
       lang={resolvedParams.locale}
+      data-scroll-behavior="smooth"
       className={`${fontLogo.variable} ${fontHeading.variable} ${fontBody.variable} ${fontMono.variable} h-full antialiased dark`}
       suppressHydrationWarning
     >
