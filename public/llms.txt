@@ -16,7 +16,7 @@ BBGeorgiaTech builds modern, high-performance websites using Next.js, React, and
 
 - [BBGeorgiaTravel](https://bbgeorgiatravel.com/)
 - [POG League](https://pog-football.vercel.app/)
-- [KC Legal](https://kc-legal.vercel.app/en)
+- [KC Legal](https://www.kclegal.ge/ka)
 - [Giga's Remonti](https://gigas-remonti.vercel.app/en)
 
 ## Contact

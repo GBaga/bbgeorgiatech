@@ -33,7 +33,7 @@ export function DeployedSystems() {
       architecture: "Next.js, Tailwind v4",
       metric: t("m1"),
       status: "ACTIVE",
-      url: "https://kc-legal.vercel.app/en",
+      url: "https://www.kclegal.ge/ka",
       image: "/KC-legal.webp"
     },
     {
