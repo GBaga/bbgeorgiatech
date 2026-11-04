@@ -123,6 +123,41 @@ body {
   animation-delay: var(--d, 0s);
 }
 
+/* Tech stack cards: a glow that follows the pointer. --mx/--my are set from
+   JS on pointer move. ::before lights the 1px border (same mask trick as
+   .lucien-card), ::after adds a faint wash on the card face. */
+.tech-spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.tech-spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), rgba(92, 156, 255, 0.9), transparent 60%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.tech-spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), rgba(92, 156, 255, 0.08), transparent 60%);
+}
+
+/* Touch screens have no pointer to follow */
+@media (hover: none) {
+  .tech-spotlight {
+    display: none;
+  }
+}
+
 /* Ensure all buttons globally have a pointer cursor */
 button,
 [role="button"],
