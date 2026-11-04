@@ -31,7 +31,7 @@ export default async function Home() {
   };
 
   return (
-    <main className="flex flex-col min-h-screen overflow-x-hidden">
+    <main className="flex flex-col min-h-screen overflow-x-clip">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
