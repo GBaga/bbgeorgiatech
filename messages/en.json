@@ -41,8 +41,9 @@
     "quoteAuthor": "Robert Browning (1855)"
   },
   "BrandHeritage": {
+    "title1": "Built on Trust.",
+    "title2": "Engineered for the Future.",
     "umbrella": "Part of the Bagauri Bonds Georgia Group",
-    "title": "Built on Trust. Engineered for the Future.",
     "description": "BBGeorgiaTech is the technology division of Bagauri Bonds Georgia — a company rooted in Georgian heritage, operating across Europe. We combine our parent company's commitment to lasting human relationships with cutting-edge web technology.",
     "bondsTitle": "Our Bonds",
     "bondsDesc": "We believe technology should connect, not complicate. Every website we build strengthens the bond between our clients and their customers — creating digital experiences that feel personal, professional, and built to last.",
@@ -174,7 +175,8 @@
     "p6": "These terms and conditions are governed by and construed in accordance with the laws of Georgia. You irrevocably submit to the exclusive jurisdiction of the courts in Georgia for the resolution of any legal disputes."
   },
   "TechStack": {
-    "title": "Our Technology",
+    "title1": "Our",
+    "title2": "Technology",
     "desc": "We use the latest, most reliable tools in the industry. No templates, no shortcuts — every site is custom-built with modern technology designed for speed, security, and growth.",
     "validated": "Battle-tested technology stack",
     "t1Code": "Lightning-fast interfaces",
@@ -208,7 +210,8 @@
     "h5": "Enterprise-grade REST API"
   },
   "ParadoxOfScale": {
-    "title": "Our Philosophy",
+    "title1": "Our",
+    "title2": "Philosophy",
     "quote": "Simplicity is the key to brilliance.",
     "p1": "We don't do mass production. Every project gets our full attention, our best thinking, and our highest standard of craftsmanship. Quality over quantity — always.",
     "p2": "By focusing on what truly matters, we create websites that feel fast, intuitive, and purposeful. No bloat, no unnecessary complexity — just clean, powerful digital experiences that serve your business goals.",

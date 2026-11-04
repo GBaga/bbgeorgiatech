@@ -33,8 +33,8 @@ export function ParadoxOfScale() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-heading text-3xl md:text-5xl font-bold text-neutral-50 mb-12">
-            {t("title")}
+          <h2 className="font-logo text-3xl md:text-5xl text-neutral-50 mb-12 uppercase tracking-tighter">
+            {t("title1")} <span className="text-primary">{t("title2")}</span>
           </h2>
           
           <blockquote className="relative p-8 md:p-12 mb-12">

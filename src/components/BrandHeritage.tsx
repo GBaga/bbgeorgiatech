@@ -35,8 +35,8 @@ export function BrandHeritage() {
           <span className="text-primary font-mono text-sm tracking-widest uppercase mb-4 block">
             {t("umbrella")}
           </span>
-          <h2 className="font-heading text-3xl md:text-5xl font-bold text-neutral-50 mb-6">
-            {t("title")}
+          <h2 className="font-logo text-3xl md:text-5xl text-neutral-50 mb-6 uppercase tracking-tighter">
+            {t("title1")} <span className="text-primary">{t("title2")}</span>
           </h2>
           <p className="font-inter text-neutral-400 max-w-2xl mx-auto leading-relaxed">
             {t("description")}

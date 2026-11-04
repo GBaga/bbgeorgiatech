@@ -55,9 +55,9 @@ export function ContactProtocol() {
               <div className="w-2 h-2 bg-primary animate-pulse" />
               <h3 className="font-mono text-sm tracking-widest text-primary uppercase">Sys_Protocol 04</h3>
             </div>
-            <h2 className="font-logo text-5xl md:text-7xl lg:text-[80px] font-bold text-neutral-50 mb-8 tracking-tighter uppercase leading-[0.9]">
+            <h2 className="font-logo text-5xl md:text-7xl lg:text-[80px] text-neutral-50 mb-8 tracking-tighter uppercase leading-[0.9]">
               {t("title1")} <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-b from-neutral-500 to-neutral-800">{t("title2")}</span>
+              <span className="text-primary">{t("title2")}</span>
             </h2>
             <div className="border-l-2 border-primary/50 pl-6 py-2 bg-gradient-to-r from-primary/5 to-transparent">
               <p className="font-mono text-neutral-400 text-sm md:text-base leading-relaxed">

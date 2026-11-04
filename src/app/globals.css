@@ -16,6 +16,8 @@
   --font-inter: var(--font-body);
   --font-mono: var(--font-mono);
   --font-logo: var(--font-logo);
+  /* Hero chart quote: Plex Mono for Latin, Noto Sans Georgian for Georgian */
+  --font-quote: var(--font-mono), var(--font-georgian), monospace;
 }
 
 :root {
@@ -87,6 +89,38 @@ body {
 
 .lucien-card:hover::before {
   background: linear-gradient(180deg, #5c9cff 0%, #3d5181 100%);
+}
+
+/* Hero entrance — pure CSS so it runs on first paint, before hydration.
+   Each headline line slides up out of a clipping mask; --d staggers them.
+   The reduced-motion backstop below collapses these to their end state. */
+@keyframes hero-line-in {
+  from { transform: translateY(110%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes hero-fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+.hero-line {
+  display: block;
+  overflow: hidden;
+  /* room for descenders / Georgian glyphs inside the mask */
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+}
+
+.hero-line > span {
+  display: inline-block;
+  animation: hero-line-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--d, 0s);
+}
+
+.hero-fade {
+  animation: hero-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--d, 0s);
 }
 
 /* Ensure all buttons globally have a pointer cursor */

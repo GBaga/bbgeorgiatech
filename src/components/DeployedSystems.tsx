@@ -118,7 +118,7 @@ function StackCard({
             </div>
 
             <div className="mt-6 font-mono text-xs uppercase tracking-[0.2em] text-neutral-500">{project.category}</div>
-            <h3 className="mt-2 font-logo text-2xl md:text-3xl font-bold uppercase tracking-tighter text-neutral-50">{project.name}</h3>
+            <h3 className="mt-2 font-logo text-2xl md:text-3xl uppercase tracking-tighter text-neutral-50">{project.name}</h3>
             <div className="mt-3 font-heading text-lg md:text-xl font-semibold" style={{ color: project.accent }}>
               {project.headline}
             </div>
@@ -241,8 +241,8 @@ export function DeployedSystems() {
               <div className="w-1.5 h-1.5 bg-primary" aria-hidden="true" />
               <div className="font-mono text-xs tracking-[0.2em] text-primary uppercase">{t("eyebrow")}</div>
             </div>
-            <h2 className="text-4xl md:text-6xl font-heading font-bold text-neutral-50 tracking-tight">
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">{t("title2")}</span>
+            <h2 className="font-logo text-4xl md:text-6xl text-primary uppercase tracking-tighter">
+              {t("title2")}
             </h2>
             <p className="mt-4 max-w-xl text-neutral-400 leading-relaxed">{t("subtitle")}</p>
           </div>

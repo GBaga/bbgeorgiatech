@@ -32,7 +32,7 @@ export function TestimonialsSection() {
             <div className="w-1.5 h-1.5 bg-primary/50" />
             <div className="w-1.5 h-1.5 bg-primary" />
           </div>
-          <h2 className="font-logo text-3xl md:text-5xl font-bold text-neutral-50 uppercase tracking-tighter text-center">
+          <h2 className="font-logo text-3xl md:text-5xl text-neutral-50 uppercase tracking-tighter text-center">
             {t("title1")} <span className="text-primary">{t("title2")}</span>
           </h2>
         </div>
@@ -61,7 +61,7 @@ export function TestimonialsSection() {
                     </span>
                   </div>
                   <div>
-                    <h4 className="font-logo font-bold text-neutral-50 text-lg">
+                    <h4 className="font-logo text-neutral-50 text-lg">
                       {testimonial.author}
                     </h4>
                     <p className="font-mono text-xs text-neutral-500 uppercase tracking-wider">

@@ -23,8 +23,8 @@ export function FAQSection() {
         
         <div className="flex flex-col items-center mb-16">
           <HelpCircle className="w-8 h-8 text-primary mb-4 opacity-80" />
-          <h2 className="font-logo text-3xl md:text-5xl font-bold text-neutral-50 uppercase tracking-tighter text-center">
-            {t("title1")} <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-600">{t("title2")}</span>
+          <h2 className="font-logo text-3xl md:text-5xl text-neutral-50 uppercase tracking-tighter text-center">
+            {t("title1")} <span className="text-primary">{t("title2")}</span>
           </h2>
         </div>
 
@@ -49,7 +49,7 @@ export function FAQSection() {
                     <span className="font-mono text-sm text-primary opacity-60 shrink-0">
                       Q{index + 1}
                     </span>
-                    <span className={`font-logo text-lg md:text-xl font-bold transition-colors ${isOpen ? 'text-primary' : 'text-neutral-200'}`}>
+                    <span className={`font-logo text-lg md:text-xl transition-colors ${isOpen ? 'text-primary' : 'text-neutral-200'}`}>
                       {faq.q}
                     </span>
                   </div>

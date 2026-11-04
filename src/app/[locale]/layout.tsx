@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, IBM_Plex_Sans, IBM_Plex_Mono, Michroma } from "next/font/google";
+import { Manrope, IBM_Plex_Sans, IBM_Plex_Mono, Michroma, Noto_Sans_Georgian } from "next/font/google";
 import "../globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -29,8 +29,21 @@ const fontBody = IBM_Plex_Sans({
 
 const fontMono = IBM_Plex_Mono({
   variable: "--font-mono",
-  weight: ["400", "500"],
+  // 300 is used by the hero chart quote
+  weight: ["300", "400", "500"],
   subsets: ["latin"],
+});
+
+// Georgian glyphs for the hero chart quote only (Plex Mono has none). It must
+// stay AFTER Plex Mono in the --font-quote stack: Google's CSS also ships this
+// font's Latin faces (`subsets` only controls preloading), so putting it first
+// would switch the English/French quote to Noto. Not preloaded: unicode-range
+// means the Georgian file is fetched only when Georgian text renders.
+const fontGeorgian = Noto_Sans_Georgian({
+  variable: "--font-georgian",
+  weight: ["300"],
+  subsets: ["georgian"],
+  preload: false,
 });
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -120,7 +133,7 @@ export default async function RootLayout({
     <html
       lang={resolvedParams.locale}
       data-scroll-behavior="smooth"
-      className={`${fontLogo.variable} ${fontHeading.variable} ${fontBody.variable} ${fontMono.variable} h-full antialiased dark`}
+      className={`${fontLogo.variable} ${fontHeading.variable} ${fontBody.variable} ${fontMono.variable} ${fontGeorgian.variable} h-full antialiased dark`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background-deep text-neutral-50 font-inter" suppressHydrationWarning>

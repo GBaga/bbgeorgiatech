@@ -38,7 +38,7 @@ export function CoreCompetencies() {
             <div className="w-10 h-10 flex items-center justify-center border border-white/10 mb-6 bg-background-deep text-primary">
               <div className="w-1.5 h-1.5 bg-primary" />
             </div>
-            <h2 className="font-logo text-3xl sm:text-4xl font-bold text-neutral-50 mb-2 uppercase tracking-tighter break-words">
+            <h2 className="font-logo text-3xl sm:text-4xl text-neutral-50 mb-2 uppercase tracking-tighter break-words">
               {t("core")} <span className="text-primary block sm:inline">{t("competencies")}</span>
             </h2>
             <p className="font-inter text-neutral-400 text-sm">
@@ -69,7 +69,7 @@ export function CoreCompetencies() {
                     transition: { staggerChildren: 0.08, delayChildren: 0.2 }
                   }
                 }}
-                className="font-logo text-[clamp(1.25rem,2.5vh,3rem)] font-bold uppercase tracking-tighter whitespace-nowrap opacity-90 shrink-0 flex items-center" 
+                className="font-logo text-[clamp(1.25rem,2.5vh,3rem)] uppercase tracking-tighter whitespace-nowrap opacity-90 shrink-0 flex items-center" 
                 style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
               >
                 <span className="text-neutral-50 flex">
@@ -129,7 +129,7 @@ export function CoreCompetencies() {
                       <div className="h-px flex-1 bg-white/5" />
                     </div>
                     
-                    <h3 className="font-logo text-2xl md:text-3xl font-bold text-neutral-50 tracking-tight mb-4 group-hover:text-primary transition-colors">
+                    <h3 className="font-logo text-2xl md:text-3xl text-neutral-50 tracking-tight mb-4 group-hover:text-primary transition-colors">
                       {service.title}
                     </h3>
                     

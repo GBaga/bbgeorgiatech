@@ -27,8 +27,8 @@ export function TechStack() {
             transition={{ duration: 0.6 }}
             className="md:w-1/3"
           >
-            <h2 className="font-heading text-3xl md:text-5xl font-bold text-neutral-50 mb-6">
-              {t("title")}
+            <h2 className="font-logo text-3xl md:text-5xl text-neutral-50 mb-6 uppercase tracking-tighter">
+              {t("title1")} <span className="text-primary">{t("title2")}</span>
             </h2>
             <p className="font-inter text-neutral-400 leading-relaxed mb-8">
               {t("desc")}

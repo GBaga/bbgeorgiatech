@@ -41,8 +41,9 @@
     "quoteAuthor": "Robert Browning (1855)"
   },
   "BrandHeritage": {
+    "title1": "Bâti sur la Confiance.",
+    "title2": "Conçu pour l'Avenir.",
     "umbrella": "Fait partie du groupe Bagauri Bonds Georgia",
-    "title": "Bâti sur la Confiance. Conçu pour l'Avenir.",
     "description": "BBGeorgiaTech est la division technologique de Bagauri Bonds Georgia — une entreprise ancrée dans l'héritage géorgien, opérant à travers l'Europe. Nous combinons l'engagement de notre société mère envers des relations humaines durables avec une technologie web de pointe.",
     "bondsTitle": "Nos Liens",
     "bondsDesc": "Nous croyons que la technologie doit connecter, et non compliquer. Chaque site web que nous créons renforce le lien entre nos clients et leurs utilisateurs — en créant des expériences numériques personnelles, professionnelles et durables.",
@@ -174,7 +175,8 @@
     "p6": "Ces conditions générales sont régies et interprétées conformément aux lois de la Géorgie. Vous vous soumettez irrévocablement à la compétence exclusive des tribunaux de Géorgie pour la résolution de tout litige juridique."
   },
   "TechStack": {
-    "title": "Notre Technologie",
+    "title1": "Notre",
+    "title2": "Technologie",
     "desc": "Nous utilisons les outils les plus récents et les plus fiables de l'industrie. Pas de modèles, pas de raccourcis — chaque site est conçu sur mesure avec une technologie moderne conçue pour la rapidité, la sécurité et la croissance.",
     "validated": "Pile technologique éprouvée",
     "t1Code": "Interfaces ultra-rapides",
@@ -208,7 +210,8 @@
     "h5": "API REST de niveau entreprise"
   },
   "ParadoxOfScale": {
-    "title": "Notre Philosophie",
+    "title1": "Notre",
+    "title2": "Philosophie",
     "quote": "La simplicité est la clé de la brillance.",
     "p1": "Nous ne faisons pas de production de masse. Chaque projet reçoit toute notre attention, notre meilleure réflexion, et notre plus haut niveau de savoir-faire. La qualité plutôt que la quantité — toujours.",
     "p2": "En nous concentrant sur ce qui compte vraiment, nous créons des sites web qui semblent rapides, intuitifs, et utiles. Pas de superflus, pas de complexité inutile — juste des expériences numériques épurées et puissantes qui servent vos objectifs commerciaux.",
