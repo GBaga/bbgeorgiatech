@@ -83,7 +83,7 @@ export function ContactProtocol() {
             <div className="p-4 sm:p-6 border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
               <ShieldCheck className="w-5 h-5 text-primary mb-4" />
               <div className="text-white mb-2">{t("encryptTitle")}</div>
-              <div className="text-neutral-600">RSA-4096 / TLS 1.3</div>
+              <div className="text-neutral-600">{t("encryptVal")}</div>
             </div>
             <div className="p-4 sm:p-6 border border-white/5 bg-white/[0.01] hover:bg-white/[0.03] transition-colors">
               <Lock className="w-5 h-5 text-primary mb-4" />
