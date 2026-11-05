@@ -72,8 +72,19 @@ export default function TermsAndConditions() {
               <p>{t("p5")}</p>
             </section>
 
+            {/* Linked from /pricing ("Full terms") */}
+            <section id="projects" className="scroll-mt-32">
+              <h2 className="font-logo text-2xl font-bold text-white mb-4">[06] {t("hProjects")}</h2>
+              <p className="mb-4">{t("pProjects")}</p>
+              <ul className="list-disc pl-5 space-y-2">
+                {(t.raw("proj") as string[]).map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </section>
+
             <section className="bg-white/5 border border-white/10 p-6 mt-12">
-              <h2 className="font-mono text-lg font-bold text-primary mb-2 uppercase tracking-widest">[06] {t("h6")}</h2>
+              <h2 className="font-mono text-lg font-bold text-primary mb-2 uppercase tracking-widest">[07] {t("h6")}</h2>
               <p>{t("p6")}</p>
             </section>
           </div>

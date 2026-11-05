@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "../i18n/routing";
+import { READY_VERTICALS } from "../data/verticals";
 
 const GithubIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" stroke="none">
@@ -16,9 +17,11 @@ const LinkedinIcon = ({ className }: { className?: string }) => (
 
 export function Footer() {
   const t = useTranslations("Footer");
-  
+  const tv = useTranslations("Verticals");
+
   const links = [
     { label: t("systems"), href: "/#systems" },
+    { label: t("pricing"), href: "/pricing" },
     { label: t("contact"), href: "/#contact" },
     { label: t("terms"), href: "/terms-and-conditions" },
     { label: t("privacy"), href: "/privacy-policy" },
@@ -31,6 +34,26 @@ export function Footer() {
       <div className="absolute inset-0 z-0 pointer-events-none lucien-blueprint opacity-20" />
 
       <div className="relative z-10 max-w-[1400px] mx-auto">
+        {/* Industry pages */}
+        <div className="mb-14 px-4 pb-12 border-b border-white/5">
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-1.5 h-1.5 bg-primary" aria-hidden="true" />
+            <div className="font-mono text-xs tracking-[0.2em] text-primary uppercase">{tv("ui.industries")}</div>
+          </div>
+          <nav aria-label={tv("ui.industries")} className="grid gap-x-10 gap-y-3 sm:grid-cols-2 lg:grid-cols-4">
+            {READY_VERTICALS.map((v) => (
+              <Link
+                key={v.slug}
+                href={`/for/${v.slug}`}
+                className="group flex items-center gap-2 font-mono text-sm text-neutral-500 hover:text-white transition-colors"
+              >
+                <span className="w-1 h-1 shrink-0" style={{ backgroundColor: v.accent }} aria-hidden="true" />
+                {tv(`${v.key}.name`)}
+              </Link>
+            ))}
+          </nav>
+        </div>
+
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-20 px-4">
           <nav className="flex flex-col md:flex-row flex-wrap gap-6 md:gap-10">
             {links.map((link) => (

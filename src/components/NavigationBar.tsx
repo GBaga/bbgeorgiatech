@@ -25,6 +25,7 @@ export function NavigationBar() {
     { label: t("competencies"), href: "/#competencies" },
     { label: t("theEngine"), href: "/#tech-stack" },
     { label: t("systems"), href: "/#systems" },
+    { label: t("pricing"), href: "/pricing" },
     { label: t("heritage"), href: "/#heritage" },
   ];
 
@@ -143,7 +144,7 @@ export function NavigationBar() {
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.4 }}
+                    transition={{ delay: navLinks.length * 0.1 }}
                     className="flex items-center gap-2"
                   >
                     <Terminal className="w-5 h-5" />

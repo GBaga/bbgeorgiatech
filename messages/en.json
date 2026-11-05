@@ -14,7 +14,8 @@
     "theEngine": "Technology",
     "systems": "Portfolio",
     "heritage": "About Us",
-    "initiateProtocol": "Get a Free Quote"
+    "initiateProtocol": "Get a Free Quote",
+    "pricing": "Pricing"
   },
   "Footer": {
     "systems": "Portfolio",
@@ -22,7 +23,8 @@
     "terms": "Terms & Conditions",
     "privacy": "Privacy Policy",
     "cookie": "Cookie Policy",
-    "allRightsReserved": "All rights reserved."
+    "allRightsReserved": "All rights reserved.",
+    "pricing": "Pricing"
   },
   "Hero": {
     "title1": "We Build",
@@ -172,7 +174,19 @@
     "h5": "Limitation of Liability",
     "p5": "In no event shall BBGeorgiaTech or its suppliers be liable for any damages arising out of the use or inability to use the materials on our website, even if notified orally or in writing of the possibility of such damage.",
     "h6": "Governing Law",
-    "p6": "These terms and conditions are governed by and construed in accordance with the laws of Georgia. You irrevocably submit to the exclusive jurisdiction of the courts in Georgia for the resolution of any legal disputes."
+    "p6": "These terms and conditions are governed by and construed in accordance with the laws of Georgia. You irrevocably submit to the exclusive jurisdiction of the courts in Georgia for the resolution of any legal disputes.",
+    "hProjects": "Website Projects, Payment & Guarantee",
+    "pProjects": "This section applies when you order a website package or care plan from BBGeorgiaTech. Your written quote or agreement sets out the exact scope, price and launch date; where it differs from this section, the quote or agreement prevails.",
+    "proj": [
+      "Payment: 50% of the project price is due before work starts and the remaining 50% at launch. All prices are in US dollars (USD), in every country.",
+      "On-time delivery guarantee: if we miss the agreed launch date for reasons on our side, you receive a 10% discount on the project price for each full week of delay, up to a maximum of 30%. The discount is deducted from the final payment.",
+      "The launch date moves accordingly when a delay is caused on your side — for example late content, materials, feedback, approvals or payments — or by changes to the agreed scope.",
+      "Partial refund: if you are not satisfied with the design concept after two rounds of revisions, you may end the project before development starts. We then refund 50% of your deposit; the rest covers the design work already done. Once development has started, the deposit is no longer refundable.",
+      "Ownership: after full payment, the website, its design and its code belong to you.",
+      "Care plans are billed in advance, monthly or yearly (yearly includes 2 months free), and can be cancelled with 30 days’ written notice. Unused hours do not roll over to the next month.",
+      "If you cancel a yearly care plan early, we refund the amount paid in proportion to the full months remaining.",
+      "Portfolio: BBGeorgiaTech may show the finished website — its name, screenshots and a link — in its portfolio and marketing materials."
+    ]
   },
   "TechStack": {
     "title1": "Our",
@@ -271,5 +285,1027 @@
     "descEnd": ".",
     "acceptBtn": "[ Accept & Continue ]",
     "rejectBtn": "[ Reject ]"
+  },
+  "Pricing": {
+    "meta": {
+      "title": "Pricing — Website Packages & Care Plans | BBGeorgiaTech",
+      "description": "Fixed-price websites for small businesses worldwide, from {launch}. Three packages, monthly care plans from {care}, add-ons and an on-time delivery guarantee."
+    },
+    "ui": {
+      "from": "from {price}",
+      "oneTime": "one-time",
+      "popular": "Most popular",
+      "getStarted": "Get started",
+      "included": "Included",
+      "notIncluded": "Not included",
+      "feature": "Feature"
+    },
+    "hero": {
+      "eyebrow": "Pricing",
+      "title1": "Clear",
+      "title2": "Prices.",
+      "subtitle": "Fixed-price websites for small businesses worldwide. No hidden fees — you know the cost before we start.",
+      "badges": [
+        "Fixed price",
+        "All prices in USD",
+        "On-time guarantee"
+      ]
+    },
+    "packages": {
+      "eyebrow": "Packages",
+      "title1": "Website",
+      "title2": "Packages",
+      "subtitle": "One-time price. Pick the package that fits today — you can always grow later.",
+      "launch": {
+        "name": "Launch",
+        "tagline": "A professional site that gets you found and gets you calls.",
+        "weeks": "~2 weeks",
+        "features": [
+          "Up to 5 pages or one long landing page",
+          "Custom design: 1 concept + 2 revisions",
+          "Mobile, tablet and desktop",
+          "1 language",
+          "Contact form, call & WhatsApp buttons, Google Maps",
+          "Basic SEO + Google Search Console",
+          "Google Business Profile setup",
+          "30 days of free fixes after launch"
+        ]
+      },
+      "business": {
+        "name": "Business",
+        "tagline": "For businesses that want clients to book and buy online.",
+        "weeks": "3–4 weeks",
+        "features": [
+          "Everything in Launch",
+          "Up to 12 pages",
+          "2–3 languages with multilingual SEO",
+          "Edit text, photos and prices yourself (CMS)",
+          "Online booking or a multi-step quote form",
+          "Blog / news section",
+          "Advanced SEO, schema and AI-search readiness",
+          "Analytics with call & form tracking",
+          "60 days of support after launch"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "tagline": "Custom features, an online shop and integrations.",
+        "weeks": "5–8 weeks",
+        "features": [
+          "Everything in Business",
+          "Up to 5 languages",
+          "Online shop (~100 products) with Stripe, PayPal or bank payments",
+          "Client portal or advanced booking",
+          "CRM, email marketing and accounting integrations",
+          "Custom design system and interactive animations",
+          "Speed & security audit before launch",
+          "90 days of priority support"
+        ]
+      }
+    },
+    "compare": {
+      "eyebrow": "Compare",
+      "title1": "Full",
+      "title2": "Comparison",
+      "rows": {
+        "pages": "Pages",
+        "languages": "Languages",
+        "revisions": "Design revisions",
+        "delivery": "Delivery time",
+        "responsive": "Mobile & tablet ready",
+        "contact": "Contact form, call & WhatsApp buttons",
+        "basicSeo": "Basic SEO & Search Console",
+        "gbp": "Google Business Profile setup",
+        "ssl": "SSL & speed optimization",
+        "legal": "Privacy & cookie policy",
+        "cms": "Self-editing (CMS)",
+        "booking": "Online booking / calendar",
+        "blog": "Blog / news",
+        "advSeo": "Advanced SEO, schema, llms.txt",
+        "analytics": "Analytics & conversion tracking",
+        "animations": "Animations",
+        "shop": "Online shop",
+        "integrations": "CRM & third-party integrations",
+        "audit": "Speed & security audit",
+        "support": "Support after launch",
+        "training": "Training session"
+      }
+    },
+    "values": {
+      "weeks2": "~2 weeks",
+      "weeks3to4": "3–4 weeks",
+      "weeks5to8": "5–8 weeks",
+      "addon": "Add-on",
+      "basic": "Basic",
+      "light": "Light",
+      "interactive": "Interactive",
+      "days30": "30 days",
+      "days60": "60 days",
+      "days90priority": "90 days, priority",
+      "min30": "30 min",
+      "hour1": "1 hour",
+      "hours2": "2 h / month",
+      "hours5": "5 h / month",
+      "quarterly": "Quarterly",
+      "monthly": "Monthly",
+      "bd2": "2 business days",
+      "bd1": "1 business day",
+      "sameDay": "Same day (critical)"
+    },
+    "care": {
+      "eyebrow": "Monthly plans",
+      "title1": "Care",
+      "title2": "Plans",
+      "subtitle": "Your site stays fast, secure and up to date — without you having to think about it.",
+      "monthly": "Monthly",
+      "yearly": "Yearly",
+      "save": "2 months free",
+      "perMonth": "/ month",
+      "perYear": "/ year",
+      "equivalent": "≈ {amount} / month",
+      "plans": {
+        "care": {
+          "name": "Care",
+          "tagline": "Hosting, security and backups."
+        },
+        "carePlus": {
+          "name": "Care+",
+          "tagline": "Plus monthly edits and reporting."
+        },
+        "growth": {
+          "name": "Growth",
+          "tagline": "An ongoing partner for growth."
+        }
+      },
+      "rows": {
+        "hosting": "Hosting on Cloudflare's global network",
+        "ssl": "SSL certificate & renewal",
+        "backups": "Daily backups, kept 30 days",
+        "updates": "Monthly security updates",
+        "uptime": "24/7 uptime monitoring",
+        "forms": "Form & email checks",
+        "dns": "Domain & DNS management",
+        "fixes": "Technical bug fixes",
+        "edits": "Text, photo & price edits",
+        "report": "Monthly report: visits, leads, speed",
+        "gbp": "Google Business Profile updates",
+        "seoCheck": "SEO health check",
+        "content": "1 new article or landing page / month",
+        "seoWork": "Ongoing SEO: keywords & internal links",
+        "cro": "Conversion review & recommendations",
+        "call": "Strategy call (30 min)",
+        "response": "Response time"
+      },
+      "terms": [
+        "Billed monthly; cancel any time with 30 days' notice.",
+        "Pay yearly and get 2 months free.",
+        "Cancel a yearly plan early and get a refund for the remaining months.",
+        "Unused hours don't roll over to the next month.",
+        "Prefer to host it yourself? Without a plan, we hand over the site and its code in full."
+      ]
+    },
+    "addons": {
+      "eyebrow": "Add-ons",
+      "title1": "Extra",
+      "title2": "Services",
+      "subtitle": "Add exactly what you need, to any package.",
+      "groups": {
+        "content": "Content",
+        "brand": "Design & brand",
+        "features": "Features",
+        "marketing": "SEO & marketing",
+        "technical": "Technical"
+      },
+      "items": {
+        "extraPage": "Extra page",
+        "copywriting": "SEO copywriting",
+        "translation": "Translation & localization",
+        "stock": "Stock photo selection & editing",
+        "products": "Product upload to your shop",
+        "logo": "Logo",
+        "identity": "Brand identity: logo, colours, fonts, guide",
+        "social": "Social media templates",
+        "print": "Business card or print design",
+        "language": "Extra language (setup; translation separate)",
+        "booking": "Booking / calendar integration (for Launch)",
+        "quoteForm": "Multi-step quote form",
+        "payments": "Online payments: Stripe, PayPal or bank",
+        "shop": "Online shop on top of Business",
+        "newsletter": "Email marketing integration (Mailchimp, Brevo)",
+        "portal": "Client portal & complex features",
+        "seoAudit": "SEO audit of an existing site",
+        "localSeo": "Local SEO: Google Business optimization + 10 directories",
+        "tracking": "Analytics, Google Ads & Meta pixel setup",
+        "migration": "Migration from an old site, keeping SEO & redirects",
+        "email": "Domain & business email (Google Workspace, Zoho)",
+        "rush": "Rush delivery",
+        "hourly": "Hourly rate outside packages"
+      },
+      "units": {
+        "from": "from {price}",
+        "perPage": "/ page",
+        "perSet": "/ set",
+        "perProduct": "/ product",
+        "perHour": "/ hour",
+        "custom": "Custom quote"
+      }
+    },
+    "guarantee": {
+      "eyebrow": "Guarantee",
+      "title1": "Our",
+      "title2": "Guarantee",
+      "g1Title": "On-time delivery",
+      "g1Text": "If we miss the agreed launch date for reasons on our side, you get 10% off for every week of delay, up to 30%. Delays caused by late content or feedback don't count.",
+      "g2Title": "Partial refund",
+      "g2Text": "If you don't like the design concept after two rounds of revisions, we refund 50% of your deposit and stop the project — before any development starts.",
+      "termsLink": "Full terms"
+    },
+    "process": {
+      "eyebrow": "How it works",
+      "title1": "How We",
+      "title2": "Work",
+      "steps": [
+        {
+          "title": "Free consultation",
+          "text": "A 30-minute call about your business, goals and budget. You get a fixed quote within 24 hours."
+        },
+        {
+          "title": "50% deposit & design",
+          "text": "We start with a design concept and refine it together with you."
+        },
+        {
+          "title": "Build & review",
+          "text": "We build the site and you review it on a private preview link."
+        },
+        {
+          "title": "Launch & final 50%",
+          "text": "The remaining 50% is due at launch. Then your support period begins."
+        }
+      ],
+      "payTitle": "Payment",
+      "payText": "50% upfront, 50% at launch. The same USD prices apply in every country.",
+      "provideTitle": "What you provide",
+      "provide": [
+        "Your logo and brand colours (or order them as an add-on)",
+        "Text for the pages (or use our copywriting)",
+        "Photos of your work, team or place",
+        "Access to your domain — or we register one for you"
+      ]
+    },
+    "faq": {
+      "title1": "Pricing",
+      "title2": "Questions",
+      "items": [
+        {
+          "q": "Why are prices shown as “from”?",
+          "a": "The final price depends on the number of pages, languages and features. After a free consultation you get a fixed quote, and the price doesn't change unless the scope does."
+        },
+        {
+          "q": "Are prices the same in every country?",
+          "a": "Yes. All prices are in US dollars, wherever your business is."
+        },
+        {
+          "q": "Do I own the website?",
+          "a": "Yes. After the final payment the site, its design and its code are yours."
+        },
+        {
+          "q": "Do I have to take a monthly plan?",
+          "a": "No, plans are optional. Without one, we hand over the site and you host and maintain it yourself."
+        },
+        {
+          "q": "What if I need something that isn't listed?",
+          "a": "Tell us. We quote custom features separately, or work at our hourly rate of {rate}."
+        },
+        {
+          "q": "Can I upgrade later?",
+          "a": "Yes. Start with Launch and add pages, languages, booking or a shop later — you only pay for the added scope."
+        }
+      ]
+    },
+    "final": {
+      "title1": "Not sure which",
+      "title2": "package fits?",
+      "text": "Tell us about your business. We'll recommend the right package and send a fixed quote within 24 hours.",
+      "button": "Get a free consultation"
+    }
+  },
+  "Verticals": {
+    "ui": {
+      "industries": "Industries",
+      "consultation": "Get a free consultation",
+      "seePricing": "See pricing",
+      "problemsEyebrow": "Sound familiar?",
+      "problemsTitle1": "Common",
+      "problemsTitle2": "Problems",
+      "featuresEyebrow": "What your site does",
+      "projectEyebrow": "Real project",
+      "projectTitle1": "Built for",
+      "projectTitle2": "a Business Like Yours",
+      "visit": "Visit site",
+      "recommendEyebrow": "Recommended package",
+      "recommendTitle": "Start with",
+      "oneTime": "one-time",
+      "otherTitle1": "Other",
+      "otherTitle2": "Industries",
+      "finalText": "Tell us about your business. We'll recommend the right package and send a fixed quote within 24 hours.",
+      "faqTitle1": "Frequently Asked",
+      "faqTitle2": "Questions"
+    },
+    "homeServices": {
+      "meta": {
+        "title": "Websites for Trades & Home Services | BBGeorgiaTech",
+        "description": "Websites for renovation companies, plumbers, electricians, cleaners and other local service businesses: call buttons, quote forms, project galleries and local SEO, from {price}."
+      },
+      "name": "Home Services & Trades",
+      "hero": {
+        "title1": "Websites for trades",
+        "title2": "that bring in calls.",
+        "subtitle": "For renovation companies, plumbers, electricians, cleaners, movers and other local service businesses. A fast site that shows your work, earns trust and turns visitors into quote requests."
+      },
+      "types": [
+        "Renovation",
+        "Plumbing",
+        "Electrical",
+        "Cleaning",
+        "Moving",
+        "Landscaping",
+        "HVAC",
+        "Auto repair"
+      ],
+      "problems": [
+        {
+          "title": "Clients can't find you on Google",
+          "text": "People search “plumber near me” and call whoever shows up first. Without a website and a Google Business Profile, that isn't you."
+        },
+        {
+          "title": "Your best work is hidden in your phone",
+          "text": "Photos of finished jobs sit in your gallery or on Facebook, where new clients never see them."
+        },
+        {
+          "title": "Calls and quote requests get lost",
+          "text": "Requests arrive through WhatsApp, Messenger and missed calls, with no clear way for clients to ask for a quote."
+        }
+      ],
+      "featuresTitle1": "Built to",
+      "featuresTitle2": "Win Jobs",
+      "features": {
+        "call": {
+          "title": "One-tap call & WhatsApp",
+          "text": "Big buttons on every page, so mobile visitors reach you in a second."
+        },
+        "quote": {
+          "title": "Quote request form",
+          "text": "Clients describe the job, add photos and their address — you get everything in one email."
+        },
+        "gallery": {
+          "title": "Before / after gallery",
+          "text": "Finished projects, organized by service, prove the quality of your work."
+        },
+        "local": {
+          "title": "Local SEO",
+          "text": "Pages for your services and areas plus Google Business Profile setup, so you show up in local searches and on Maps."
+        },
+        "trust": {
+          "title": "Reviews & guarantees",
+          "text": "Reviews, licenses, warranties and years of experience, shown exactly where clients decide."
+        },
+        "languages": {
+          "title": "Several languages",
+          "text": "Reach expats, tourists and international clients in their own language."
+        }
+      },
+      "recommend": "Most trades businesses need Launch: a fast site with call buttons, a project gallery and Google Business setup. Choose Business if you want a multi-step quote form, several languages and to update your gallery yourself.",
+      "faq": [
+        {
+          "q": "How fast can my site be live?",
+          "a": "A Launch site usually goes live in about 2 weeks after we receive your content: logo, texts and photos of your work."
+        },
+        {
+          "q": "Can I add new project photos myself?",
+          "a": "Yes. With the Business package you can upload photos to your gallery straight from your phone, without any technical skills."
+        },
+        {
+          "q": "Will it help me show up on Google Maps?",
+          "a": "We set up and optimize your Google Business Profile and build local SEO into the site. Rankings depend on competition and reviews, so we don't promise positions — but the foundation will be done right."
+        },
+        {
+          "q": "I already have a Facebook page. Why do I need a website?",
+          "a": "Facebook doesn't rank in Google the way a website does, and clients can't easily find your services, prices and past work there. A website is yours and works for you around the clock."
+        }
+      ],
+      "final": {
+        "title1": "Ready to get",
+        "title2": "more calls?"
+      }
+    },
+    "professionalServices": {
+      "meta": {
+        "title": "Websites for Law Firms, Accountants & Consultants | BBGeorgiaTech",
+        "description": "Websites for lawyers, notaries, accountants, consultants and real estate agents: practice-area pages, team profiles, consultation booking and multilingual SEO, from {price}."
+      },
+      "name": "Professional Services",
+      "hero": {
+        "title1": "Websites for experts",
+        "title2": "that earn trust.",
+        "subtitle": "For law firms, notaries, accountants, consultants, real estate agents and other professionals. A clear, credible site that explains what you do, shows who you are and makes it easy to book a consultation."
+      },
+      "types": [
+        "Law firms",
+        "Notaries",
+        "Accountants",
+        "Consultants",
+        "Real estate",
+        "Translators",
+        "Architects",
+        "Insurance"
+      ],
+      "problems": [
+        {
+          "title": "Your site doesn't look as credible as you are",
+          "text": "An outdated or template site makes a serious firm look small. Clients judge your expertise by your website before they ever call."
+        },
+        {
+          "title": "Clients can't tell what you specialize in",
+          "text": "When all your services sit on one page, people don't see that you handle exactly their case — and keep searching."
+        },
+        {
+          "title": "International clients can't read your site",
+          "text": "Foreign companies, investors and expats look for professionals in their own language. A one-language site loses them."
+        }
+      ],
+      "featuresTitle1": "Built to",
+      "featuresTitle2": "Earn Trust",
+      "features": {
+        "practice": {
+          "title": "Practice area pages",
+          "text": "A page for every service, written for the client's question — and for the way people search."
+        },
+        "team": {
+          "title": "Team profiles",
+          "text": "Photos, experience, qualifications and languages for each specialist."
+        },
+        "booking": {
+          "title": "Consultation booking",
+          "text": "Clients pick a time for a call or meeting online, without back-and-forth emails."
+        },
+        "trust": {
+          "title": "Credentials & results",
+          "text": "Memberships, licences, notable cases and client logos, shown clearly and professionally."
+        },
+        "insights": {
+          "title": "Articles & insights",
+          "text": "Publish legal or financial updates yourself — they build authority and bring search traffic."
+        },
+        "languages": {
+          "title": "Several languages",
+          "text": "Proper multilingual pages with correct SEO for each language, not machine-translated copies."
+        }
+      },
+      "recommend": "Most firms need Business: up to 12 pages for your practice areas and team, 2–3 languages, consultation booking and articles you publish yourself. Launch works for a solo practitioner with a few core services.",
+      "faq": [
+        {
+          "q": "Can you write the texts for our services?",
+          "a": "Yes, as an add-on. We write clear, SEO-friendly service pages based on a short interview with you; you approve every word before launch."
+        },
+        {
+          "q": "Do you follow advertising rules for lawyers?",
+          "a": "We build the site around the content you approve. Professional advertising rules differ by country and bar, so you stay in control of every claim on the site."
+        },
+        {
+          "q": "Can clients book a paid consultation?",
+          "a": "Yes. We connect booking tools such as Cal.com or Calendly, which can take payment when the consultation is booked."
+        },
+        {
+          "q": "We already have a site. Can you redesign it without losing Google rankings?",
+          "a": "Yes. We migrate your content with redirects from old pages to new ones, so existing search visibility is preserved."
+        }
+      ],
+      "final": {
+        "title1": "Ready to look as",
+        "title2": "good as you are?"
+      }
+    },
+    "healthWellness": {
+      "meta": {
+        "title": "Websites for Psychologists, Dentists & Clinics | BBGeorgiaTech",
+        "description": "Websites for psychologists, dentists, physiotherapists, nutritionists and private clinics: online booking, specialist profiles, privacy-first forms and local SEO, from {price}."
+      },
+      "name": "Health & Therapy",
+      "hero": {
+        "title1": "Websites for practices",
+        "title2": "that patients trust.",
+        "subtitle": "For psychologists, dentists, physiotherapists, nutritionists, private clinics and vets. A calm, clear site where patients learn about you, see your services and book an appointment online."
+      },
+      "types": [
+        "Psychologists",
+        "Dentists",
+        "Physiotherapists",
+        "Nutritionists",
+        "Private clinics",
+        "Vets",
+        "Massage therapy",
+        "Speech therapy"
+      ],
+      "problems": [
+        {
+          "title": "Booking means phone tag",
+          "text": "Patients call while you're with someone else, leave a message and book elsewhere. Every missed call is a missed appointment."
+        },
+        {
+          "title": "Patients choose who they trust",
+          "text": "Before booking, people want to know who will treat them: your experience, your approach, your prices. Without that, they hesitate."
+        },
+        {
+          "title": "Sensitive details travel through unsafe channels",
+          "text": "Health information sent through ordinary forms or messengers puts both you and your patients at risk."
+        }
+      ],
+      "featuresTitle1": "Built for",
+      "featuresTitle2": "Patient Trust",
+      "features": {
+        "booking": {
+          "title": "Online appointment booking",
+          "text": "Patients book free slots 24/7 through an established booking tool, with reminders that reduce no-shows."
+        },
+        "profiles": {
+          "title": "Specialist profiles",
+          "text": "Education, experience, approach and languages for each doctor or therapist."
+        },
+        "services": {
+          "title": "Services & prices",
+          "text": "Clear descriptions and prices, so patients arrive informed and confident."
+        },
+        "privacy": {
+          "title": "Privacy by design",
+          "text": "Website forms don't ask for health information; bookings run through secure tools; privacy and cookie policies are in place."
+        },
+        "local": {
+          "title": "Local SEO & Maps",
+          "text": "Show up when people search for a specialist nearby, with your address, hours and directions."
+        },
+        "languages": {
+          "title": "Several languages",
+          "text": "Welcome expats and international patients in their own language."
+        }
+      },
+      "recommend": "Most practices need Business: online booking, specialist profiles, 2–3 languages and texts and prices you can update yourself. A solo therapist can start with Launch and add booking as an add-on.",
+      "faq": [
+        {
+          "q": "Is the site compliant with health-data rules like GDPR or HIPAA?",
+          "a": "We design the site so it doesn't collect health information: contact forms ask only for basic details, and bookings run through established tools that handle their own compliance. Requirements differ by country, so we recommend confirming your obligations with a local adviser."
+        },
+        {
+          "q": "Which booking systems can you connect?",
+          "a": "Tools such as Cal.com, Calendly or the booking system you already use, if it can be embedded. We help you choose one if you don't have one yet."
+        },
+        {
+          "q": "Can I write a blog about my field?",
+          "a": "Yes. With the Business package you publish articles yourself; useful articles also help patients find you on Google."
+        },
+        {
+          "q": "Will my site look clinical and cold?",
+          "a": "No. We design calm, warm sites with your real photos and a tone that fits your practice — still in a clear, modern style."
+        }
+      ],
+      "final": {
+        "title1": "Ready for fewer calls",
+        "title2": "and more bookings?"
+      }
+    },
+    "beauty": {
+      "meta": {
+        "title": "Websites for Salons, Barbershops & Spas | BBGeorgiaTech",
+        "description": "Websites for hair salons, barbershops, nail studios, spas and fitness studios: 24/7 online booking, portfolio galleries, price lists and local SEO, from {price}."
+      },
+      "name": "Beauty & Wellbeing",
+      "hero": {
+        "title1": "Websites for salons",
+        "title2": "that fill your calendar.",
+        "subtitle": "For hair salons, barbershops, nail studios, spas, massage, tattoo and fitness studios. A beautiful site that shows your work, lists your prices and lets clients book any time."
+      },
+      "types": [
+        "Hair salons",
+        "Barbershops",
+        "Nail studios",
+        "Spas",
+        "Massage",
+        "Tattoo studios",
+        "Fitness",
+        "Yoga"
+      ],
+      "problems": [
+        {
+          "title": "Bookings only happen in DMs",
+          "text": "You answer Instagram messages between clients, and people who don't want to wait for a reply book somewhere else."
+        },
+        {
+          "title": "Instagram doesn't show up on Google",
+          "text": "When someone searches “nail salon near me”, your Instagram profile rarely appears. A website does."
+        },
+        {
+          "title": "The same price questions every day",
+          "text": "Without a clear price list online, you spend hours answering “how much is…?” instead of working."
+        }
+      ],
+      "featuresTitle1": "Built to",
+      "featuresTitle2": "Fill Your Calendar",
+      "features": {
+        "booking": {
+          "title": "Online booking 24/7",
+          "text": "Clients choose a service, a master and a time — through Booksy, Fresha or another tool you prefer."
+        },
+        "gallery": {
+          "title": "Portfolio gallery",
+          "text": "Your best work, organized by service, so clients see exactly what they'll get."
+        },
+        "prices": {
+          "title": "Clear price list",
+          "text": "Services, durations and prices in one place that you can update yourself."
+        },
+        "team": {
+          "title": "Your team",
+          "text": "Profiles for each stylist or master, so clients can book their favourite."
+        },
+        "local": {
+          "title": "Local SEO & Maps",
+          "text": "Show up in local searches with your address, opening hours and directions."
+        },
+        "reviews": {
+          "title": "Reviews",
+          "text": "Your Google reviews shown on the site, where new clients decide."
+        }
+      },
+      "recommend": "Most salons need Business: online booking, a gallery and price list you update yourself, team profiles and 2–3 languages. A single master can start with Launch and add booking as an add-on.",
+      "faq": [
+        {
+          "q": "I already use Booksy or Fresha. Can I keep it?",
+          "a": "Yes. We connect your existing booking system to the site, so your calendar stays in one place."
+        },
+        {
+          "q": "Can the site show my Instagram posts?",
+          "a": "We can link your Instagram and feature your best work in a fast, well-organized gallery — which also works on Google, unlike an embedded feed."
+        },
+        {
+          "q": "Can I change prices myself?",
+          "a": "Yes, with the Business package you edit services and prices from your phone in a couple of minutes."
+        },
+        {
+          "q": "Will the site match my salon's style?",
+          "a": "Yes. We design around your brand, interior and photos, so the site feels like your place."
+        }
+      ],
+      "final": {
+        "title1": "Ready for a",
+        "title2": "fuller calendar?"
+      }
+    },
+    "hospitalityTourism": {
+      "meta": {
+        "title": "Websites for Tour Operators, Hotels & Restaurants | BBGeorgiaTech",
+        "description": "Websites for tour operators, guesthouses, boutique hotels, restaurants and wineries: direct booking and inquiries, multilingual pages, fast galleries and Maps, from {price}."
+      },
+      "name": "Hospitality & Tourism",
+      "hero": {
+        "title1": "Websites for hosts",
+        "title2": "that win direct bookings.",
+        "subtitle": "For tour operators, guesthouses, boutique hotels, restaurants, wineries and car rentals. A fast, multilingual site that shows your place at its best and lets guests book with you directly."
+      },
+      "types": [
+        "Tour operators",
+        "Guesthouses",
+        "Boutique hotels",
+        "Restaurants",
+        "Wineries",
+        "Car rental",
+        "Transfers",
+        "Excursions"
+      ],
+      "problems": [
+        {
+          "title": "Booking platforms take a cut of every stay",
+          "text": "Commissions on every reservation add up quickly — and the platform, not you, keeps the guest relationship."
+        },
+        {
+          "title": "Guests can't read about you in their language",
+          "text": "Travellers plan in their own language. If your site doesn't speak it, they book a competitor who does."
+        },
+        {
+          "title": "Your photos don't do the place justice",
+          "text": "Small, slow images on social media can't show the view, the rooms or the food the way a proper gallery can."
+        }
+      ],
+      "featuresTitle1": "Built for",
+      "featuresTitle2": "Direct Bookings",
+      "features": {
+        "booking": {
+          "title": "Direct booking & inquiries",
+          "text": "Guests check dates and send a booking request or book online — without platform commission."
+        },
+        "languages": {
+          "title": "Multilingual by default",
+          "text": "Pages in the languages your guests speak, each with proper SEO."
+        },
+        "gallery": {
+          "title": "Immersive galleries",
+          "text": "Large, fast-loading photos of rooms, tours, dishes and views."
+        },
+        "speed": {
+          "title": "Fast on any connection",
+          "text": "Optimized for mobile data and slow hotel Wi-Fi, so travellers don't give up while it loads."
+        },
+        "local": {
+          "title": "Maps & directions",
+          "text": "Location, how to get there and what's nearby, plus your Google Business Profile."
+        },
+        "reviews": {
+          "title": "Reviews",
+          "text": "Guest reviews from Google and other platforms, displayed where travellers decide."
+        }
+      },
+      "recommend": "Most hospitality businesses need Business: 2–3 languages, booking or inquiry forms, large galleries and content you update yourself. Choose Pro for online payments, a full booking engine or more languages.",
+      "faq": [
+        {
+          "q": "Should I leave Booking.com or Airbnb?",
+          "a": "Not necessarily. Most hosts keep the platforms for reach and use their own site to win repeat and direct guests without commission."
+        },
+        {
+          "q": "Can guests pay online?",
+          "a": "Yes. Online payments come with the Pro package or as an add-on: Stripe, PayPal or your bank's payment system."
+        },
+        {
+          "q": "Which languages should my site have?",
+          "a": "The ones your guests speak. We look at where your current guests come from and recommend 2–3 languages to start."
+        },
+        {
+          "q": "Can I update prices and availability myself?",
+          "a": "Yes. With the Business package you edit prices, tours and seasonal offers yourself."
+        }
+      ],
+      "final": {
+        "title1": "Ready for more",
+        "title2": "direct bookings?"
+      }
+    },
+    "creativePersonalBrands": {
+      "meta": {
+        "title": "Portfolio Websites for Creatives & Personal Brands | BBGeorgiaTech",
+        "description": "Portfolio websites for photographers, videographers, designers, coaches, speakers and wedding planners: a strong personal brand, beautiful galleries and inquiry forms, from {price}."
+      },
+      "name": "Creative & Personal Brands",
+      "hero": {
+        "title1": "Portfolio websites",
+        "title2": "that get you hired.",
+        "subtitle": "For photographers, videographers, designers, artists, coaches, speakers, wedding planners and freelancers. A personal site that shows your best work and turns admirers into clients."
+      },
+      "types": [
+        "Photographers",
+        "Videographers",
+        "Designers",
+        "Artists",
+        "Coaches",
+        "Speakers",
+        "Wedding planners",
+        "Freelancers"
+      ],
+      "problems": [
+        {
+          "title": "Your work is scattered everywhere",
+          "text": "Instagram, Behance, Vimeo, Google Drive — clients have to piece your story together, and most won't."
+        },
+        {
+          "title": "It's hard to stand out",
+          "text": "On platforms you look like everyone else. A personal site shows your style, your process and your personality."
+        },
+        {
+          "title": "Inquiries come without the details",
+          "text": "“How much?” with no date, location or scope means hours of back-and-forth before you can even quote."
+        }
+      ],
+      "featuresTitle1": "Built to",
+      "featuresTitle2": "Get You Hired",
+      "features": {
+        "portfolio": {
+          "title": "Portfolio that sells",
+          "text": "Your strongest projects, presented as stories — not just a wall of images."
+        },
+        "brand": {
+          "title": "Personal brand design",
+          "text": "A look that's unmistakably yours, from typography to colours to layout."
+        },
+        "inquiry": {
+          "title": "Smart inquiry form",
+          "text": "Clients share date, location, budget and scope up front, so you can quote right away."
+        },
+        "booking": {
+          "title": "Discovery-call booking",
+          "text": "Let serious leads book a call in your calendar directly."
+        },
+        "seo": {
+          "title": "Found by name and niche",
+          "text": "Show up when people search your name — and “wedding photographer in [city]”."
+        },
+        "languages": {
+          "title": "Several languages",
+          "text": "Work with international clients in their own language."
+        }
+      },
+      "recommend": "Most creatives start with Launch: up to 5 pages, a strong portfolio, an inquiry form and Google setup. Choose Business if you want to add projects yourself, write a blog or offer bookings in several languages.",
+      "faq": [
+        {
+          "q": "Will big photos and videos make the site slow?",
+          "a": "No. We optimize every image and stream video efficiently, so your portfolio looks sharp and loads fast on phones."
+        },
+        {
+          "q": "Can I add new projects myself?",
+          "a": "Yes, with the Business package. On Launch, we add new work for you with the edit hours in Care+ or Growth."
+        },
+        {
+          "q": "Can I sell prints, presets or courses?",
+          "a": "Yes. A small shop or digital downloads come with the Pro package or as an add-on."
+        },
+        {
+          "q": "Do I need a logo first?",
+          "a": "No. Many personal brands use a strong name-based wordmark, which we can design as part of the add-on brand identity."
+        }
+      ],
+      "final": {
+        "title1": "Ready to show",
+        "title2": "your best work?"
+      }
+    },
+    "education": {
+      "meta": {
+        "title": "Websites for Schools, Tutors & Course Creators | BBGeorgiaTech",
+        "description": "Websites for tutors, language schools, driving schools, music and dance schools and training centres: course schedules, online registration and payments, from {price}."
+      },
+      "name": "Education & Courses",
+      "hero": {
+        "title1": "Websites for schools",
+        "title2": "that fill your classes.",
+        "subtitle": "For tutors, language schools, driving schools, music and dance schools, kids' clubs, training centres and online courses. A clear site with your courses, schedule and an easy way to sign up."
+      },
+      "types": [
+        "Tutors",
+        "Language schools",
+        "Driving schools",
+        "Music schools",
+        "Dance studios",
+        "Kids' clubs",
+        "Training centres",
+        "Online courses"
+      ],
+      "problems": [
+        {
+          "title": "Schedules live in chats and spreadsheets",
+          "text": "Parents and students keep asking when the next group starts, because there's no single place to see it."
+        },
+        {
+          "title": "Sign-ups and payments are manual",
+          "text": "Collecting names, checking payments and sending reminders by hand eats hours every week."
+        },
+        {
+          "title": "Parents compare you online",
+          "text": "Before they call, families compare schools on the web. Without a clear site, you lose the comparison."
+        }
+      ],
+      "featuresTitle1": "Built to",
+      "featuresTitle2": "Fill Your Classes",
+      "features": {
+        "courses": {
+          "title": "Courses & schedule",
+          "text": "Every course with level, age group, dates, times and price — easy to update each term."
+        },
+        "registration": {
+          "title": "Online registration",
+          "text": "Students or parents sign up in minutes; you get all the details in one place."
+        },
+        "payments": {
+          "title": "Online payments",
+          "text": "Take course fees or deposits online with Stripe, PayPal or your bank."
+        },
+        "teachers": {
+          "title": "Teacher profiles",
+          "text": "Qualifications and experience of each teacher, so families feel confident."
+        },
+        "resources": {
+          "title": "News & resources",
+          "text": "Announcements, results and learning materials you publish yourself."
+        },
+        "languages": {
+          "title": "Several languages",
+          "text": "Reach international students and expat families in their own language."
+        }
+      },
+      "recommend": "Most schools need Business: course pages and schedules you edit yourself, a registration form and 2–3 languages. Add online payments as an add-on, or choose Pro for a student portal or a full course platform.",
+      "faq": [
+        {
+          "q": "Can I update the schedule myself every term?",
+          "a": "Yes. With the Business package you edit courses, dates and prices yourself, in minutes."
+        },
+        {
+          "q": "Can students pay online?",
+          "a": "Yes, as an add-on or with the Pro package: Stripe, PayPal or your bank's payment system."
+        },
+        {
+          "q": "Can you build an online course platform?",
+          "a": "Yes, with the Pro package: a student area with lessons, progress and access control. We quote it based on your needs."
+        },
+        {
+          "q": "Will the registration form send me notifications?",
+          "a": "Yes. Every registration arrives in your email, and we can also add it to a spreadsheet or CRM."
+        }
+      ],
+      "final": {
+        "title1": "Ready to fill",
+        "title2": "your next class?"
+      }
+    },
+    "localShops": {
+      "meta": {
+        "title": "Websites & Online Shops for Local Shops and Producers | BBGeorgiaTech",
+        "description": "Websites and online shops for boutiques, florists, bakeries, wine, honey and cheese producers and artisans: online sales, delivery, pickup and your brand story, from {price}."
+      },
+      "name": "Local Shops & Producers",
+      "hero": {
+        "title1": "Online shops for makers",
+        "title2": "that sell every day.",
+        "subtitle": "For boutiques, florists, bakeries, wine, honey and cheese producers, artisans and gift shops. A beautiful shop that tells your story and keeps selling when your doors are closed."
+      },
+      "types": [
+        "Boutiques",
+        "Florists",
+        "Bakeries",
+        "Wine producers",
+        "Honey & cheese",
+        "Artisans",
+        "Gift shops",
+        "Cosmetics"
+      ],
+      "problems": [
+        {
+          "title": "Sales stop when the shop closes",
+          "text": "Customers who find you in the evening or on a day off have nowhere to buy."
+        },
+        {
+          "title": "Marketplaces take a cut and own the customer",
+          "text": "Commissions eat your margin, and you rarely get to build a relationship with the people who buy."
+        },
+        {
+          "title": "Visitors can't buy again after they leave",
+          "text": "Tourists and one-time visitors love your products but have no way to order once they're home."
+        }
+      ],
+      "featuresTitle1": "Built to",
+      "featuresTitle2": "Sell Every Day",
+      "features": {
+        "shop": {
+          "title": "Your own online shop",
+          "text": "Products, variants and stock, with a simple checkout that works on any phone."
+        },
+        "payments": {
+          "title": "Online payments",
+          "text": "Cards through Stripe, PayPal or your local bank."
+        },
+        "delivery": {
+          "title": "Delivery & pickup",
+          "text": "Delivery zones and prices, or in-store pickup — whatever suits your business."
+        },
+        "story": {
+          "title": "Your story",
+          "text": "The people, place and craft behind your products — the reason customers choose you."
+        },
+        "local": {
+          "title": "Local SEO & Maps",
+          "text": "Show up in local searches and guide customers to your shop."
+        },
+        "languages": {
+          "title": "Sell abroad",
+          "text": "Several languages for tourists and international customers."
+        }
+      },
+      "recommend": "Most shops need Pro: an online shop with payments, delivery options and up to 5 languages. If you only want to showcase products and take orders by phone or message, start with Business and add a shop later.",
+      "faq": [
+        {
+          "q": "How many products can the shop have?",
+          "a": "Pro includes setup for around 100 products. Larger catalogues are possible — we quote them based on size."
+        },
+        {
+          "q": "Can I manage orders and stock myself?",
+          "a": "Yes. You add products, change prices and manage orders yourself, from your phone or computer."
+        },
+        {
+          "q": "Can I ship abroad?",
+          "a": "Yes. We set up delivery zones and prices per country, along with the languages your customers need."
+        },
+        {
+          "q": "Do you upload my products?",
+          "a": "You can, or we can do it for you as an add-on, priced per product."
+        }
+      ],
+      "final": {
+        "title1": "Ready to sell",
+        "title2": "around the clock?"
+      }
+    }
   }
 }

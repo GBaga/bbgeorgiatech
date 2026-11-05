@@ -9,6 +9,7 @@ import { AnalyticsGate } from "../../components/AnalyticsGate";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { buildAlternates } from '../../lib/seo';
+import { CARE_PLANS, CURRENCY, PACKAGES, formatUsd } from '../../data/pricing';
 
 const fontLogo = Michroma({
   variable: "--font-logo",
@@ -91,10 +92,11 @@ export default async function RootLayout({
         "name": "BBGeorgiaTech",
         "url": "https://bbgeorgiatech.com",
         "image": "https://bbgeorgiatech.com/icon.svg",
-        "description": "Website Design, Development & Maintenance",
-        "areaServed": ["Georgia", "Europe", "Global"],
-        "knowsAbout": ["Website Design", "Web Development", "E-Commerce", "Website Maintenance", "SEO"],
-        "priceRange": "$$",
+        "description": "Fixed-price website design, development and maintenance for small businesses worldwide",
+        "areaServed": "Worldwide",
+        "knowsAbout": ["Website Design", "Web Development", "E-Commerce", "Website Maintenance", "SEO", "Multilingual Websites", "Small Business Websites"],
+        "priceRange": `${formatUsd(PACKAGES[0].price)}+`,
+        "currenciesAccepted": CURRENCY,
         "email": "bbgeorgiatech@gmail.com",
         "sameAs": [
           "https://github.com/GBaga",
@@ -111,10 +113,26 @@ export default async function RootLayout({
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Services",
+          "url": `https://bbgeorgiatech.com/${resolvedParams.locale}/pricing`,
+          // Same numbers as /pricing (src/data/pricing.ts)
           "itemListElement": [
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design & Development" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "E-Commerce Solutions" } },
-            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Maintenance & Support" } },
+            ...PACKAGES.map((p) => ({
+              "@type": "Offer",
+              "name": `Website package: ${p.key[0].toUpperCase()}${p.key.slice(1)}`,
+              "itemOffered": { "@type": "Service", "name": "Website Design & Development" },
+              "priceSpecification": { "@type": "PriceSpecification", "minPrice": p.price, "priceCurrency": CURRENCY },
+            })),
+            {
+              "@type": "Offer",
+              "name": "Website care plans",
+              "itemOffered": { "@type": "Service", "name": "Maintenance & Support" },
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "minPrice": CARE_PLANS[0].monthly,
+                "priceCurrency": CURRENCY,
+                "unitCode": "MON",
+              },
+            },
           ],
         },
       },
