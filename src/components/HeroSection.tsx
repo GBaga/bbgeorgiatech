@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { animate, motion, useMotionValue, useMotionValueEvent, useReducedMotion, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Link } from "../i18n/routing";
+import { priceParams } from "../data/pricing";
 
 export const GridLight = () => {
   const [pathData, setPathData] = useState<{ d: string, w: number, h: number } | null>(null);
@@ -317,9 +319,21 @@ export function HeroSection() {
                 <div className="absolute inset-0 h-full w-0 bg-primary/10 transition-all duration-300 ease-out group-hover:w-full" />
               </a>
             </div>
-            <p className="font-mono text-xs text-neutral-500 mt-2 sm:ml-1">
-              {t("pricingNote")}
-            </p>
+            {/* Entry price on the first screen, linking to /pricing */}
+            <Link
+              href="/pricing"
+              className="group/price mt-2 sm:ml-1 inline-flex w-fit flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs text-neutral-400 hover:text-neutral-200 transition-colors"
+            >
+              <span className="w-1.5 h-1.5 bg-primary animate-pulse" aria-hidden="true" />
+              <span>{t("pricingNote", priceParams())}</span>
+              <span className="inline-flex items-center gap-1 text-primary">
+                <span className="relative">
+                  {t("seePricing")}
+                  <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-300 group-hover/price:scale-x-100" />
+                </span>
+                <ArrowRight className="w-3 h-3 transition-transform duration-300 group-hover/price:translate-x-1" aria-hidden="true" />
+              </span>
+            </Link>
           </div>
         </div>
 

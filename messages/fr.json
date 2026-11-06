@@ -38,9 +38,10 @@
     "targetValue": "MAINTENANCE & SOIN CONTINUS",
     "getAQuote": "[ Obtenir un Devis Gratuit ]",
     "initializeDeployment": "Voir Notre Travail →",
-    "pricingNote": "Projets à partir de 678$ · Maintenance à partir de 247$/an",
+    "pricingNote": "À partir de {start} · ou {monthly} / mois",
     "lessIsMore": "Parfois, moins c'est plus.",
-    "quoteAuthor": "Robert Browning (1855)"
+    "quoteAuthor": "Robert Browning (1855)",
+    "seePricing": "Voir les tarifs"
   },
   "BrandHeritage": {
     "title1": "Bâti sur la Confiance.",
@@ -79,7 +80,7 @@
     "title1": "Questions",
     "title2": "Fréquentes",
     "q1": "Combien coûte un nouveau site web ?",
-    "a1": "La création d'un site web sur mesure commence à partir de 678 $, et nos forfaits de maintenance complets commencent à partir de 247 $ par an. Chaque projet étant conçu spécifiquement pour vos besoins, veuillez nous contacter pour un devis précis et gratuit.",
+    "a1": "Les sites commencent à {start} pour une page unique et à {launch} pour le forfait Launch complet — ou {monthly} par mois avec Launch Mensuel, hébergement et maintenance inclus. Les plans de maintenance commencent à {care} par mois. Chaque projet reçoit un devis fixe sous 24 heures après une consultation gratuite ; retrouvez tous les forfaits et options sur la page Tarifs.",
     "q2": "Proposez-vous une maintenance mensuelle ?",
     "a2": "Oui. Nous proposons des forfaits d'assistance mensuels complets qui couvrent l'hébergement, les mises à jour de sécurité et les modifications de contenu.",
     "q3": "Combien de temps faut-il pour créer un site web ?",
@@ -265,7 +266,12 @@
     "btnIdle": "ENVOYER_MESSAGE",
     "btnTx": "ENVOI_EN_COURS...",
     "btnSuccess": "MESSAGE_ENVOYÉ",
-    "btnError": "VEUILLEZ_RÉESSAYER"
+    "btnError": "VEUILLEZ_RÉESSAYER",
+    "guarantees": [
+      "Garantie de délai",
+      "Prix fixe",
+      "Réponse sous 24 heures"
+    ]
   },
   "EmailReceipt": {
     "subject": "Transmission Reçue : BBGeorgiaTech",
@@ -1410,6 +1416,27 @@
         "title1": "Prêt à vendre",
         "title2": "jour et nuit ?"
       }
+    }
+  },
+  "Home": {
+    "who": {
+      "eyebrow": "Pour qui",
+      "title1": "Conçu pour",
+      "title2": "Votre Secteur",
+      "subtitle": "Chaque activité a ses clients et ses questions. Choisissez la vôtre et découvrez ce que votre site doit faire.",
+      "explore": "Découvrir"
+    },
+    "why": {
+      "eyebrow": "Pourquoi un site",
+      "link": "Voir comment un site se rentabilise"
+    },
+    "pricing": {
+      "eyebrow": "Tarifs",
+      "title1": "Des Prix",
+      "title2": "Clairs",
+      "subtitle": "Des prix fixes en USD, identiques dans tous les pays. Commencez petit ou payez au mois.",
+      "all": "Voir tous les tarifs",
+      "popular": "Le plus simple"
     }
   }
 }

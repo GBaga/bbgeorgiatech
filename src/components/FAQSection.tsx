@@ -4,13 +4,16 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus, HelpCircle } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Link } from "../i18n/routing";
+import { priceParams } from "../data/pricing";
 
 export function FAQSection() {
   const t = useTranslations("FAQSection");
+  const tHero = useTranslations("Hero");
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
-    { q: t("q1"), a: t("a1") },
+    { q: t("q1"), a: t("a1", priceParams()), pricing: true },
     { q: t("q2"), a: t("a2") },
     { q: t("q3"), a: t("a3") },
     { q: t("q4"), a: t("a4") },
@@ -69,6 +72,12 @@ export function FAQSection() {
                     >
                       <div className="p-6 md:p-8 pt-0 font-inter text-neutral-400 leading-relaxed border-t border-white/5 mt-2">
                         {faq.a}
+                        {"pricing" in faq && faq.pricing && (
+                          <Link href="/pricing" className="group/p mt-4 flex w-fit items-center gap-2 font-mono text-xs uppercase tracking-wider text-primary hover:text-white transition-colors">
+                            {tHero("seePricing")}
+                            <span aria-hidden="true" className="transition-transform group-hover/p:translate-x-1">→</span>
+                          </Link>
+                        )}
                       </div>
                     </motion.div>
                   )}

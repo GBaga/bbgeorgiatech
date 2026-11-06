@@ -158,6 +158,73 @@ body {
   }
 }
 
+/* Industry tiles: same pointer spotlight idea, tinted with each tile's
+   own --accent colour. */
+.accent-spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  background: radial-gradient(260px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--accent) 22%, transparent), transparent 65%);
+}
+
+.group:hover > .accent-spotlight {
+  opacity: 1;
+}
+
+/* Endless ticker of business types. The list is rendered twice and slides
+   by exactly one copy (-50%), so the loop is seamless. */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 60s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+/* Featured pricing card: a light that travels around the 1px border. */
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes border-spin {
+  to { --border-angle: 360deg; }
+}
+
+.border-orbit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  background: conic-gradient(from var(--border-angle), rgba(92, 156, 255, 0.25) 0deg, #5c9cff 40deg, rgba(92, 156, 255, 0.25) 90deg, rgba(92, 156, 255, 0.25) 360deg);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: border-spin 5s linear infinite;
+  pointer-events: none;
+}
+
+@media (hover: none) {
+  .accent-spotlight {
+    display: none;
+  }
+}
+
 /* Ensure all buttons globally have a pointer cursor */
 button,
 [role="button"],

@@ -138,3 +138,14 @@ export const pad2 = (n: number) => String(n).padStart(2, "0");
 export function formatUsd(amount: number) {
   return `$${amount.toLocaleString("en-US")}`;
 }
+
+// Values for {start} {launch} {monthly} {care} in copy outside /pricing
+// (hero note, home FAQ), so no old price can linger in a message file.
+export function priceParams() {
+  return {
+    start: formatUsd(START.price),
+    launch: formatUsd(PACKAGES[0].price),
+    monthly: formatUsd(MONTHLY.monthly),
+    care: formatUsd(CARE_PLANS[0].monthly),
+  };
+}

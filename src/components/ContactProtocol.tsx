@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Terminal, Lock, ArrowRight, ShieldCheck, CheckCircle2, AlertCircle } from "lucide-react";
 import { transmitPayloadAction } from "../actions/transmit-payload";
 import { useTranslations } from "next-intl";
+import { Link } from "../i18n/routing";
 
 const ERROR_MESSAGE_KEYS: Record<string, string> = {
   ERR_MISSING_PARAMETERS: "errValidation",
@@ -72,6 +73,30 @@ export function ContactProtocol() {
               {t("emailLabel")} {t("emailValue")}
             </a>
           </motion.div>
+
+          {/* Guarantees, right where the visitor decides to write */}
+          <motion.ul
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.1, delayChildren: 0.15 } } }}
+            className="flex flex-wrap gap-2"
+          >
+            {(t.raw("guarantees") as string[]).map((g) => (
+              <motion.li
+                key={g}
+                variants={{ hidden: { opacity: 0, y: 8 }, visible: { opacity: 1, y: 0 } }}
+              >
+                <Link
+                  href="/pricing#guarantee"
+                  className="flex items-center gap-2 border border-primary/30 bg-primary/5 px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-neutral-300 transition-colors hover:border-primary hover:text-white"
+                >
+                  <CheckCircle2 className="w-3.5 h-3.5 text-primary" aria-hidden="true" />
+                  {g}
+                </Link>
+              </motion.li>
+            ))}
+          </motion.ul>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}

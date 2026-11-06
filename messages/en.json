@@ -38,9 +38,10 @@
     "targetValue": "ONGOING MAINTENANCE & CARE",
     "getAQuote": "[ Get a Free Quote ]",
     "initializeDeployment": "See Our Work →",
-    "pricingNote": "Projects from $678 · Maintenance from $247/yr",
+    "pricingNote": "From {start} · or {monthly} / month",
     "lessIsMore": "Sometimes less is more.",
-    "quoteAuthor": "Robert Browning (1855)"
+    "quoteAuthor": "Robert Browning (1855)",
+    "seePricing": "See pricing"
   },
   "BrandHeritage": {
     "title1": "Built on Trust.",
@@ -79,7 +80,7 @@
     "title1": "Frequently Asked",
     "title2": "Questions",
     "q1": "How much does a new website cost?",
-    "a1": "Building a custom website starts from $678, and our comprehensive maintenance packages start from $247 a year. Because every project is custom-tailored to your specific needs, please contact us for a free, precise quote.",
+    "a1": "Websites start from {start} for a one-page site and {launch} for a full Launch package — or {monthly} a month with Launch Monthly, which includes hosting and care. Care plans start at {care} a month. Every project gets a fixed quote within 24 hours of a free consultation; see the Pricing page for every package and add-on.",
     "q2": "Do you offer monthly maintenance?",
     "a2": "Yes. We offer comprehensive monthly support packages that cover hosting, security updates, and content changes so you don't have to worry about the technical details.",
     "q3": "How long does it take to build a website?",
@@ -265,7 +266,12 @@
     "btnIdle": "SEND_MESSAGE",
     "btnTx": "SENDING...",
     "btnSuccess": "MESSAGE_SENT",
-    "btnError": "PLEASE_TRY_AGAIN"
+    "btnError": "PLEASE_TRY_AGAIN",
+    "guarantees": [
+      "On-time guarantee",
+      "Fixed price",
+      "Reply within 24 hours"
+    ]
   },
   "EmailReceipt": {
     "subject": "Transmission Received: BBGeorgiaTech",
@@ -1410,6 +1416,27 @@
         "title1": "Ready to sell",
         "title2": "around the clock?"
       }
+    }
+  },
+  "Home": {
+    "who": {
+      "eyebrow": "Who we help",
+      "title1": "Built for",
+      "title2": "Your Industry",
+      "subtitle": "Every business has different clients and different questions. Pick yours and see what your website should do.",
+      "explore": "Explore"
+    },
+    "why": {
+      "eyebrow": "Why a website",
+      "link": "See how a website pays off"
+    },
+    "pricing": {
+      "eyebrow": "Pricing",
+      "title1": "Clear",
+      "title2": "Prices",
+      "subtitle": "Fixed prices in USD, the same in every country. Start small or pay monthly.",
+      "all": "See all pricing",
+      "popular": "Easiest start"
     }
   }
 }
