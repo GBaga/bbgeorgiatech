@@ -1,38 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { animate, useInView, useReducedMotion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "../../i18n/routing";
 import { Reveal } from "../marketing/Reveal";
 import { SectionHeader } from "../marketing/SectionHeader";
-import { MONTHLY, PACKAGES, START, formatUsd } from "../../data/pricing";
-
-// The price counts up from zero the first time it scrolls into view. The
-// final value is rendered on the server, so crawlers and no-JS see it.
-function CountUp({ value }: { value: number }) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
-  const reduceMotion = useReducedMotion();
-  const [shown, setShown] = useState(value);
-
-  useEffect(() => {
-    if (!inView || reduceMotion) return;
-    const controls = animate(0, value, {
-      duration: 1.2,
-      ease: [0.22, 1, 0.36, 1],
-      onUpdate: (v) => setShown(Math.round(v)),
-    });
-    return () => controls.stop();
-  }, [inView, reduceMotion, value]);
-
-  return (
-    <span ref={ref} className="tabular-nums">
-      {formatUsd(shown)}
-    </span>
-  );
-}
+import { CountUp } from "../marketing/CountUp";
+import { MONTHLY, PACKAGES, START } from "../../data/pricing";
 
 // Home: a compact pricing strip — the two easy starts plus the two main
 // packages — that hands off to /pricing for everything else.

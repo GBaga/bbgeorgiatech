@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus, HelpCircle } from "lucide-react";
+import { Plus, Minus, HelpCircle, ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "../i18n/routing";
 import { priceParams } from "../data/pricing";
@@ -75,7 +75,7 @@ export function FAQSection() {
                         {"pricing" in faq && faq.pricing && (
                           <Link href="/pricing" className="group/p mt-4 flex w-fit items-center gap-2 font-mono text-xs uppercase tracking-wider text-primary hover:text-white transition-colors">
                             {tHero("seePricing")}
-                            <span aria-hidden="true" className="transition-transform group-hover/p:translate-x-1">→</span>
+                            <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover/p:translate-x-1" aria-hidden="true" />
                           </Link>
                         )}
                       </div>

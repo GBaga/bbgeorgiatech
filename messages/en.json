@@ -55,15 +55,56 @@
     "bagauriDesc": "Georgia-born, globally minded. The name Bagauri represents our founder's heritage and the craftsmanship tradition we bring to every project. In a world of quick fixes, we build things that endure — and we invite you to build the next chapter of your digital story with us."
   },
   "CoreCompetencies": {
-    "precisionEngineering": "Everything your business needs online.",
+    "precisionEngineering": "Website, sales, Google and care. In one place, at a fixed price.",
     "core": "Our",
     "competencies": "Services",
-    "service1Title": "Website Design & Development",
-    "service1Desc": "From landing pages to complex web applications — we design and build custom websites that look stunning, load fast, and turn visitors into customers.",
-    "service2Title": "E-Commerce Solutions",
-    "service2Desc": "Online stores built for performance. We create e-commerce experiences that are fast, secure, and optimized for sales — accessible to customers anywhere in the world.",
-    "service3Title": "Maintenance & Support",
-    "service3Desc": "Your website is never done. We offer ongoing maintenance, security updates, content changes, and performance monitoring so you can focus on running your business."
+    "services": [
+      {
+        "title": "Website",
+        "desc": "A site where customers learn who you are, what you do and how to reach you, on phone and desktop alike.",
+        "chips": [
+          "Mobile-friendly",
+          "Call & WhatsApp",
+          "Google Business",
+          "From 1 week"
+        ]
+      },
+      {
+        "title": "Online store",
+        "desc": "Sell day and night: product catalog, online payments and simple order management in one place.",
+        "chips": [
+          "Product catalog",
+          "Online payments",
+          "Order management",
+          "Mobile-friendly"
+        ]
+      },
+      {
+        "title": "Get found on Google",
+        "desc": "When people look for what you do on Google, on a map or in ChatGPT, they find you, and choose you.",
+        "chips": [
+          "Google Business",
+          "Local SEO",
+          "Maps & directories",
+          "Analytics"
+        ]
+      },
+      {
+        "title": "Website care",
+        "desc": "Hosting, security, backups and updates are on us. You focus on your business.",
+        "chips": [
+          "Hosting & SSL",
+          "Backups",
+          "Updates",
+          "Monitoring"
+        ]
+      }
+    ],
+    "orMonthly": "or {monthly} / month",
+    "fromMonthly": "from {price} / month",
+    "details": "Details",
+    "more": "Also: logo & branding, translation, business email",
+    "allAddons": "All add-ons"
   },
   "ProcessSection": {
     "title1": "How It",
@@ -503,7 +544,7 @@
         "newsletter": "Email marketing integration (Mailchimp, Brevo)",
         "portal": "Client portal & complex features",
         "seoAudit": "SEO audit of an existing site",
-        "localSeo": "Local SEO: Google Business optimization + 10 directories",
+        "localSeo": "Local SEO: Google Business optimization and listing your business on 10 maps and directories (Apple Maps, Bing, Facebook…)",
         "tracking": "Analytics, Google Ads & Meta pixel setup",
         "migration": "Migration from an old site, keeping SEO & redirects",
         "email": "Domain & business email (Google Workspace, Zoho)",
@@ -517,6 +558,12 @@
         "perProduct": "/ product",
         "perHour": "/ hour",
         "custom": "Custom quote"
+      },
+      "localSeoInfo": {
+        "summary": "What's included",
+        "core": "Listed on:",
+        "extra": "+ 3 picked for your industry, e.g. TripAdvisor, Booking.com or local business directories.",
+        "note": "Profiles are created in your name and we're added as managers. Some platforms verify ownership by call, SMS or video, which can take a few days."
       }
     },
     "guarantee": {

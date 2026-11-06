@@ -2,8 +2,26 @@
 
 import { useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { MonitorSmartphone, ShoppingCart, LifeBuoy } from "lucide-react";
+import { MonitorSmartphone, ShoppingCart, LifeBuoy, MapPin, ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
+import { Link } from "../i18n/routing";
+import { CountUp } from "./marketing/CountUp";
+import { MONTHLY, SERVICE_PRICES, formatUsd } from "../data/pricing";
+
+// Renders a localized price pattern ("from {price}", "{price}-დან / თვეში")
+// with only the number animated.
+function PricePattern({ pattern, value }: { pattern: string; value: number }) {
+  const [before, after] = pattern.split("§");
+  return (
+    <span>
+      {before && <span className="font-mono text-xs tracking-normal text-neutral-500 mr-1.5">{before.trim()}</span>}
+      <CountUp value={value} />
+      {after && <span className="font-mono text-xs tracking-normal text-neutral-500">{after}</span>}
+    </span>
+  );
+}
+
+type ServiceCopy = { title: string; desc: string; chips: string[] };
 
 export function CoreCompetencies() {
   const t = useTranslations("CoreCompetencies");
@@ -32,23 +50,17 @@ export function CoreCompetencies() {
     setActive((prev) => (prev === next ? prev : next));
   });
 
+  const tp = useTranslations("Pricing");
+  const copy = t.raw("services") as ServiceCopy[];
+  const from = tp("ui.from", { price: "§" });
+
+  // Order and prices follow the packages: site, shop, Google, care.
   const services = [
-    {
-      title: t("service1Title"),
-      description: t("service1Desc"),
-      icon: MonitorSmartphone,
-    },
-    {
-      title: t("service2Title"),
-      description: t("service2Desc"),
-      icon: ShoppingCart,
-    },
-    {
-      title: t("service3Title"),
-      description: t("service3Desc"),
-      icon: LifeBuoy,
-    },
-  ];
+    { icon: MonitorSmartphone, href: "/pricing#packages", price: <PricePattern pattern={from} value={SERVICE_PRICES.website} />, extra: t("orMonthly", { monthly: formatUsd(MONTHLY.monthly) }) },
+    { icon: ShoppingCart, href: "/pricing#packages", price: <PricePattern pattern={from} value={SERVICE_PRICES.shop} /> },
+    { icon: MapPin, href: "/pricing#add-ons", price: <PricePattern pattern={from} value={SERVICE_PRICES.google} /> },
+    { icon: LifeBuoy, href: "/pricing#care", price: <PricePattern pattern={t("fromMonthly", { price: "§" })} value={SERVICE_PRICES.care} /> },
+  ].map((s, i) => ({ ...s, ...copy[i] }));
 
   return (
     <section className="relative py-24 px-6 bg-background-deep overflow-hidden">
@@ -150,7 +162,7 @@ export function CoreCompetencies() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className={`group relative p-8 md:p-16 hover:bg-surface transition-colors duration-500 overflow-hidden ${
+                className={`group relative hover:bg-surface transition-colors duration-500 overflow-hidden ${
                   isActive ? "bg-surface/60" : "bg-background-deep"
                 } ${
                   index !== services.length - 1 ? 'border-b border-white/10' : ''
@@ -158,11 +170,14 @@ export function CoreCompetencies() {
               >
                 {/* Accent Line on hover */}
                 <div className={`absolute top-0 left-0 w-1 bg-primary group-hover:h-full transition-all duration-500 ease-out ${isActive ? "h-full" : "h-0"}`} />
-                
-                <div className="relative z-10 flex flex-col md:flex-row md:items-start justify-between gap-8">
-                  <div className="flex-1">
-                    <div className="flex items-center gap-6 mb-8">
-                      <span className="font-mono text-sm text-primary">0{index + 1}</span>
+
+                <Link
+                  href={service.href}
+                  className="relative z-10 flex flex-col md:flex-row md:items-start justify-between gap-8 p-8 md:p-10 xl:p-12 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-inset focus-visible:ring-primary"
+                >
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-6 mb-6">
+                      <span className="font-mono text-sm text-primary">{String(index + 1).padStart(2, "0")}</span>
                       <div className="relative h-px flex-1 bg-white/5" aria-hidden="true">
                         <motion.div
                           className="absolute inset-0 bg-primary/40 origin-left"
@@ -173,27 +188,69 @@ export function CoreCompetencies() {
                         />
                       </div>
                     </div>
-                    
-                    <h3 className={`font-logo text-2xl md:text-3xl tracking-tight mb-4 group-hover:text-primary transition-colors duration-500 ${isActive ? "text-primary" : "text-neutral-50"}`}>
+
+                    <h3 className={`font-logo text-2xl md:text-3xl tracking-tight mb-4 group-hover:text-primary transition-colors duration-500 break-words ${isActive ? "text-primary" : "text-neutral-50"}`}>
                       {service.title}
                     </h3>
-                    
-                    <p className="font-inter text-xl text-neutral-400 leading-relaxed max-w-2xl">
-                      {service.description}
+
+                    <p className="font-inter text-lg text-neutral-400 leading-relaxed max-w-2xl">
+                      {service.desc}
                     </p>
+
+                    <ul className="mt-6 flex flex-wrap gap-2">
+                      {service.chips.map((chip, ci) => (
+                        <motion.li
+                          key={chip}
+                          initial={{ opacity: 0, y: 6 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          viewport={{ once: true, margin: "-60px" }}
+                          transition={{ duration: 0.35, delay: 0.3 + ci * 0.06 }}
+                          className={`border px-3 py-1 font-inter text-xs transition-colors duration-500 ${
+                            isActive ? "border-primary/30 text-neutral-200" : "border-white/10 text-neutral-400"
+                          } group-hover:border-primary/30 group-hover:text-neutral-200`}
+                        >
+                          {chip}
+                        </motion.li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-8 flex flex-wrap items-end justify-between gap-4">
+                      <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 font-logo text-2xl tracking-tighter text-neutral-50">
+                        {service.price}
+                        {"extra" in service && service.extra && (
+                          <span className="font-mono text-xs tracking-normal text-neutral-500">· {service.extra}</span>
+                        )}
+                      </div>
+                      <span className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-primary group-hover:text-white transition-colors">
+                        {t("details")}
+                        <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                      </span>
+                    </div>
                   </div>
-                  
-                  <div className="shrink-0">
+
+                  <div className="shrink-0 order-first md:order-none">
                     <div className={`w-16 h-16 border flex items-center justify-center group-hover:border-primary group-hover:bg-primary/5 group-hover:text-primary transition-all duration-500 ${
                       isActive ? "border-primary bg-primary/5 text-primary" : "border-white/10 bg-surface text-neutral-400"
                     }`}>
-                      <service.icon className="w-8 h-8" />
+                      <service.icon className="w-8 h-8" aria-hidden="true" />
                     </div>
                   </div>
-                </div>
+                </Link>
               </motion.div>
               );
             })}
+
+            {/* Everything else lives in the add-ons */}
+            <div className="border-t border-white/10 bg-background-deep px-8 py-6 md:px-10 xl:px-12 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <p className="font-inter text-sm text-neutral-400">{t("more")}</p>
+              <Link
+                href="/pricing#add-ons"
+                className="group/more inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-primary hover:text-white transition-colors whitespace-nowrap"
+              >
+                {t("allAddons")}
+                <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover/more:translate-x-1" aria-hidden="true" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

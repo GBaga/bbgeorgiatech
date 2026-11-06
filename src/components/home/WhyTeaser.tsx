@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "../../i18n/routing";
 import { Reveal } from "../marketing/Reveal";
@@ -117,7 +117,7 @@ export function WhyTeaser() {
               {th("link")}
               <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-300 group-hover/link:scale-x-100" />
             </span>
-            <ArrowRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" aria-hidden="true" />
+            <ChevronRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" aria-hidden="true" />
           </Link>
         </Reveal>
       </div>

@@ -149,3 +149,26 @@ export function priceParams() {
     care: formatUsd(CARE_PLANS[0].monthly),
   };
 }
+
+const addonPriceOf = (key: string) => ADDON_GROUPS.flatMap((g) => g.items).find((i) => i.key === key)?.price ?? 0;
+
+// Home "Services": the lowest real price behind each service, derived from the
+// packages and add-ons above so the section can never show a stale price.
+export const SERVICE_PRICES = {
+  website: START.price,
+  shop: PACKAGES.find((p) => p.key === "business")!.price + addonPriceOf("shop"),
+  google: Math.min(addonPriceOf("seoAudit"), addonPriceOf("localSeo")),
+  care: CARE_PLANS[0].monthly,
+};
+
+// Local SEO add-on: the fixed listings every client gets. Brand names, so not
+// translated; 3 more are picked per industry (see Pricing.addons.localSeoInfo).
+export const LOCAL_SEO_LISTINGS = [
+  "Apple Business Connect (Apple Maps)",
+  "Bing Places",
+  "Waze",
+  "Facebook",
+  "Instagram",
+  "LinkedIn",
+  "Foursquare",
+];

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { ArrowRight, Check, CalendarClock, RotateCcw } from "lucide-react";
+import { ArrowRight, Check, CalendarClock, RotateCcw, ChevronDown, ChevronRight } from "lucide-react";
 import { NavigationBar } from "../../../components/NavigationBar";
 import { Footer } from "../../../components/Footer";
 import { GridLight } from "../../../components/HeroSection";
@@ -25,6 +25,7 @@ import {
   pad2,
   type AddonUnit,
   type Cell,
+  LOCAL_SEO_LISTINGS,
 } from "../../../data/pricing";
 
 const BASE_URL = "https://bbgeorgiatech.com";
@@ -424,9 +425,32 @@ export default async function PricingPage({ params }: Props) {
                   </div>
                   <ul className="divide-y divide-white/5">
                     {g.items.map((item) => (
-                      <li key={item.key} className="flex items-baseline justify-between gap-4 py-3">
-                        <span className="text-sm text-neutral-300 leading-snug">{t(`addons.items.${item.key}`)}</span>
-                        <span className="shrink-0 font-mono text-xs text-primary whitespace-nowrap">{addonPrice(item.price, item.unit)}</span>
+                      <li key={item.key} className="py-3">
+                        <div className="flex items-baseline justify-between gap-4">
+                          <span className="text-sm text-neutral-300 leading-snug">{t(`addons.items.${item.key}`)}</span>
+                          <span className="shrink-0 font-mono text-xs text-primary whitespace-nowrap">{addonPrice(item.price, item.unit)}</span>
+                        </div>
+                        {item.key === "localSeo" && (
+                          <details className="group/info mt-3">
+                            <summary className="flex w-fit cursor-pointer list-none items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-primary hover:text-white transition-colors [&::-webkit-details-marker]:hidden">
+                              <ChevronDown className="w-3.5 h-3.5 transition-transform group-open/info:rotate-180" aria-hidden="true" />
+                              {t("addons.localSeoInfo.summary")}
+                            </summary>
+                            <div className="mt-3 border-l border-white/10 pl-4 text-xs text-neutral-400 leading-relaxed">
+                              <p className="text-neutral-300">{t("addons.localSeoInfo.core")}</p>
+                              <ul className="mt-2 space-y-1">
+                                {LOCAL_SEO_LISTINGS.map((name) => (
+                                  <li key={name} className="flex items-start gap-2">
+                                    <span className="mt-[0.5em] w-1 h-1 shrink-0 bg-primary" aria-hidden="true" />
+                                    {name}
+                                  </li>
+                                ))}
+                              </ul>
+                              <p className="mt-2">{t("addons.localSeoInfo.extra")}</p>
+                              <p className="mt-2 text-neutral-500">{t("addons.localSeoInfo.note")}</p>
+                            </div>
+                          </details>
+                        )}
                       </li>
                     ))}
                   </ul>
@@ -461,10 +485,10 @@ export default async function PricingPage({ params }: Props) {
           <Reveal className="mt-6">
             <Link
               href="/terms-and-conditions#projects"
-              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-primary hover:text-white transition-colors"
+              className="group/terms inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-primary hover:text-white transition-colors"
             >
               {t("guarantee.termsLink")}
-              <ArrowRight className="w-3.5 h-3.5" aria-hidden="true" />
+              <ChevronRight className="w-3.5 h-3.5 transition-transform group-hover/terms:translate-x-1" aria-hidden="true" />
             </Link>
           </Reveal>
         </div>

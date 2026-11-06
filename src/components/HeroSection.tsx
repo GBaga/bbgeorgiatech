@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { animate, motion, useMotionValue, useMotionValueEvent, useReducedMotion, useTransform } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "../i18n/routing";
 import { priceParams } from "../data/pricing";
@@ -331,7 +331,7 @@ export function HeroSection() {
                   {t("seePricing")}
                   <span className="absolute -bottom-0.5 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-300 group-hover/price:scale-x-100" />
                 </span>
-                <ArrowRight className="w-3 h-3 transition-transform duration-300 group-hover/price:translate-x-1" aria-hidden="true" />
+                <ChevronRight className="w-3 h-3 transition-transform duration-300 group-hover/price:translate-x-1" aria-hidden="true" />
               </span>
             </Link>
           </div>

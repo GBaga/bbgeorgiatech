@@ -55,15 +55,56 @@
     "bagauriDesc": "Nés en Géorgie, tournés vers le monde. Le nom Bagauri représente l'héritage de notre fondateur et la tradition artisanale que nous apportons à chaque projet. Dans un monde de solutions éphémères, nous construisons des choses qui durent — et nous vous invitons à bâtir le prochain chapitre de votre histoire numérique avec nous."
   },
   "CoreCompetencies": {
-    "precisionEngineering": "Tout ce dont votre entreprise a besoin en ligne.",
+    "precisionEngineering": "Site, ventes, Google et maintenance. Au même endroit, à prix fixe.",
     "core": "Nos",
     "competencies": "Services",
-    "service1Title": "Création de Sites Web & Développement",
-    "service1Desc": "Des pages de renvoi aux applications web complexes — nous concevons et créons des sites web personnalisés qui sont superbes, se chargent rapidement, et transforment les visiteurs en clients.",
-    "service2Title": "Solutions E-Commerce",
-    "service2Desc": "Des boutiques en ligne conçues pour la performance. Nous créons des expériences e-commerce rapides, sécurisées, et optimisées pour les ventes — accessibles aux clients partout dans le monde.",
-    "service3Title": "Maintenance & Support",
-    "service3Desc": "Votre site web n'est jamais terminé. Nous offrons une maintenance continue, des mises à jour de sécurité, des modifications de contenu et une surveillance des performances pour que vous puissiez vous concentrer sur votre entreprise."
+    "services": [
+      {
+        "title": "Site web",
+        "desc": "Un site où vos clients découvrent qui vous êtes, ce que vous faites et comment vous joindre, sur mobile comme sur ordinateur.",
+        "chips": [
+          "Adapté au mobile",
+          "Appel et WhatsApp",
+          "Google Business",
+          "Dès 1 semaine"
+        ]
+      },
+      {
+        "title": "Boutique en ligne",
+        "desc": "Vendez jour et nuit : catalogue, paiement en ligne et gestion simple des commandes, au même endroit.",
+        "chips": [
+          "Catalogue produits",
+          "Paiement en ligne",
+          "Gestion des commandes",
+          "Adapté au mobile"
+        ]
+      },
+      {
+        "title": "Visibilité sur Google",
+        "desc": "Quand on cherche votre service sur Google, sur une carte ou dans ChatGPT, on vous trouve, et on vous choisit.",
+        "chips": [
+          "Google Business",
+          "SEO local",
+          "Cartes et annuaires",
+          "Statistiques"
+        ]
+      },
+      {
+        "title": "Maintenance du site",
+        "desc": "Hébergement, sécurité, sauvegardes et mises à jour : on s'en charge. Vous vous occupez de votre entreprise.",
+        "chips": [
+          "Hébergement et SSL",
+          "Sauvegardes",
+          "Mises à jour",
+          "Surveillance"
+        ]
+      }
+    ],
+    "orMonthly": "ou {monthly} / mois",
+    "fromMonthly": "à partir de {price} / mois",
+    "details": "En savoir plus",
+    "more": "Aussi : logo et identité, traduction, e-mail professionnel",
+    "allAddons": "Tous les compléments"
   },
   "ProcessSection": {
     "title1": "Comment Ça",
@@ -503,7 +544,7 @@
         "newsletter": "Intégration e-mailing (Mailchimp, Brevo)",
         "portal": "Espace client et fonctionnalités complexes",
         "seoAudit": "Audit SEO d'un site existant",
-        "localSeo": "SEO local : optimisation Google Business + 10 annuaires",
+        "localSeo": "SEO local : optimisation Google Business et inscription sur 10 cartes et annuaires (Apple Plans, Bing, Facebook…)",
         "tracking": "Configuration Analytics, Google Ads et pixel Meta",
         "migration": "Migration d'un ancien site, SEO et redirections conservés",
         "email": "Domaine et e-mail professionnel (Google Workspace, Zoho)",
@@ -517,6 +558,12 @@
         "perProduct": "/ produit",
         "perHour": "/ heure",
         "custom": "Sur devis"
+      },
+      "localSeoInfo": {
+        "summary": "Ce qui est inclus",
+        "core": "Inscription sur :",
+        "extra": "+ 3 choisis selon votre secteur, par ex. TripAdvisor, Booking.com ou des annuaires locaux.",
+        "note": "Les profils sont créés à votre nom et nous sommes ajoutés comme gestionnaires. Certaines plateformes vérifient la propriété par appel, SMS ou vidéo, ce qui peut prendre quelques jours."
       }
     },
     "guarantee": {
