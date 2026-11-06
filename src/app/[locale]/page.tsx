@@ -3,6 +3,7 @@ import { HeroSection } from "@/components/HeroSection";
 import { getTranslations } from "next-intl/server";
 import dynamic from "next/dynamic";
 import { priceParams } from "@/data/pricing";
+import { ChapterRail } from "@/components/effects/ChapterRail";
 
 const CoreCompetencies = dynamic(() => import("@/components/CoreCompetencies").then(m => m.CoreCompetencies));
 const TechStack = dynamic(() => import("@/components/TechStack").then(m => m.TechStack));
@@ -20,6 +21,23 @@ const Footer = dynamic(() => import("@/components/Footer").then(m => m.Footer));
 
 export default async function Home() {
   const t = await getTranslations("FAQSection");
+  const tn = await getTranslations("Navigation");
+  const tv = await getTranslations("Verticals");
+  const tproc = await getTranslations("ProcessSection");
+  const thome = await getTranslations("Home");
+
+  // Side index of the page (wide screens), in section order.
+  const chapters = [
+    { id: "competencies", label: tn("competencies") },
+    { id: "industries", label: tv("ui.industries") },
+    { id: "process", label: `${tproc("title1")} ${tproc("title2")}` },
+    { id: "systems", label: tn("systems") },
+    { id: "why", label: thome("why.eyebrow") },
+    { id: "pricing", label: tn("pricing") },
+    { id: "faq", label: "FAQ" },
+    { id: "heritage", label: tn("heritage") },
+    { id: "contact", label: tn("contact") },
+  ];
 
   const faqJsonLd = {
     "@context": "https://schema.org",
@@ -41,6 +59,7 @@ export default async function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <NavigationBar />
+      <ChapterRail items={chapters} hideOn={["competencies"]} neutral={["paradox", "tech-stack"]} />
 
       <div id="hero"><HeroSection /></div>
       <div id="competencies"><CoreCompetencies /></div>

@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "../../i18n/routing";
 import { SectionHeader } from "../marketing/SectionHeader";
 import { READY_VERTICALS } from "../../data/verticals";
+import { SearchTyping } from "../effects/SearchTyping";
 
 const pad = (n: number) => String(n).padStart(2, "0");
 
@@ -24,6 +25,8 @@ export function WhoWeHelp() {
   const t = useTranslations("Home.who");
   const tv = useTranslations("Verticals");
 
+  // One real search per industry, typed in turn: every visitor sees their own.
+  const searches = READY_VERTICALS.map((v) => (tv.raw(`${v.key}.searches`) as string[])[0]);
   const types = READY_VERTICALS.flatMap((v) => (tv.raw(`${v.key}.types`) as string[]).map((type) => ({ type, accent: v.accent })));
 
   return (
@@ -55,6 +58,7 @@ export function WhoWeHelp() {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6">
+        <SearchTyping phrases={searches} label={tv("ui.searchLabel")} />
         <motion.ul
           initial="hidden"
           whileInView="visible"

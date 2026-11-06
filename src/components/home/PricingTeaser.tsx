@@ -6,6 +6,7 @@ import { Link } from "../../i18n/routing";
 import { Reveal } from "../marketing/Reveal";
 import { SectionHeader } from "../marketing/SectionHeader";
 import { CountUp } from "../marketing/CountUp";
+import { MonthsTrack } from "../effects/MonthsTrack";
 import { MONTHLY, PACKAGES, START } from "../../data/pricing";
 
 // Home: a compact pricing strip — the two easy starts plus the two main
@@ -91,6 +92,12 @@ export function PricingTeaser() {
                   )}
                   {c.per && <span className="font-mono text-xs tracking-normal text-neutral-500 whitespace-nowrap">{c.per}</span>}
                 </div>
+                {c.key === "monthly" ? (
+                  <MonthsTrack compact months={MONTHLY.months} label={t("easy.monthly.track", { months: MONTHLY.months })} />
+                ) : (
+                  // Same height as the track, so the price rows line up across cards
+                  <div className="mt-4 h-5" aria-hidden="true" />
+                )}
                 <div className="mt-2 flex items-center justify-between font-mono text-[11px] uppercase tracking-wider text-neutral-500">
                   <span>{c.meta}</span>
                   <ArrowRight
