@@ -573,7 +573,10 @@
       "g1Text": "Si nous dépassons la date de lancement convenue pour des raisons qui nous incombent, vous obtenez 10 % de remise par semaine de retard, jusqu'à 30 %. Les retards dus à un contenu ou à des retours tardifs ne comptent pas.",
       "g2Title": "Remboursement partiel",
       "g2Text": "Si le concept de design ne vous convient pas après deux séries de révisions, nous remboursons 50 % de votre acompte et arrêtons le projet — avant le début du développement.",
-      "termsLink": "Conditions complètes"
+      "termsLink": "Conditions complètes",
+      "seal": "Délai garanti · BBGEORGIATECH",
+      "timelineCaption": "Remise par semaine de retard",
+      "week": "{n, plural, one {# semaine} other {# semaines}}"
     },
     "process": {
       "eyebrow": "Fonctionnement",
@@ -676,7 +679,8 @@
           "Paiement mois par mois, dès le début des travaux",
           "Après {months} mois, le site est à vous ; continuez avec le plan Care pour {care} / mois ou hébergez-le vous-même"
         ],
-        "note": "Résiliable à tout moment avec un préavis de 30 jours, sans rien payer de plus — l’accès au site et aux services réalisés prend alors fin. La garantie de remboursement partiel ne s’applique pas au paiement mensuel."
+        "note": "Résiliable à tout moment avec un préavis de 30 jours, sans rien payer de plus — l’accès au site et aux services réalisés prend alors fin. La garantie de remboursement partiel ne s’applique pas au paiement mensuel.",
+        "track": "Après {months} mensualités, le site est à vous"
       },
       "badge": "Le plus simple"
     },
@@ -744,7 +748,12 @@
       "closing1": "Nous ne promettons pas de miracles.",
       "closing2": "Nous promettons que lorsqu’on vous cherchera, on vous trouvera.",
       "ctaText": "Lors d’une consultation gratuite, nous vous montrons comment on cherche votre service sur Google en ce moment."
-    }
+    },
+    "trust": [
+      "Prix fixe",
+      "Délai garanti",
+      "Le site vous appartient"
+    ]
   },
   "Verticals": {
     "ui": {
@@ -767,7 +776,8 @@
       "faqTitle1": "Questions",
       "faqTitle2": "Fréquentes",
       "packageBadge": "forfait",
-      "packageName": "forfait {name}"
+      "packageName": "forfait {name}",
+      "searchLabel": "Voici comment vos clients vous cherchent :"
     },
     "homeServices": {
       "meta": {
@@ -854,7 +864,11 @@
       "final": {
         "title1": "Prêt à recevoir",
         "title2": "plus d'appels ?"
-      }
+      },
+      "searches": [
+        "plombier près de chez moi",
+        "électricien urgence ce soir"
+      ]
     },
     "professionalServices": {
       "meta": {
@@ -941,7 +955,11 @@
       "final": {
         "title1": "Prêt à paraître",
         "title2": "aussi solide que vous l'êtes ?"
-      }
+      },
+      "searches": [
+        "avocat d'affaires près de chez moi",
+        "comptable pour petite entreprise"
+      ]
     },
     "healthWellness": {
       "meta": {
@@ -1028,7 +1046,11 @@
       "final": {
         "title1": "Moins d'appels,",
         "title2": "plus de rendez-vous ?"
-      }
+      },
+      "searches": [
+        "dentiste près de chez moi",
+        "kiné prise de rendez-vous en ligne"
+      ]
     },
     "beauty": {
       "meta": {
@@ -1115,7 +1137,11 @@
       "final": {
         "title1": "Prêt pour un",
         "title2": "agenda bien rempli ?"
-      }
+      },
+      "searches": [
+        "salon de coiffure près de chez moi",
+        "manucure rendez-vous aujourd'hui"
+      ]
     },
     "hospitalityTourism": {
       "meta": {
@@ -1202,7 +1228,11 @@
       "final": {
         "title1": "Prêt pour plus de",
         "title2": "réservations directes ?"
-      }
+      },
+      "searches": [
+        "hôtel de charme à Kazbegi",
+        "circuit œnologique en Kakhétie"
+      ]
     },
     "creativePersonalBrands": {
       "meta": {
@@ -1289,7 +1319,11 @@
       "final": {
         "title1": "Prêt à montrer",
         "title2": "votre meilleur travail ?"
-      }
+      },
+      "searches": [
+        "photographe de mariage Tbilissi",
+        "graphiste portfolio"
+      ]
     },
     "education": {
       "meta": {
@@ -1376,7 +1410,11 @@
       "final": {
         "title1": "Prêt à remplir",
         "title2": "votre prochain cours ?"
-      }
+      },
+      "searches": [
+        "cours d'anglais pour enfants",
+        "cours de programmation débutant"
+      ]
     },
     "localShops": {
       "meta": {
@@ -1463,7 +1501,11 @@
       "final": {
         "title1": "Prêt à vendre",
         "title2": "jour et nuit ?"
-      }
+      },
+      "searches": [
+        "bijoux faits main en ligne",
+        "livraison de fleurs près de chez moi"
+      ]
     }
   },
   "Home": {

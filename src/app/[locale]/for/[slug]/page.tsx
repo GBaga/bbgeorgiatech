@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getTranslations } from "next-intl/server";
-import { ArrowRight, ArrowUpRight, Lock } from "lucide-react";
+import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { NavigationBar } from "../../../../components/NavigationBar";
 import { Footer } from "../../../../components/Footer";
 import { GridLight } from "../../../../components/HeroSection";
@@ -10,6 +9,13 @@ import { TypeBadge } from "../../../../components/marketing/TypeBadge";
 import { Reveal } from "../../../../components/marketing/Reveal";
 import { SectionHeader } from "../../../../components/marketing/SectionHeader";
 import { FaqList } from "../../../../components/marketing/FaqList";
+import { HeroBlueprint } from "../../../../components/effects/HeroBlueprint";
+import { TrustStrip } from "../../../../components/effects/TrustStrip";
+import { PointerGlow } from "../../../../components/effects/PointerGlow";
+import { DrawLine } from "../../../../components/effects/DrawLine";
+import { SearchTyping } from "../../../../components/effects/SearchTyping";
+import { ProjectBrowser } from "../../../../components/effects/ProjectBrowser";
+import { PricePattern } from "../../../../components/marketing/CountUp";
 import { Link } from "../../../../i18n/routing";
 import { buildAlternates } from "../../../../lib/seo";
 import { CURRENCY, PACKAGES, formatUsd, pad2 } from "../../../../data/pricing";
@@ -108,15 +114,17 @@ export default async function VerticalPage({ params }: Props) {
       {/* Hero */}
       <section className="relative pt-40 pb-20 md:pb-28 px-6 lucien-blueprint overflow-hidden">
         <GridLight />
+        <HeroBlueprint color={accent} />
+        {/* The industry's colour, breathing slowly behind the hero */}
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute -top-40 right-0 h-[560px] w-[70%] opacity-[0.18] blur-3xl"
-          style={{ background: `radial-gradient(closest-side, ${accent}, transparent)` }}
+          className="breathe pointer-events-none absolute -top-40 right-0 h-[560px] w-[70%] blur-3xl"
+          style={{ background: `radial-gradient(closest-side, ${accent}, transparent)`, ["--breathe-min" as string]: 0.14, ["--breathe-max" as string]: 0.26 }}
         />
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="hero-fade flex items-center gap-4 mb-8">
             <div className="w-12 h-12 shrink-0 flex items-center justify-center border border-white/10 bg-background-deep" style={{ color: accent }}>
-              <Icon className="w-6 h-6" aria-hidden="true" />
+              <Icon className="icon-draw w-6 h-6" aria-hidden="true" />
             </div>
             <div className="font-mono text-xs md:text-sm tracking-[0.2em] uppercase">
               <span className="text-neutral-500">{t("ui.industries")} / </span>
@@ -131,9 +139,13 @@ export default async function VerticalPage({ params }: Props) {
           <p className="hero-fade mt-8 max-w-2xl text-lg text-neutral-400 leading-relaxed" style={{ ["--d" as string]: "0.25s" }}>
             {t(`${k}.hero.subtitle`)}
           </p>
-          <ul className="hero-fade mt-8 flex flex-wrap gap-2" style={{ ["--d" as string]: "0.32s" }}>
-            {types.map((type) => (
-              <li key={type} className="flex items-center gap-2 border border-white/10 bg-background-deep/70 px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-neutral-300">
+          <ul className="mt-8 flex flex-wrap gap-2">
+            {types.map((type, ti) => (
+              <li
+                key={type}
+                className="hero-fade flex items-center gap-2 border border-white/10 bg-background-deep/70 px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-neutral-300"
+                style={{ ["--d" as string]: `${0.32 + ti * 0.06}s` }}
+              >
                 <span className="w-1.5 h-1.5" style={{ backgroundColor: accent }} aria-hidden="true" />
                 {type}
               </li>
@@ -154,6 +166,9 @@ export default async function VerticalPage({ params }: Props) {
               {t("ui.seePricing")}
             </Link>
           </div>
+          <div className="mt-10">
+            <TrustStrip items={tp.raw("trust") as string[]} start={0.55 + types.length * 0.06} />
+          </div>
         </div>
       </section>
 
@@ -161,6 +176,9 @@ export default async function VerticalPage({ params }: Props) {
       <section className="relative py-24 px-6 bg-surface border-t border-white/5">
         <div className="max-w-6xl mx-auto">
           <SectionHeader eyebrow={t("ui.problemsEyebrow")} title1={t("ui.problemsTitle1")} title2={t("ui.problemsTitle2")} />
+          <Reveal>
+            <SearchTyping phrases={t.raw(`${k}.searches`) as string[]} label={t("ui.searchLabel")} />
+          </Reveal>
           <div className="grid gap-4 md:grid-cols-3">
             {problems.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.08} className="h-full">
@@ -168,7 +186,7 @@ export default async function VerticalPage({ params }: Props) {
                   <div aria-hidden="true" className="absolute left-0 top-0 bottom-0 w-1" style={{ backgroundColor: accent }} />
                   <div className="flex items-center gap-4 mb-6">
                     <span className="font-mono text-sm text-primary">{pad2(i + 1)}</span>
-                    <div className="h-px flex-1 bg-white/10" aria-hidden="true" />
+                    <DrawLine delay={0.2 + i * 0.1} />
                   </div>
                   <h3 className="font-logo text-lg uppercase tracking-tighter text-neutral-50 leading-snug">{p.title}</h3>
                   <p className="mt-4 text-neutral-400 leading-relaxed">{p.text}</p>
@@ -186,9 +204,15 @@ export default async function VerticalPage({ params }: Props) {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {v.features.map((f, i) => (
               <Reveal key={f.key} delay={(i % 3) * 0.08} className="h-full">
-                <div className="group lucien-card h-full p-6 md:p-8">
-                  <div className="w-12 h-12 flex items-center justify-center border border-white/10 bg-background-deep text-neutral-400 transition-colors duration-300 group-hover:border-primary group-hover:bg-primary/5 group-hover:text-primary">
-                    <f.icon className="w-6 h-6" aria-hidden="true" />
+                <div className="group relative isolate overflow-hidden lucien-card h-full p-6 md:p-8" style={{ ["--accent" as string]: accent }}>
+                  <PointerGlow />
+                  <span
+                    aria-hidden="true"
+                    className="absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-500 ease-out group-hover:w-full"
+                    style={{ backgroundColor: accent }}
+                  />
+                  <div className="w-12 h-12 flex items-center justify-center border border-white/10 bg-background-deep text-neutral-400 transition-all duration-300 group-hover:border-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-background-deep">
+                    <f.icon className="w-6 h-6 transition-transform duration-500 group-hover:scale-110" aria-hidden="true" />
                   </div>
                   <h3 className="mt-6 font-heading text-lg font-semibold text-neutral-50">{t(`${k}.features.${f.key}.title`)}</h3>
                   <p className="mt-2 text-sm text-neutral-400 leading-relaxed">{t(`${k}.features.${f.key}.text`)}</p>
@@ -232,31 +256,7 @@ export default async function VerticalPage({ params }: Props) {
                     </a>
                   </div>
                   <div className="order-1 lg:order-2">
-                    <div className="relative border border-white/10 bg-background-deep shadow-2xl shadow-black/50 overflow-hidden">
-                      <div className="flex items-center gap-3 px-4 h-8 border-b border-white/10 bg-white/[0.03]">
-                        <div className="flex gap-1.5" aria-hidden="true">
-                          <span className="w-2 h-2 bg-white/20" />
-                          <span className="w-2 h-2 bg-white/20" />
-                          <span className="w-2 h-2" style={{ backgroundColor: project.accent }} />
-                        </div>
-                        <div className="flex-1 min-w-0 flex items-center justify-center">
-                          <div className="flex items-center gap-1.5 max-w-full px-3 py-0.5 border border-white/10 font-mono text-[11px] text-neutral-400">
-                            <Lock className="w-3 h-3 shrink-0" aria-hidden="true" />
-                            <span className="truncate">{new URL(project.url).hostname.replace(/^www\./, "")}</span>
-                          </div>
-                        </div>
-                        <div className="w-[42px]" aria-hidden="true" />
-                      </div>
-                      <div className="relative aspect-[16/10] bg-white/5">
-                        <Image
-                          src={project.image}
-                          alt={`${project.name} website preview`}
-                          fill
-                          sizes="(min-width: 1024px) 560px, 90vw"
-                          className="object-cover object-top"
-                        />
-                      </div>
-                    </div>
+                    <ProjectBrowser url={project.url} image={project.image} name={project.name} accent={project.accent} />
                   </div>
                 </div>
               </article>
@@ -269,7 +269,10 @@ export default async function VerticalPage({ params }: Props) {
       <section className="relative py-24 px-6 bg-background-deep border-t border-white/5">
         <div className="max-w-6xl mx-auto">
           <Reveal>
-            <div className="relative overflow-hidden border border-primary/60 bg-gradient-to-b from-surface-bright to-surface p-6 md:p-10 shadow-[0_0_60px_-16px_rgba(92,156,255,0.5)]">
+            <div
+              className="relative overflow-hidden border border-transparent border-orbit bg-gradient-to-b from-surface-bright to-surface p-6 md:p-10 shadow-[0_0_60px_-16px_rgba(92,156,255,0.5)]"
+              style={{ ["--orbit" as string]: accent }}
+            >
               <div aria-hidden="true" className="absolute left-0 top-0 bottom-0 w-1 bg-primary" />
               <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
                 <div>
@@ -300,7 +303,7 @@ export default async function VerticalPage({ params }: Props) {
                 </div>
                 <div className="lg:text-right">
                   <div className="font-logo text-4xl tracking-tighter text-neutral-50 tabular-nums">
-                    {tp("ui.from", { price: formatUsd(pkg.price) })}
+                    <PricePattern pattern={tp("ui.from", { price: "§" })} value={pkg.price} />
                   </div>
                   <div className="mt-2 font-mono text-[11px] uppercase tracking-wider text-neutral-500">
                     {t("ui.oneTime")} · {tp(`packages.${pkg.key}.weeks`)}
@@ -337,9 +340,18 @@ export default async function VerticalPage({ params }: Props) {
                 <Link
                   key={o.slug}
                   href={`/for/${o.slug}`}
-                  className="group flex items-center gap-4 bg-background-deep p-5 transition-colors hover:bg-surface"
+                  style={{ ["--accent" as string]: o.accent }}
+                  className="group relative isolate overflow-hidden flex items-center gap-4 bg-background-deep p-5 transition-colors hover:bg-surface"
                 >
-                  <span className="w-10 h-10 shrink-0 flex items-center justify-center border border-white/10" style={{ color: o.accent }}>
+                  <PointerGlow />
+                  <span
+                    aria-hidden="true"
+                    className="absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-500 ease-out group-hover:w-full"
+                    style={{ backgroundColor: o.accent }}
+                  />
+                  <span
+                    className="w-10 h-10 shrink-0 flex items-center justify-center border border-white/10 text-[var(--accent)] transition-all duration-300 group-hover:border-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-background-deep"
+                  >
                     <o.icon className="w-5 h-5" aria-hidden="true" />
                   </span>
                   <span className="text-sm text-neutral-300 group-hover:text-white transition-colors">{t(`${o.key}.name`)}</span>
@@ -354,8 +366,8 @@ export default async function VerticalPage({ params }: Props) {
       <section className="relative py-24 md:py-32 px-6 lucien-blueprint border-t border-white/5 overflow-hidden">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-          style={{ background: "radial-gradient(50% 70% at 50% 100%, rgba(92,156,255,0.16), transparent)" }}
+          className="breathe pointer-events-none absolute inset-0"
+          style={{ background: `radial-gradient(50% 70% at 50% 100%, ${accent}, transparent)`, ["--breathe-min" as string]: 0.1, ["--breathe-max" as string]: 0.2 }}
         />
         <Reveal className="relative z-10 max-w-3xl mx-auto text-center flex flex-col items-center">
           <h2 className="font-logo text-3xl md:text-5xl text-neutral-50 uppercase tracking-tighter">
@@ -364,7 +376,7 @@ export default async function VerticalPage({ params }: Props) {
           <p className="mt-6 text-lg text-neutral-400 leading-relaxed">{t("ui.finalText")}</p>
           <Link
             href="/#contact"
-            className="group/cta mt-10 inline-flex items-center gap-2 border-2 border-primary bg-primary px-8 py-4 font-mono text-sm uppercase tracking-wider text-white transition-all hover:bg-primary/80"
+            className="cta-halo group/cta relative mt-10 inline-flex items-center gap-2 border-2 border-primary bg-primary px-8 py-4 font-mono text-sm uppercase tracking-wider text-white transition-all hover:bg-primary/80"
           >
             {t("ui.consultation")}
             <ArrowRight className="w-4 h-4 transition-transform group-hover/cta:translate-x-0.5" aria-hidden="true" />

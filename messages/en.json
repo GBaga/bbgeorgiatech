@@ -573,7 +573,10 @@
       "g1Text": "If we miss the agreed launch date for reasons on our side, you get 10% off for every week of delay, up to 30%. Delays caused by late content or feedback don't count.",
       "g2Title": "Partial refund",
       "g2Text": "If you don't like the design concept after two rounds of revisions, we refund 50% of your deposit and stop the project — before any development starts.",
-      "termsLink": "Full terms"
+      "termsLink": "Full terms",
+      "seal": "On-time guarantee · BBGEORGIATECH",
+      "timelineCaption": "Discount per late week",
+      "week": "{n, plural, one {# week} other {# weeks}}"
     },
     "process": {
       "eyebrow": "How it works",
@@ -676,7 +679,8 @@
           "Pay month by month, starting when work begins",
           "After {months} months the site is yours; continue on the Care plan for {care} / month or host it yourself"
         ],
-        "note": "Cancel any time with 30 days’ notice and pay nothing more — access to the website and the services built for you ends. The partial-refund guarantee doesn’t apply to monthly payment."
+        "note": "Cancel any time with 30 days’ notice and pay nothing more — access to the website and the services built for you ends. The partial-refund guarantee doesn’t apply to monthly payment.",
+        "track": "After {months} payments the site is yours"
       },
       "badge": "Easiest start"
     },
@@ -744,7 +748,12 @@
       "closing1": "We don’t promise miracles.",
       "closing2": "We promise that when people look for you, they’ll find you.",
       "ctaText": "In a free consultation, we’ll show you how people search for your service on Google right now."
-    }
+    },
+    "trust": [
+      "Fixed price",
+      "On-time guarantee",
+      "The site is yours"
+    ]
   },
   "Verticals": {
     "ui": {
@@ -767,7 +776,8 @@
       "faqTitle1": "Frequently Asked",
       "faqTitle2": "Questions",
       "packageBadge": "package",
-      "packageName": "{name} package"
+      "packageName": "{name} package",
+      "searchLabel": "This is how customers look for you:"
     },
     "homeServices": {
       "meta": {
@@ -854,7 +864,11 @@
       "final": {
         "title1": "Ready to get",
         "title2": "more calls?"
-      }
+      },
+      "searches": [
+        "plumber near me",
+        "emergency electrician tonight"
+      ]
     },
     "professionalServices": {
       "meta": {
@@ -941,7 +955,11 @@
       "final": {
         "title1": "Ready to look as",
         "title2": "good as you are?"
-      }
+      },
+      "searches": [
+        "business lawyer near me",
+        "accountant for small business"
+      ]
     },
     "healthWellness": {
       "meta": {
@@ -1028,7 +1046,11 @@
       "final": {
         "title1": "Ready for fewer calls",
         "title2": "and more bookings?"
-      }
+      },
+      "searches": [
+        "dentist near me",
+        "physiotherapist book online"
+      ]
     },
     "beauty": {
       "meta": {
@@ -1115,7 +1137,11 @@
       "final": {
         "title1": "Ready for a",
         "title2": "fuller calendar?"
-      }
+      },
+      "searches": [
+        "hair salon near me",
+        "nail appointment today"
+      ]
     },
     "hospitalityTourism": {
       "meta": {
@@ -1202,7 +1228,11 @@
       "final": {
         "title1": "Ready for more",
         "title2": "direct bookings?"
-      }
+      },
+      "searches": [
+        "boutique hotel in Kazbegi",
+        "wine tour in Kakheti"
+      ]
     },
     "creativePersonalBrands": {
       "meta": {
@@ -1289,7 +1319,11 @@
       "final": {
         "title1": "Ready to show",
         "title2": "your best work?"
-      }
+      },
+      "searches": [
+        "wedding photographer Tbilisi",
+        "graphic designer portfolio"
+      ]
     },
     "education": {
       "meta": {
@@ -1376,7 +1410,11 @@
       "final": {
         "title1": "Ready to fill",
         "title2": "your next class?"
-      }
+      },
+      "searches": [
+        "english classes for kids",
+        "coding course for beginners"
+      ]
     },
     "localShops": {
       "meta": {
@@ -1463,7 +1501,11 @@
       "final": {
         "title1": "Ready to sell",
         "title2": "around the clock?"
-      }
+      },
+      "searches": [
+        "handmade jewelry online",
+        "flower delivery near me"
+      ]
     }
   },
   "Home": {

@@ -211,12 +211,94 @@ body {
   position: absolute;
   inset: 0;
   padding: 1px;
-  background: conic-gradient(from var(--border-angle), rgba(92, 156, 255, 0.25) 0deg, #5c9cff 40deg, rgba(92, 156, 255, 0.25) 90deg, rgba(92, 156, 255, 0.25) 360deg);
+  /* --orbit lets a card spin in its own colour (industry accents) */
+  background: conic-gradient(
+    from var(--border-angle),
+    color-mix(in srgb, var(--orbit, #5c9cff) 25%, transparent) 0deg,
+    var(--orbit, #5c9cff) 40deg,
+    color-mix(in srgb, var(--orbit, #5c9cff) 25%, transparent) 90deg,
+    color-mix(in srgb, var(--orbit, #5c9cff) 25%, transparent) 360deg
+  );
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   animation: border-spin 5s linear infinite;
   pointer-events: none;
+}
+
+/* ---- Pricing & industry page effects ---------------------------------- */
+
+/* Blueprint lines that draw themselves across a hero (SVG with pathLength=1) */
+@keyframes draw-line {
+  to { stroke-dashoffset: 0; }
+}
+.draw-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw-line 1.6s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  animation-delay: var(--d, 0s);
+}
+
+/* Technical-drawing corner marks around a hero */
+@keyframes corner-in {
+  from { opacity: 0; transform: scale(1.6); }
+  to { opacity: 1; transform: none; }
+}
+.corner-mark {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-color: rgba(92, 156, 255, 0.55);
+  animation: corner-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--d, 0.5s);
+}
+
+/* A check box that "switches on" (trust strip) */
+@keyframes check-on {
+  0% { background-color: transparent; color: transparent; transform: scale(0.6); }
+  60% { transform: scale(1.15); }
+  100% { background-color: #5c9cff; color: #080d2c; transform: none; }
+}
+.check-on {
+  animation: check-on 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--d, 0s);
+}
+
+/* Slow "breathing" glow behind heroes and CTAs */
+@keyframes breathe {
+  0%, 100% { opacity: var(--breathe-min, 0.12); transform: scale(1); }
+  50% { opacity: var(--breathe-max, 0.24); transform: scale(1.06); }
+}
+.breathe {
+  animation: breathe 7s ease-in-out infinite;
+}
+
+/* A lucide icon that draws its own strokes */
+@keyframes icon-draw {
+  to { stroke-dashoffset: 0; }
+}
+.icon-draw * {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: icon-draw 1.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  animation-delay: 0.3s;
+}
+
+/* Typing caret */
+@keyframes caret {
+  50% { opacity: 0; }
+}
+.caret {
+  animation: caret 1s steps(1) infinite;
+}
+
+/* Rotating ring of text on the guarantee seal */
+@keyframes seal-spin {
+  to { transform: rotate(360deg); }
+}
+.seal-spin {
+  transform-origin: 50% 50%;
+  animation: seal-spin 24s linear infinite;
 }
 
 @media (hover: none) {
@@ -244,4 +326,18 @@ input[type="button"] {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* A soft halo that keeps pulsing out of the final call-to-action button */
+@keyframes cta-halo {
+  0% { opacity: 0.55; transform: scale(1); }
+  100% { opacity: 0; transform: scale(1.18, 1.5); }
+}
+.cta-halo::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border: 1px solid #5c9cff;
+  pointer-events: none;
+  animation: cta-halo 2.6s cubic-bezier(0.22, 1, 0.36, 1) infinite;
 }

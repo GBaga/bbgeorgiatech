@@ -10,6 +10,15 @@ import { FaqList } from "../../../components/marketing/FaqList";
 import { CompareTable, type ResolvedCell } from "../../../components/pricing/CompareTable";
 import { CarePlans } from "../../../components/pricing/CarePlans";
 import { WhyWebsite } from "../../../components/pricing/WhyWebsite";
+import { HeroBlueprint } from "../../../components/effects/HeroBlueprint";
+import { TrustStrip } from "../../../components/effects/TrustStrip";
+import { PointerGlow } from "../../../components/effects/PointerGlow";
+import { DrawLine } from "../../../components/effects/DrawLine";
+import { MonthsTrack } from "../../../components/effects/MonthsTrack";
+import { GuaranteeSeal } from "../../../components/effects/GuaranteeSeal";
+import { DelayTimeline } from "../../../components/effects/DelayTimeline";
+import { ChapterRail } from "../../../components/effects/ChapterRail";
+import { PricePattern } from "../../../components/marketing/CountUp";
 import { Link } from "../../../i18n/routing";
 import { buildAlternates } from "../../../lib/seo";
 import {
@@ -83,6 +92,8 @@ export default async function PricingPage({ params }: Props) {
       name: t("easy.start.name"),
       tagline: t("easy.start.tagline"),
       price: t("ui.from", { price: formatUsd(START.price) }),
+      value: START.price,
+      pattern: t("ui.from", { price: "§" }),
       meta: `${t("ui.oneTime")} · ${t("easy.start.weeks")}`,
       features: t.raw("easy.start.features") as string[],
       featured: false,
@@ -92,6 +103,8 @@ export default async function PricingPage({ params }: Props) {
       name: t("easy.monthly.name"),
       tagline: t("easy.monthly.tagline"),
       price: formatUsd(MONTHLY.monthly),
+      value: MONTHLY.monthly,
+      pattern: "§",
       per: t("easy.monthly.per"),
       meta: fill(t.raw("easy.monthly.term") as string),
       features: (t.raw("easy.monthly.features") as string[]).map(fill),
@@ -100,6 +113,15 @@ export default async function PricingPage({ params }: Props) {
     },
   ];
   const steps = t.raw("process.steps") as { title: string; text: string }[];
+  const fromPattern = t("ui.from", { price: "§" });
+  const chapters = [
+    { id: "why", label: t("why.eyebrow") },
+    { id: "packages", label: t("packages.eyebrow") },
+    { id: "easy-start", label: t("easy.eyebrow") },
+    { id: "care", label: t("care.eyebrow") },
+    { id: "add-ons", label: t("addons.eyebrow") },
+    { id: "guarantee", label: t("guarantee.eyebrow") },
+  ];
 
   const pageUrl = `${BASE_URL}/${locale}/pricing`;
   const jsonLd = {
@@ -181,14 +203,16 @@ export default async function PricingPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
       />
       <NavigationBar />
+      <ChapterRail items={chapters} />
 
-      {/* Hero */}
+      {/* Hero: construction lines draw in, then the title, then three facts */}
       <section className="relative pt-40 pb-20 md:pb-28 px-6 lucien-blueprint overflow-hidden">
         <GridLight />
+        <HeroBlueprint />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 h-[480px]"
-          style={{ background: "radial-gradient(40% 60% at 15% 0%, rgba(92,156,255,0.14), transparent)" }}
+          className="breathe pointer-events-none absolute inset-x-0 top-0 h-[480px]"
+          style={{ background: "radial-gradient(40% 60% at 15% 0%, rgba(92,156,255,1), transparent)", ["--breathe-min" as string]: 0.1, ["--breathe-max" as string]: 0.2 }}
         />
         <div className="relative z-10 max-w-6xl mx-auto">
           <div className="hero-fade flex items-center gap-3 mb-6">
@@ -202,14 +226,9 @@ export default async function PricingPage({ params }: Props) {
           <p className="hero-fade mt-8 max-w-2xl text-lg text-neutral-400 leading-relaxed" style={{ ["--d" as string]: "0.25s" }}>
             {t("hero.subtitle")}
           </p>
-          <ul className="hero-fade mt-8 flex flex-wrap gap-3" style={{ ["--d" as string]: "0.35s" }}>
-            {(t.raw("hero.badges") as string[]).map((b) => (
-              <li key={b} className="flex items-center gap-2 border border-white/10 bg-background-deep/70 px-3 py-1.5 font-mono text-xs uppercase tracking-wider text-neutral-300">
-                <span className="w-1.5 h-1.5 bg-primary" aria-hidden="true" />
-                {b}
-              </li>
-            ))}
-          </ul>
+          <div className="mt-10">
+            <TrustStrip items={t.raw("trust") as string[]} />
+          </div>
         </div>
       </section>
 
@@ -229,10 +248,12 @@ export default async function PricingPage({ params }: Props) {
             {PACKAGES.map((p, i) => (
               <Reveal key={p.key} delay={i * 0.08} className="h-full">
                 <article
-                  className={`relative h-full flex flex-col overflow-hidden border p-6 md:p-8 bg-gradient-to-b from-surface-bright to-surface ${
-                    p.featured ? "border-primary/60 shadow-[0_0_60px_-16px_rgba(92,156,255,0.55)]" : "border-white/10"
+                  style={{ ["--accent" as string]: "#5c9cff" }}
+                  className={`group relative isolate h-full flex flex-col overflow-hidden border p-6 md:p-8 bg-gradient-to-b from-surface-bright to-surface transition-transform duration-500 hover:-translate-y-1 ${
+                    p.featured ? "border-transparent border-orbit shadow-[0_0_60px_-16px_rgba(92,156,255,0.55)]" : "border-white/10 hover:border-primary/30"
                   }`}
                 >
+                  <PointerGlow />
                   {p.featured && (
                     <div
                       aria-hidden="true"
@@ -244,7 +265,7 @@ export default async function PricingPage({ params }: Props) {
 
                   <div className="relative flex items-center gap-4">
                     <span className="font-mono text-sm text-primary">{pad2(i + 1)}</span>
-                    <div className="h-px flex-1 bg-white/10" aria-hidden="true" />
+                    <DrawLine delay={0.2 + i * 0.1} />
                     {p.featured && (
                       <span className="border border-primary/50 bg-primary/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-primary">
                         {t("ui.popular")}
@@ -258,7 +279,7 @@ export default async function PricingPage({ params }: Props) {
                   <p className="relative mt-2 text-sm text-neutral-400 leading-relaxed min-h-[2.75rem]">{t(`packages.${p.key}.tagline`)}</p>
 
                   <div className="relative mt-6 font-logo text-4xl md:text-[2.6rem] tracking-tighter text-neutral-50 tabular-nums">
-                    {t("ui.from", { price: formatUsd(p.price) })}
+                    <PricePattern pattern={fromPattern} value={p.price} />
                   </div>
                   <div className="relative mt-2 flex items-center gap-3 font-mono text-[11px] uppercase tracking-wider text-neutral-500">
                     <span>{t("ui.oneTime")}</span>
@@ -308,10 +329,12 @@ export default async function PricingPage({ params }: Props) {
             {easy.map((o, i) => (
               <Reveal key={o.key} delay={i * 0.08} className="h-full">
                 <article
-                  className={`relative h-full flex flex-col overflow-hidden border p-6 md:p-8 bg-gradient-to-b from-surface-bright to-surface ${
-                    o.featured ? "border-primary/60 shadow-[0_0_60px_-16px_rgba(92,156,255,0.55)]" : "border-white/10"
+                  style={{ ["--accent" as string]: "#5c9cff" }}
+                  className={`group relative isolate h-full flex flex-col overflow-hidden border p-6 md:p-8 bg-gradient-to-b from-surface-bright to-surface ${
+                    o.featured ? "border-transparent border-orbit shadow-[0_0_60px_-16px_rgba(92,156,255,0.55)]" : "border-white/10 hover:border-primary/30"
                   }`}
                 >
+                  <PointerGlow />
                   <div aria-hidden="true" className={`absolute left-0 top-0 bottom-0 w-1 ${o.featured ? "bg-primary" : "bg-white/10"}`} />
                   <div className="flex items-start justify-between gap-3">
                     <h3 className="font-logo text-2xl uppercase tracking-tighter text-neutral-50">{o.name}</h3>
@@ -324,10 +347,15 @@ export default async function PricingPage({ params }: Props) {
                   <p className="mt-2 text-sm text-neutral-400 leading-relaxed">{o.tagline}</p>
 
                   <div className="mt-6 flex items-baseline gap-2">
-                    <span className="font-logo text-4xl tracking-tighter text-neutral-50 tabular-nums">{o.price}</span>
+                    <span className="font-logo text-4xl tracking-tighter text-neutral-50 tabular-nums">
+                      <PricePattern pattern={o.pattern} value={o.value} />
+                    </span>
                     {o.per && <span className="font-mono text-xs text-neutral-500 whitespace-nowrap">{o.per}</span>}
                   </div>
                   <div className="mt-2 font-mono text-[11px] uppercase tracking-wider text-neutral-500">{o.meta}</div>
+                  {o.key === "monthly" && (
+                    <MonthsTrack months={MONTHLY.months} label={t("easy.monthly.track", { months: MONTHLY.months })} />
+                  )}
 
                   <ul className="mt-8 space-y-3 flex-1">
                     {o.features.map((f) => (
@@ -473,11 +501,18 @@ export default async function PricingPage({ params }: Props) {
               <Reveal key={g.title} delay={i * 0.08} className="h-full">
                 <div className="relative h-full border border-white/10 bg-gradient-to-b from-surface-bright to-surface p-6 md:p-8">
                   <div aria-hidden="true" className="absolute left-0 top-0 bottom-0 w-1 bg-primary" />
+                  {i === 0 && <GuaranteeSeal text={t("guarantee.seal")} className="absolute -top-8 right-3 md:-top-10 md:right-6" />}
                   <div className="w-12 h-12 flex items-center justify-center border border-primary/40 bg-primary/5 text-primary">
                     <g.icon className="w-6 h-6" aria-hidden="true" />
                   </div>
                   <h3 className="mt-6 font-logo text-xl uppercase tracking-tighter text-neutral-50">{g.title}</h3>
                   <p className="mt-3 text-neutral-400 leading-relaxed">{g.text}</p>
+                  {i === 0 && (
+                    <DelayTimeline
+                      caption={t("guarantee.timelineCaption")}
+                      rows={[1, 2, 3].map((n) => ({ label: t("guarantee.week", { n }), value: n * 10 }))}
+                    />
+                  )}
                 </div>
               </Reveal>
             ))}
@@ -504,7 +539,7 @@ export default async function PricingPage({ params }: Props) {
                 <Reveal delay={i * 0.08} className="h-full p-6 md:p-8">
                   <div className="flex items-center gap-4 mb-6">
                     <span className="font-mono text-sm text-primary">{pad2(i + 1)}</span>
-                    <div className="h-px flex-1 bg-white/10" aria-hidden="true" />
+                    <DrawLine delay={0.15 + i * 0.15} className="bg-primary" />
                   </div>
                   <h3 className="font-logo text-base uppercase tracking-tighter text-neutral-50">{s.title}</h3>
                   <p className="mt-3 text-sm text-neutral-400 leading-relaxed">{s.text}</p>
@@ -549,8 +584,8 @@ export default async function PricingPage({ params }: Props) {
       <section className="relative py-24 md:py-32 px-6 lucien-blueprint border-t border-white/5 overflow-hidden">
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-          style={{ background: "radial-gradient(50% 70% at 50% 100%, rgba(92,156,255,0.16), transparent)" }}
+          className="breathe pointer-events-none absolute inset-0"
+          style={{ background: "radial-gradient(50% 70% at 50% 100%, rgba(92,156,255,1), transparent)", ["--breathe-min" as string]: 0.12, ["--breathe-max" as string]: 0.22 }}
         />
         <Reveal className="relative z-10 max-w-3xl mx-auto text-center flex flex-col items-center">
           <h2 className="font-logo text-3xl md:text-5xl text-neutral-50 uppercase tracking-tighter">
@@ -559,7 +594,7 @@ export default async function PricingPage({ params }: Props) {
           <p className="mt-6 text-lg text-neutral-400 leading-relaxed">{t("final.text")}</p>
           <Link
             href="/#contact"
-            className="group/cta mt-10 inline-flex items-center gap-2 border-2 border-primary bg-primary px-8 py-4 font-mono text-sm uppercase tracking-wider text-white transition-all hover:bg-primary/80"
+            className="cta-halo group/cta relative mt-10 inline-flex items-center gap-2 border-2 border-primary bg-primary px-8 py-4 font-mono text-sm uppercase tracking-wider text-white transition-all hover:bg-primary/80"
           >
             {t("final.button")}
             <ArrowRight className="w-4 h-4 transition-transform group-hover/cta:translate-x-0.5" aria-hidden="true" />

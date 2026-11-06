@@ -28,3 +28,16 @@ export function CountUp({ value }: { value: number }) {
     </span>
   );
 }
+
+// A localized price pattern ("from {price}", "{price}-დან") with only the
+// number animated. Pass the pattern with "§" in place of the price.
+export function PricePattern({ pattern, value, affixClassName = "font-mono text-xs tracking-normal text-neutral-500" }: { pattern: string; value: number; affixClassName?: string }) {
+  const [before, after] = pattern.split("§");
+  return (
+    <span>
+      {before && <span className={`${affixClassName} mr-1.5`}>{before.trim()}</span>}
+      <CountUp value={value} />
+      {after && <span className={affixClassName}>{after}</span>}
+    </span>
+  );
+}

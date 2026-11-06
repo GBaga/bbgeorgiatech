@@ -5,21 +5,8 @@ import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { MonitorSmartphone, ShoppingCart, LifeBuoy, MapPin, ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "../i18n/routing";
-import { CountUp } from "./marketing/CountUp";
+import { PricePattern } from "./marketing/CountUp";
 import { MONTHLY, SERVICE_PRICES, formatUsd } from "../data/pricing";
-
-// Renders a localized price pattern ("from {price}", "{price}-დან / თვეში")
-// with only the number animated.
-function PricePattern({ pattern, value }: { pattern: string; value: number }) {
-  const [before, after] = pattern.split("§");
-  return (
-    <span>
-      {before && <span className="font-mono text-xs tracking-normal text-neutral-500 mr-1.5">{before.trim()}</span>}
-      <CountUp value={value} />
-      {after && <span className="font-mono text-xs tracking-normal text-neutral-500">{after}</span>}
-    </span>
-  );
-}
 
 type ServiceCopy = { title: string; desc: string; chips: string[] };
 
