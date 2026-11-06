@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { ArrowRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "../i18n/routing";
 import { READY_VERTICALS } from "../data/verticals";
@@ -55,7 +55,7 @@ export function Footer() {
                   href={link.href}
                   className="group flex items-center gap-2 font-mono text-sm text-neutral-400 hover:text-white transition-colors"
                 >
-                  <ArrowRight className="w-3 h-3 shrink-0 text-primary group-hover:translate-x-1 transition-all" aria-hidden="true" />
+                  <ChevronRight className="w-3 h-3 shrink-0 text-primary group-hover:translate-x-1 transition-all" aria-hidden="true" />
                   {link.label}
                 </Link>
               ))}
