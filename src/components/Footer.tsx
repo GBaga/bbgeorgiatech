@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "../i18n/routing";
@@ -14,6 +15,15 @@ const LinkedinIcon = ({ className }: { className?: string }) => (
     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
   </svg>
 );
+
+function ColumnLabel({ children }: { children: ReactNode }) {
+  return (
+    <div className="flex items-center gap-3 mb-5">
+      <div className="w-1.5 h-1.5 bg-primary" aria-hidden="true" />
+      <div className="font-mono text-xs tracking-[0.2em] text-primary uppercase">{children}</div>
+    </div>
+  );
+}
 
 export function Footer() {
   const t = useTranslations("Footer");
@@ -34,41 +44,45 @@ export function Footer() {
       <div className="absolute inset-0 z-0 pointer-events-none lucien-blueprint opacity-20" />
 
       <div className="relative z-10 max-w-[1400px] mx-auto">
-        {/* Industry pages */}
-        <div className="mb-14 px-4 pb-12 border-b border-white/5">
-          <div className="flex items-center gap-3 mb-6">
-            <div className="w-1.5 h-1.5 bg-primary" aria-hidden="true" />
-            <div className="font-mono text-xs tracking-[0.2em] text-primary uppercase">{tv("ui.industries")}</div>
+        {/* One row: site pages, industry pages, socials. */}
+        <div className="grid gap-12 md:grid-cols-[auto_1fr_auto] md:gap-16 lg:gap-24 mb-20 px-4">
+          <div>
+            <ColumnLabel>{t("pages")}</ColumnLabel>
+            <nav aria-label={t("pages")} className="flex flex-col gap-3">
+              {links.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="group flex items-center gap-2 font-mono text-sm text-neutral-400 hover:text-white transition-colors"
+                >
+                  <ArrowRight className="w-3 h-3 shrink-0 text-primary group-hover:translate-x-1 transition-all" aria-hidden="true" />
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
           </div>
-          <nav aria-label={tv("ui.industries")} className="grid gap-x-10 gap-y-3 sm:grid-cols-2 lg:grid-cols-4">
-            {READY_VERTICALS.map((v) => (
-              <Link
-                key={v.slug}
-                href={`/for/${v.slug}`}
-                className="group flex items-center gap-2 font-mono text-sm text-neutral-500 hover:text-white transition-colors"
-              >
-                <span className="w-1 h-1 shrink-0" style={{ backgroundColor: v.accent }} aria-hidden="true" />
-                {tv(`${v.key}.name`)}
-              </Link>
-            ))}
-          </nav>
-        </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-20 px-4">
-          <nav className="flex flex-col md:flex-row flex-wrap gap-6 md:gap-10">
-            {links.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="group flex items-center gap-2 font-mono text-sm text-neutral-400 hover:text-white transition-colors"
-              >
-                <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-all" />
-                {link.label}
-              </Link>
-            ))}
-          </nav>
+          <div>
+            <ColumnLabel>{tv("ui.industries")}</ColumnLabel>
+            <nav aria-label={tv("ui.industries")} className="grid grid-cols-2 gap-x-8 gap-y-3 lg:max-w-xl">
+              {READY_VERTICALS.map((v) => (
+                <Link
+                  key={v.slug}
+                  href={`/for/${v.slug}`}
+                  className="group flex items-start gap-2 font-inter text-sm leading-snug text-neutral-500 hover:text-white transition-colors"
+                >
+                  <span
+                    className="mt-[0.45em] w-1 h-1 shrink-0 transition-transform group-hover:scale-150"
+                    style={{ backgroundColor: v.accent }}
+                    aria-hidden="true"
+                  />
+                  {tv(`${v.key}.name`)}
+                </Link>
+              ))}
+            </nav>
+          </div>
 
-          <div className="flex flex-col items-start md:items-end gap-6">
+          <div className="flex flex-col items-start md:items-end md:justify-between gap-6">
             <div className="flex items-center gap-6">
               <a href="https://github.com/GBaga" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white transition-colors group" aria-label="GitHub">
                 <GithubIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -77,7 +91,7 @@ export function Footer() {
                 <LinkedinIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
             </div>
-            <div className="font-mono text-xs text-neutral-500">
+            <div className="font-mono text-xs text-neutral-500 md:text-right">
               © {new Date().getFullYear()} BBGeorgiaTech. {t("allRightsReserved")}
             </div>
           </div>
