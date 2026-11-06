@@ -89,7 +89,7 @@ export function PricingTeaser() {
                   ) : (
                     <CountUp value={c.value} />
                   )}
-                  {c.per && <span className="font-mono text-xs tracking-normal text-neutral-500">{c.per}</span>}
+                  {c.per && <span className="font-mono text-xs tracking-normal text-neutral-500 whitespace-nowrap">{c.per}</span>}
                 </div>
                 <div className="mt-2 flex items-center justify-between font-mono text-[11px] uppercase tracking-wider text-neutral-500">
                   <span>{c.meta}</span>

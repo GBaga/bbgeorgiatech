@@ -15,17 +15,16 @@
     "systems": "Portfolio",
     "heritage": "About Us",
     "initiateProtocol": "Get a Free Quote",
-    "pricing": "Pricing"
+    "pricing": "Pricing",
+    "contact": "Contact"
   },
   "Footer": {
-    "systems": "Portfolio",
-    "contact": "Contact",
     "terms": "Terms & Conditions",
     "privacy": "Privacy Policy",
     "cookie": "Cookie Policy",
     "allRightsReserved": "All rights reserved.",
-    "pricing": "Pricing",
-    "pages": "Pages"
+    "pages": "Pages",
+    "legal": "Legal"
   },
   "Hero": {
     "title1": "We Build",
@@ -638,7 +637,7 @@
         },
         {
           "q": "Can I upgrade later?",
-          "a": "Yes. Start with Launch and add pages, languages, booking or a shop later — you only pay for the added scope."
+          "a": "Yes. Start with the Launch package and add pages, languages, booking or a shop later — you only pay for the added scope."
         }
       ]
     },
@@ -663,7 +662,7 @@
           "Mobile-ready, 1 language",
           "Google Business Profile setup",
           "Basic SEO",
-          "Upgrade to Launch or Business later — pay only the difference"
+          "Upgrade to the Launch or Business package later — pay only the difference"
         ]
       },
       "monthly": {
@@ -675,7 +674,7 @@
           "Everything in the Launch package",
           "Everything in Care: hosting, SSL, backups, updates and monitoring",
           "Pay month by month, starting when work begins",
-          "After {months} months the site is yours; continue on Care for {care} / month or host it yourself"
+          "After {months} months the site is yours; continue on the Care plan for {care} / month or host it yourself"
         ],
         "note": "Cancel any time with 30 days’ notice and pay nothing more — access to the website and the services built for you ends. The partial-refund guarantee doesn’t apply to monthly payment."
       },
@@ -760,14 +759,15 @@
       "projectTitle1": "Built for",
       "projectTitle2": "a Business Like Yours",
       "visit": "Visit site",
-      "recommendEyebrow": "Recommended package",
-      "recommendTitle": "Start with",
+      "recommendEyebrow": "Our recommendation",
       "oneTime": "one-time",
       "otherTitle1": "Other",
       "otherTitle2": "Industries",
       "finalText": "Tell us about your business. We'll recommend the right package and send a fixed quote within 24 hours.",
       "faqTitle1": "Frequently Asked",
-      "faqTitle2": "Questions"
+      "faqTitle2": "Questions",
+      "packageBadge": "package",
+      "packageName": "{name} package"
     },
     "homeServices": {
       "meta": {
@@ -832,7 +832,7 @@
           "text": "Reach expats, tourists and international clients in their own language."
         }
       },
-      "recommend": "Most trades businesses need Launch: a fast site with call buttons, a project gallery and Google Business setup. Choose Business if you want a multi-step quote form, several languages and to update your gallery yourself.",
+      "recommend": "Most trades businesses need the Launch package: a fast site with call buttons, a project gallery and Google Business setup. Choose the Business package if you want a multi-step quote form, several languages and to update your gallery yourself.",
       "faq": [
         {
           "q": "How fast can my site be live?",
@@ -919,7 +919,7 @@
           "text": "Proper multilingual pages with correct SEO for each language, not machine-translated copies."
         }
       },
-      "recommend": "Most firms need Business: up to 12 pages for your practice areas and team, 2–3 languages, consultation booking and articles you publish yourself. Launch works for a solo practitioner with a few core services.",
+      "recommend": "Most firms need the Business package: up to 12 pages for your practice areas and team, 2–3 languages, consultation booking and articles you publish yourself. The Launch package works for a solo practitioner with a few core services.",
       "faq": [
         {
           "q": "Can you write the texts for our services?",
@@ -1006,7 +1006,7 @@
           "text": "Welcome expats and international patients in their own language."
         }
       },
-      "recommend": "Most practices need Business: online booking, specialist profiles, 2–3 languages and texts and prices you can update yourself. A solo therapist can start with Launch and add booking as an add-on.",
+      "recommend": "Most practices need the Business package: online booking, specialist profiles, 2–3 languages and texts and prices you can update yourself. A solo therapist can start with the Launch package and add booking as an add-on.",
       "faq": [
         {
           "q": "Is the site compliant with health-data rules like GDPR or HIPAA?",
@@ -1093,7 +1093,7 @@
           "text": "Your Google reviews shown on the site, where new clients decide."
         }
       },
-      "recommend": "Most salons need Business: online booking, a gallery and price list you update yourself, team profiles and 2–3 languages. A single master can start with Launch and add booking as an add-on.",
+      "recommend": "Most salons need the Business package: online booking, a gallery and price list you update yourself, team profiles and 2–3 languages. A single master can start with the Launch package and add booking as an add-on.",
       "faq": [
         {
           "q": "I already use Booksy or Fresha. Can I keep it?",
@@ -1180,7 +1180,7 @@
           "text": "Guest reviews from Google and other platforms, displayed where travellers decide."
         }
       },
-      "recommend": "Most hospitality businesses need Business: 2–3 languages, booking or inquiry forms, large galleries and content you update yourself. Choose Pro for online payments, a full booking engine or more languages.",
+      "recommend": "Most hospitality businesses need the Business package: 2–3 languages, booking or inquiry forms, large galleries and content you update yourself. Choose the Pro package for online payments, a full booking engine or more languages.",
       "faq": [
         {
           "q": "Should I leave Booking.com or Airbnb?",
@@ -1267,7 +1267,7 @@
           "text": "Work with international clients in their own language."
         }
       },
-      "recommend": "Most creatives start with Launch: up to 5 pages, a strong portfolio, an inquiry form and Google setup. Choose Business if you want to add projects yourself, write a blog or offer bookings in several languages.",
+      "recommend": "Most creatives start with the Launch package: up to 5 pages, a strong portfolio, an inquiry form and Google setup. Choose the Business package if you want to add projects yourself, write a blog or offer bookings in several languages.",
       "faq": [
         {
           "q": "Will big photos and videos make the site slow?",
@@ -1275,7 +1275,7 @@
         },
         {
           "q": "Can I add new projects myself?",
-          "a": "Yes, with the Business package. On Launch, we add new work for you with the edit hours in Care+ or Growth."
+          "a": "Yes, with the Business package. On the Launch package, we add new work for you with the edit hours in Care+ or Growth."
         },
         {
           "q": "Can I sell prints, presets or courses?",
@@ -1354,7 +1354,7 @@
           "text": "Reach international students and expat families in their own language."
         }
       },
-      "recommend": "Most schools need Business: course pages and schedules you edit yourself, a registration form and 2–3 languages. Add online payments as an add-on, or choose Pro for a student portal or a full course platform.",
+      "recommend": "Most schools need the Business package: course pages and schedules you edit yourself, a registration form and 2–3 languages. Add online payments as an add-on, or choose the Pro package for a student portal or a full course platform.",
       "faq": [
         {
           "q": "Can I update the schedule myself every term?",
@@ -1441,11 +1441,11 @@
           "text": "Several languages for tourists and international customers."
         }
       },
-      "recommend": "Most shops need Pro: an online shop with payments, delivery options and up to 5 languages. If you only want to showcase products and take orders by phone or message, start with Business and add a shop later.",
+      "recommend": "Most shops need the Pro package: an online shop with payments, delivery options and up to 5 languages. If you only want to showcase products and take orders by phone or message, start with the Business package and add a shop later.",
       "faq": [
         {
           "q": "How many products can the shop have?",
-          "a": "Pro includes setup for around 100 products. Larger catalogues are possible — we quote them based on size."
+          "a": "The Pro package includes setup for around 100 products. Larger catalogues are possible — we quote them based on size."
         },
         {
           "q": "Can I manage orders and stock myself?",

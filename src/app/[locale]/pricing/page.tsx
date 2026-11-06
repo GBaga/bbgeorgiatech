@@ -325,7 +325,7 @@ export default async function PricingPage({ params }: Props) {
 
                   <div className="mt-6 flex items-baseline gap-2">
                     <span className="font-logo text-4xl tracking-tighter text-neutral-50 tabular-nums">{o.price}</span>
-                    {o.per && <span className="font-mono text-xs text-neutral-500">{o.per}</span>}
+                    {o.per && <span className="font-mono text-xs text-neutral-500 whitespace-nowrap">{o.per}</span>}
                   </div>
                   <div className="mt-2 font-mono text-[11px] uppercase tracking-wider text-neutral-500">{o.meta}</div>
 

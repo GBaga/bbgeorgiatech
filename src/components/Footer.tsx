@@ -3,6 +3,7 @@ import { ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "../i18n/routing";
 import { READY_VERTICALS } from "../data/verticals";
+import { CONTACT_HREF, LEGAL_LINKS, NAV_LINKS } from "../data/navigation";
 
 const GithubIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" stroke="none">
@@ -29,13 +30,12 @@ export function Footer() {
   const t = useTranslations("Footer");
   const tv = useTranslations("Verticals");
 
+  const tn = useTranslations("Navigation");
+
+  // Same pages, labels and order as the header, plus contact.
   const links = [
-    { label: t("systems"), href: "/#systems" },
-    { label: t("pricing"), href: "/pricing" },
-    { label: t("contact"), href: "/#contact" },
-    { label: t("terms"), href: "/terms-and-conditions" },
-    { label: t("privacy"), href: "/privacy-policy" },
-    { label: t("cookie"), href: "/cookie-policy" },
+    ...NAV_LINKS.map((l) => ({ label: tn(l.key), href: l.href })),
+    { label: tn("contact"), href: CONTACT_HREF },
   ];
 
   return (
@@ -45,7 +45,7 @@ export function Footer() {
 
       <div className="relative z-10 max-w-[1400px] mx-auto">
         {/* One row: site pages, industry pages, socials. */}
-        <div className="grid gap-12 md:grid-cols-[auto_1fr_auto] md:gap-16 lg:gap-24 mb-20 px-4">
+        <div className="grid gap-12 md:grid-cols-[auto_1fr_auto] md:gap-16 lg:gap-24 mb-16 px-4">
           <div>
             <ColumnLabel>{t("pages")}</ColumnLabel>
             <nav aria-label={t("pages")} className="flex flex-col gap-3">
@@ -82,18 +82,27 @@ export function Footer() {
             </nav>
           </div>
 
-          <div className="flex flex-col items-start md:items-end md:justify-between gap-6">
-            <div className="flex items-center gap-6">
-              <a href="https://github.com/GBaga" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white transition-colors group" aria-label="GitHub">
-                <GithubIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              </a>
-              <a href="https://www.linkedin.com/in/goga-bagauri" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white transition-colors group" aria-label="LinkedIn">
-                <LinkedinIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              </a>
-            </div>
-            <div className="font-mono text-xs text-neutral-500 md:text-right">
-              © {new Date().getFullYear()} BBGeorgiaTech. {t("allRightsReserved")}
-            </div>
+          <div className="flex items-center gap-6 md:items-start">
+            <a href="https://github.com/GBaga" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white transition-colors group" aria-label="GitHub">
+              <GithubIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            </a>
+            <a href="https://www.linkedin.com/in/goga-bagauri" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white transition-colors group" aria-label="LinkedIn">
+              <LinkedinIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            </a>
+          </div>
+        </div>
+
+        {/* Legal links and copyright */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-12 px-4 pt-6 border-t border-white/5">
+          <nav aria-label={t("legal")} className="flex flex-wrap gap-x-6 gap-y-2">
+            {LEGAL_LINKS.map((l) => (
+              <Link key={l.key} href={l.href} className="font-mono text-xs text-neutral-500 hover:text-white transition-colors">
+                {t(l.key)}
+              </Link>
+            ))}
+          </nav>
+          <div className="font-mono text-xs text-neutral-500">
+            © {new Date().getFullYear()} BBGeorgiaTech. {t("allRightsReserved")}
           </div>
         </div>
 

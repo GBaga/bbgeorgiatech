@@ -15,17 +15,16 @@
     "systems": "Portfolio",
     "heritage": "À Propos",
     "initiateProtocol": "Obtenir un Devis Gratuit",
-    "pricing": "Tarifs"
+    "pricing": "Tarifs",
+    "contact": "Contact"
   },
   "Footer": {
-    "systems": "Portfolio",
-    "contact": "Contact",
     "terms": "Conditions Générales",
     "privacy": "Politique de Confidentialité",
     "cookie": "Politique des Cookies",
     "allRightsReserved": "Tous droits réservés.",
-    "pricing": "Tarifs",
-    "pages": "Pages"
+    "pages": "Pages",
+    "legal": "Mentions légales"
   },
   "Hero": {
     "title1": "Nous Créons",
@@ -638,7 +637,7 @@
         },
         {
           "q": "Puis-je évoluer plus tard ?",
-          "a": "Oui. Commencez avec Launch et ajoutez plus tard des pages, des langues, la réservation ou une boutique — vous ne payez que le périmètre ajouté."
+          "a": "Oui. Commencez avec le forfait Launch et ajoutez plus tard des pages, des langues, la réservation ou une boutique — vous ne payez que le périmètre ajouté."
         }
       ]
     },
@@ -663,7 +662,7 @@
           "Adapté mobile, 1 langue",
           "Configuration de la fiche Google Business",
           "SEO de base",
-          "Passez ensuite à Launch ou Business — vous ne payez que la différence"
+          "Passez ensuite au forfait Launch ou Business — vous ne payez que la différence"
         ]
       },
       "monthly": {
@@ -675,7 +674,7 @@
           "Tout le forfait Launch",
           "Tout le plan Care : hébergement, SSL, sauvegardes, mises à jour et surveillance",
           "Paiement mois par mois, dès le début des travaux",
-          "Après {months} mois, le site est à vous ; continuez avec Care pour {care} / mois ou hébergez-le vous-même"
+          "Après {months} mois, le site est à vous ; continuez avec le plan Care pour {care} / mois ou hébergez-le vous-même"
         ],
         "note": "Résiliable à tout moment avec un préavis de 30 jours, sans rien payer de plus — l’accès au site et aux services réalisés prend alors fin. La garantie de remboursement partiel ne s’applique pas au paiement mensuel."
       },
@@ -760,14 +759,15 @@
       "projectTitle1": "Conçu pour",
       "projectTitle2": "une Entreprise Comme la Vôtre",
       "visit": "Voir le site",
-      "recommendEyebrow": "Forfait recommandé",
-      "recommendTitle": "Commencez avec",
+      "recommendEyebrow": "Notre recommandation",
       "oneTime": "paiement unique",
       "otherTitle1": "Autres",
       "otherTitle2": "Secteurs",
       "finalText": "Parlez-nous de votre activité. Nous vous recommandons le bon forfait et envoyons un devis fixe sous 24 heures.",
       "faqTitle1": "Questions",
-      "faqTitle2": "Fréquentes"
+      "faqTitle2": "Fréquentes",
+      "packageBadge": "forfait",
+      "packageName": "forfait {name}"
     },
     "homeServices": {
       "meta": {
@@ -832,7 +832,7 @@
           "text": "Touchez expatriés, touristes et clients internationaux dans leur propre langue."
         }
       },
-      "recommend": "La plupart des artisans ont besoin de Launch : un site rapide avec boutons d'appel, galerie de réalisations et fiche Google Business. Choisissez Business pour un formulaire de devis en plusieurs étapes, plusieurs langues et une galerie que vous mettez à jour vous-même.",
+      "recommend": "La plupart des artisans ont besoin du forfait Launch : un site rapide avec boutons d'appel, galerie de réalisations et fiche Google Business. Choisissez le forfait Business pour un formulaire de devis en plusieurs étapes, plusieurs langues et une galerie que vous mettez à jour vous-même.",
       "faq": [
         {
           "q": "En combien de temps mon site peut-il être en ligne ?",
@@ -919,7 +919,7 @@
           "text": "De vraies pages multilingues avec un SEO adapté à chaque langue, pas des copies traduites automatiquement."
         }
       },
-      "recommend": "La plupart des cabinets ont besoin de Business : jusqu'à 12 pages pour vos domaines et votre équipe, 2–3 langues, la prise de rendez-vous et des articles que vous publiez vous-même. Launch convient à un praticien indépendant avec quelques services clés.",
+      "recommend": "La plupart des cabinets ont besoin du forfait Business : jusqu'à 12 pages pour vos domaines et votre équipe, 2–3 langues, la prise de rendez-vous et des articles que vous publiez vous-même. Le forfait Launch convient à un praticien indépendant avec quelques services clés.",
       "faq": [
         {
           "q": "Pouvez-vous rédiger les textes de nos services ?",
@@ -1006,7 +1006,7 @@
           "text": "Accueillez expatriés et patients internationaux dans leur langue."
         }
       },
-      "recommend": "La plupart des cabinets ont besoin de Business : réservation en ligne, profils des praticiens, 2–3 langues et des textes et tarifs que vous mettez à jour vous-même. Un thérapeute indépendant peut commencer avec Launch et ajouter la réservation en option.",
+      "recommend": "La plupart des cabinets ont besoin du forfait Business : réservation en ligne, profils des praticiens, 2–3 langues et des textes et tarifs que vous mettez à jour vous-même. Un thérapeute indépendant peut commencer avec le forfait Launch et ajouter la réservation en option.",
       "faq": [
         {
           "q": "Le site respecte-t-il les règles comme le RGPD ou HIPAA ?",
@@ -1093,7 +1093,7 @@
           "text": "Vos avis Google affichés sur le site, là où les nouveaux clients décident."
         }
       },
-      "recommend": "La plupart des salons ont besoin de Business : réservation en ligne, galerie et tarifs que vous mettez à jour, profils de l'équipe et 2–3 langues. Un praticien indépendant peut commencer avec Launch et ajouter la réservation en option.",
+      "recommend": "La plupart des salons ont besoin du forfait Business : réservation en ligne, galerie et tarifs que vous mettez à jour, profils de l'équipe et 2–3 langues. Un praticien indépendant peut commencer avec le forfait Launch et ajouter la réservation en option.",
       "faq": [
         {
           "q": "J'utilise déjà Booksy ou Fresha. Puis-je le garder ?",
@@ -1180,7 +1180,7 @@
           "text": "Les avis de Google et d'autres plateformes, affichés là où les voyageurs décident."
         }
       },
-      "recommend": "La plupart des établissements ont besoin de Business : 2–3 langues, formulaires de réservation ou de demande, grandes galeries et contenu que vous mettez à jour. Choisissez Pro pour le paiement en ligne, un moteur de réservation complet ou plus de langues.",
+      "recommend": "La plupart des établissements ont besoin du forfait Business : 2–3 langues, formulaires de réservation ou de demande, grandes galeries et contenu que vous mettez à jour. Choisissez le forfait Pro pour le paiement en ligne, un moteur de réservation complet ou plus de langues.",
       "faq": [
         {
           "q": "Dois-je quitter Booking.com ou Airbnb ?",
@@ -1188,7 +1188,7 @@
         },
         {
           "q": "Les clients peuvent-ils payer en ligne ?",
-          "a": "Oui. Le paiement en ligne est inclus dans Pro ou disponible en option : Stripe, PayPal ou le système de votre banque."
+          "a": "Oui. Le paiement en ligne est inclus dans le forfait Pro ou disponible en option : Stripe, PayPal ou le système de votre banque."
         },
         {
           "q": "Quelles langues pour mon site ?",
@@ -1267,7 +1267,7 @@
           "text": "Travaillez avec des clients internationaux dans leur langue."
         }
       },
-      "recommend": "La plupart des créatifs commencent avec Launch : jusqu'à 5 pages, un portfolio fort, un formulaire de demande et la configuration Google. Choisissez Business pour ajouter vous-même vos projets, tenir un blog ou proposer la réservation en plusieurs langues.",
+      "recommend": "La plupart des créatifs commencent avec le forfait Launch : jusqu'à 5 pages, un portfolio fort, un formulaire de demande et la configuration Google. Choisissez le forfait Business pour ajouter vous-même vos projets, tenir un blog ou proposer la réservation en plusieurs langues.",
       "faq": [
         {
           "q": "Les grandes photos et vidéos vont-elles ralentir le site ?",
@@ -1275,11 +1275,11 @@
         },
         {
           "q": "Puis-je ajouter de nouveaux projets moi-même ?",
-          "a": "Oui, avec le forfait Business. Avec Launch, nous ajoutons vos nouveaux projets grâce aux heures de modification incluses dans Care+ ou Growth."
+          "a": "Oui, avec le forfait Business. Avec le forfait Launch, nous ajoutons vos nouveaux projets grâce aux heures de modification incluses dans Care+ ou Growth."
         },
         {
           "q": "Puis-je vendre des tirages, presets ou formations ?",
-          "a": "Oui. Une petite boutique ou des téléchargements numériques sont inclus dans Pro ou disponibles en option."
+          "a": "Oui. Une petite boutique ou des téléchargements numériques sont inclus dans le forfait Pro ou disponibles en option."
         },
         {
           "q": "Ai-je besoin d'un logo au préalable ?",
@@ -1354,7 +1354,7 @@
           "text": "Touchez élèves internationaux et familles expatriées dans leur langue."
         }
       },
-      "recommend": "La plupart des écoles ont besoin de Business : pages de cours et planning modifiables, formulaire d'inscription et 2–3 langues. Ajoutez le paiement en ligne en option, ou choisissez Pro pour un espace élève ou une plateforme de cours complète.",
+      "recommend": "La plupart des écoles ont besoin du forfait Business : pages de cours et planning modifiables, formulaire d'inscription et 2–3 langues. Ajoutez le paiement en ligne en option, ou choisissez le forfait Pro pour un espace élève ou une plateforme de cours complète.",
       "faq": [
         {
           "q": "Puis-je mettre à jour le planning moi-même à chaque session ?",
@@ -1441,11 +1441,11 @@
           "text": "Plusieurs langues pour les touristes et les clients internationaux."
         }
       },
-      "recommend": "La plupart des commerces ont besoin de Pro : une boutique en ligne avec paiement, options de livraison et jusqu'à 5 langues. Si vous voulez seulement présenter vos produits et prendre les commandes par téléphone ou message, commencez avec Business et ajoutez une boutique plus tard.",
+      "recommend": "La plupart des commerces ont besoin du forfait Pro : une boutique en ligne avec paiement, options de livraison et jusqu'à 5 langues. Si vous voulez seulement présenter vos produits et prendre les commandes par téléphone ou message, commencez avec le forfait Business et ajoutez une boutique plus tard.",
       "faq": [
         {
           "q": "Combien de produits la boutique peut-elle contenir ?",
-          "a": "Pro inclut la mise en place d'environ 100 produits. Des catalogues plus grands sont possibles — nous les chiffrons selon leur taille."
+          "a": "Le forfait Pro inclut la mise en place d'environ 100 produits. Des catalogues plus grands sont possibles — nous les chiffrons selon leur taille."
         },
         {
           "q": "Puis-je gérer commandes et stock moi-même ?",

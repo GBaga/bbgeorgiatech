@@ -6,6 +6,7 @@ import { ArrowRight, ArrowUpRight, Lock } from "lucide-react";
 import { NavigationBar } from "../../../../components/NavigationBar";
 import { Footer } from "../../../../components/Footer";
 import { GridLight } from "../../../../components/HeroSection";
+import { TypeBadge } from "../../../../components/marketing/TypeBadge";
 import { Reveal } from "../../../../components/marketing/Reveal";
 import { SectionHeader } from "../../../../components/marketing/SectionHeader";
 import { FaqList } from "../../../../components/marketing/FaqList";
@@ -47,6 +48,8 @@ export default async function VerticalPage({ params }: Props) {
   const k = v.key;
   const accent = v.accent;
   const pkg = PACKAGES.find((p) => p.key === v.recommended) ?? PACKAGES[0];
+  const pkgName = tp(`packages.${pkg.key}.name`);
+  const spokenName = t("ui.packageName", { name: pkgName });
   const project = v.project ? PROJECTS[v.project] : undefined;
   const problems = t.raw(`${k}.problems`) as { title: string; text: string }[];
   const faqs = t.raw(`${k}.faq`) as { q: string; a: string }[];
@@ -275,7 +278,23 @@ export default async function VerticalPage({ params }: Props) {
                     <div className="font-mono text-xs tracking-[0.2em] text-primary uppercase">{t("ui.recommendEyebrow")}</div>
                   </div>
                   <h2 className="font-logo text-3xl md:text-4xl text-neutral-50 uppercase tracking-tighter">
-                    {t("ui.recommendTitle")} <span className="text-primary">{tp(`packages.${pkg.key}.name`)}</span>
+                    {/* Visually "Business [package]". Where the language puts the word
+                        first ("forfait Business"), assistive tech gets the natural
+                        order and the visual version is hidden from it. */}
+                    {spokenName === `${pkgName} ${t("ui.packageBadge")}` ? (
+                      <>
+                        <span className="text-primary">{pkgName}</span>
+                        <TypeBadge>{t("ui.packageBadge")}</TypeBadge>
+                      </>
+                    ) : (
+                      <>
+                        <span className="sr-only">{spokenName}</span>
+                        <span aria-hidden="true">
+                          <span className="text-primary">{pkgName}</span>
+                          <TypeBadge>{t("ui.packageBadge")}</TypeBadge>
+                        </span>
+                      </>
+                    )}
                   </h2>
                   <p className="mt-4 max-w-2xl text-neutral-400 leading-relaxed">{t(`${k}.recommend`)}</p>
                 </div>

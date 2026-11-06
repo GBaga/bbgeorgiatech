@@ -8,6 +8,7 @@ import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { READY_VERTICALS } from "../data/verticals";
 import { MONTHLY, formatUsd } from "../data/pricing";
+import { CONTACT_HREF, INDUSTRIES_AFTER, NAV_LINKS, type NavKey } from "../data/navigation";
 
 const BrandIcon = () => (
   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-neutral-50 transition-colors group flex-shrink-0">
@@ -20,11 +21,13 @@ const BrandIcon = () => (
   </svg>
 );
 
-type NavKey = "competencies" | "systems" | "pricing" | "industries" | "heritage";
+// Everything the "you are here" indicator can point at: the shared page links
+// plus the industries dropdown.
+type ActiveKey = NavKey | "industries";
 
 // Home-page section id -> the nav item it belongs to. Sections without a nav
 // item (hero, process, faq…) clear the indicator.
-const SECTION_TO_NAV: Record<string, NavKey | null> = {
+const SECTION_TO_NAV: Record<string, ActiveKey | null> = {
   hero: null,
   competencies: "competencies",
   industries: "industries",
@@ -41,10 +44,10 @@ const SECTION_TO_NAV: Record<string, NavKey | null> = {
 
 // Which nav item is "where you are": the page on inner pages, the section
 // crossing the middle of the viewport on the home page.
-function useActiveNav(): NavKey | null {
+function useActiveNav(): ActiveKey | null {
   const pathname = usePathname();
   const isHome = pathname === "/";
-  const [section, setSection] = useState<NavKey | null>(null);
+  const [section, setSection] = useState<ActiveKey | null>(null);
 
   useEffect(() => {
     if (!isHome) return;
@@ -165,7 +168,7 @@ function IndustriesMenu({ active, open, setOpen }: { active: boolean; open: bool
               className="relative w-[min(44rem,calc(100vw-3rem))] overflow-hidden border border-white/10 bg-background-deep/95 backdrop-blur-xl shadow-[0_30px_80px_-30px_rgba(0,0,0,0.8)]"
             >
               <div className="absolute inset-0 pointer-events-none lucien-blueprint opacity-30" aria-hidden="true" />
-              <div className="relative grid grid-cols-[1fr_13rem]">
+              <div className="relative grid grid-cols-[1fr_14.5rem]">
                 <div className="p-6">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-1.5 h-1.5 bg-primary" aria-hidden="true" />
@@ -211,7 +214,7 @@ function IndustriesMenu({ active, open, setOpen }: { active: boolean; open: bool
                     <div className="mt-4 font-heading text-sm font-semibold text-neutral-200">{tp("easy.monthly.name")}</div>
                     <div className="mt-2 flex items-baseline gap-1.5 font-logo text-3xl tracking-tighter text-neutral-50">
                       {formatUsd(MONTHLY.monthly)}
-                      <span className="font-mono text-xs tracking-normal text-neutral-500">{tp("easy.monthly.per")}</span>
+                      <span className="font-mono text-xs tracking-normal text-neutral-500 whitespace-nowrap">{tp("easy.monthly.per")}</span>
                     </div>
                   </div>
                   <span className="mt-6 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-primary group-hover:text-white transition-colors">
@@ -232,14 +235,9 @@ export function NavigationBar() {
   const t = useTranslations("Navigation");
   const tv = useTranslations("Verticals");
 
-  const navLinks: { key: NavKey; label: string; href: string }[] = [
-    { key: "competencies", label: t("competencies"), href: "/#competencies" },
-    { key: "systems", label: t("systems"), href: "/#systems" },
-    { key: "pricing", label: t("pricing"), href: "/pricing" },
-    { key: "heritage", label: t("heritage"), href: "/#heritage" },
-  ];
-  // Same order as the home-page sections; the industries dropdown sits right after "competencies".
-  const industriesAfter = navLinks.findIndex((l) => l.key === "competencies");
+  const navLinks = NAV_LINKS.map((l) => ({ ...l, label: t(l.key) }));
+  // The industries dropdown sits right after INDUSTRIES_AFTER (see data/navigation).
+  const industriesAfter = navLinks.findIndex((l) => l.key === INDUSTRIES_AFTER);
 
   const active = useActiveNav();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -319,7 +317,7 @@ export function NavigationBar() {
           {/* Execution Button & Language */}
           <div className="hidden lg:flex items-center">
             <Link
-              href="/#contact"
+              href={CONTACT_HREF}
               className="flex items-center gap-2 px-6 py-2 border-2 border-primary/50 text-primary hover:bg-primary hover:text-white font-mono text-sm uppercase tracking-wider transition-all"
             >
               <Terminal className="w-4 h-4" />
@@ -436,7 +434,7 @@ export function NavigationBar() {
                 ))}
 
                 <Link
-                  href="/#contact"
+                  href={CONTACT_HREF}
                   onClick={closeMobile}
                   className="mt-8 flex items-center justify-center gap-2 w-full py-4 border-2 border-primary text-primary hover:bg-primary hover:text-white font-mono text-lg uppercase tracking-wider transition-all"
                 >

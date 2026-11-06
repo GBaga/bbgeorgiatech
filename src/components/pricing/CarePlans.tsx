@@ -84,7 +84,7 @@ export function CarePlans() {
                     {formatUsd(amount)}
                   </motion.span>
                 </AnimatePresence>
-                <span className="font-mono text-xs text-neutral-500">{yearly ? t("care.perYear") : t("care.perMonth")}</span>
+                <span className="font-mono text-xs text-neutral-500 whitespace-nowrap">{yearly ? t("care.perYear") : t("care.perMonth")}</span>
               </div>
               <div className="h-5 font-mono text-[11px] text-neutral-500">
                 {yearly && t("care.equivalent", { amount: formatUsd(Math.round(amount / 12)) })}
