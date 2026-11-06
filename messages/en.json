@@ -182,6 +182,8 @@
       "On-time delivery guarantee: if we miss the agreed launch date for reasons on our side, you receive a 10% discount on the project price for each full week of delay, up to a maximum of 30%. The discount is deducted from the final payment.",
       "The launch date moves accordingly when a delay is caused on your side — for example late content, materials, feedback, approvals or payments — or by changes to the agreed scope.",
       "Partial refund: if you are not satisfied with the design concept after two rounds of revisions, you may end the project before development starts. We then refund 50% of your deposit; the rest covers the design work already done. Once development has started, the deposit is no longer refundable.",
+      "Monthly payment plan: instead of the 50/50 payment above, the Launch website and the Care plan can be paid in monthly instalments over the term shown on the pricing page, starting when work begins. The partial refund guarantee does not apply to the monthly payment plan.",
+      "You may cancel the monthly payment plan at any time with 30 days’ notice and you owe nothing further. On cancellation, access to the website and to the services built for you ends. Once all instalments are paid, the website belongs to you and you may continue with a care plan or host it yourself.",
       "Ownership: after full payment, the website, its design and its code belong to you.",
       "Care plans are billed in advance, monthly or yearly (yearly includes 2 months free), and can be cancelled with 30 days’ written notice. Unused hours do not roll over to the next month.",
       "If you cancel a yearly care plan early, we refund the amount paid in proportion to the full months remaining.",
@@ -561,6 +563,10 @@
           "a": "The final price depends on the number of pages, languages and features. After a free consultation you get a fixed quote, and the price doesn't change unless the scope does."
         },
         {
+          "q": "Can I pay monthly instead of upfront?",
+          "a": "Yes. With Launch Monthly you pay {monthly} a month for {months} months, covering both the Launch website and the Care plan. You can cancel any time and pay nothing more; access to the site then ends. After {months} months the site is yours."
+        },
+        {
           "q": "Are prices the same in every country?",
           "a": "Yes. All prices are in US dollars, wherever your business is."
         },
@@ -587,6 +593,104 @@
       "title2": "package fits?",
       "text": "Tell us about your business. We'll recommend the right package and send a fixed quote within 24 hours.",
       "button": "Get a free consultation"
+    },
+    "easy": {
+      "eyebrow": "Easier start",
+      "title1": "Easier",
+      "title2": "Ways to Start",
+      "subtitle": "Not ready for a full package? Start small, or spread the cost over the year.",
+      "start": {
+        "name": "Start",
+        "tagline": "One page that gets you found and gets you calls — upgrade any time.",
+        "weeks": "~1 week",
+        "features": [
+          "One page with your services, photos and contact details",
+          "Call & WhatsApp buttons, Google Maps",
+          "Mobile-ready, 1 language",
+          "Google Business Profile setup",
+          "Basic SEO",
+          "Upgrade to Launch or Business later — pay only the difference"
+        ]
+      },
+      "monthly": {
+        "name": "Launch Monthly",
+        "tagline": "The Launch website and the Care plan together, paid monthly — no large upfront payment.",
+        "per": "/ month",
+        "term": "{months}-month plan",
+        "features": [
+          "Everything in the Launch package",
+          "Everything in Care: hosting, SSL, backups, updates and monitoring",
+          "Pay month by month, starting when work begins",
+          "After {months} months the site is yours; continue on Care for {care} / month or host it yourself"
+        ],
+        "note": "Cancel any time with 30 days’ notice and pay nothing more — access to the website and the services built for you ends. The partial-refund guarantee doesn’t apply to monthly payment."
+      },
+      "badge": "Easiest start"
+    },
+    "why": {
+      "eyebrow": "Why a website",
+      "title1": "People are already looking for you.",
+      "title2": "The question is whether they find you.",
+      "subtitle": "When someone needs a tradesperson, a doctor or a place to stay, they search Google first. If you aren’t there, they call your competitor — and you never even hear about it.",
+      "scenarios": [
+        {
+          "time": "23:04",
+          "title": "The late-night call",
+          "text": "A pipe bursts in someone’s kitchen. Nobody answers their message on Facebook. They search Google for “plumber near me” and call the first business with a “Call now” button on its website.",
+          "punch": "Your website takes orders even while you sleep."
+        },
+        {
+          "time": "11:30",
+          "title": "“How much?” a hundred times a day",
+          "text": "You answer the same question between clients — by phone, on Instagram, on WhatsApp. On a website, your services, prices and hours are written once.",
+          "punch": "Fewer messages, more time for the work."
+        },
+        {
+          "time": "16:45",
+          "title": "The visitor who can’t read your language",
+          "text": "A tourist or expat looks for the best place in town. Your Instagram is in one language; your competitor’s website is in three.",
+          "punch": "Your site speaks your language — and your client’s."
+        },
+        {
+          "time": "09:00",
+          "title": "Instagram isn’t yours",
+          "text": "Algorithms change, accounts get blocked, fewer people see each post. Your website and domain belong to you — and a business with a website simply looks more serious.",
+          "punch": "Social media introduces you. A website earns trust."
+        },
+        {
+          "time": "14:20",
+          "title": "A question to ChatGPT",
+          "text": "More and more people ask AI assistants “who’s a good dentist near me?”. AI recommends the businesses it can find clear information about online.",
+          "punch": "A website lets AI know you exist."
+        }
+      ],
+      "calc": {
+        "eyebrow": "Simple math",
+        "title": "Does it pay off?",
+        "label": "How much does one client bring you, on average?",
+        "lead": "{name} ({monthly} / month) pays for itself with",
+        "result": "{n, plural, one {# extra client} other {# extra clients}} a month.",
+        "rest": "Everything above that is profit.",
+        "note": "An example, not a guarantee."
+      },
+      "doubtsTitle": "Common doubts",
+      "doubts": [
+        {
+          "q": "“My clients already know me.”",
+          "a": "Your regulars do. New clients meet you through Google."
+        },
+        {
+          "q": "“Facebook is enough.”",
+          "a": "Facebook is for conversation. A website is for decisions."
+        },
+        {
+          "q": "“It’s expensive.”",
+          "a": "{monthly} a month — often less than a single month of advertising."
+        }
+      ],
+      "closing1": "We don’t promise miracles.",
+      "closing2": "We promise that when people look for you, they’ll find you.",
+      "ctaText": "In a free consultation, we’ll show you how people search for your service on Google right now."
     }
   },
   "Verticals": {

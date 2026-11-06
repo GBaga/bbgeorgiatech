@@ -182,6 +182,8 @@
       "Garantie de délai : si nous dépassons la date de lancement convenue pour des raisons qui nous incombent, vous bénéficiez d’une remise de 10 % sur le prix du projet par semaine complète de retard, dans la limite de 30 %. La remise est déduite du paiement final.",
       "La date de lancement est décalée d’autant lorsqu’un retard vient de votre côté — par exemple contenu, documents, retours, validations ou paiements tardifs — ou d’une modification du périmètre convenu.",
       "Remboursement partiel : si le concept de design ne vous satisfait pas après deux séries de révisions, vous pouvez mettre fin au projet avant le début du développement. Nous remboursons alors 50 % de votre acompte ; le reste couvre le travail de design déjà réalisé. Une fois le développement commencé, l’acompte n’est plus remboursable.",
+      "Paiement mensuel : au lieu du paiement 50/50 ci-dessus, le site Launch et le plan Care peuvent être payés en mensualités sur la durée indiquée sur la page des tarifs, à partir du début des travaux. La garantie de remboursement partiel ne s’applique pas au paiement mensuel.",
+      "Vous pouvez résilier le paiement mensuel à tout moment avec un préavis de 30 jours, sans rien devoir de plus. À la résiliation, l’accès au site et aux services réalisés pour vous prend fin. Une fois toutes les mensualités payées, le site vous appartient et vous pouvez poursuivre avec un plan de maintenance ou l’héberger vous-même.",
       "Propriété : après paiement intégral, le site, son design et son code vous appartiennent.",
       "Les plans de maintenance sont facturés d’avance, au mois ou à l’année (l’annuel inclut 2 mois offerts), et peuvent être résiliés avec un préavis écrit de 30 jours. Les heures non utilisées ne sont pas reportées au mois suivant.",
       "Si vous résiliez un plan de maintenance annuel avant son terme, nous remboursons le montant payé au prorata des mois complets restants.",
@@ -561,6 +563,10 @@
           "a": "Le prix final dépend du nombre de pages, de langues et de fonctionnalités. Après une consultation gratuite, vous recevez un devis fixe, et le prix ne change pas tant que le périmètre reste le même."
         },
         {
+          "q": "Puis-je payer au mois plutôt qu’en une fois ?",
+          "a": "Oui. Avec Launch Mensuel, vous payez {monthly} par mois pendant {months} mois, pour le site Launch et le plan Care. Vous pouvez résilier à tout moment sans rien payer de plus ; l’accès au site prend alors fin. Après {months} mois, le site est à vous."
+        },
+        {
           "q": "Les prix sont-ils les mêmes dans tous les pays ?",
           "a": "Oui. Tous les prix sont en dollars américains, où que se trouve votre entreprise."
         },
@@ -587,6 +593,104 @@
       "title2": "les forfaits ?",
       "text": "Parlez-nous de votre activité. Nous vous recommandons le bon forfait et envoyons un devis fixe sous 24 heures.",
       "button": "Consultation gratuite"
+    },
+    "easy": {
+      "eyebrow": "Démarrage facile",
+      "title1": "Démarrer",
+      "title2": "Plus Facilement",
+      "subtitle": "Pas prêt pour un forfait complet ? Commencez petit, ou étalez le coût sur l’année.",
+      "start": {
+        "name": "Start",
+        "tagline": "Une page qui vous rend visible et fait sonner le téléphone — évolutive à tout moment.",
+        "weeks": "~1 semaine",
+        "features": [
+          "Une page avec vos services, photos et coordonnées",
+          "Boutons d’appel et WhatsApp, Google Maps",
+          "Adapté mobile, 1 langue",
+          "Configuration de la fiche Google Business",
+          "SEO de base",
+          "Passez ensuite à Launch ou Business — vous ne payez que la différence"
+        ]
+      },
+      "monthly": {
+        "name": "Launch Mensuel",
+        "tagline": "Le site Launch et le plan Care ensemble, payés au mois — sans gros paiement initial.",
+        "per": "/ mois",
+        "term": "Engagement de {months} mois",
+        "features": [
+          "Tout le forfait Launch",
+          "Tout le plan Care : hébergement, SSL, sauvegardes, mises à jour et surveillance",
+          "Paiement mois par mois, dès le début des travaux",
+          "Après {months} mois, le site est à vous ; continuez avec Care pour {care} / mois ou hébergez-le vous-même"
+        ],
+        "note": "Résiliable à tout moment avec un préavis de 30 jours, sans rien payer de plus — l’accès au site et aux services réalisés prend alors fin. La garantie de remboursement partiel ne s’applique pas au paiement mensuel."
+      },
+      "badge": "Le plus simple"
+    },
+    "why": {
+      "eyebrow": "Pourquoi un site",
+      "title1": "On vous cherche déjà.",
+      "title2": "La question, c’est de savoir si on vous trouve.",
+      "subtitle": "Quand quelqu’un a besoin d’un artisan, d’un médecin ou d’un hébergement, il commence par Google. Si vous n’y êtes pas, il appelle votre concurrent — et vous n’en saurez jamais rien.",
+      "scenarios": [
+        {
+          "time": "23:04",
+          "title": "L’appel de nuit",
+          "text": "Une canalisation éclate dans une cuisine. Personne ne répond au message sur Facebook. On cherche « plombier près de chez moi » sur Google et on appelle la première entreprise qui a un bouton « Appeler » sur son site.",
+          "punch": "Votre site prend des commandes même quand vous dormez."
+        },
+        {
+          "time": "11:30",
+          "title": "« C’est combien ? » cent fois par jour",
+          "text": "Vous répondez à la même question entre deux clients — au téléphone, sur Instagram, sur WhatsApp. Sur un site, vos services, prix et horaires sont écrits une fois pour toutes.",
+          "punch": "Moins de messages, plus de temps pour le travail."
+        },
+        {
+          "time": "16:45",
+          "title": "Le visiteur qui ne lit pas votre langue",
+          "text": "Un touriste ou un expatrié cherche la meilleure adresse en ville. Votre Instagram est dans une seule langue ; le site de votre concurrent, en trois.",
+          "punch": "Votre site parle votre langue — et celle de vos clients."
+        },
+        {
+          "time": "09:00",
+          "title": "Instagram ne vous appartient pas",
+          "text": "Les algorithmes changent, les comptes sont bloqués, chaque publication touche moins de monde. Votre site et votre domaine sont à vous — et une entreprise avec un site paraît tout simplement plus sérieuse.",
+          "punch": "Les réseaux vous présentent. Un site inspire confiance."
+        },
+        {
+          "time": "14:20",
+          "title": "Une question à ChatGPT",
+          "text": "De plus en plus de gens demandent aux assistants IA « quel bon dentiste près de chez moi ? ». L’IA recommande les entreprises sur lesquelles elle trouve des informations claires en ligne.",
+          "punch": "Un site fait savoir à l’IA que vous existez."
+        }
+      ],
+      "calc": {
+        "eyebrow": "Calcul simple",
+        "title": "Est-ce rentable ?",
+        "label": "Combien vous rapporte un client, en moyenne ?",
+        "lead": "{name} ({monthly} / mois) est remboursé avec",
+        "result": "{n, plural, one {# client supplémentaire} other {# clients supplémentaires}} par mois.",
+        "rest": "Tout le reste est du bénéfice.",
+        "note": "Un exemple, pas une garantie."
+      },
+      "doubtsTitle": "Doutes fréquents",
+      "doubts": [
+        {
+          "q": "« Mes clients me connaissent déjà. »",
+          "a": "Vos habitués, oui. Les nouveaux vous découvrent via Google."
+        },
+        {
+          "q": "« Facebook me suffit. »",
+          "a": "Facebook sert à discuter. Un site sert à décider."
+        },
+        {
+          "q": "« C’est cher. »",
+          "a": "{monthly} par mois — souvent moins qu’un seul mois de publicité."
+        }
+      ],
+      "closing1": "Nous ne promettons pas de miracles.",
+      "closing2": "Nous promettons que lorsqu’on vous cherchera, on vous trouvera.",
+      "ctaText": "Lors d’une consultation gratuite, nous vous montrons comment on cherche votre service sur Google en ce moment."
     }
   },
   "Verticals": {

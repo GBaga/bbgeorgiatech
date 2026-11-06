@@ -1,5 +1,5 @@
 import en from "../../../messages/en.json";
-import { ADDON_GROUPS, CARE_PLANS, PACKAGES, formatUsd } from "../../data/pricing";
+import { ADDON_GROUPS, CARE_PLANS, MONTHLY, PACKAGES, START, formatUsd } from "../../data/pricing";
 import { PROJECTS, READY_VERTICALS } from "../../data/verticals";
 
 // /llms.txt — a plain-Markdown summary for AI assistants. Generated from the
@@ -33,6 +33,11 @@ export function GET() {
       const m = p.packages[pkg.key];
       return `- **${m.name}** — from ${formatUsd(pkg.price)}, ${m.weeks}. ${m.tagline} Includes: ${m.features.join("; ")}.`;
     }),
+    "",
+    "### Easier ways to start",
+    "",
+    `- **${p.easy.start.name}** — from ${formatUsd(START.price)}, ${p.easy.start.weeks}. ${p.easy.start.tagline} Includes: ${p.easy.start.features.join("; ")}.`,
+    `- **${p.easy.monthly.name}** — ${formatUsd(MONTHLY.monthly)} / month for ${MONTHLY.months} months. ${p.easy.monthly.tagline} ${p.easy.monthly.note}`,
     "",
     "### Monthly care plans",
     "",

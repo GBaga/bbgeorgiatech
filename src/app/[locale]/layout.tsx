@@ -9,7 +9,7 @@ import { AnalyticsGate } from "../../components/AnalyticsGate";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import { buildAlternates } from '../../lib/seo';
-import { CARE_PLANS, CURRENCY, PACKAGES, formatUsd } from '../../data/pricing';
+import { CARE_PLANS, CURRENCY, MONTHLY, PACKAGES, START, formatUsd } from '../../data/pricing';
 
 const fontLogo = Michroma({
   variable: "--font-logo",
@@ -95,7 +95,7 @@ export default async function RootLayout({
         "description": "Fixed-price website design, development and maintenance for small businesses worldwide",
         "areaServed": "Worldwide",
         "knowsAbout": ["Website Design", "Web Development", "E-Commerce", "Website Maintenance", "SEO", "Multilingual Websites", "Small Business Websites"],
-        "priceRange": `${formatUsd(PACKAGES[0].price)}+`,
+        "priceRange": `${formatUsd(START.price)}+`,
         "currenciesAccepted": CURRENCY,
         "email": "bbgeorgiatech@gmail.com",
         "sameAs": [
@@ -116,6 +116,24 @@ export default async function RootLayout({
           "url": `https://bbgeorgiatech.com/${resolvedParams.locale}/pricing`,
           // Same numbers as /pricing (src/data/pricing.ts)
           "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Website package: Start",
+              "itemOffered": { "@type": "Service", "name": "One-page Website" },
+              "priceSpecification": { "@type": "PriceSpecification", "minPrice": START.price, "priceCurrency": CURRENCY },
+            },
+            {
+              "@type": "Offer",
+              "name": "Launch Monthly",
+              "itemOffered": { "@type": "Service", "name": "Website Design & Development with Maintenance" },
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": MONTHLY.monthly,
+                "priceCurrency": CURRENCY,
+                "unitCode": "MON",
+                "billingDuration": MONTHLY.months,
+              },
+            },
             ...PACKAGES.map((p) => ({
               "@type": "Offer",
               "name": `Website package: ${p.key[0].toUpperCase()}${p.key.slice(1)}`,

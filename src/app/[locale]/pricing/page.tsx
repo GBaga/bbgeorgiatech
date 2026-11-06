@@ -9,6 +9,7 @@ import { SectionHeader } from "../../../components/marketing/SectionHeader";
 import { FaqList } from "../../../components/marketing/FaqList";
 import { CompareTable, type ResolvedCell } from "../../../components/pricing/CompareTable";
 import { CarePlans } from "../../../components/pricing/CarePlans";
+import { WhyWebsite } from "../../../components/pricing/WhyWebsite";
 import { Link } from "../../../i18n/routing";
 import { buildAlternates } from "../../../lib/seo";
 import {
@@ -16,7 +17,9 @@ import {
   CARE_PLANS,
   CARE_ROWS,
   CURRENCY,
+  MONTHLY,
   PACKAGES,
+  START,
   PACKAGE_ROWS,
   formatUsd,
   pad2,
@@ -34,7 +37,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "Pricing" });
   const title = t("meta.title");
   const description = t("meta.description", {
-    launch: formatUsd(PACKAGES[0].price),
+    launch: formatUsd(START.price),
     care: formatUsd(CARE_PLANS[0].monthly),
   });
 
@@ -65,10 +68,36 @@ export default async function PricingPage({ params }: Props) {
   const packageColumns = PACKAGES.map((p) => ({ name: t(`packages.${p.key}.name`), featured: p.featured }));
   const careColumns = CARE_PLANS.map((p) => ({ name: t(`care.plans.${p.key}.name`), featured: p.featured }));
 
-  const faqs = (t.raw("faq.items") as { q: string; a: string }[]).map((f) => ({
-    q: f.q,
-    a: f.a.replace("{rate}", `${formatUsd(HOURLY)} ${t("addons.units.perHour")}`),
-  }));
+  // t.raw() skips ICU formatting, so fill the few placeholders here
+  const fill = (s: string) =>
+    s
+      .replaceAll("{rate}", `${formatUsd(HOURLY)} ${t("addons.units.perHour")}`)
+      .replaceAll("{monthly}", formatUsd(MONTHLY.monthly))
+      .replaceAll("{months}", String(MONTHLY.months))
+      .replaceAll("{care}", formatUsd(CARE_PLANS[0].monthly));
+  const faqs = (t.raw("faq.items") as { q: string; a: string }[]).map((f) => ({ q: f.q, a: fill(f.a) }));
+  const easy = [
+    {
+      key: "start",
+      name: t("easy.start.name"),
+      tagline: t("easy.start.tagline"),
+      price: t("ui.from", { price: formatUsd(START.price) }),
+      meta: `${t("ui.oneTime")} · ${t("easy.start.weeks")}`,
+      features: t.raw("easy.start.features") as string[],
+      featured: false,
+    },
+    {
+      key: "monthly",
+      name: t("easy.monthly.name"),
+      tagline: t("easy.monthly.tagline"),
+      price: formatUsd(MONTHLY.monthly),
+      per: t("easy.monthly.per"),
+      meta: fill(t.raw("easy.monthly.term") as string),
+      features: (t.raw("easy.monthly.features") as string[]).map(fill),
+      note: t("easy.monthly.note"),
+      featured: true,
+    },
+  ];
   const steps = t.raw("process.steps") as { title: string; text: string }[];
 
   const pageUrl = `${BASE_URL}/${locale}/pricing`;
@@ -87,6 +116,24 @@ export default async function PricingPage({ params }: Props) {
           "@type": "OfferCatalog",
           name: t("packages.title2"),
           itemListElement: [
+            {
+              "@type": "Offer",
+              name: t("easy.start.name"),
+              description: t("easy.start.tagline"),
+              priceSpecification: { "@type": "PriceSpecification", minPrice: START.price, priceCurrency: CURRENCY },
+            },
+            {
+              "@type": "Offer",
+              name: t("easy.monthly.name"),
+              description: t("easy.monthly.tagline"),
+              priceSpecification: {
+                "@type": "UnitPriceSpecification",
+                price: MONTHLY.monthly,
+                priceCurrency: CURRENCY,
+                unitCode: "MON",
+                billingDuration: MONTHLY.months,
+              },
+            },
             ...PACKAGES.map((p) => ({
               "@type": "Offer",
               name: t(`packages.${p.key}.name`),
@@ -165,6 +212,9 @@ export default async function PricingPage({ params }: Props) {
         </div>
       </section>
 
+      {/* Why a website: value before price */}
+      <WhyWebsite />
+
       {/* Packages */}
       <section id="packages" className="relative py-24 px-6 bg-background-deep border-t border-white/5">
         <div className="max-w-6xl mx-auto">
@@ -230,6 +280,73 @@ export default async function PricingPage({ params }: Props) {
                     href="/#contact"
                     className={`group/cta relative mt-8 inline-flex justify-center items-center gap-2 border-2 px-5 py-3 font-mono text-sm uppercase tracking-wider transition-all ${
                       p.featured
+                        ? "border-primary bg-primary text-white hover:bg-primary/80"
+                        : "border-primary/50 text-primary hover:bg-primary hover:text-white"
+                    }`}
+                  >
+                    {t("ui.getStarted")}
+                    <ArrowRight className="w-4 h-4 transition-transform group-hover/cta:translate-x-0.5" aria-hidden="true" />
+                  </Link>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Easier ways to start: Start (small one-off) + Launch Monthly */}
+      <section id="easy-start" className="relative py-24 px-6 bg-background-deep border-t border-white/5 lucien-blueprint">
+        <div className="relative z-10 max-w-6xl mx-auto">
+          <SectionHeader
+            eyebrow={t("easy.eyebrow")}
+            title1={t("easy.title1")}
+            title2={t("easy.title2")}
+            subtitle={t("easy.subtitle")}
+          />
+          <div className="grid gap-4 lg:grid-cols-2 lg:items-stretch">
+            {easy.map((o, i) => (
+              <Reveal key={o.key} delay={i * 0.08} className="h-full">
+                <article
+                  className={`relative h-full flex flex-col overflow-hidden border p-6 md:p-8 bg-gradient-to-b from-surface-bright to-surface ${
+                    o.featured ? "border-primary/60 shadow-[0_0_60px_-16px_rgba(92,156,255,0.55)]" : "border-white/10"
+                  }`}
+                >
+                  <div aria-hidden="true" className={`absolute left-0 top-0 bottom-0 w-1 ${o.featured ? "bg-primary" : "bg-white/10"}`} />
+                  <div className="flex items-start justify-between gap-3">
+                    <h3 className="font-logo text-2xl uppercase tracking-tighter text-neutral-50">{o.name}</h3>
+                    {o.featured && (
+                      <span className="shrink-0 border border-primary/50 bg-primary/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-primary">
+                        {t("easy.badge")}
+                      </span>
+                    )}
+                  </div>
+                  <p className="mt-2 text-sm text-neutral-400 leading-relaxed">{o.tagline}</p>
+
+                  <div className="mt-6 flex items-baseline gap-2">
+                    <span className="font-logo text-4xl tracking-tighter text-neutral-50 tabular-nums">{o.price}</span>
+                    {o.per && <span className="font-mono text-xs text-neutral-500">{o.per}</span>}
+                  </div>
+                  <div className="mt-2 font-mono text-[11px] uppercase tracking-wider text-neutral-500">{o.meta}</div>
+
+                  <ul className="mt-8 space-y-3 flex-1">
+                    {o.features.map((f) => (
+                      <li key={f} className="flex gap-3 text-sm leading-relaxed text-neutral-300">
+                        <span className="mt-0.5 inline-flex w-5 h-5 shrink-0 items-center justify-center border border-primary/40 bg-primary/5 text-primary">
+                          <Check className="w-3 h-3" aria-hidden="true" />
+                        </span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {o.note && (
+                    <p className="mt-6 border-t border-white/10 pt-4 text-xs text-neutral-500 leading-relaxed">{o.note}</p>
+                  )}
+
+                  <Link
+                    href="/#contact"
+                    className={`group/cta mt-8 inline-flex justify-center items-center gap-2 border-2 px-5 py-3 font-mono text-sm uppercase tracking-wider transition-all ${
+                      o.featured
                         ? "border-primary bg-primary text-white hover:bg-primary/80"
                         : "border-primary/50 text-primary hover:bg-primary hover:text-white"
                     }`}

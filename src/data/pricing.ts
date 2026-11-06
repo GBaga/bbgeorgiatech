@@ -13,6 +13,13 @@ export const PACKAGES: { key: PackageKey; price: number; featured?: boolean }[] 
   { key: "pro", price: 4990 },
 ];
 
+// Easier ways to start (shown in their own section, not in the comparison):
+// - START: a one-page entry site, upgradeable later
+// - MONTHLY: the Launch package + Care plan paid monthly for a fixed term.
+//   No refund guarantee; cancelling early costs nothing more but ends access.
+export const START = { price: 490 };
+export const MONTHLY = { monthly: 129, months: 12, includes: "launch" as PackageKey };
+
 // Yearly billing = 10 months (2 months free)
 export const YEARLY_MONTHS = 10;
 
