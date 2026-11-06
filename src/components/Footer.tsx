@@ -1,6 +1,9 @@
-import { ArrowRight } from "lucide-react";
+import type { ReactNode } from "react";
+import { ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "../i18n/routing";
+import { READY_VERTICALS } from "../data/verticals";
+import { CONTACT_HREF, LEGAL_LINKS, NAV_LINKS } from "../data/navigation";
 
 const GithubIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" stroke="none">
@@ -14,15 +17,25 @@ const LinkedinIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
+function ColumnLabel({ children }: { children: ReactNode }) {
+  return (
+    <div className="flex items-center gap-3 mb-5">
+      <div className="w-1.5 h-1.5 bg-primary" aria-hidden="true" />
+      <div className="font-mono text-xs tracking-[0.2em] text-primary uppercase">{children}</div>
+    </div>
+  );
+}
+
 export function Footer() {
   const t = useTranslations("Footer");
-  
+  const tv = useTranslations("Verticals");
+
+  const tn = useTranslations("Navigation");
+
+  // Same pages, labels and order as the header, plus contact.
   const links = [
-    { label: t("systems"), href: "/#systems" },
-    { label: t("contact"), href: "/#contact" },
-    { label: t("terms"), href: "/terms-and-conditions" },
-    { label: t("privacy"), href: "/privacy-policy" },
-    { label: t("cookie"), href: "/cookie-policy" },
+    ...NAV_LINKS.map((l) => ({ label: tn(l.key), href: l.href })),
+    { label: tn("contact"), href: CONTACT_HREF },
   ];
 
   return (
@@ -31,32 +44,65 @@ export function Footer() {
       <div className="absolute inset-0 z-0 pointer-events-none lucien-blueprint opacity-20" />
 
       <div className="relative z-10 max-w-[1400px] mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-20 px-4">
-          <nav className="flex flex-col md:flex-row flex-wrap gap-6 md:gap-10">
-            {links.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="group flex items-center gap-2 font-mono text-sm text-neutral-400 hover:text-white transition-colors"
-              >
-                <ArrowRight className="w-3 h-3 text-primary group-hover:translate-x-1 transition-all" />
-                {link.label}
+        {/* One row: site pages, industry pages, socials. */}
+        <div className="grid gap-12 md:grid-cols-[auto_1fr_auto] md:gap-16 lg:gap-24 mb-16 px-4">
+          <div>
+            <ColumnLabel>{t("pages")}</ColumnLabel>
+            <nav aria-label={t("pages")} className="flex flex-col gap-3">
+              {links.map((link) => (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="group flex items-center gap-2 font-mono text-sm text-neutral-400 hover:text-white transition-colors"
+                >
+                  <ChevronRight className="w-3 h-3 shrink-0 text-primary group-hover:translate-x-1 transition-all" aria-hidden="true" />
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          <div>
+            <ColumnLabel>{tv("ui.industries")}</ColumnLabel>
+            <nav aria-label={tv("ui.industries")} className="grid grid-cols-2 gap-x-8 gap-y-3 lg:max-w-xl">
+              {READY_VERTICALS.map((v) => (
+                <Link
+                  key={v.slug}
+                  href={`/for/${v.slug}`}
+                  className="group flex items-start gap-2 font-inter text-sm leading-snug text-neutral-500 hover:text-white transition-colors"
+                >
+                  <span
+                    className="mt-[0.45em] w-1 h-1 shrink-0 transition-transform group-hover:scale-150"
+                    style={{ backgroundColor: v.accent }}
+                    aria-hidden="true"
+                  />
+                  {tv(`${v.key}.name`)}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          <div className="flex items-center gap-6 md:items-start">
+            <a href="https://github.com/GBaga" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white transition-colors group" aria-label="GitHub">
+              <GithubIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            </a>
+            <a href="https://www.linkedin.com/in/goga-bagauri" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white transition-colors group" aria-label="LinkedIn">
+              <LinkedinIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            </a>
+          </div>
+        </div>
+
+        {/* Legal links and copyright */}
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-12 px-4 pt-6 border-t border-white/5">
+          <nav aria-label={t("legal")} className="flex flex-wrap gap-x-6 gap-y-2">
+            {LEGAL_LINKS.map((l) => (
+              <Link key={l.key} href={l.href} className="font-mono text-xs text-neutral-500 hover:text-white transition-colors">
+                {t(l.key)}
               </Link>
             ))}
           </nav>
-
-          <div className="flex flex-col items-start md:items-end gap-6">
-            <div className="flex items-center gap-6">
-              <a href="https://github.com/GBaga" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white transition-colors group" aria-label="GitHub">
-                <GithubIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              </a>
-              <a href="https://www.linkedin.com/in/goga-bagauri" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:text-white transition-colors group" aria-label="LinkedIn">
-                <LinkedinIcon className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              </a>
-            </div>
-            <div className="font-mono text-xs text-neutral-500">
-              © {new Date().getFullYear()} BBGeorgiaTech. {t("allRightsReserved")}
-            </div>
+          <div className="font-mono text-xs text-neutral-500">
+            © {new Date().getFullYear()} BBGeorgiaTech. {t("allRightsReserved")}
           </div>
         </div>
 

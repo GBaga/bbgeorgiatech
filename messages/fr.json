@@ -14,15 +14,17 @@
     "theEngine": "Technologie",
     "systems": "Portfolio",
     "heritage": "À Propos",
-    "initiateProtocol": "Obtenir un Devis Gratuit"
+    "initiateProtocol": "Obtenir un Devis Gratuit",
+    "pricing": "Tarifs",
+    "contact": "Contact"
   },
   "Footer": {
-    "systems": "Portfolio",
-    "contact": "Contact",
     "terms": "Conditions Générales",
     "privacy": "Politique de Confidentialité",
     "cookie": "Politique des Cookies",
-    "allRightsReserved": "Tous droits réservés."
+    "allRightsReserved": "Tous droits réservés.",
+    "pages": "Pages",
+    "legal": "Mentions légales"
   },
   "Hero": {
     "title1": "Nous Créons",
@@ -36,9 +38,10 @@
     "targetValue": "MAINTENANCE & SOIN CONTINUS",
     "getAQuote": "[ Obtenir un Devis Gratuit ]",
     "initializeDeployment": "Voir Notre Travail →",
-    "pricingNote": "Projets à partir de 678$ · Maintenance à partir de 247$/an",
+    "pricingNote": "À partir de {start} · ou {monthly} / mois",
     "lessIsMore": "Parfois, moins c'est plus.",
-    "quoteAuthor": "Robert Browning (1855)"
+    "quoteAuthor": "Robert Browning (1855)",
+    "seePricing": "Voir les tarifs"
   },
   "BrandHeritage": {
     "title1": "Bâti sur la Confiance.",
@@ -51,15 +54,56 @@
     "bagauriDesc": "Nés en Géorgie, tournés vers le monde. Le nom Bagauri représente l'héritage de notre fondateur et la tradition artisanale que nous apportons à chaque projet. Dans un monde de solutions éphémères, nous construisons des choses qui durent — et nous vous invitons à bâtir le prochain chapitre de votre histoire numérique avec nous."
   },
   "CoreCompetencies": {
-    "precisionEngineering": "Tout ce dont votre entreprise a besoin en ligne.",
+    "precisionEngineering": "Site, ventes, Google et maintenance. Au même endroit, à prix fixe.",
     "core": "Nos",
     "competencies": "Services",
-    "service1Title": "Création de Sites Web & Développement",
-    "service1Desc": "Des pages de renvoi aux applications web complexes — nous concevons et créons des sites web personnalisés qui sont superbes, se chargent rapidement, et transforment les visiteurs en clients.",
-    "service2Title": "Solutions E-Commerce",
-    "service2Desc": "Des boutiques en ligne conçues pour la performance. Nous créons des expériences e-commerce rapides, sécurisées, et optimisées pour les ventes — accessibles aux clients partout dans le monde.",
-    "service3Title": "Maintenance & Support",
-    "service3Desc": "Votre site web n'est jamais terminé. Nous offrons une maintenance continue, des mises à jour de sécurité, des modifications de contenu et une surveillance des performances pour que vous puissiez vous concentrer sur votre entreprise."
+    "services": [
+      {
+        "title": "Site web",
+        "desc": "Un site où vos clients découvrent qui vous êtes, ce que vous faites et comment vous joindre, sur mobile comme sur ordinateur.",
+        "chips": [
+          "Adapté au mobile",
+          "Appel et WhatsApp",
+          "Google Business",
+          "Dès 1 semaine"
+        ]
+      },
+      {
+        "title": "Boutique en ligne",
+        "desc": "Vendez jour et nuit : catalogue, paiement en ligne et gestion simple des commandes, au même endroit.",
+        "chips": [
+          "Catalogue produits",
+          "Paiement en ligne",
+          "Gestion des commandes",
+          "Adapté au mobile"
+        ]
+      },
+      {
+        "title": "Visibilité sur Google",
+        "desc": "Quand on cherche votre service sur Google, sur une carte ou dans ChatGPT, on vous trouve, et on vous choisit.",
+        "chips": [
+          "Google Business",
+          "SEO local",
+          "Cartes et annuaires",
+          "Statistiques"
+        ]
+      },
+      {
+        "title": "Maintenance du site",
+        "desc": "Hébergement, sécurité, sauvegardes et mises à jour : on s'en charge. Vous vous occupez de votre entreprise.",
+        "chips": [
+          "Hébergement et SSL",
+          "Sauvegardes",
+          "Mises à jour",
+          "Surveillance"
+        ]
+      }
+    ],
+    "orMonthly": "ou {monthly} / mois",
+    "fromMonthly": "à partir de {price} / mois",
+    "details": "En savoir plus",
+    "more": "Aussi : logo et identité, traduction, e-mail professionnel",
+    "allAddons": "Tous les compléments"
   },
   "ProcessSection": {
     "title1": "Comment Ça",
@@ -77,7 +121,7 @@
     "title1": "Questions",
     "title2": "Fréquentes",
     "q1": "Combien coûte un nouveau site web ?",
-    "a1": "La création d'un site web sur mesure commence à partir de 678 $, et nos forfaits de maintenance complets commencent à partir de 247 $ par an. Chaque projet étant conçu spécifiquement pour vos besoins, veuillez nous contacter pour un devis précis et gratuit.",
+    "a1": "Les sites commencent à {start} pour une page unique et à {launch} pour le forfait Launch complet — ou {monthly} par mois avec Launch Mensuel, hébergement et maintenance inclus. Les plans de maintenance commencent à {care} par mois. Chaque projet reçoit un devis fixe sous 24 heures après une consultation gratuite ; retrouvez tous les forfaits et options sur la page Tarifs.",
     "q2": "Proposez-vous une maintenance mensuelle ?",
     "a2": "Oui. Nous proposons des forfaits d'assistance mensuels complets qui couvrent l'hébergement, les mises à jour de sécurité et les modifications de contenu.",
     "q3": "Combien de temps faut-il pour créer un site web ?",
@@ -172,7 +216,21 @@
     "h5": "Limitation de responsabilité",
     "p5": "En aucun cas BBGeorgiaTech ou ses fournisseurs ne seront tenus responsables des dommages découlant de l'utilisation ou de l'incapacité d'utiliser les éléments sur notre site web, même s'ils ont été informés oralement ou par écrit de la possibilité de tels dommages.",
     "h6": "Droit applicable",
-    "p6": "Ces conditions générales sont régies et interprétées conformément aux lois de la Géorgie. Vous vous soumettez irrévocablement à la compétence exclusive des tribunaux de Géorgie pour la résolution de tout litige juridique."
+    "p6": "Ces conditions générales sont régies et interprétées conformément aux lois de la Géorgie. Vous vous soumettez irrévocablement à la compétence exclusive des tribunaux de Géorgie pour la résolution de tout litige juridique.",
+    "hProjects": "Projets Web, Paiement et Garantie",
+    "pProjects": "Cette section s’applique lorsque vous commandez un forfait site web ou un plan de maintenance auprès de BBGeorgiaTech. Votre devis ou contrat écrit précise le périmètre, le prix et la date de lancement ; en cas de divergence avec cette section, le devis ou le contrat prévaut.",
+    "proj": [
+      "Paiement : 50 % du prix du projet est dû avant le début des travaux et les 50 % restants au lancement. Tous les prix sont en dollars américains (USD), dans tous les pays.",
+      "Garantie de délai : si nous dépassons la date de lancement convenue pour des raisons qui nous incombent, vous bénéficiez d’une remise de 10 % sur le prix du projet par semaine complète de retard, dans la limite de 30 %. La remise est déduite du paiement final.",
+      "La date de lancement est décalée d’autant lorsqu’un retard vient de votre côté — par exemple contenu, documents, retours, validations ou paiements tardifs — ou d’une modification du périmètre convenu.",
+      "Remboursement partiel : si le concept de design ne vous satisfait pas après deux séries de révisions, vous pouvez mettre fin au projet avant le début du développement. Nous remboursons alors 50 % de votre acompte ; le reste couvre le travail de design déjà réalisé. Une fois le développement commencé, l’acompte n’est plus remboursable.",
+      "Paiement mensuel : au lieu du paiement 50/50 ci-dessus, le site Launch et le plan Care peuvent être payés en mensualités sur la durée indiquée sur la page des tarifs, à partir du début des travaux. La garantie de remboursement partiel ne s’applique pas au paiement mensuel.",
+      "Vous pouvez résilier le paiement mensuel à tout moment avec un préavis de 30 jours, sans rien devoir de plus. À la résiliation, l’accès au site et aux services réalisés pour vous prend fin. Une fois toutes les mensualités payées, le site vous appartient et vous pouvez poursuivre avec un plan de maintenance ou l’héberger vous-même.",
+      "Propriété : après paiement intégral, le site, son design et son code vous appartiennent.",
+      "Les plans de maintenance sont facturés d’avance, au mois ou à l’année (l’annuel inclut 2 mois offerts), et peuvent être résiliés avec un préavis écrit de 30 jours. Les heures non utilisées ne sont pas reportées au mois suivant.",
+      "Si vous résiliez un plan de maintenance annuel avant son terme, nous remboursons le montant payé au prorata des mois complets restants.",
+      "Portfolio : BBGeorgiaTech peut présenter le site réalisé — son nom, des captures d’écran et un lien — dans son portfolio et ses supports marketing."
+    ]
   },
   "TechStack": {
     "title1": "Notre",
@@ -249,7 +307,12 @@
     "btnIdle": "ENVOYER_MESSAGE",
     "btnTx": "ENVOI_EN_COURS...",
     "btnSuccess": "MESSAGE_ENVOYÉ",
-    "btnError": "VEUILLEZ_RÉESSAYER"
+    "btnError": "VEUILLEZ_RÉESSAYER",
+    "guarantees": [
+      "Garantie de délai",
+      "Prix fixe",
+      "Réponse sous 24 heures"
+    ]
   },
   "EmailReceipt": {
     "subject": "Transmission Reçue : BBGeorgiaTech",
@@ -271,5 +334,1199 @@
     "descEnd": ".",
     "acceptBtn": "[ Accepter & Continuer ]",
     "rejectBtn": "[ Refuser ]"
+  },
+  "Pricing": {
+    "meta": {
+      "title": "Tarifs — Forfaits Sites Web & Maintenance | BBGeorgiaTech",
+      "description": "Des sites web à prix fixe pour les petites entreprises du monde entier, à partir de {launch}. Trois forfaits, des plans de maintenance dès {care} par mois, des options et une garantie de délai."
+    },
+    "ui": {
+      "from": "à partir de {price}",
+      "oneTime": "paiement unique",
+      "popular": "Le plus choisi",
+      "getStarted": "Commencer",
+      "included": "Inclus",
+      "notIncluded": "Non inclus",
+      "feature": "Fonctionnalité"
+    },
+    "hero": {
+      "eyebrow": "Tarifs",
+      "title1": "Des Prix",
+      "title2": "Clairs.",
+      "subtitle": "Des sites web à prix fixe pour les petites entreprises du monde entier. Aucun frais caché — vous connaissez le coût avant de commencer.",
+      "badges": [
+        "Prix fixe",
+        "Tous les prix en USD",
+        "Garantie de délai"
+      ]
+    },
+    "packages": {
+      "eyebrow": "Forfaits",
+      "title1": "Forfaits",
+      "title2": "Site Web",
+      "subtitle": "Prix unique. Choisissez le forfait adapté aujourd'hui — vous pourrez toujours évoluer ensuite.",
+      "launch": {
+        "name": "Launch",
+        "tagline": "Un site professionnel qui vous rend visible et fait sonner le téléphone.",
+        "weeks": "~2 semaines",
+        "features": [
+          "Jusqu'à 5 pages ou une longue page d'accueil",
+          "Design sur mesure : 1 concept + 2 révisions",
+          "Mobile, tablette et ordinateur",
+          "1 langue",
+          "Formulaire de contact, boutons d'appel et WhatsApp, Google Maps",
+          "SEO de base + Google Search Console",
+          "Configuration de la fiche Google Business",
+          "30 jours de corrections gratuites après le lancement"
+        ]
+      },
+      "business": {
+        "name": "Business",
+        "tagline": "Pour les entreprises qui veulent que leurs clients réservent et achètent en ligne.",
+        "weeks": "3–4 semaines",
+        "features": [
+          "Tout le forfait Launch",
+          "Jusqu'à 12 pages",
+          "2–3 langues avec SEO multilingue",
+          "Modifiez vous-même textes, photos et prix (CMS)",
+          "Réservation en ligne ou formulaire de devis en plusieurs étapes",
+          "Section blog / actualités",
+          "SEO avancé, schema et visibilité dans la recherche IA",
+          "Analytics avec suivi des appels et formulaires",
+          "60 jours de support après le lancement"
+        ]
+      },
+      "pro": {
+        "name": "Pro",
+        "tagline": "Fonctionnalités sur mesure, boutique en ligne et intégrations.",
+        "weeks": "5–8 semaines",
+        "features": [
+          "Tout le forfait Business",
+          "Jusqu'à 5 langues",
+          "Boutique en ligne (~100 produits) avec Stripe, PayPal ou paiement bancaire",
+          "Espace client ou réservation avancée",
+          "Intégrations CRM, e-mailing et comptabilité",
+          "Design system sur mesure et animations interactives",
+          "Audit de vitesse et de sécurité avant le lancement",
+          "90 jours de support prioritaire"
+        ]
+      }
+    },
+    "compare": {
+      "eyebrow": "Comparer",
+      "title1": "Comparatif",
+      "title2": "Complet",
+      "rows": {
+        "pages": "Pages",
+        "languages": "Langues",
+        "revisions": "Révisions du design",
+        "delivery": "Délai de livraison",
+        "responsive": "Adapté mobile et tablette",
+        "contact": "Formulaire, boutons d'appel et WhatsApp",
+        "basicSeo": "SEO de base et Search Console",
+        "gbp": "Configuration Google Business",
+        "ssl": "SSL et optimisation de la vitesse",
+        "legal": "Politique de confidentialité et cookies",
+        "cms": "Édition autonome (CMS)",
+        "booking": "Réservation en ligne / calendrier",
+        "blog": "Blog / actualités",
+        "advSeo": "SEO avancé, schema, llms.txt",
+        "analytics": "Analytics et suivi des conversions",
+        "animations": "Animations",
+        "shop": "Boutique en ligne",
+        "integrations": "CRM et intégrations tierces",
+        "audit": "Audit de vitesse et de sécurité",
+        "support": "Support après le lancement",
+        "training": "Formation"
+      }
+    },
+    "values": {
+      "weeks2": "~2 semaines",
+      "weeks3to4": "3–4 semaines",
+      "weeks5to8": "5–8 semaines",
+      "addon": "En option",
+      "basic": "Basiques",
+      "light": "Légères",
+      "interactive": "Interactives",
+      "days30": "30 jours",
+      "days60": "60 jours",
+      "days90priority": "90 jours, prioritaire",
+      "min30": "30 min",
+      "hour1": "1 heure",
+      "hours2": "2 h / mois",
+      "hours5": "5 h / mois",
+      "quarterly": "Trimestriel",
+      "monthly": "Mensuel",
+      "bd2": "2 jours ouvrés",
+      "bd1": "1 jour ouvré",
+      "sameDay": "Le jour même (urgent)"
+    },
+    "care": {
+      "eyebrow": "Plans mensuels",
+      "title1": "Plans de",
+      "title2": "Maintenance",
+      "subtitle": "Votre site reste rapide, sécurisé et à jour — sans que vous ayez à y penser.",
+      "monthly": "Mensuel",
+      "yearly": "Annuel",
+      "save": "2 mois offerts",
+      "perMonth": "/ mois",
+      "perYear": "/ an",
+      "equivalent": "≈ {amount} / mois",
+      "plans": {
+        "care": {
+          "name": "Care",
+          "tagline": "Hébergement, sécurité et sauvegardes."
+        },
+        "carePlus": {
+          "name": "Care+",
+          "tagline": "Plus des modifications et un rapport chaque mois."
+        },
+        "growth": {
+          "name": "Growth",
+          "tagline": "Un partenaire continu pour votre croissance."
+        }
+      },
+      "rows": {
+        "hosting": "Hébergement sur le réseau mondial Cloudflare",
+        "ssl": "Certificat SSL et renouvellement",
+        "backups": "Sauvegardes quotidiennes, conservées 30 jours",
+        "updates": "Mises à jour de sécurité mensuelles",
+        "uptime": "Surveillance de disponibilité 24/7",
+        "forms": "Vérification des formulaires et e-mails",
+        "dns": "Gestion du domaine et du DNS",
+        "fixes": "Correction des bugs techniques",
+        "edits": "Modifications de textes, photos et prix",
+        "report": "Rapport mensuel : visites, demandes, vitesse",
+        "gbp": "Mises à jour de la fiche Google Business",
+        "seoCheck": "Contrôle SEO",
+        "content": "1 nouvel article ou page / mois",
+        "seoWork": "SEO continu : mots-clés et liens internes",
+        "cro": "Analyse des conversions et recommandations",
+        "call": "Appel stratégique (30 min)",
+        "response": "Délai de réponse"
+      },
+      "terms": [
+        "Facturation mensuelle ; résiliable à tout moment avec un préavis de 30 jours.",
+        "Payez à l'année et obtenez 2 mois offerts.",
+        "Résiliez un plan annuel avant terme et soyez remboursé des mois restants.",
+        "Les heures non utilisées ne sont pas reportées au mois suivant.",
+        "Vous préférez l'héberger vous-même ? Sans plan, nous vous remettons le site et son code dans leur intégralité."
+      ]
+    },
+    "addons": {
+      "eyebrow": "Options",
+      "title1": "Services",
+      "title2": "Additionnels",
+      "subtitle": "Ajoutez exactement ce dont vous avez besoin, à n'importe quel forfait.",
+      "groups": {
+        "content": "Contenu",
+        "brand": "Design et marque",
+        "features": "Fonctionnalités",
+        "marketing": "SEO et marketing",
+        "technical": "Technique"
+      },
+      "items": {
+        "extraPage": "Page supplémentaire",
+        "copywriting": "Rédaction optimisée SEO",
+        "translation": "Traduction et localisation",
+        "stock": "Sélection et retouche de photos",
+        "products": "Ajout de produits à la boutique",
+        "logo": "Logo",
+        "identity": "Identité de marque : logo, couleurs, polices, charte",
+        "social": "Modèles pour réseaux sociaux",
+        "print": "Carte de visite ou supports imprimés",
+        "language": "Langue supplémentaire (configuration ; traduction à part)",
+        "booking": "Intégration de réservation / calendrier (pour Launch)",
+        "quoteForm": "Formulaire de devis en plusieurs étapes",
+        "payments": "Paiements en ligne : Stripe, PayPal ou banque",
+        "shop": "Boutique en ligne en plus du forfait Business",
+        "newsletter": "Intégration e-mailing (Mailchimp, Brevo)",
+        "portal": "Espace client et fonctionnalités complexes",
+        "seoAudit": "Audit SEO d'un site existant",
+        "localSeo": "SEO local : optimisation Google Business et inscription sur 10 cartes et annuaires (Apple Plans, Bing, Facebook…)",
+        "tracking": "Configuration Analytics, Google Ads et pixel Meta",
+        "migration": "Migration d'un ancien site, SEO et redirections conservés",
+        "email": "Domaine et e-mail professionnel (Google Workspace, Zoho)",
+        "rush": "Livraison express",
+        "hourly": "Taux horaire hors forfaits"
+      },
+      "units": {
+        "from": "à partir de {price}",
+        "perPage": "/ page",
+        "perSet": "/ lot",
+        "perProduct": "/ produit",
+        "perHour": "/ heure",
+        "custom": "Sur devis"
+      },
+      "localSeoInfo": {
+        "summary": "Ce qui est inclus",
+        "core": "Inscription sur :",
+        "extra": "+ 3 choisis selon votre secteur, par ex. TripAdvisor, Booking.com ou des annuaires locaux.",
+        "note": "Les profils sont créés à votre nom et nous sommes ajoutés comme gestionnaires. Certaines plateformes vérifient la propriété par appel, SMS ou vidéo, ce qui peut prendre quelques jours."
+      }
+    },
+    "guarantee": {
+      "eyebrow": "Garantie",
+      "title1": "Notre",
+      "title2": "Garantie",
+      "g1Title": "Livraison dans les délais",
+      "g1Text": "Si nous dépassons la date de lancement convenue pour des raisons qui nous incombent, vous obtenez 10 % de remise par semaine de retard, jusqu'à 30 %. Les retards dus à un contenu ou à des retours tardifs ne comptent pas.",
+      "g2Title": "Remboursement partiel",
+      "g2Text": "Si le concept de design ne vous convient pas après deux séries de révisions, nous remboursons 50 % de votre acompte et arrêtons le projet — avant le début du développement.",
+      "termsLink": "Conditions complètes",
+      "seal": "Délai garanti · BBGEORGIATECH",
+      "timelineCaption": "Remise par semaine de retard",
+      "week": "{n, plural, one {# semaine} other {# semaines}}"
+    },
+    "process": {
+      "eyebrow": "Fonctionnement",
+      "title1": "Notre",
+      "title2": "Méthode",
+      "steps": [
+        {
+          "title": "Consultation gratuite",
+          "text": "Un appel de 30 minutes sur votre activité, vos objectifs et votre budget. Vous recevez un devis fixe sous 24 heures."
+        },
+        {
+          "title": "Acompte de 50 % et design",
+          "text": "Nous commençons par un concept de design et l'affinons avec vous."
+        },
+        {
+          "title": "Développement et validation",
+          "text": "Nous construisons le site et vous le validez sur un lien de prévisualisation privé."
+        },
+        {
+          "title": "Lancement et solde de 50 %",
+          "text": "Les 50 % restants sont dus au lancement. Votre période de support commence alors."
+        }
+      ],
+      "payTitle": "Paiement",
+      "payText": "50 % à la commande, 50 % au lancement. Les mêmes prix en USD s'appliquent dans tous les pays.",
+      "provideTitle": "Ce que vous fournissez",
+      "provide": [
+        "Votre logo et vos couleurs (ou commandez-les en option)",
+        "Les textes des pages (ou notre service de rédaction)",
+        "Des photos de votre travail, de votre équipe ou de vos locaux",
+        "L'accès à votre domaine — ou nous en enregistrons un pour vous"
+      ]
+    },
+    "faq": {
+      "title1": "Questions sur",
+      "title2": "les Tarifs",
+      "items": [
+        {
+          "q": "Pourquoi les prix sont-ils indiqués « à partir de » ?",
+          "a": "Le prix final dépend du nombre de pages, de langues et de fonctionnalités. Après une consultation gratuite, vous recevez un devis fixe, et le prix ne change pas tant que le périmètre reste le même."
+        },
+        {
+          "q": "Puis-je payer au mois plutôt qu’en une fois ?",
+          "a": "Oui. Avec Launch Mensuel, vous payez {monthly} par mois pendant {months} mois, pour le site Launch et le plan Care. Vous pouvez résilier à tout moment sans rien payer de plus ; l’accès au site prend alors fin. Après {months} mois, le site est à vous."
+        },
+        {
+          "q": "Les prix sont-ils les mêmes dans tous les pays ?",
+          "a": "Oui. Tous les prix sont en dollars américains, où que se trouve votre entreprise."
+        },
+        {
+          "q": "Le site m'appartient-il ?",
+          "a": "Oui. Après le paiement final, le site, son design et son code sont à vous."
+        },
+        {
+          "q": "Dois-je souscrire un plan mensuel ?",
+          "a": "Non, les plans sont facultatifs. Sans plan, nous vous remettons le site et vous l'hébergez et l'entretenez vous-même."
+        },
+        {
+          "q": "Et si j'ai besoin de quelque chose qui n'est pas listé ?",
+          "a": "Dites-le-nous. Nous chiffrons les fonctionnalités sur mesure séparément, ou travaillons à notre taux horaire de {rate}."
+        },
+        {
+          "q": "Puis-je évoluer plus tard ?",
+          "a": "Oui. Commencez avec le forfait Launch et ajoutez plus tard des pages, des langues, la réservation ou une boutique — vous ne payez que le périmètre ajouté."
+        }
+      ]
+    },
+    "final": {
+      "title1": "Vous hésitez entre",
+      "title2": "les forfaits ?",
+      "text": "Parlez-nous de votre activité. Nous vous recommandons le bon forfait et envoyons un devis fixe sous 24 heures.",
+      "button": "Consultation gratuite"
+    },
+    "easy": {
+      "eyebrow": "Démarrage facile",
+      "title1": "Démarrer",
+      "title2": "Plus Facilement",
+      "subtitle": "Pas prêt pour un forfait complet ? Commencez petit, ou étalez le coût sur l’année.",
+      "start": {
+        "name": "Start",
+        "tagline": "Une page qui vous rend visible et fait sonner le téléphone — évolutive à tout moment.",
+        "weeks": "~1 semaine",
+        "features": [
+          "Une page avec vos services, photos et coordonnées",
+          "Boutons d’appel et WhatsApp, Google Maps",
+          "Adapté mobile, 1 langue",
+          "Configuration de la fiche Google Business",
+          "SEO de base",
+          "Passez ensuite au forfait Launch ou Business — vous ne payez que la différence"
+        ]
+      },
+      "monthly": {
+        "name": "Launch Mensuel",
+        "tagline": "Le site Launch et le plan Care ensemble, payés au mois — sans gros paiement initial.",
+        "per": "/ mois",
+        "term": "Engagement de {months} mois",
+        "features": [
+          "Tout le forfait Launch",
+          "Tout le plan Care : hébergement, SSL, sauvegardes, mises à jour et surveillance",
+          "Paiement mois par mois, dès le début des travaux",
+          "Après {months} mois, le site est à vous ; continuez avec le plan Care pour {care} / mois ou hébergez-le vous-même"
+        ],
+        "note": "Résiliable à tout moment avec un préavis de 30 jours, sans rien payer de plus — l’accès au site et aux services réalisés prend alors fin. La garantie de remboursement partiel ne s’applique pas au paiement mensuel.",
+        "track": "Après {months} mensualités, le site est à vous"
+      },
+      "badge": "Le plus simple"
+    },
+    "why": {
+      "eyebrow": "Pourquoi un site",
+      "title1": "On vous cherche déjà.",
+      "title2": "La question, c’est de savoir si on vous trouve.",
+      "subtitle": "Quand quelqu’un a besoin d’un artisan, d’un médecin ou d’un hébergement, il commence par Google. Si vous n’y êtes pas, il appelle votre concurrent — et vous n’en saurez jamais rien.",
+      "scenarios": [
+        {
+          "time": "23:04",
+          "title": "L’appel de nuit",
+          "text": "Une canalisation éclate dans une cuisine. Personne ne répond au message sur Facebook. On cherche « plombier près de chez moi » sur Google et on appelle la première entreprise qui a un bouton « Appeler » sur son site.",
+          "punch": "Votre site prend des commandes même quand vous dormez."
+        },
+        {
+          "time": "11:30",
+          "title": "« C’est combien ? » cent fois par jour",
+          "text": "Vous répondez à la même question entre deux clients — au téléphone, sur Instagram, sur WhatsApp. Sur un site, vos services, prix et horaires sont écrits une fois pour toutes.",
+          "punch": "Moins de messages, plus de temps pour le travail."
+        },
+        {
+          "time": "16:45",
+          "title": "Le visiteur qui ne lit pas votre langue",
+          "text": "Un touriste ou un expatrié cherche la meilleure adresse en ville. Votre Instagram est dans une seule langue ; le site de votre concurrent, en trois.",
+          "punch": "Votre site parle votre langue — et celle de vos clients."
+        },
+        {
+          "time": "09:00",
+          "title": "Instagram ne vous appartient pas",
+          "text": "Les algorithmes changent, les comptes sont bloqués, chaque publication touche moins de monde. Votre site et votre domaine sont à vous — et une entreprise avec un site paraît tout simplement plus sérieuse.",
+          "punch": "Les réseaux vous présentent. Un site inspire confiance."
+        },
+        {
+          "time": "14:20",
+          "title": "Une question à ChatGPT",
+          "text": "De plus en plus de gens demandent aux assistants IA « quel bon dentiste près de chez moi ? ». L’IA recommande les entreprises sur lesquelles elle trouve des informations claires en ligne.",
+          "punch": "Un site fait savoir à l’IA que vous existez."
+        }
+      ],
+      "calc": {
+        "eyebrow": "Calcul simple",
+        "title": "Est-ce rentable ?",
+        "label": "Combien vous rapporte un client, en moyenne ?",
+        "lead": "{name} ({monthly} / mois) est remboursé avec",
+        "result": "{n, plural, one {# client supplémentaire} other {# clients supplémentaires}} par mois.",
+        "rest": "Tout le reste est du bénéfice.",
+        "note": "Un exemple, pas une garantie."
+      },
+      "doubtsTitle": "Doutes fréquents",
+      "doubts": [
+        {
+          "q": "« Mes clients me connaissent déjà. »",
+          "a": "Vos habitués, oui. Les nouveaux vous découvrent via Google."
+        },
+        {
+          "q": "« Facebook me suffit. »",
+          "a": "Facebook sert à discuter. Un site sert à décider."
+        },
+        {
+          "q": "« C’est cher. »",
+          "a": "{monthly} par mois — souvent moins qu’un seul mois de publicité."
+        }
+      ],
+      "closing1": "Nous ne promettons pas de miracles.",
+      "closing2": "Nous promettons que lorsqu’on vous cherchera, on vous trouvera.",
+      "ctaText": "Lors d’une consultation gratuite, nous vous montrons comment on cherche votre service sur Google en ce moment."
+    },
+    "trust": [
+      "Prix fixe",
+      "Délai garanti",
+      "Le site vous appartient"
+    ]
+  },
+  "Verticals": {
+    "ui": {
+      "industries": "Secteurs",
+      "consultation": "Consultation gratuite",
+      "seePricing": "Voir les tarifs",
+      "problemsEyebrow": "Ça vous parle ?",
+      "problemsTitle1": "Problèmes",
+      "problemsTitle2": "Fréquents",
+      "featuresEyebrow": "Ce que fait votre site",
+      "projectEyebrow": "Projet réel",
+      "projectTitle1": "Conçu pour",
+      "projectTitle2": "une Entreprise Comme la Vôtre",
+      "visit": "Voir le site",
+      "recommendEyebrow": "Notre recommandation",
+      "oneTime": "paiement unique",
+      "otherTitle1": "Autres",
+      "otherTitle2": "Secteurs",
+      "finalText": "Parlez-nous de votre activité. Nous vous recommandons le bon forfait et envoyons un devis fixe sous 24 heures.",
+      "faqTitle1": "Questions",
+      "faqTitle2": "Fréquentes",
+      "packageBadge": "forfait",
+      "packageName": "forfait {name}",
+      "searchLabel": "Voici comment vos clients vous cherchent :"
+    },
+    "homeServices": {
+      "meta": {
+        "title": "Sites Web pour Artisans & Services à Domicile | BBGeorgiaTech",
+        "description": "Des sites web pour entreprises de rénovation, plombiers, électriciens, sociétés de nettoyage et autres services locaux : boutons d'appel, formulaires de devis, galeries de réalisations et SEO local, à partir de {price}."
+      },
+      "name": "Artisans & Services à Domicile",
+      "hero": {
+        "title1": "Des sites pour artisans",
+        "title2": "qui font sonner le téléphone.",
+        "subtitle": "Pour les entreprises de rénovation, plombiers, électriciens, sociétés de nettoyage, déménageurs et autres services locaux. Un site rapide qui montre votre travail, inspire confiance et transforme les visiteurs en demandes de devis."
+      },
+      "types": [
+        "Rénovation",
+        "Plomberie",
+        "Électricité",
+        "Nettoyage",
+        "Déménagement",
+        "Paysagisme",
+        "Climatisation",
+        "Garage auto"
+      ],
+      "problems": [
+        {
+          "title": "Les clients ne vous trouvent pas sur Google",
+          "text": "Les gens cherchent « plombier près de chez moi » et appellent le premier résultat. Sans site ni fiche Google Business, ce n'est pas vous."
+        },
+        {
+          "title": "Vos plus beaux chantiers restent dans votre téléphone",
+          "text": "Les photos de vos réalisations dorment dans votre galerie ou sur Facebook, là où les nouveaux clients ne les voient jamais."
+        },
+        {
+          "title": "Appels et demandes de devis se perdent",
+          "text": "Les demandes arrivent par WhatsApp, Messenger et appels manqués, sans moyen simple de demander un devis."
+        }
+      ],
+      "featuresTitle1": "Conçu pour",
+      "featuresTitle2": "Décrocher des Chantiers",
+      "features": {
+        "call": {
+          "title": "Appel et WhatsApp en un clic",
+          "text": "De grands boutons sur chaque page, pour que les visiteurs mobiles vous joignent en une seconde."
+        },
+        "quote": {
+          "title": "Formulaire de devis",
+          "text": "Le client décrit le chantier, ajoute des photos et son adresse — vous recevez tout dans un seul e-mail."
+        },
+        "gallery": {
+          "title": "Galerie avant / après",
+          "text": "Vos réalisations, classées par service, prouvent la qualité de votre travail."
+        },
+        "local": {
+          "title": "SEO local",
+          "text": "Des pages pour vos services et vos zones, plus la configuration de la fiche Google Business, pour apparaître dans les recherches locales et sur Maps."
+        },
+        "trust": {
+          "title": "Avis et garanties",
+          "text": "Avis, certifications, garanties et années d'expérience, affichés là où le client décide."
+        },
+        "languages": {
+          "title": "Plusieurs langues",
+          "text": "Touchez expatriés, touristes et clients internationaux dans leur propre langue."
+        }
+      },
+      "recommend": "La plupart des artisans ont besoin du forfait Launch : un site rapide avec boutons d'appel, galerie de réalisations et fiche Google Business. Choisissez le forfait Business pour un formulaire de devis en plusieurs étapes, plusieurs langues et une galerie que vous mettez à jour vous-même.",
+      "faq": [
+        {
+          "q": "En combien de temps mon site peut-il être en ligne ?",
+          "a": "Un site Launch est généralement en ligne environ 2 semaines après réception de votre contenu : logo, textes et photos de vos réalisations."
+        },
+        {
+          "q": "Puis-je ajouter moi-même de nouvelles photos ?",
+          "a": "Oui. Avec le forfait Business, vous ajoutez des photos à votre galerie directement depuis votre téléphone, sans compétences techniques."
+        },
+        {
+          "q": "Cela m'aidera-t-il à apparaître sur Google Maps ?",
+          "a": "Nous configurons et optimisons votre fiche Google Business et intégrons le SEO local au site. Le classement dépend de la concurrence et des avis, donc nous ne promettons pas de position — mais les bases seront solides."
+        },
+        {
+          "q": "J'ai déjà une page Facebook. Pourquoi un site ?",
+          "a": "Facebook ne se positionne pas sur Google comme un site web, et les clients y trouvent difficilement vos services, vos prix et vos réalisations. Un site vous appartient et travaille pour vous en permanence."
+        }
+      ],
+      "final": {
+        "title1": "Prêt à recevoir",
+        "title2": "plus d'appels ?"
+      },
+      "searches": [
+        "plombier près de chez moi",
+        "électricien urgence ce soir"
+      ]
+    },
+    "professionalServices": {
+      "meta": {
+        "title": "Sites Web pour Avocats, Comptables & Consultants | BBGeorgiaTech",
+        "description": "Des sites web pour avocats, notaires, comptables, consultants et agents immobiliers : pages par domaine d'expertise, profils d'équipe, prise de rendez-vous et SEO multilingue, à partir de {price}."
+      },
+      "name": "Services Professionnels",
+      "hero": {
+        "title1": "Des sites pour experts",
+        "title2": "qui inspirent confiance.",
+        "subtitle": "Pour les cabinets d'avocats, notaires, comptables, consultants, agents immobiliers et autres professionnels. Un site clair et crédible qui explique ce que vous faites, montre qui vous êtes et facilite la prise de rendez-vous."
+      },
+      "types": [
+        "Avocats",
+        "Notaires",
+        "Comptables",
+        "Consultants",
+        "Immobilier",
+        "Traducteurs",
+        "Architectes",
+        "Assurances"
+      ],
+      "problems": [
+        {
+          "title": "Votre site n'est pas à la hauteur de votre expertise",
+          "text": "Un site daté ou un simple modèle fait paraître petit un cabinet sérieux. Les clients jugent votre expertise sur votre site avant même d'appeler."
+        },
+        {
+          "title": "Les clients ne voient pas votre spécialité",
+          "text": "Quand tous vos services tiennent sur une seule page, les gens ne voient pas que vous traitez exactement leur cas — et continuent de chercher."
+        },
+        {
+          "title": "Les clients internationaux ne peuvent pas vous lire",
+          "text": "Entreprises étrangères, investisseurs et expatriés cherchent des professionnels dans leur langue. Un site monolingue les perd."
+        }
+      ],
+      "featuresTitle1": "Conçu pour",
+      "featuresTitle2": "Inspirer Confiance",
+      "features": {
+        "practice": {
+          "title": "Pages par domaine",
+          "text": "Une page par service, rédigée pour répondre à la question du client — et à la façon dont il cherche."
+        },
+        "team": {
+          "title": "Profils de l'équipe",
+          "text": "Photos, expérience, qualifications et langues de chaque spécialiste."
+        },
+        "booking": {
+          "title": "Prise de rendez-vous",
+          "text": "Les clients choisissent en ligne un créneau d'appel ou de rendez-vous, sans échanges d'e-mails."
+        },
+        "trust": {
+          "title": "Références et résultats",
+          "text": "Affiliations, agréments, dossiers marquants et logos clients, présentés de façon claire et professionnelle."
+        },
+        "insights": {
+          "title": "Articles et analyses",
+          "text": "Publiez vous-même vos actualités juridiques ou financières — elles renforcent votre autorité et attirent du trafic."
+        },
+        "languages": {
+          "title": "Plusieurs langues",
+          "text": "De vraies pages multilingues avec un SEO adapté à chaque langue, pas des copies traduites automatiquement."
+        }
+      },
+      "recommend": "La plupart des cabinets ont besoin du forfait Business : jusqu'à 12 pages pour vos domaines et votre équipe, 2–3 langues, la prise de rendez-vous et des articles que vous publiez vous-même. Le forfait Launch convient à un praticien indépendant avec quelques services clés.",
+      "faq": [
+        {
+          "q": "Pouvez-vous rédiger les textes de nos services ?",
+          "a": "Oui, en option. Nous rédigeons des pages claires et optimisées SEO à partir d'un court entretien ; vous validez chaque mot avant le lancement."
+        },
+        {
+          "q": "Respectez-vous les règles de publicité des avocats ?",
+          "a": "Nous construisons le site autour du contenu que vous validez. Les règles de publicité professionnelle varient selon les pays et les barreaux, vous gardez donc la maîtrise de chaque affirmation."
+        },
+        {
+          "q": "Les clients peuvent-ils réserver une consultation payante ?",
+          "a": "Oui. Nous connectons des outils comme Cal.com ou Calendly, qui peuvent encaisser le paiement lors de la réservation."
+        },
+        {
+          "q": "Nous avons déjà un site. Pouvez-vous le refaire sans perdre notre référencement ?",
+          "a": "Oui. Nous migrons votre contenu avec des redirections des anciennes pages vers les nouvelles, afin de préserver votre visibilité."
+        }
+      ],
+      "final": {
+        "title1": "Prêt à paraître",
+        "title2": "aussi solide que vous l'êtes ?"
+      },
+      "searches": [
+        "avocat d'affaires près de chez moi",
+        "comptable pour petite entreprise"
+      ]
+    },
+    "healthWellness": {
+      "meta": {
+        "title": "Sites Web pour Psychologues, Dentistes & Cliniques | BBGeorgiaTech",
+        "description": "Des sites web pour psychologues, dentistes, kinésithérapeutes, nutritionnistes et cliniques privées : réservation en ligne, profils des praticiens, formulaires respectueux de la vie privée et SEO local, à partir de {price}."
+      },
+      "name": "Santé & Thérapie",
+      "hero": {
+        "title1": "Des sites pour cabinets",
+        "title2": "en qui les patients ont confiance.",
+        "subtitle": "Pour psychologues, dentistes, kinésithérapeutes, nutritionnistes, cliniques privées et vétérinaires. Un site calme et clair où les patients vous découvrent, voient vos services et prennent rendez-vous en ligne."
+      },
+      "types": [
+        "Psychologues",
+        "Dentistes",
+        "Kinésithérapeutes",
+        "Nutritionnistes",
+        "Cliniques privées",
+        "Vétérinaires",
+        "Massothérapie",
+        "Orthophonie"
+      ],
+      "problems": [
+        {
+          "title": "Prendre rendez-vous, c'est jouer au téléphone",
+          "text": "Les patients appellent pendant une consultation, laissent un message et réservent ailleurs. Chaque appel manqué est un rendez-vous perdu."
+        },
+        {
+          "title": "Les patients choisissent en qui ils ont confiance",
+          "text": "Avant de réserver, on veut savoir qui va nous soigner : votre expérience, votre approche, vos tarifs. Sans cela, on hésite."
+        },
+        {
+          "title": "Des informations sensibles passent par des canaux non sécurisés",
+          "text": "Des données de santé envoyées via des formulaires ordinaires ou des messageries vous exposent, vous et vos patients."
+        }
+      ],
+      "featuresTitle1": "Conçu pour",
+      "featuresTitle2": "la Confiance des Patients",
+      "features": {
+        "booking": {
+          "title": "Réservation en ligne",
+          "text": "Les patients réservent un créneau 24h/24 via un outil de réservation reconnu, avec des rappels qui réduisent les absences."
+        },
+        "profiles": {
+          "title": "Profils des praticiens",
+          "text": "Formation, expérience, approche et langues de chaque médecin ou thérapeute."
+        },
+        "services": {
+          "title": "Soins et tarifs",
+          "text": "Des descriptions et des tarifs clairs, pour que les patients arrivent informés et rassurés."
+        },
+        "privacy": {
+          "title": "Confidentialité dès la conception",
+          "text": "Les formulaires ne demandent aucune donnée de santé ; les réservations passent par des outils sécurisés ; les politiques de confidentialité et de cookies sont en place."
+        },
+        "local": {
+          "title": "SEO local et Maps",
+          "text": "Apparaissez quand on cherche un spécialiste à proximité, avec adresse, horaires et itinéraire."
+        },
+        "languages": {
+          "title": "Plusieurs langues",
+          "text": "Accueillez expatriés et patients internationaux dans leur langue."
+        }
+      },
+      "recommend": "La plupart des cabinets ont besoin du forfait Business : réservation en ligne, profils des praticiens, 2–3 langues et des textes et tarifs que vous mettez à jour vous-même. Un thérapeute indépendant peut commencer avec le forfait Launch et ajouter la réservation en option.",
+      "faq": [
+        {
+          "q": "Le site respecte-t-il les règles comme le RGPD ou HIPAA ?",
+          "a": "Nous concevons le site pour qu'il ne collecte aucune donnée de santé : les formulaires ne demandent que des informations de base et les réservations passent par des outils reconnus qui gèrent leur propre conformité. Les exigences varient selon les pays ; nous vous recommandons de confirmer vos obligations auprès d'un conseiller local."
+        },
+        {
+          "q": "Quels systèmes de réservation pouvez-vous connecter ?",
+          "a": "Des outils comme Cal.com, Calendly ou le système que vous utilisez déjà, s'il peut être intégré. Nous vous aidons à en choisir un si besoin."
+        },
+        {
+          "q": "Puis-je tenir un blog sur ma spécialité ?",
+          "a": "Oui. Avec le forfait Business, vous publiez vous-même vos articles ; des articles utiles aident aussi les patients à vous trouver sur Google."
+        },
+        {
+          "q": "Mon site aura-t-il l'air froid et clinique ?",
+          "a": "Non. Nous créons des sites apaisants et chaleureux, avec vos vraies photos et un ton adapté à votre cabinet — dans un style clair et moderne."
+        }
+      ],
+      "final": {
+        "title1": "Moins d'appels,",
+        "title2": "plus de rendez-vous ?"
+      },
+      "searches": [
+        "dentiste près de chez moi",
+        "kiné prise de rendez-vous en ligne"
+      ]
+    },
+    "beauty": {
+      "meta": {
+        "title": "Sites Web pour Salons de Coiffure, Barbiers & Spas | BBGeorgiaTech",
+        "description": "Des sites web pour salons de coiffure, barbiers, ongleries, spas et studios de fitness : réservation en ligne 24h/24, galeries, grille tarifaire et SEO local, à partir de {price}."
+      },
+      "name": "Beauté & Bien-être",
+      "hero": {
+        "title1": "Des sites pour salons",
+        "title2": "qui remplissent votre agenda.",
+        "subtitle": "Pour salons de coiffure, barbiers, ongleries, spas, massage, tatouage et studios de fitness. Un beau site qui montre votre travail, affiche vos prix et permet de réserver à tout moment."
+      },
+      "types": [
+        "Coiffure",
+        "Barbiers",
+        "Ongleries",
+        "Spas",
+        "Massage",
+        "Tatouage",
+        "Fitness",
+        "Yoga"
+      ],
+      "problems": [
+        {
+          "title": "Les réservations se font seulement en DM",
+          "text": "Vous répondez aux messages Instagram entre deux clients, et ceux qui ne veulent pas attendre réservent ailleurs."
+        },
+        {
+          "title": "Instagram n'apparaît pas sur Google",
+          "text": "Quand quelqu'un cherche « onglerie près de chez moi », votre profil Instagram apparaît rarement. Un site, si."
+        },
+        {
+          "title": "Les mêmes questions de prix chaque jour",
+          "text": "Sans grille tarifaire en ligne, vous passez des heures à répondre « c'est combien… ? » au lieu de travailler."
+        }
+      ],
+      "featuresTitle1": "Conçu pour",
+      "featuresTitle2": "Remplir Votre Agenda",
+      "features": {
+        "booking": {
+          "title": "Réservation 24h/24",
+          "text": "Le client choisit une prestation, un praticien et un horaire — via Booksy, Fresha ou l'outil de votre choix."
+        },
+        "gallery": {
+          "title": "Galerie de réalisations",
+          "text": "Vos plus belles réalisations, classées par prestation, pour que le client sache exactement à quoi s'attendre."
+        },
+        "prices": {
+          "title": "Grille tarifaire claire",
+          "text": "Prestations, durées et prix au même endroit, modifiables par vous-même."
+        },
+        "team": {
+          "title": "Votre équipe",
+          "text": "Un profil par coiffeur ou praticien, pour que chacun réserve son préféré."
+        },
+        "local": {
+          "title": "SEO local et Maps",
+          "text": "Apparaissez dans les recherches locales avec adresse, horaires et itinéraire."
+        },
+        "reviews": {
+          "title": "Avis clients",
+          "text": "Vos avis Google affichés sur le site, là où les nouveaux clients décident."
+        }
+      },
+      "recommend": "La plupart des salons ont besoin du forfait Business : réservation en ligne, galerie et tarifs que vous mettez à jour, profils de l'équipe et 2–3 langues. Un praticien indépendant peut commencer avec le forfait Launch et ajouter la réservation en option.",
+      "faq": [
+        {
+          "q": "J'utilise déjà Booksy ou Fresha. Puis-je le garder ?",
+          "a": "Oui. Nous connectons votre système de réservation au site, pour que votre agenda reste au même endroit."
+        },
+        {
+          "q": "Le site peut-il afficher mes publications Instagram ?",
+          "a": "Nous pouvons relier votre Instagram et présenter vos meilleures réalisations dans une galerie rapide et bien organisée — qui, contrairement à un fil intégré, fonctionne aussi sur Google."
+        },
+        {
+          "q": "Puis-je modifier mes prix moi-même ?",
+          "a": "Oui, avec le forfait Business vous modifiez prestations et prix depuis votre téléphone en quelques minutes."
+        },
+        {
+          "q": "Le site correspondra-t-il au style de mon salon ?",
+          "a": "Oui. Nous partons de votre marque, de votre décor et de vos photos, pour que le site vous ressemble."
+        }
+      ],
+      "final": {
+        "title1": "Prêt pour un",
+        "title2": "agenda bien rempli ?"
+      },
+      "searches": [
+        "salon de coiffure près de chez moi",
+        "manucure rendez-vous aujourd'hui"
+      ]
+    },
+    "hospitalityTourism": {
+      "meta": {
+        "title": "Sites Web pour Tour-Opérateurs, Hôtels & Restaurants | BBGeorgiaTech",
+        "description": "Des sites web pour tour-opérateurs, maisons d'hôtes, hôtels de charme, restaurants et domaines viticoles : réservation directe, pages multilingues, galeries rapides et Maps, à partir de {price}."
+      },
+      "name": "Hôtellerie & Tourisme",
+      "hero": {
+        "title1": "Des sites pour hôtes",
+        "title2": "qui génèrent des réservations directes.",
+        "subtitle": "Pour tour-opérateurs, maisons d'hôtes, hôtels de charme, restaurants, domaines viticoles et loueurs de voitures. Un site rapide et multilingue qui met votre lieu en valeur et permet de réserver directement chez vous."
+      },
+      "types": [
+        "Tour-opérateurs",
+        "Maisons d'hôtes",
+        "Hôtels de charme",
+        "Restaurants",
+        "Domaines viticoles",
+        "Location de voitures",
+        "Transferts",
+        "Excursions"
+      ],
+      "problems": [
+        {
+          "title": "Les plateformes prélèvent sur chaque séjour",
+          "text": "Les commissions sur chaque réservation s'accumulent vite — et c'est la plateforme, pas vous, qui garde la relation client."
+        },
+        {
+          "title": "Les voyageurs ne vous lisent pas dans leur langue",
+          "text": "On prépare son voyage dans sa langue. Si votre site ne la parle pas, on réserve chez un concurrent qui la parle."
+        },
+        {
+          "title": "Vos photos ne rendent pas justice au lieu",
+          "text": "De petites images lentes sur les réseaux ne montrent pas la vue, les chambres ou la cuisine comme une vraie galerie."
+        }
+      ],
+      "featuresTitle1": "Conçu pour",
+      "featuresTitle2": "les Réservations Directes",
+      "features": {
+        "booking": {
+          "title": "Réservation directe et demandes",
+          "text": "Les voyageurs vérifient les dates et envoient une demande ou réservent en ligne — sans commission."
+        },
+        "languages": {
+          "title": "Multilingue par défaut",
+          "text": "Des pages dans les langues de vos clients, chacune avec un SEO adapté."
+        },
+        "gallery": {
+          "title": "Galeries immersives",
+          "text": "De grandes photos rapides des chambres, circuits, plats et paysages."
+        },
+        "speed": {
+          "title": "Rapide partout",
+          "text": "Optimisé pour les données mobiles et le Wi-Fi lent, pour que personne n'abandonne au chargement."
+        },
+        "local": {
+          "title": "Carte et itinéraire",
+          "text": "Emplacement, accès et alentours, plus votre fiche Google Business."
+        },
+        "reviews": {
+          "title": "Avis clients",
+          "text": "Les avis de Google et d'autres plateformes, affichés là où les voyageurs décident."
+        }
+      },
+      "recommend": "La plupart des établissements ont besoin du forfait Business : 2–3 langues, formulaires de réservation ou de demande, grandes galeries et contenu que vous mettez à jour. Choisissez le forfait Pro pour le paiement en ligne, un moteur de réservation complet ou plus de langues.",
+      "faq": [
+        {
+          "q": "Dois-je quitter Booking.com ou Airbnb ?",
+          "a": "Pas forcément. La plupart des hôtes gardent les plateformes pour la visibilité et utilisent leur propre site pour fidéliser et réserver en direct, sans commission."
+        },
+        {
+          "q": "Les clients peuvent-ils payer en ligne ?",
+          "a": "Oui. Le paiement en ligne est inclus dans le forfait Pro ou disponible en option : Stripe, PayPal ou le système de votre banque."
+        },
+        {
+          "q": "Quelles langues pour mon site ?",
+          "a": "Celles de vos clients. Nous regardons d'où viennent vos visiteurs actuels et recommandons 2–3 langues pour commencer."
+        },
+        {
+          "q": "Puis-je mettre à jour prix et disponibilités moi-même ?",
+          "a": "Oui. Avec le forfait Business, vous modifiez vous-même prix, circuits et offres saisonnières."
+        }
+      ],
+      "final": {
+        "title1": "Prêt pour plus de",
+        "title2": "réservations directes ?"
+      },
+      "searches": [
+        "hôtel de charme à Kazbegi",
+        "circuit œnologique en Kakhétie"
+      ]
+    },
+    "creativePersonalBrands": {
+      "meta": {
+        "title": "Sites Portfolio pour Créatifs & Marques Personnelles | BBGeorgiaTech",
+        "description": "Des sites portfolio pour photographes, vidéastes, designers, coachs, conférenciers et wedding planners : une marque personnelle forte, de belles galeries et des formulaires de demande, à partir de {price}."
+      },
+      "name": "Créatifs & Marques Personnelles",
+      "hero": {
+        "title1": "Des sites portfolio",
+        "title2": "qui vous font embaucher.",
+        "subtitle": "Pour photographes, vidéastes, designers, artistes, coachs, conférenciers, wedding planners et freelances. Un site personnel qui montre votre meilleur travail et transforme les admirateurs en clients."
+      },
+      "types": [
+        "Photographes",
+        "Vidéastes",
+        "Designers",
+        "Artistes",
+        "Coachs",
+        "Conférenciers",
+        "Wedding planners",
+        "Freelances"
+      ],
+      "problems": [
+        {
+          "title": "Votre travail est éparpillé partout",
+          "text": "Instagram, Behance, Vimeo, Google Drive — les clients doivent reconstituer votre parcours, et la plupart ne le font pas."
+        },
+        {
+          "title": "Difficile de se démarquer",
+          "text": "Sur les plateformes, vous ressemblez à tout le monde. Un site personnel montre votre style, votre méthode et votre personnalité."
+        },
+        {
+          "title": "Les demandes arrivent sans détails",
+          "text": "« C'est combien ? » sans date, lieu ni périmètre, ce sont des heures d'échanges avant de pouvoir chiffrer."
+        }
+      ],
+      "featuresTitle1": "Conçu pour",
+      "featuresTitle2": "Vous Faire Embaucher",
+      "features": {
+        "portfolio": {
+          "title": "Un portfolio qui vend",
+          "text": "Vos meilleurs projets, racontés comme des histoires — pas un simple mur d'images."
+        },
+        "brand": {
+          "title": "Design de marque personnelle",
+          "text": "Une identité qui n'appartient qu'à vous, de la typographie aux couleurs."
+        },
+        "inquiry": {
+          "title": "Formulaire de demande intelligent",
+          "text": "Le client indique date, lieu, budget et besoin d'emblée, pour que vous puissiez chiffrer tout de suite."
+        },
+        "booking": {
+          "title": "Réservation d'appel découverte",
+          "text": "Les prospects sérieux réservent directement un appel dans votre agenda."
+        },
+        "seo": {
+          "title": "Trouvé par nom et spécialité",
+          "text": "Apparaissez quand on cherche votre nom — et « photographe de mariage à [ville] »."
+        },
+        "languages": {
+          "title": "Plusieurs langues",
+          "text": "Travaillez avec des clients internationaux dans leur langue."
+        }
+      },
+      "recommend": "La plupart des créatifs commencent avec le forfait Launch : jusqu'à 5 pages, un portfolio fort, un formulaire de demande et la configuration Google. Choisissez le forfait Business pour ajouter vous-même vos projets, tenir un blog ou proposer la réservation en plusieurs langues.",
+      "faq": [
+        {
+          "q": "Les grandes photos et vidéos vont-elles ralentir le site ?",
+          "a": "Non. Nous optimisons chaque image et diffusons la vidéo efficacement, pour un portfolio net et rapide sur mobile."
+        },
+        {
+          "q": "Puis-je ajouter de nouveaux projets moi-même ?",
+          "a": "Oui, avec le forfait Business. Avec le forfait Launch, nous ajoutons vos nouveaux projets grâce aux heures de modification incluses dans Care+ ou Growth."
+        },
+        {
+          "q": "Puis-je vendre des tirages, presets ou formations ?",
+          "a": "Oui. Une petite boutique ou des téléchargements numériques sont inclus dans le forfait Pro ou disponibles en option."
+        },
+        {
+          "q": "Ai-je besoin d'un logo au préalable ?",
+          "a": "Non. Beaucoup de marques personnelles utilisent un logotype basé sur leur nom, que nous pouvons créer dans l'option identité de marque."
+        }
+      ],
+      "final": {
+        "title1": "Prêt à montrer",
+        "title2": "votre meilleur travail ?"
+      },
+      "searches": [
+        "photographe de mariage Tbilissi",
+        "graphiste portfolio"
+      ]
+    },
+    "education": {
+      "meta": {
+        "title": "Sites Web pour Écoles, Professeurs & Formateurs | BBGeorgiaTech",
+        "description": "Des sites web pour professeurs particuliers, écoles de langues, auto-écoles, écoles de musique et de danse et centres de formation : planning des cours, inscription et paiement en ligne, à partir de {price}."
+      },
+      "name": "Éducation & Formation",
+      "hero": {
+        "title1": "Des sites pour écoles",
+        "title2": "qui remplissent vos cours.",
+        "subtitle": "Pour professeurs particuliers, écoles de langues, auto-écoles, écoles de musique et de danse, clubs pour enfants, centres de formation et cours en ligne. Un site clair avec vos cours, votre planning et une inscription simple."
+      },
+      "types": [
+        "Professeurs",
+        "Écoles de langues",
+        "Auto-écoles",
+        "Écoles de musique",
+        "Danse",
+        "Clubs enfants",
+        "Centres de formation",
+        "Cours en ligne"
+      ],
+      "problems": [
+        {
+          "title": "Le planning vit dans des chats et des tableurs",
+          "text": "Parents et élèves demandent sans cesse quand commence le prochain groupe, faute d'un endroit unique pour le voir."
+        },
+        {
+          "title": "Inscriptions et paiements sont manuels",
+          "text": "Collecter les noms, vérifier les paiements et envoyer des rappels à la main prend des heures chaque semaine."
+        },
+        {
+          "title": "Les parents vous comparent en ligne",
+          "text": "Avant d'appeler, les familles comparent les écoles sur le web. Sans site clair, vous perdez la comparaison."
+        }
+      ],
+      "featuresTitle1": "Conçu pour",
+      "featuresTitle2": "Remplir Vos Cours",
+      "features": {
+        "courses": {
+          "title": "Cours et planning",
+          "text": "Chaque cours avec niveau, âge, dates, horaires et prix — facile à mettre à jour à chaque session."
+        },
+        "registration": {
+          "title": "Inscription en ligne",
+          "text": "Élèves ou parents s'inscrivent en quelques minutes ; vous recevez tout au même endroit."
+        },
+        "payments": {
+          "title": "Paiement en ligne",
+          "text": "Encaissez frais de cours ou acomptes en ligne via Stripe, PayPal ou votre banque."
+        },
+        "teachers": {
+          "title": "Profils des enseignants",
+          "text": "Diplômes et expérience de chaque enseignant, pour rassurer les familles."
+        },
+        "resources": {
+          "title": "Actualités et ressources",
+          "text": "Annonces, résultats et supports pédagogiques que vous publiez vous-même."
+        },
+        "languages": {
+          "title": "Plusieurs langues",
+          "text": "Touchez élèves internationaux et familles expatriées dans leur langue."
+        }
+      },
+      "recommend": "La plupart des écoles ont besoin du forfait Business : pages de cours et planning modifiables, formulaire d'inscription et 2–3 langues. Ajoutez le paiement en ligne en option, ou choisissez le forfait Pro pour un espace élève ou une plateforme de cours complète.",
+      "faq": [
+        {
+          "q": "Puis-je mettre à jour le planning moi-même à chaque session ?",
+          "a": "Oui. Avec le forfait Business, vous modifiez cours, dates et prix vous-même, en quelques minutes."
+        },
+        {
+          "q": "Les élèves peuvent-ils payer en ligne ?",
+          "a": "Oui, en option ou avec le forfait Pro : Stripe, PayPal ou le système de votre banque."
+        },
+        {
+          "q": "Pouvez-vous créer une plateforme de cours en ligne ?",
+          "a": "Oui, avec le forfait Pro : un espace élève avec leçons, progression et contrôle d'accès. Nous chiffrons selon vos besoins."
+        },
+        {
+          "q": "Serai-je notifié de chaque inscription ?",
+          "a": "Oui. Chaque inscription arrive par e-mail, et nous pouvons aussi l'ajouter à un tableur ou à un CRM."
+        }
+      ],
+      "final": {
+        "title1": "Prêt à remplir",
+        "title2": "votre prochain cours ?"
+      },
+      "searches": [
+        "cours d'anglais pour enfants",
+        "cours de programmation débutant"
+      ]
+    },
+    "localShops": {
+      "meta": {
+        "title": "Sites & Boutiques en Ligne pour Commerces et Producteurs Locaux | BBGeorgiaTech",
+        "description": "Des sites et boutiques en ligne pour boutiques, fleuristes, boulangeries, producteurs de vin, miel et fromage et artisans : vente en ligne, livraison, retrait et l'histoire de votre marque, à partir de {price}."
+      },
+      "name": "Commerces & Producteurs Locaux",
+      "hero": {
+        "title1": "Des boutiques en ligne",
+        "title2": "qui vendent tous les jours.",
+        "subtitle": "Pour boutiques, fleuristes, boulangeries, producteurs de vin, de miel et de fromage, artisans et boutiques de cadeaux. Une belle boutique qui raconte votre histoire et continue de vendre quand vos portes sont fermées."
+      },
+      "types": [
+        "Boutiques",
+        "Fleuristes",
+        "Boulangeries",
+        "Vignerons",
+        "Miel et fromage",
+        "Artisans",
+        "Cadeaux",
+        "Cosmétiques"
+      ],
+      "problems": [
+        {
+          "title": "Les ventes s'arrêtent à la fermeture",
+          "text": "Les clients qui vous découvrent le soir ou un jour de fermeture n'ont nulle part où acheter."
+        },
+        {
+          "title": "Les marketplaces prélèvent et gardent le client",
+          "text": "Les commissions rognent votre marge, et vous créez rarement une relation avec ceux qui achètent."
+        },
+        {
+          "title": "Les visiteurs ne peuvent pas racheter une fois partis",
+          "text": "Touristes et visiteurs de passage adorent vos produits, mais ne peuvent plus commander une fois rentrés chez eux."
+        }
+      ],
+      "featuresTitle1": "Conçu pour",
+      "featuresTitle2": "Vendre Chaque Jour",
+      "features": {
+        "shop": {
+          "title": "Votre propre boutique",
+          "text": "Produits, variantes et stock, avec un paiement simple sur n'importe quel téléphone."
+        },
+        "payments": {
+          "title": "Paiement en ligne",
+          "text": "Cartes bancaires via Stripe, PayPal ou votre banque locale."
+        },
+        "delivery": {
+          "title": "Livraison et retrait",
+          "text": "Zones et tarifs de livraison, ou retrait en boutique — selon votre activité."
+        },
+        "story": {
+          "title": "Votre histoire",
+          "text": "Les personnes, le lieu et le savoir-faire derrière vos produits — la raison pour laquelle on vous choisit."
+        },
+        "local": {
+          "title": "SEO local et Maps",
+          "text": "Apparaissez dans les recherches locales et guidez les clients jusqu'à votre boutique."
+        },
+        "languages": {
+          "title": "Vendre à l'étranger",
+          "text": "Plusieurs langues pour les touristes et les clients internationaux."
+        }
+      },
+      "recommend": "La plupart des commerces ont besoin du forfait Pro : une boutique en ligne avec paiement, options de livraison et jusqu'à 5 langues. Si vous voulez seulement présenter vos produits et prendre les commandes par téléphone ou message, commencez avec le forfait Business et ajoutez une boutique plus tard.",
+      "faq": [
+        {
+          "q": "Combien de produits la boutique peut-elle contenir ?",
+          "a": "Le forfait Pro inclut la mise en place d'environ 100 produits. Des catalogues plus grands sont possibles — nous les chiffrons selon leur taille."
+        },
+        {
+          "q": "Puis-je gérer commandes et stock moi-même ?",
+          "a": "Oui. Vous ajoutez des produits, changez les prix et gérez les commandes vous-même, depuis votre téléphone ou ordinateur."
+        },
+        {
+          "q": "Puis-je livrer à l'étranger ?",
+          "a": "Oui. Nous configurons zones et tarifs de livraison par pays, avec les langues dont vos clients ont besoin."
+        },
+        {
+          "q": "Ajoutez-vous mes produits ?",
+          "a": "Vous pouvez le faire, ou nous pouvons le faire pour vous en option, avec un prix par produit."
+        }
+      ],
+      "final": {
+        "title1": "Prêt à vendre",
+        "title2": "jour et nuit ?"
+      },
+      "searches": [
+        "bijoux faits main en ligne",
+        "livraison de fleurs près de chez moi"
+      ]
+    }
+  },
+  "Home": {
+    "who": {
+      "eyebrow": "Pour qui",
+      "title1": "Conçu pour",
+      "title2": "Votre Secteur",
+      "subtitle": "Chaque activité a ses clients et ses questions. Choisissez la vôtre et découvrez ce que votre site doit faire.",
+      "explore": "Découvrir"
+    },
+    "why": {
+      "eyebrow": "Pourquoi un site",
+      "link": "Voir comment un site se rentabilise"
+    },
+    "pricing": {
+      "eyebrow": "Tarifs",
+      "title1": "Des Prix",
+      "title2": "Clairs",
+      "subtitle": "Des prix fixes en USD, identiques dans tous les pays. Commencez petit ou payez au mois.",
+      "all": "Voir tous les tarifs",
+      "popular": "Le plus simple"
+    }
   }
 }
