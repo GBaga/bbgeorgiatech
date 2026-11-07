@@ -4,7 +4,7 @@
   },
   "Metadata": {
     "title": "Sites web pour petites entreprises à prix fixe | BBGeorgiaTech",
-    "description": "Sites web à prix fixe pour petites entreprises du monde entier, dès {price}. Conception, développement, visibilité sur Google et maintenance. En ligne en 3 semaines environ. Devis gratuit sous 24 h.",
+    "description": "Sites web à prix fixe pour petites entreprises, dès {price}. Conception, textes, visibilité Google et maintenance. En ligne en 3 semaines environ.",
     "ogTitle": "Sites web à prix fixe pour petites entreprises | BBGeorgiaTech",
     "ogDescription": "Des sites rapides et adaptés au mobile qui vous apportent appels, réservations et clients. Dès {price}, en ligne en 3 semaines environ.",
     "ogTagline": "Sites web à prix fixe pour petites entreprises",
@@ -12,7 +12,6 @@
   },
   "Navigation": {
     "competencies": "Services",
-    "theEngine": "Technologie",
     "systems": "Portfolio",
     "heritage": "À Propos",
     "initiateProtocol": "Devis gratuit",
@@ -39,29 +38,24 @@
     "targetValue": "Hébergement, mises à jour et maintenance",
     "getAQuote": "Obtenir un devis gratuit",
     "initializeDeployment": "Voir Notre Travail →",
-    "pricingNote": "À partir de {start} · ou {monthly} / mois",
+    "pricingNote": "À partir de {launch} · ou {monthly} / mois",
     "lessIsMore": "Parfois, moins c'est plus.",
     "quoteAuthor": "Robert Browning (1855)",
     "seePricing": "Voir les tarifs"
   },
   "About": {
     "eyebrow": "À propos",
-    "umbrella": "Fait partie du groupe Bagauri Bonds Georgia",
-    "title1": "Un petit studio.",
-    "title2": "Toute notre attention.",
-    "intro": "BBGeorgiaTech est un petit studio web fondé en Géorgie par Goga Bagauri, membre du groupe Bagauri Bonds Georgia, qui travaille avec des clients du monde entier. Nous prenons peu de projets à la fois : chaque site reçoit toute notre attention et est conçu pour durer.",
-    "values": [
+    "title1": "Prix Fixe. Délai Convenu.",
+    "title2": "Votre Site.",
+    "intro": "BBGeorgiaTech est la branche technologique de Bagauri Bonds Georgia. Nous créons des sites web pour les petites et moyennes entreprises, pour que vos clients vous trouvent et vous contactent facilement. Nous ne travaillons que sur quelques projets à la fois. Le prix et le délai sont convenus dès le départ, et si nous dépassons le délai, nous baissons le prix.",
+    "stories": [
       {
-        "title": "La qualité avant la quantité",
-        "text": "Pas de production de masse. Chaque projet reçoit notre meilleure réflexion et notre plus haut niveau d'exigence."
+        "title": "Notre Approche",
+        "text": "Nous croyons à une technologie vraiment utile. C’est pourquoi nous créons des sites simples, rapides et faciles à utiliser, qui relient votre entreprise à vos clients et vous aident à gagner leur confiance."
       },
       {
-        "title": "Simple et rapide",
-        "text": "Sans superflu ni complexité inutile : des sites clairs, rapides et faciles à utiliser."
-      },
-      {
-        "title": "Technologie moderne",
-        "text": "Chaque site est développé sur mesure avec des outils modernes et éprouvés, pensés pour la vitesse, la sécurité et la croissance."
+        "title": "Nos Racines",
+        "text": "Bagauri est notre nom de famille, et la responsabilité que nous prenons pour chaque projet. Une fois payé en totalité, le site, son code et l’accès à l’administration vous appartiennent entièrement. Nous vous aidons à le faire évoluer, mais vous gardez toujours le contrôle."
       }
     ],
     "techLabel": "Technologies",
@@ -86,7 +80,7 @@
           "Adapté au mobile",
           "Appel et WhatsApp",
           "Google Business",
-          "Dès 1 semaine"
+          "Textes inclus"
         ]
       },
       {
@@ -123,7 +117,7 @@
     "orMonthly": "ou {monthly} / mois",
     "fromMonthly": "à partir de {price} / mois",
     "details": "En savoir plus",
-    "more": "Aussi : logo et identité, traduction, e-mail professionnel",
+    "more": "Aussi : logo, traduction, paiement en ligne",
     "allAddons": "Tous les compléments"
   },
   "ProcessSection": {
@@ -142,15 +136,15 @@
     "title1": "Questions",
     "title2": "Fréquentes",
     "q1": "Combien coûte un nouveau site web ?",
-    "a1": "Les sites commencent à {start} pour une page unique et à {launch} pour le forfait Launch complet — ou {monthly} par mois avec Launch Mensuel, hébergement et maintenance inclus. Les plans de maintenance commencent à {care} par mois. Chaque projet reçoit un devis fixe sous 24 heures après une consultation gratuite ; retrouvez tous les forfaits et options sur la page Tarifs.",
+    "a1": "Le forfait Launch coûte {launch} et Business {business}, ou payez au mois à partir de {monthly} pendant {months} mois, plan Care inclus. Les entreprises enregistrées en Géorgie paient la moitié du prix unique. Chaque projet reçoit un devis fixe sous 24 heures après une consultation gratuite ; tous les forfaits et options sont sur la page Tarifs.",
     "q2": "Proposez-vous une maintenance mensuelle ?",
-    "a2": "Oui. Les plans de maintenance commencent à {care} par mois et couvrent l'hébergement, le SSL, les sauvegardes quotidiennes, les mises à jour de sécurité et la surveillance 24/7. Care+ et Growth ajoutent des modifications mensuelles, des rapports et un SEO continu. En annuel, 2 mois sont offerts ; résiliable à tout moment avec un préavis de 30 jours.",
+    "a2": "Oui. Les plans de maintenance commencent à {care} par mois et couvrent l'hébergement, le SSL, les sauvegardes quotidiennes, les mises à jour de sécurité et la surveillance 24/7. Care+ ajoute des modifications mensuelles, un rapport et la mise à jour de la fiche Google Business. En annuel, 2 mois sont offerts ; résiliable à tout moment avec un préavis de 30 jours.",
     "q3": "Combien de temps faut-il pour créer un site web ?",
-    "a3": "La plupart des sites d’entreprise sont en ligne en 3 semaines environ, du premier appel au lancement. Un site d’une page peut être prêt en une semaine environ, tandis que les projets Pro plus importants prennent 5 à 8 semaines. Votre devis indique la date de lancement exacte.",
+    "a3": "La plupart des sites d’entreprise sont en ligne en 3 semaines environ, du premier appel au lancement : Launch prend en général 2 à 3 semaines, Business 3 à 4, et les projets sur mesure plus importants 5 à 8. Votre devis indique la date de lancement exacte.",
     "q4": "Travaillez-vous avec des clients internationaux ?",
-    "a4": "Absolument. Bien que nous ayons des racines profondes en Géorgie et opérions en Europe, nous servons des clients dans le monde entier avec une communication fluide.",
+    "a4": "Absolument. Nous sommes basés en Géorgie et travaillons avec des clients de tous les pays, en français, en anglais ou en géorgien, par e-mail, WhatsApp ou visioconférence.",
     "q5": "Puis-je mettre à jour mon propre site web une fois qu'il est construit ?",
-    "a5": "Oui. Pour les clients qui souhaitent être indépendants, nous intégrons un CMS simple sans code (tel que Sanity.io) afin que vous puissiez mettre à jour du texte, des images, des articles de blog, et plus encore — aucune connaissance technique n'est nécessaire. Nous fournirons également une courte vidéo explicative pour que vous soyez confiant dès le premier jour."
+    "a5": "Oui. Avec le forfait Business, vous modifiez vous-même textes, photos et prix dans un éditeur simple, sans connaissances techniques, et nous enregistrons une courte vidéo explicative. Avec le forfait Launch, envoyez-nous simplement vos modifications : elles sont incluses dans le plan Care+."
   },
   "TestimonialsSection": {
     "title1": "Succès",
@@ -241,13 +235,15 @@
     "hProjects": "Projets Web, Paiement et Garantie",
     "pProjects": "Cette section s’applique lorsque vous commandez un forfait site web ou un plan de maintenance auprès de BBGeorgiaTech. Votre devis ou contrat écrit précise le périmètre, le prix et la date de lancement ; en cas de divergence avec cette section, le devis ou le contrat prévaut.",
     "proj": [
-      "Paiement : 50 % du prix du projet est dû avant le début des travaux et les 50 % restants au lancement. Tous les prix sont en dollars américains (USD), dans tous les pays.",
+      "Paiement : pour les projets à paiement unique, 50 % du prix est dû avant le début des travaux et les 50 % restants au lancement. Tous les prix sont en dollars américains (USD).",
+      "Prix local : les entreprises enregistrées en Géorgie paient 50 % des prix uniques affichés pour les forfaits et les options. Les plans de maintenance sont facturés au prix affiché. L’éligibilité est confirmée par le numéro d’identification de l’entreprise dans le devis ou le contrat.",
       "Garantie de délai : si nous dépassons la date de lancement convenue pour des raisons qui nous incombent, vous bénéficiez d’une remise de 10 % sur le prix du projet par semaine complète de retard, dans la limite de 30 %. La remise est déduite du paiement final.",
       "La date de lancement est décalée d’autant lorsqu’un retard vient de votre côté — par exemple contenu, documents, retours, validations ou paiements tardifs — ou d’une modification du périmètre convenu.",
       "Remboursement partiel : si le concept de design ne vous satisfait pas après deux séries de révisions, vous pouvez mettre fin au projet avant le début du développement. Nous remboursons alors 50 % de votre acompte ; le reste couvre le travail de design déjà réalisé. Une fois le développement commencé, l’acompte n’est plus remboursable.",
-      "Paiement mensuel : au lieu du paiement 50/50 ci-dessus, le site Launch et le plan Care peuvent être payés en mensualités sur la durée indiquée sur la page des tarifs, à partir du début des travaux. La garantie de remboursement partiel ne s’applique pas au paiement mensuel.",
+      "Textes : les forfaits incluent la rédaction des principaux textes du site, à partir d’un questionnaire ou d’un appel avec vous. Vous les relisez et les validez avant le lancement.",
+      "Paiement mensuel : au lieu du paiement 50/50 ci-dessus, le forfait Launch ou Business et le plan Care peuvent être payés en 12 mensualités, à partir du début des travaux. La garantie de remboursement partiel ne s’applique pas au paiement mensuel.",
       "Vous pouvez résilier le paiement mensuel à tout moment avec un préavis de 30 jours, sans rien devoir de plus. À la résiliation, l’accès au site et aux services réalisés pour vous prend fin. Une fois toutes les mensualités payées, le site vous appartient et vous pouvez poursuivre avec un plan de maintenance ou l’héberger vous-même.",
-      "Propriété : après paiement intégral, le site, son design et son code vous appartiennent.",
+      "Propriété : après paiement complet, le site, son design, son code et l’accès à l’administration vous appartiennent.",
       "Les plans de maintenance sont facturés d’avance, au mois ou à l’année (l’annuel inclut 2 mois offerts), et peuvent être résiliés avec un préavis écrit de 30 jours. Les heures non utilisées ne sont pas reportées au mois suivant.",
       "Si vous résiliez un plan de maintenance annuel avant son terme, nous remboursons le montant payé au prorata des mois complets restants.",
       "Portfolio : BBGeorgiaTech peut présenter le site réalisé — son nom, des captures d’écran et un lien — dans son portfolio et ses supports marketing."
@@ -255,12 +251,12 @@
   },
   "DeployedSystems": {
     "title2": "Portfolio",
-    "m1": "De la première conversation au site en ligne en seulement 2 semaines — KC Legal attire déjà des demandes de consultation qualifiées grâce à des temps de chargement plus rapides et une mise en page axée sur la conversion.",
+    "m1": "De la première conversation au site en ligne en seulement 2 semaines : un site rapide et clair pour un cabinet d’avocats, conçu pour faciliter les demandes de consultation.",
     "m2": "Un site en trois langues pour une entreprise de rénovation active à Tbilissi, Batoumi et Akhmeta. L'équipe publie elle-même ses nouveaux chantiers et services, sans code.",
     "m3": "Moteur de réservation en direct, livraison d'images en temps réel via Cloudinary et annonces multi-devises — le tout en moins de 1,5s sur mobile. Le panneau de contrôle back-office permet aux propriétaires de créer des factures, de gérer les réservations et de gérer les opérations quotidiennes entièrement depuis un téléphone.",
     "m5": "Une plateforme qui gère les championnats de football et de basketball d'une ligue d'entreprise privée : classements en direct, calendrier, meilleurs buteurs et playoffs, mis à jour par les organisateurs eux-mêmes.",
     "eyebrow": "Réalisations",
-    "subtitle": "De vraies entreprises, de vrais résultats — des sites qui génèrent appels, réservations et clients.",
+    "subtitle": "De vraies entreprises, des sites en ligne — conçus pour générer appels, réservations et clients.",
     "projectsLabel": "projets",
     "visit": "Voir le site",
     "paused": "En pause",
@@ -305,21 +301,21 @@
     ]
   },
   "EmailReceipt": {
-    "subject": "Transmission Reçue : BBGeorgiaTech",
-    "title": "Transmission Reçue",
+    "subject": "Message bien reçu : BBGeorgiaTech",
+    "title": "Message reçu",
     "greeting": "Bonjour",
-    "p1": "Merci d'avoir contacté BBGeorgiaTech. Nous avons enregistré avec succès votre demande de projet dans nos systèmes sécurisés. Notre équipe d'architecture technique examinera vos spécifications et vous contactera dans les 24 heures pour discuter du déploiement.",
+    "p1": "Merci d’avoir contacté BBGeorgiaTech. Nous avons bien reçu votre message et vous répondrons sous 24 heures pour organiser une consultation gratuite.",
     "payloadRecord": "Votre message",
-    "entity": "Entité / Nom :",
-    "returnVector": "Vecteur de Retour :",
-    "requirements": "Exigences :",
+    "entity": "Nom / entreprise :",
+    "returnVector": "E-mail :",
+    "requirements": "Votre message :",
     "regards1": "Cordialement,",
-    "regards2": "L'Équipe BBGeorgiaTech",
+    "regards2": "L’équipe BBGeorgiaTech",
     "rightsReserved": "BBGeorgiaTech. Tous droits réservés."
   },
   "CookieBanner": {
     "title": "Confidentialité et cookies",
-    "descStart": "Nous utilisons un minimum de matrices de suivi (Vercel Core Vitals, GA4) pour optimiser les performances de l'infrastructure. Pas de profilage intrusif. Consultez notre ",
+    "descStart": "Nous utilisons quelques outils d’analyse (Vercel Analytics, Google Analytics) pour comprendre l’usage du site et le garder rapide. Aucun suivi publicitaire ni profilage. Consultez notre ",
     "linkText": "Politique relative aux cookies",
     "descEnd": ".",
     "acceptBtn": "Accepter et continuer",
@@ -328,7 +324,7 @@
   "Pricing": {
     "meta": {
       "title": "Tarifs — Forfaits Sites Web & Maintenance | BBGeorgiaTech",
-      "description": "Des sites web à prix fixe pour les petites entreprises du monde entier, à partir de {launch}. Trois forfaits, des plans de maintenance dès {care} par mois, des options et une garantie de délai."
+      "description": "Sites web à prix fixe dès {launch} : deux forfaits, paiement unique ou mensuel, maintenance dès {care}/mois, prix local Géorgie et garantie de délai."
     },
     "ui": {
       "from": "à partir de {price}",
@@ -337,13 +333,18 @@
       "getStarted": "Commencer",
       "included": "Inclus",
       "notIncluded": "Non inclus",
-      "feature": "Fonctionnalité"
+      "feature": "Fonctionnalité",
+      "orMonthly": "ou {monthly} / mois × {months}",
+      "localLine": "Entreprises enregistrées en Géorgie : {price} ou {monthly} / mois",
+      "intlLine": "Prix international : {price} ou {monthly} / mois",
+      "localScope": "pour les entreprises enregistrées en Géorgie",
+      "perMonth": "/ mois"
     },
     "hero": {
       "eyebrow": "Tarifs",
       "title1": "Des Prix",
       "title2": "Clairs.",
-      "subtitle": "Des sites web à prix fixe pour les petites entreprises du monde entier. Aucun frais caché — vous connaissez le coût avant de commencer.",
+      "subtitle": "Des sites web à prix fixe pour les petites entreprises. Payez en une fois ou au mois — sans frais cachés, vous connaissez le prix avant de commencer.",
       "badges": [
         "Prix fixe",
         "Tous les prix en USD",
@@ -354,51 +355,36 @@
       "eyebrow": "Forfaits",
       "title1": "Forfaits",
       "title2": "Site Web",
-      "subtitle": "Prix unique. Choisissez le forfait adapté aujourd'hui — vous pourrez toujours évoluer ensuite.",
+      "subtitle": "Deux forfaits. Payez en une fois, ou au mois sur 12 mois — après le dernier paiement, le site est à vous.",
       "launch": {
         "name": "Launch",
         "tagline": "Un site professionnel qui vous rend visible et fait sonner le téléphone.",
-        "weeks": "~2 semaines",
+        "weeks": "2–3 semaines",
         "features": [
           "Jusqu'à 5 pages ou une longue page d'accueil",
+          "Nous rédigeons les textes pour vous",
           "Design sur mesure : 1 concept + 2 révisions",
           "Mobile, tablette et ordinateur",
           "1 langue",
           "Formulaire de contact, boutons d'appel et WhatsApp, Google Maps",
-          "SEO de base + Google Search Console",
-          "Configuration de la fiche Google Business",
+          "SEO de base + configuration de la fiche Google Business",
           "30 jours de corrections gratuites après le lancement"
         ]
       },
       "business": {
         "name": "Business",
-        "tagline": "Pour les entreprises qui veulent que leurs clients réservent et achètent en ligne.",
+        "tagline": "Pour les entreprises qui veulent que leurs clients réservent, commandent ou demandent un devis en ligne.",
         "weeks": "3–4 semaines",
         "features": [
           "Tout le forfait Launch",
           "Jusqu'à 12 pages",
           "2–3 langues avec SEO multilingue",
+          "Réservation en ligne, connectée à l’outil que vous utilisez déjà, ou formulaire de devis en plusieurs étapes",
           "Modifiez vous-même textes, photos et prix (CMS)",
-          "Réservation en ligne ou formulaire de devis en plusieurs étapes",
           "Section blog / actualités",
           "SEO avancé, schema et visibilité dans la recherche IA",
           "Analytics avec suivi des appels et formulaires",
           "60 jours de support après le lancement"
-        ]
-      },
-      "pro": {
-        "name": "Pro",
-        "tagline": "Fonctionnalités sur mesure, boutique en ligne et intégrations.",
-        "weeks": "5–8 semaines",
-        "features": [
-          "Tout le forfait Business",
-          "Jusqu'à 5 langues",
-          "Boutique en ligne (~100 produits) avec Stripe, PayPal ou paiement bancaire",
-          "Espace client ou réservation avancée",
-          "Intégrations CRM, e-mailing et comptabilité",
-          "Design system sur mesure et animations interactives",
-          "Audit de vitesse et de sécurité avant le lancement",
-          "90 jours de support prioritaire"
         ]
       }
     },
@@ -409,47 +395,30 @@
       "rows": {
         "pages": "Pages",
         "languages": "Langues",
-        "revisions": "Révisions du design",
+        "copy": "Textes rédigés pour vous",
         "delivery": "Délai de livraison",
-        "responsive": "Adapté mobile et tablette",
+        "revisions": "Révisions du design",
         "contact": "Formulaire, boutons d'appel et WhatsApp",
-        "basicSeo": "SEO de base et Search Console",
-        "gbp": "Configuration Google Business",
-        "ssl": "SSL et optimisation de la vitesse",
-        "legal": "Politique de confidentialité et cookies",
-        "cms": "Édition autonome (CMS)",
-        "booking": "Réservation en ligne / calendrier",
-        "blog": "Blog / actualités",
-        "advSeo": "SEO avancé, schema, llms.txt",
-        "analytics": "Analytics et suivi des conversions",
-        "animations": "Animations",
-        "shop": "Boutique en ligne",
-        "integrations": "CRM et intégrations tierces",
-        "audit": "Audit de vitesse et de sécurité",
-        "support": "Support après le lancement",
-        "training": "Formation"
+        "seo": "SEO",
+        "gbp": "Configuration de la fiche Google Business",
+        "cms": "Modification autonome (CMS)",
+        "booking": "Réservation en ligne / formulaire de devis",
+        "analytics": "Suivi des appels et formulaires",
+        "support": "Support après le lancement"
       }
     },
     "values": {
-      "weeks2": "~2 semaines",
+      "weeks2to3": "2–3 semaines",
       "weeks3to4": "3–4 semaines",
-      "weeks5to8": "5–8 semaines",
       "addon": "En option",
-      "basic": "Basiques",
-      "light": "Légères",
-      "interactive": "Interactives",
+      "basic": "De base",
+      "advanced": "Avancé + schema",
       "days30": "30 jours",
       "days60": "60 jours",
-      "days90priority": "90 jours, prioritaire",
-      "min30": "30 min",
-      "hour1": "1 heure",
       "hours2": "2 h / mois",
-      "hours5": "5 h / mois",
       "quarterly": "Trimestriel",
-      "monthly": "Mensuel",
       "bd2": "2 jours ouvrés",
-      "bd1": "1 jour ouvré",
-      "sameDay": "Le jour même (urgent)"
+      "bd1": "1 jour ouvré"
     },
     "care": {
       "eyebrow": "Plans mensuels",
@@ -470,10 +439,6 @@
         "carePlus": {
           "name": "Care+",
           "tagline": "Plus des modifications et un rapport chaque mois."
-        },
-        "growth": {
-          "name": "Growth",
-          "tagline": "Un partenaire continu pour votre croissance."
         }
       },
       "rows": {
@@ -489,10 +454,6 @@
         "report": "Rapport mensuel : visites, demandes, vitesse",
         "gbp": "Mises à jour de la fiche Google Business",
         "seoCheck": "Contrôle SEO",
-        "content": "1 nouvel article ou page / mois",
-        "seoWork": "SEO continu : mots-clés et liens internes",
-        "cro": "Analyse des conversions et recommandations",
-        "call": "Appel stratégique (30 min)",
         "response": "Délai de réponse"
       },
       "terms": [
@@ -500,6 +461,7 @@
         "Payez à l'année et obtenez 2 mois offerts.",
         "Résiliez un plan annuel avant terme et soyez remboursé des mois restants.",
         "Les heures non utilisées ne sont pas reportées au mois suivant.",
+        "Besoin d’un SEO continu et de nouveaux contenus chaque mois ? Nous le proposons sur demande.",
         "Vous préférez l'héberger vous-même ? Sans plan, nous vous remettons le site et son code dans leur intégralité."
       ]
     },
@@ -507,46 +469,21 @@
       "eyebrow": "Options",
       "title1": "Services",
       "title2": "Additionnels",
-      "subtitle": "Ajoutez exactement ce dont vous avez besoin, à n'importe quel forfait.",
-      "groups": {
-        "content": "Contenu",
-        "brand": "Design et marque",
-        "features": "Fonctionnalités",
-        "marketing": "SEO et marketing",
-        "technical": "Technique"
-      },
+      "subtitle": "Ajoutez ce dont vous avez besoin à l’un ou l’autre forfait. Le reste est chiffré sur mesure.",
       "items": {
         "extraPage": "Page supplémentaire",
-        "copywriting": "Rédaction optimisée SEO",
-        "translation": "Traduction et localisation",
-        "stock": "Sélection et retouche de photos",
-        "products": "Ajout de produits à la boutique",
-        "logo": "Logo",
-        "identity": "Identité de marque : logo, couleurs, polices, charte",
-        "social": "Modèles pour réseaux sociaux",
-        "print": "Carte de visite ou supports imprimés",
         "language": "Langue supplémentaire (configuration ; traduction à part)",
-        "booking": "Intégration de réservation / calendrier (pour Launch)",
-        "quoteForm": "Formulaire de devis en plusieurs étapes",
+        "translation": "Traduction et localisation",
+        "booking": "Connexion d’un outil de réservation / calendrier (pour Launch)",
         "payments": "Paiements en ligne : Stripe, PayPal ou banque",
         "shop": "Boutique en ligne en plus du forfait Business",
-        "newsletter": "Intégration e-mailing (Mailchimp, Brevo)",
-        "portal": "Espace client et fonctionnalités complexes",
-        "seoAudit": "Audit SEO d'un site existant",
-        "localSeo": "SEO local : optimisation Google Business et inscription sur 10 cartes et annuaires (Apple Plans, Bing, Facebook…)",
-        "tracking": "Configuration Analytics, Google Ads et pixel Meta",
-        "migration": "Migration d'un ancien site, SEO et redirections conservés",
-        "email": "Domaine et e-mail professionnel (Google Workspace, Zoho)",
-        "rush": "Livraison express",
-        "hourly": "Taux horaire hors forfaits"
+        "logo": "Logo",
+        "localSeo": "SEO local : optimisation Google Business et inscription sur 10 cartes et annuaires (Apple Plans, Bing, Facebook…)"
       },
       "units": {
         "from": "à partir de {price}",
         "perPage": "/ page",
-        "perSet": "/ lot",
-        "perProduct": "/ produit",
-        "perHour": "/ heure",
-        "custom": "Sur devis"
+        "perHour": "/ heure"
       },
       "localSeoInfo": {
         "summary": "Ce qui est inclus",
@@ -579,7 +516,7 @@
         },
         {
           "title": "Acompte de 50 % et design",
-          "text": "Nous commençons par un concept de design et l'affinons avec vous."
+          "text": "Nous rédigeons les textes et créons un concept de design, puis nous l’affinons avec vous."
         },
         {
           "title": "Développement et validation",
@@ -587,16 +524,16 @@
         },
         {
           "title": "Lancement et solde de 50 %",
-          "text": "Les 50 % restants sont dus au lancement. Votre période de support commence alors."
+          "text": "Les 50 % restants sont dus au lancement — ou vos mensualités continuent simplement. Votre période de support commence ensuite."
         }
       ],
       "payTitle": "Paiement",
-      "payText": "50 % à la commande, 50 % au lancement. Les mêmes prix en USD s'appliquent dans tous les pays.",
+      "payText": "En une fois : 50 % à l’avance, 50 % au lancement. Ou au mois, sur {months} mois. Tous les prix sont en dollars américains.",
       "provideTitle": "Ce que vous fournissez",
       "provide": [
-        "Votre logo et vos couleurs (ou commandez-les en option)",
-        "Les textes des pages (ou notre service de rédaction)",
-        "Des photos de votre travail, de votre équipe ou de vos locaux",
+        "Votre logo et vos couleurs (ou commandez un logo en option)",
+        "Les réponses à un court questionnaire ou un appel — nous rédigeons les textes",
+        "Des photos de vos réalisations, de votre équipe ou de votre lieu",
         "L'accès à votre domaine — ou nous en enregistrons un pour vous"
       ]
     },
@@ -610,23 +547,27 @@
         },
         {
           "q": "Puis-je payer au mois plutôt qu’en une fois ?",
-          "a": "Oui. Avec Launch Mensuel, vous payez {monthly} par mois pendant {months} mois, pour le site Launch et le plan Care. Vous pouvez résilier à tout moment sans rien payer de plus ; l’accès au site prend alors fin. Après {months} mois, le site est à vous."
+          "a": "Oui. Launch coûte {monthly} par mois et Business {businessMonthly} par mois pendant {months} mois, plan Care inclus. Résiliable à tout moment avec un préavis de 30 jours, sans rien payer de plus ; l’accès au site prend alors fin. Après {months} mensualités, le site est à vous."
         },
         {
-          "q": "Les prix sont-ils les mêmes dans tous les pays ?",
-          "a": "Oui. Tous les prix sont en dollars américains, où que se trouve votre entreprise."
+          "q": "Y a-t-il un prix réduit pour les entreprises en Géorgie ?",
+          "a": "Oui. Les entreprises enregistrées en Géorgie paient 50 % du prix unique des forfaits et des options : Launch coûte {localLaunch} au lieu de {intlLaunch}. Les plans de maintenance coûtent le même prix pour tous, et tous les prix sont en dollars américains."
         },
         {
           "q": "Le site m'appartient-il ?",
-          "a": "Oui. Après le paiement final, le site, son design et son code sont à vous."
+          "a": "Oui. Après le dernier paiement, le site, son design, son code et l’accès à l’administration sont à vous."
         },
         {
-          "q": "Dois-je souscrire un plan mensuel ?",
-          "a": "Non, les plans sont facultatifs. Sans plan, nous vous remettons le site et vous l'hébergez et l'entretenez vous-même."
+          "q": "Dois-je prendre un plan de maintenance ?",
+          "a": "Pas si vous payez en une fois : sans plan, nous vous remettons le site et vous l’hébergez et l’entretenez vous-même. Le paiement mensuel inclut le plan Care."
         },
         {
-          "q": "Et si j'ai besoin de quelque chose qui n'est pas listé ?",
-          "a": "Dites-le-nous. Nous chiffrons les fonctionnalités sur mesure séparément, ou travaillons à notre taux horaire de {rate}."
+          "q": "Dois-je rédiger les textes moi-même ?",
+          "a": "Non. Nous rédigeons les principaux textes à partir d’un court questionnaire ou d’un appel avec vous, et vous les validez avant le lancement."
+        },
+        {
+          "q": "Et si j’ai besoin d’une boutique en ligne ou de quelque chose qui n’est pas listé ?",
+          "a": "Dites-le-nous. Boutiques en ligne, espaces clients et intégrations sont chiffrés sur mesure, à partir de {custom}. Les petits travaux supplémentaires sont facturés {rate}."
         },
         {
           "q": "Puis-je évoluer plus tard ?",
@@ -640,39 +581,29 @@
       "text": "Parlez-nous de votre activité. Nous vous recommandons le bon forfait et envoyons un devis fixe sous 24 heures.",
       "button": "Consultation gratuite"
     },
-    "easy": {
-      "eyebrow": "Démarrage facile",
-      "title1": "Démarrer",
-      "title2": "Plus Facilement",
-      "subtitle": "Pas prêt pour un forfait complet ? Commencez petit, ou étalez le coût sur l’année.",
-      "start": {
-        "name": "Start",
-        "tagline": "Une page qui vous rend visible et fait sonner le téléphone — évolutive à tout moment.",
-        "weeks": "~1 semaine",
-        "features": [
-          "Une page avec vos services, photos et coordonnées",
-          "Boutons d’appel et WhatsApp, Google Maps",
-          "Adapté mobile, 1 langue",
-          "Configuration de la fiche Google Business",
-          "SEO de base",
-          "Passez ensuite au forfait Launch ou Business — vous ne payez que la différence"
-        ]
-      },
-      "monthly": {
-        "name": "Launch Mensuel",
-        "tagline": "Le site Launch et le plan Care ensemble, payés au mois — sans gros paiement initial.",
-        "per": "/ mois",
-        "term": "Engagement de {months} mois",
-        "features": [
-          "Tout le forfait Launch",
-          "Tout le plan Care : hébergement, SSL, sauvegardes, mises à jour et surveillance",
-          "Paiement mois par mois, dès le début des travaux",
-          "Après {months} mois, le site est à vous ; continuez avec le plan Care pour {care} / mois ou hébergez-le vous-même"
-        ],
-        "note": "Résiliable à tout moment avec un préavis de 30 jours, sans rien payer de plus — l’accès au site et aux services réalisés prend alors fin. La garantie de remboursement partiel ne s’applique pas au paiement mensuel.",
-        "track": "Après {months} mensualités, le site est à vous"
-      },
-      "badge": "Le plus simple"
+    "monthly": {
+      "eyebrow": "Paiement mensuel",
+      "title1": "Payez au Mois,",
+      "title2": "Propriétaire Après 12",
+      "subtitle": "Sans gros paiement initial : le forfait et le plan Care dans un seul prix mensuel.",
+      "features": [
+        "Launch ou Business, plan Care inclus : hébergement, SSL, sauvegardes, mises à jour et surveillance",
+        "Les paiements commencent au début des travaux",
+        "Après {months} mensualités, le site est à vous ; continuez avec Care pour {care} / mois ou hébergez-le vous-même",
+        "Résiliable à tout moment avec un préavis de 30 jours, sans rien payer de plus"
+      ],
+      "note": "En cas de résiliation, l’accès au site et aux services réalisés prend fin. La garantie de remboursement partiel ne s’applique pas au paiement mensuel.",
+      "track": "Après {months} mensualités, le site est à vous",
+      "badge": "Sans paiement initial"
+    },
+    "local": {
+      "title": "Prix local pour la Géorgie",
+      "text": "Les entreprises enregistrées en Géorgie paient 50 % du prix unique des forfaits et des options. Les plans de maintenance coûtent le même prix pour tous. Tous les prix sont en dollars américains."
+    },
+    "custom": {
+      "title": "Besoin d’une boutique en ligne ou d’un projet plus important ?",
+      "text": "Boutiques en ligne, espaces clients et intégrations sont chiffrés sur mesure, à partir de {price}.",
+      "cta": "Parlez-nous de votre besoin"
     },
     "why": {
       "eyebrow": "Pourquoi un site",
@@ -772,7 +703,7 @@
     "homeServices": {
       "meta": {
         "title": "Sites Web pour Artisans & Services à Domicile | BBGeorgiaTech",
-        "description": "Des sites web pour entreprises de rénovation, plombiers, électriciens, sociétés de nettoyage et autres services locaux : boutons d'appel, formulaires de devis, galeries de réalisations et SEO local, à partir de {price}."
+        "description": "Sites web pour artisans et services locaux : boutons d'appel, devis en ligne, galeries de réalisations et SEO local. Textes inclus, dès {price}."
       },
       "name": "Artisans & Services à Domicile",
       "hero": {
@@ -836,7 +767,7 @@
       "faq": [
         {
           "q": "En combien de temps mon site peut-il être en ligne ?",
-          "a": "Un site Launch est généralement en ligne environ 2 semaines après réception de votre contenu : logo, textes et photos de vos réalisations."
+          "a": "Un site Launch est généralement en ligne en 2 à 3 semaines. Nous rédigeons les textes ; vous nous envoyez votre logo et des photos de vos réalisations."
         },
         {
           "q": "Puis-je ajouter moi-même de nouvelles photos ?",
@@ -862,8 +793,8 @@
     },
     "professionalServices": {
       "meta": {
-        "title": "Sites Web pour Avocats, Comptables & Consultants | BBGeorgiaTech",
-        "description": "Des sites web pour avocats, notaires, comptables, consultants et agents immobiliers : pages par domaine d'expertise, profils d'équipe, prise de rendez-vous et SEO multilingue, à partir de {price}."
+        "title": "Sites Web pour Avocats & Consultants | BBGeorgiaTech",
+        "description": "Sites web pour avocats, comptables et consultants : pages par expertise, profils d'équipe, prise de rendez-vous et SEO multilingue, dès {price}."
       },
       "name": "Services Professionnels",
       "hero": {
@@ -953,8 +884,8 @@
     },
     "healthWellness": {
       "meta": {
-        "title": "Sites Web pour Psychologues, Dentistes & Cliniques | BBGeorgiaTech",
-        "description": "Des sites web pour psychologues, dentistes, kinésithérapeutes, nutritionnistes et cliniques privées : réservation en ligne, profils des praticiens, formulaires respectueux de la vie privée et SEO local, à partir de {price}."
+        "title": "Sites Web pour Cliniques & Thérapeutes | BBGeorgiaTech",
+        "description": "Sites web pour cliniques, dentistes et thérapeutes : réservation en ligne, profils des praticiens, formulaires confidentiels et SEO local, dès {price}."
       },
       "name": "Santé & Thérapie",
       "hero": {
@@ -1044,8 +975,8 @@
     },
     "beauty": {
       "meta": {
-        "title": "Sites Web pour Salons de Coiffure, Barbiers & Spas | BBGeorgiaTech",
-        "description": "Des sites web pour salons de coiffure, barbiers, ongleries, spas et studios de fitness : réservation en ligne 24h/24, galeries, grille tarifaire et SEO local, à partir de {price}."
+        "title": "Sites Web pour Salons, Barbiers & Spas | BBGeorgiaTech",
+        "description": "Sites web pour salons, barbiers et spas : réservation en ligne 24h/24, galeries, grille tarifaire et SEO local, dès {price}."
       },
       "name": "Beauté & Bien-être",
       "hero": {
@@ -1135,8 +1066,8 @@
     },
     "hospitalityTourism": {
       "meta": {
-        "title": "Sites Web pour Tour-Opérateurs, Hôtels & Restaurants | BBGeorgiaTech",
-        "description": "Des sites web pour tour-opérateurs, maisons d'hôtes, hôtels de charme, restaurants et domaines viticoles : réservation directe, pages multilingues, galeries rapides et Maps, à partir de {price}."
+        "title": "Sites Web pour Hôtels, Tours & Restaurants | BBGeorgiaTech",
+        "description": "Sites web pour maisons d'hôtes, hôtels, tour-opérateurs et domaines viticoles : réservation directe, pages multilingues et galeries, dès {price}."
       },
       "name": "Hôtellerie & Tourisme",
       "hero": {
@@ -1196,7 +1127,7 @@
           "text": "Les avis de Google et d'autres plateformes, affichés là où les voyageurs décident."
         }
       },
-      "recommend": "La plupart des établissements ont besoin du forfait Business : 2–3 langues, formulaires de réservation ou de demande, grandes galeries et contenu que vous mettez à jour. Choisissez le forfait Pro pour le paiement en ligne, un moteur de réservation complet ou plus de langues.",
+      "recommend": "La plupart des établissements ont besoin du forfait Business : 2–3 langues, formulaires de réservation ou de demande, grandes galeries et contenu que vous mettez à jour. Ajoutez le paiement en ligne en option, ou demandez-nous un moteur de réservation complet ou plus de langues.",
       "faq": [
         {
           "q": "Dois-je quitter Booking.com ou Airbnb ?",
@@ -1204,7 +1135,7 @@
         },
         {
           "q": "Les clients peuvent-ils payer en ligne ?",
-          "a": "Oui. Le paiement en ligne est inclus dans le forfait Pro ou disponible en option : Stripe, PayPal ou le système de votre banque."
+          "a": "Oui. Le paiement en ligne est disponible en option : Stripe, PayPal ou le système de votre banque."
         },
         {
           "q": "Quelles langues pour mon site ?",
@@ -1226,8 +1157,8 @@
     },
     "creativePersonalBrands": {
       "meta": {
-        "title": "Sites Portfolio pour Créatifs & Marques Personnelles | BBGeorgiaTech",
-        "description": "Des sites portfolio pour photographes, vidéastes, designers, coachs, conférenciers et wedding planners : une marque personnelle forte, de belles galeries et des formulaires de demande, à partir de {price}."
+        "title": "Sites Portfolio pour Créatifs | BBGeorgiaTech",
+        "description": "Sites portfolio pour photographes, designers, coachs et wedding planners : galeries, marque personnelle forte et formulaires de demande, dès {price}."
       },
       "name": "Créatifs & Marques Personnelles",
       "hero": {
@@ -1295,11 +1226,11 @@
         },
         {
           "q": "Puis-je ajouter de nouveaux projets moi-même ?",
-          "a": "Oui, avec le forfait Business. Avec le forfait Launch, nous ajoutons vos nouveaux projets grâce aux heures de modification incluses dans Care+ ou Growth."
+          "a": "Oui, avec le forfait Business. Avec le forfait Launch, nous ajoutons vos nouveaux projets grâce aux heures de modification incluses dans Care+."
         },
         {
           "q": "Puis-je vendre des tirages, presets ou formations ?",
-          "a": "Oui. Une petite boutique ou des téléchargements numériques sont inclus dans le forfait Pro ou disponibles en option."
+          "a": "Oui. Une petite boutique ou des téléchargements numériques sont disponibles en option."
         },
         {
           "q": "Ai-je besoin d'un logo au préalable ?",
@@ -1317,8 +1248,8 @@
     },
     "education": {
       "meta": {
-        "title": "Sites Web pour Écoles, Professeurs & Formateurs | BBGeorgiaTech",
-        "description": "Des sites web pour professeurs particuliers, écoles de langues, auto-écoles, écoles de musique et de danse et centres de formation : planning des cours, inscription et paiement en ligne, à partir de {price}."
+        "title": "Sites Web pour Écoles & Formateurs | BBGeorgiaTech",
+        "description": "Sites web pour écoles, professeurs et centres de formation : planning des cours, inscription et paiement en ligne, dès {price}."
       },
       "name": "Éducation & Formation",
       "hero": {
@@ -1378,7 +1309,7 @@
           "text": "Touchez élèves internationaux et familles expatriées dans leur langue."
         }
       },
-      "recommend": "La plupart des écoles ont besoin du forfait Business : pages de cours et planning modifiables, formulaire d'inscription et 2–3 langues. Ajoutez le paiement en ligne en option, ou choisissez le forfait Pro pour un espace élève ou une plateforme de cours complète.",
+      "recommend": "La plupart des écoles ont besoin du forfait Business : pages de cours et planning modifiables, formulaire d'inscription et 2–3 langues. Ajoutez le paiement en ligne en option ; un espace élève ou une plateforme de cours complète est chiffré sur mesure.",
       "faq": [
         {
           "q": "Puis-je mettre à jour le planning moi-même à chaque session ?",
@@ -1386,11 +1317,11 @@
         },
         {
           "q": "Les élèves peuvent-ils payer en ligne ?",
-          "a": "Oui, en option ou avec le forfait Pro : Stripe, PayPal ou le système de votre banque."
+          "a": "Oui, en option : Stripe, PayPal ou le système de votre banque."
         },
         {
           "q": "Pouvez-vous créer une plateforme de cours en ligne ?",
-          "a": "Oui, avec le forfait Pro : un espace élève avec leçons, progression et contrôle d'accès. Nous chiffrons selon vos besoins."
+          "a": "Oui : un espace élève avec leçons, progression et contrôle d'accès. Nous le chiffrons sur mesure, selon vos besoins."
         },
         {
           "q": "Serai-je notifié de chaque inscription ?",
@@ -1408,8 +1339,8 @@
     },
     "localShops": {
       "meta": {
-        "title": "Sites & Boutiques en Ligne pour Commerces et Producteurs Locaux | BBGeorgiaTech",
-        "description": "Des sites et boutiques en ligne pour boutiques, fleuristes, boulangeries, producteurs de vin, miel et fromage et artisans : vente en ligne, livraison, retrait et l'histoire de votre marque, à partir de {price}."
+        "title": "Boutiques en Ligne pour Commerces Locaux | BBGeorgiaTech",
+        "description": "Sites et boutiques en ligne pour commerces et producteurs locaux : vente en ligne, livraison, retrait et histoire de votre marque, dès {price}."
       },
       "name": "Commerces & Producteurs Locaux",
       "hero": {
@@ -1469,11 +1400,11 @@
           "text": "Plusieurs langues pour les touristes et les clients internationaux."
         }
       },
-      "recommend": "La plupart des commerces ont besoin du forfait Pro : une boutique en ligne avec paiement, options de livraison et jusqu'à 5 langues. Si vous voulez seulement présenter vos produits et prendre les commandes par téléphone ou message, commencez avec le forfait Business et ajoutez une boutique plus tard.",
+      "recommend": "La plupart des commerces ont besoin du forfait Business avec l’option boutique en ligne : paiement, options de livraison et plusieurs langues. Si vous voulez seulement présenter vos produits et prendre les commandes par téléphone ou message, commencez avec Business et ajoutez la boutique plus tard.",
       "faq": [
         {
           "q": "Combien de produits la boutique peut-elle contenir ?",
-          "a": "Le forfait Pro inclut la mise en place d'environ 100 produits. Des catalogues plus grands sont possibles — nous les chiffrons selon leur taille."
+          "a": "L’option boutique en ligne inclut la mise en place d'environ 100 produits. Des catalogues plus grands sont possibles — nous les chiffrons selon leur taille."
         },
         {
           "q": "Puis-je gérer commandes et stock moi-même ?",
@@ -1513,9 +1444,9 @@
       "eyebrow": "Tarifs",
       "title1": "Des Prix",
       "title2": "Clairs",
-      "subtitle": "Des prix fixes en USD, identiques dans tous les pays. Commencez petit ou payez au mois.",
+      "subtitle": "Deux forfaits : payez en une fois ou au mois sur 12 mois. Après le dernier paiement, le site est à vous.",
       "all": "Voir tous les tarifs",
-      "popular": "Le plus simple"
+      "popular": "Paiement mensuel"
     }
   }
 }

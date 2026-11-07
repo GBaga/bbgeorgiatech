@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 import { getTranslations } from "next-intl/server";
 import { routing } from "../../i18n/routing";
-import { START, formatUsd } from "../../data/pricing";
+import { formatUsd, packageByKey, packagePrices, usesLocalPrices } from "../../data/pricing";
 
 // Share image for every page of a locale. Pages that set their own
 // `openGraph` keep it via ogImages() in lib/seo.ts. Prerendered at build for
@@ -50,7 +50,7 @@ export default async function Image({ params }: { params: Promise<{ locale: stri
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Metadata" });
   const fonts = await loadFonts();
-  const price = formatUsd(START.price);
+  const price = formatUsd(packagePrices(packageByKey("launch"), usesLocalPrices(locale)).price);
 
   return new ImageResponse(
     (

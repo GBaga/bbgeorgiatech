@@ -9,7 +9,8 @@ import { Reveal } from "../marketing/Reveal";
 import { SectionHeader } from "../marketing/SectionHeader";
 import { CountUp } from "../marketing/CountUp";
 import { MonthsTrack } from "../effects/MonthsTrack";
-import { MONTHLY, PACKAGES, START } from "../../data/pricing";
+import { useLocale } from "next-intl";
+import { CARE_PLANS, MONTHS, formatUsd, packageByKey, packagePrices, usesLocalPrices } from "../../data/pricing";
 
 // One word of the "why" headline; it lights up as the heading scrolls through
 // the viewport, so the sentence "reads itself" as you scroll.
@@ -39,26 +40,29 @@ export function PricingTeaser() {
     ...t("why.title2").split(" ").map((w) => ({ w, accent: true })),
   ];
 
-  const launch = PACKAGES.find((p) => p.key === "launch")!;
-  const business = PACKAGES.find((p) => p.key === "business")!;
+  const locale = useLocale();
+  const local = usesLocalPrices(locale);
+  const launch = packagePrices(packageByKey("launch"), local);
+  const business = packagePrices(packageByKey("business"), local);
+  const orMonthly = (monthly: number) => t("ui.orMonthly", { monthly: formatUsd(monthly), months: MONTHS });
 
   const cards = [
-    { key: "start", name: t("easy.start.name"), tagline: t("easy.start.tagline"), value: START.price, from: true, meta: t("ui.oneTime"), href: "/pricing#easy-start" },
+    { key: "launch", name: t("packages.launch.name"), tagline: t("packages.launch.tagline"), value: launch.price, from: true, meta: orMonthly(launch.monthly), href: "/pricing#packages", track: true },
     {
-      key: "monthly",
-      name: t("easy.monthly.name"),
-      tagline: t("easy.monthly.tagline"),
-      value: MONTHLY.monthly,
-      per: t("easy.monthly.per"),
-      meta: t("easy.monthly.term", { months: MONTHLY.months }),
-      href: "/pricing#easy-start",
+      key: "business",
+      name: t("packages.business.name"),
+      tagline: t("packages.business.tagline"),
+      value: business.price,
+      from: true,
+      meta: orMonthly(business.monthly),
+      href: "/pricing#packages",
       featured: true,
+      track: true,
     },
-    { key: "launch", name: t("packages.launch.name"), tagline: t("packages.launch.tagline"), value: launch.price, from: true, meta: t("ui.oneTime"), href: "/pricing#packages" },
-    { key: "business", name: t("packages.business.name"), tagline: t("packages.business.tagline"), value: business.price, from: true, meta: t("ui.oneTime"), href: "/pricing#packages" },
+    { key: "care", name: t("care.plans.care.name"), tagline: t("care.plans.care.tagline"), value: CARE_PLANS[0].monthly, per: t("ui.perMonth"), meta: t("care.eyebrow"), href: "/pricing#care" },
   ];
 
-  // "from $490" / "$490-დან" — split the localized pattern around the number
+  // "from $990" / "$990-დან" — split the localized pattern around the number
   // so only the number animates.
   const [fromBefore, fromAfter] = t("ui.from", { price: "§" }).split("§");
 
@@ -118,7 +122,7 @@ export function PricingTeaser() {
           </Reveal>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 md:grid-cols-3">
           {cards.map((c, i) => (
             <Reveal key={c.key} delay={i * 0.08} className="h-full">
               <Link
@@ -133,7 +137,7 @@ export function PricingTeaser() {
                   <h3 className="font-logo text-lg uppercase tracking-tighter text-neutral-50">{c.name}</h3>
                   {c.featured && (
                     <span className="shrink-0 border border-primary/50 bg-primary/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-primary">
-                      {th("popular")}
+                      {t("ui.popular")}
                     </span>
                   )}
                 </div>
@@ -151,8 +155,8 @@ export function PricingTeaser() {
                   )}
                   {c.per && <span className="font-mono text-xs tracking-normal text-neutral-500 whitespace-nowrap">{c.per}</span>}
                 </div>
-                {c.key === "monthly" ? (
-                  <MonthsTrack compact months={MONTHLY.months} label={t("easy.monthly.track", { months: MONTHLY.months })} />
+                {c.track ? (
+                  <MonthsTrack compact months={MONTHS} label={t("monthly.track", { months: MONTHS })} />
                 ) : (
                   // Same height as the track, so the price rows line up across cards
                   <div className="mt-4 h-5" aria-hidden="true" />

@@ -2,12 +2,17 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { Link } from "../../i18n/routing";
 import { Reveal } from "../marketing/Reveal";
 import { ScanCard } from "../marketing/ScanCard";
-import { MONTHLY, formatUsd } from "../../data/pricing";
+import { formatUsd, packageByKey, packagePrices, usesLocalPrices } from "../../data/pricing";
+
+// The payback maths uses Launch paid monthly, as this visitor sees it.
+function useLaunchMonthly() {
+  return packagePrices(packageByKey("launch"), usesLocalPrices(useLocale())).monthly;
+}
 
 const PRESETS = [20, 50, 100, 300];
 
@@ -40,8 +45,9 @@ function PaybackCalculator() {
   const t = useTranslations("Pricing");
   const [value, setValue] = useState(70);
   const valid = Number.isFinite(value) && value > 0;
-  const clients = valid ? Math.max(1, Math.ceil(MONTHLY.monthly / value)) : null;
-  const monthly = formatUsd(MONTHLY.monthly);
+  const launchMonthly = useLaunchMonthly();
+  const clients = valid ? Math.max(1, Math.ceil(launchMonthly / value)) : null;
+  const monthly = formatUsd(launchMonthly);
 
   return (
     <div className="relative h-full flex flex-col overflow-hidden border border-primary/60 bg-gradient-to-b from-surface-bright to-surface p-6 md:p-8 shadow-[0_0_60px_-16px_rgba(92,156,255,0.5)]">
@@ -90,7 +96,7 @@ function PaybackCalculator() {
       </div>
 
       <div className="mt-6 flex-1 border-t border-white/10 pt-5" aria-live="polite">
-        <p className="text-sm text-neutral-400">{t("why.calc.lead", { name: t("easy.monthly.name"), monthly })}</p>
+        <p className="text-sm text-neutral-400">{t("why.calc.lead", { name: t("packages.launch.name"), monthly })}</p>
         <div className="mt-2 min-h-[3.5rem]">
           <AnimatePresence mode="popLayout" initial={false}>
             <motion.p
@@ -118,7 +124,7 @@ function PaybackCalculator() {
 export function WhyWebsite() {
   const t = useTranslations("Pricing");
   const scenarios = t.raw("why.scenarios") as { time: string; title: string; text: string; punch: string }[];
-  const monthly = formatUsd(MONTHLY.monthly);
+  const monthly = formatUsd(useLaunchMonthly());
   const doubts = (t.raw("why.doubts") as { q: string; a: string }[]).map((d) => ({
     q: d.q,
     a: d.a.replaceAll("{monthly}", monthly),

@@ -20,25 +20,29 @@ import { DelayTimeline } from "../../../components/effects/DelayTimeline";
 import { ChapterRail } from "../../../components/effects/ChapterRail";
 import { PricePattern } from "../../../components/marketing/CountUp";
 import { Link } from "../../../i18n/routing";
-import { buildAlternates, ogImages } from "../../../lib/seo";
+import { buildAlternates, socialMeta } from "../../../lib/seo";
 import {
-  ADDON_GROUPS,
+  ADDONS,
   CARE_PLANS,
   CARE_ROWS,
   CURRENCY,
-  MONTHLY,
+  CUSTOM_FROM,
+  HOURLY,
+  MONTHS,
   PACKAGES,
-  START,
   PACKAGE_ROWS,
   formatUsd,
+  localPrice,
+  packageByKey,
+  packagePrices,
   pad2,
+  usesLocalPrices,
   type AddonUnit,
   type Cell,
   LOCAL_SEO_LISTINGS,
 } from "../../../data/pricing";
 
 const BASE_URL = "https://bbgeorgiatech.com";
-const HOURLY = ADDON_GROUPS.flatMap((g) => g.items).find((i) => i.key === "hourly")?.price ?? 45;
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -46,8 +50,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Pricing" });
   const title = t("meta.title");
+  const launch = packagePrices(packageByKey("launch"), usesLocalPrices(locale));
   const description = t("meta.description", {
-    launch: formatUsd(START.price),
+    launch: formatUsd(launch.price),
     care: formatUsd(CARE_PLANS[0].monthly),
   });
 
@@ -55,20 +60,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: buildAlternates(locale, "/pricing"),
-    openGraph: { title, description, type: "website", locale, images: ogImages(locale) },
+    ...socialMeta(locale, title, description),
   };
 }
 
 export default async function PricingPage({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "Pricing" });
+  // Georgian visitors see the local price as the main one (see data/pricing.ts)
+  const local = usesLocalPrices(locale);
 
   const resolve = (cell: Cell): ResolvedCell =>
     typeof cell === "string" && cell.startsWith("@") ? t(`values.${cell.slice(1)}`) : cell;
 
-  const addonPrice = (price: number | undefined, unit: AddonUnit) => {
-    if (unit === "custom" || price === undefined) return t("addons.units.custom");
-    if (unit === "percent") return `+${price}%`;
+  // Add-ons are one-time work, so the local price applies to them too
+  const addonPrice = (listPrice: number, unit: AddonUnit) => {
+    const price = local ? localPrice(listPrice) : listPrice;
     if (unit === "from") return t("addons.units.from", { price: formatUsd(price) });
     if (unit === "flat") return formatUsd(price);
     return `${formatUsd(price)} ${t(`addons.units.${unit}`)}`;
@@ -78,46 +85,29 @@ export default async function PricingPage({ params }: Props) {
   const packageColumns = PACKAGES.map((p) => ({ name: t(`packages.${p.key}.name`), featured: p.featured }));
   const careColumns = CARE_PLANS.map((p) => ({ name: t(`care.plans.${p.key}.name`), featured: p.featured }));
 
+  const launch = packageByKey("launch");
+  const launchView = packagePrices(launch, local);
+  const businessView = packagePrices(packageByKey("business"), local);
+
   // t.raw() skips ICU formatting, so fill the few placeholders here
-  const fill = (s: string) =>
-    s
+  const fill = (str: string) =>
+    str
       .replaceAll("{rate}", `${formatUsd(HOURLY)} ${t("addons.units.perHour")}`)
-      .replaceAll("{monthly}", formatUsd(MONTHLY.monthly))
-      .replaceAll("{months}", String(MONTHLY.months))
-      .replaceAll("{care}", formatUsd(CARE_PLANS[0].monthly));
+      .replaceAll("{monthly}", formatUsd(launchView.monthly))
+      .replaceAll("{businessMonthly}", formatUsd(businessView.monthly))
+      .replaceAll("{months}", String(MONTHS))
+      .replaceAll("{care}", formatUsd(CARE_PLANS[0].monthly))
+      .replaceAll("{localLaunch}", formatUsd(localPrice(launch.price)))
+      .replaceAll("{intlLaunch}", formatUsd(launch.price))
+      .replaceAll("{custom}", formatUsd(CUSTOM_FROM));
   const faqs = (t.raw("faq.items") as { q: string; a: string }[]).map((f) => ({ q: f.q, a: fill(f.a) }));
-  const easy = [
-    {
-      key: "start",
-      name: t("easy.start.name"),
-      tagline: t("easy.start.tagline"),
-      price: t("ui.from", { price: formatUsd(START.price) }),
-      value: START.price,
-      pattern: t("ui.from", { price: "§" }),
-      meta: `${t("ui.oneTime")} · ${t("easy.start.weeks")}`,
-      features: t.raw("easy.start.features") as string[],
-      featured: false,
-    },
-    {
-      key: "monthly",
-      name: t("easy.monthly.name"),
-      tagline: t("easy.monthly.tagline"),
-      price: formatUsd(MONTHLY.monthly),
-      value: MONTHLY.monthly,
-      pattern: "§",
-      per: t("easy.monthly.per"),
-      meta: fill(t.raw("easy.monthly.term") as string),
-      features: (t.raw("easy.monthly.features") as string[]).map(fill),
-      note: t("easy.monthly.note"),
-      featured: true,
-    },
-  ];
+  const monthlyFeatures = (t.raw("monthly.features") as string[]).map(fill);
   const steps = t.raw("process.steps") as { title: string; text: string }[];
   const fromPattern = t("ui.from", { price: "§" });
   const chapters = [
     { id: "why", label: t("why.eyebrow") },
     { id: "packages", label: t("packages.eyebrow") },
-    { id: "easy-start", label: t("easy.eyebrow") },
+    { id: "monthly", label: t("monthly.eyebrow") },
     { id: "care", label: t("care.eyebrow") },
     { id: "add-ons", label: t("addons.eyebrow") },
     { id: "guarantee", label: t("guarantee.eyebrow") },
@@ -139,30 +129,31 @@ export default async function PricingPage({ params }: Props) {
           "@type": "OfferCatalog",
           name: t("packages.title2"),
           itemListElement: [
-            {
-              "@type": "Offer",
-              name: t("easy.start.name"),
-              description: t("easy.start.tagline"),
-              priceSpecification: { "@type": "PriceSpecification", minPrice: START.price, priceCurrency: CURRENCY },
-            },
-            {
-              "@type": "Offer",
-              name: t("easy.monthly.name"),
-              description: t("easy.monthly.tagline"),
-              priceSpecification: {
-                "@type": "UnitPriceSpecification",
-                price: MONTHLY.monthly,
-                priceCurrency: CURRENCY,
-                unitCode: "MON",
-                billingDuration: MONTHLY.months,
+            ...PACKAGES.flatMap((p) => [
+              {
+                "@type": "Offer",
+                name: t(`packages.${p.key}.name`),
+                description: t(`packages.${p.key}.tagline`),
+                priceSpecification: { "@type": "PriceSpecification", minPrice: p.price, priceCurrency: CURRENCY },
               },
-            },
-            ...PACKAGES.map((p) => ({
-              "@type": "Offer",
-              name: t(`packages.${p.key}.name`),
-              description: t(`packages.${p.key}.tagline`),
-              priceSpecification: { "@type": "PriceSpecification", minPrice: p.price, priceCurrency: CURRENCY },
-            })),
+              {
+                "@type": "Offer",
+                name: `${t(`packages.${p.key}.name`)} · ${t("monthly.eyebrow")}`,
+                priceSpecification: {
+                  "@type": "UnitPriceSpecification",
+                  price: p.monthly,
+                  priceCurrency: CURRENCY,
+                  unitCode: "MON",
+                  billingDuration: MONTHS,
+                },
+              },
+              {
+                "@type": "Offer",
+                name: `${t(`packages.${p.key}.name`)} · ${t("local.title")}`,
+                eligibleRegion: { "@type": "Country", name: "GE" },
+                priceSpecification: { "@type": "PriceSpecification", minPrice: localPrice(p.price), priceCurrency: CURRENCY },
+              },
+            ]),
             ...CARE_PLANS.map((p) => ({
               "@type": "Offer",
               name: t(`care.plans.${p.key}.name`),
@@ -244,7 +235,7 @@ export default async function PricingPage({ params }: Props) {
             title2={t("packages.title2")}
             subtitle={t("packages.subtitle")}
           />
-          <div className="grid gap-4 lg:grid-cols-3 lg:items-stretch">
+          <div className="grid gap-4 lg:grid-cols-2 lg:items-stretch">
             {PACKAGES.map((p, i) => (
               <Reveal key={p.key} delay={i * 0.08} className="h-full">
                 <article
@@ -279,13 +270,22 @@ export default async function PricingPage({ params }: Props) {
                   <p className="relative mt-2 text-sm text-neutral-400 leading-relaxed min-h-[2.75rem]">{t(`packages.${p.key}.tagline`)}</p>
 
                   <div className="relative mt-6 font-logo text-4xl md:text-[2.6rem] tracking-tighter text-neutral-50 tabular-nums">
-                    <PricePattern pattern={fromPattern} value={p.price} />
+                    <PricePattern pattern={fromPattern} value={packagePrices(p, local).price} />
                   </div>
                   <div className="relative mt-2 flex items-center gap-3 font-mono text-[11px] uppercase tracking-wider text-neutral-500">
                     <span>{t("ui.oneTime")}</span>
                     <span className="w-1 h-1 bg-white/20" aria-hidden="true" />
                     <span>{t(`packages.${p.key}.weeks`)}</span>
                   </div>
+                  <div className="relative mt-3 font-mono text-xs text-neutral-300">
+                    {t("ui.orMonthly", { monthly: formatUsd(packagePrices(p, local).monthly), months: MONTHS })}
+                  </div>
+                  {/* The other price list, so nobody has to guess what it is */}
+                  <p className="relative mt-2 text-xs text-primary leading-relaxed">
+                    {local
+                      ? `${t("ui.localScope")} · ${t("ui.intlLine", { price: formatUsd(p.price), monthly: formatUsd(p.monthly) })}`
+                      : t("ui.localLine", { price: formatUsd(localPrice(p.price)), monthly: formatUsd(p.localMonthly) })}
+                  </p>
 
                   <ul className="relative mt-8 space-y-3 flex-1">
                     {(t.raw(`packages.${p.key}.features`) as string[]).map((f, fi) => (
@@ -313,52 +313,57 @@ export default async function PricingPage({ params }: Props) {
               </Reveal>
             ))}
           </div>
+
+          {/* Local price for Georgia + custom projects */}
+          <div className="mt-4 grid gap-4 md:grid-cols-2">
+            <Reveal className="h-full">
+              <div className="lucien-card h-full p-6 md:p-8">
+                <div className="font-mono text-xs uppercase tracking-[0.2em] text-primary">{t("local.title")}</div>
+                <p className="mt-3 text-sm text-neutral-300 leading-relaxed">{t("local.text")}</p>
+              </div>
+            </Reveal>
+            <Reveal delay={0.08} className="h-full">
+              <div className="lucien-card h-full flex flex-col p-6 md:p-8">
+                <div className="font-mono text-xs uppercase tracking-[0.2em] text-primary">{t("custom.title")}</div>
+                <p className="mt-3 flex-1 text-sm text-neutral-300 leading-relaxed">
+                  {t("custom.text", { price: formatUsd(local ? localPrice(CUSTOM_FROM) : CUSTOM_FROM) })}
+                </p>
+                <Link
+                  href="/#contact"
+                  className="group/cta mt-5 inline-flex w-fit items-center gap-2 font-mono text-xs uppercase tracking-wider text-primary hover:text-white transition-colors"
+                >
+                  {t("custom.cta")}
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover/cta:translate-x-0.5" aria-hidden="true" />
+                </Link>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
-      {/* Easier ways to start: Start (small one-off) + Launch Monthly */}
-      <section id="easy-start" className="relative py-24 px-6 bg-background-deep border-t border-white/5 lucien-blueprint">
+      {/* Pay monthly: either package with Care included, owned after 12 payments */}
+      <section id="monthly" className="relative py-24 px-6 bg-background-deep border-t border-white/5 lucien-blueprint">
         <div className="relative z-10 max-w-6xl mx-auto">
           <SectionHeader
-            eyebrow={t("easy.eyebrow")}
-            title1={t("easy.title1")}
-            title2={t("easy.title2")}
-            subtitle={t("easy.subtitle")}
+            eyebrow={t("monthly.eyebrow")}
+            title1={t("monthly.title1")}
+            title2={t("monthly.title2")}
+            subtitle={t("monthly.subtitle")}
           />
-          <div className="grid gap-4 lg:grid-cols-2 lg:items-stretch">
-            {easy.map((o, i) => (
-              <Reveal key={o.key} delay={i * 0.08} className="h-full">
-                <article
-                  style={{ ["--accent" as string]: "#5c9cff" }}
-                  className={`group relative isolate h-full flex flex-col overflow-hidden border p-6 md:p-8 bg-gradient-to-b from-surface-bright to-surface ${
-                    o.featured ? "border-transparent border-orbit shadow-[0_0_60px_-16px_rgba(92,156,255,0.55)]" : "border-white/10 hover:border-primary/30"
-                  }`}
-                >
-                  <PointerGlow />
-                  <div aria-hidden="true" className={`absolute left-0 top-0 bottom-0 w-1 ${o.featured ? "bg-primary" : "bg-white/10"}`} />
-                  <div className="flex items-start justify-between gap-3">
-                    <h3 className="font-logo text-2xl uppercase tracking-tighter text-neutral-50">{o.name}</h3>
-                    {o.featured && (
-                      <span className="shrink-0 border border-primary/50 bg-primary/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-primary">
-                        {t("easy.badge")}
-                      </span>
-                    )}
-                  </div>
-                  <p className="mt-2 text-sm text-neutral-400 leading-relaxed">{o.tagline}</p>
-
-                  <div className="mt-6 flex items-baseline gap-2">
-                    <span className="font-logo text-4xl tracking-tighter text-neutral-50 tabular-nums">
-                      <PricePattern pattern={o.pattern} value={o.value} />
-                    </span>
-                    {o.per && <span className="font-mono text-xs text-neutral-500 whitespace-nowrap">{o.per}</span>}
-                  </div>
-                  <div className="mt-2 font-mono text-[11px] uppercase tracking-wider text-neutral-500">{o.meta}</div>
-                  {o.key === "monthly" && (
-                    <MonthsTrack months={MONTHLY.months} label={t("easy.monthly.track", { months: MONTHLY.months })} />
-                  )}
-
-                  <ul className="mt-8 space-y-3 flex-1">
-                    {o.features.map((f) => (
+          <Reveal>
+            <article
+              style={{ ["--accent" as string]: "#5c9cff" }}
+              className="group relative isolate overflow-hidden border border-transparent border-orbit p-6 md:p-10 bg-gradient-to-b from-surface-bright to-surface shadow-[0_0_60px_-16px_rgba(92,156,255,0.55)]"
+            >
+              <PointerGlow />
+              <div aria-hidden="true" className="absolute left-0 top-0 bottom-0 w-1 bg-primary" />
+              <div className="relative grid gap-10 lg:grid-cols-[1.1fr_1fr] lg:items-start">
+                <div>
+                  <span className="inline-block border border-primary/50 bg-primary/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-primary">
+                    {t("monthly.badge")}
+                  </span>
+                  <ul className="mt-6 space-y-3">
+                    {monthlyFeatures.map((f) => (
                       <li key={f} className="flex gap-3 text-sm leading-relaxed text-neutral-300">
                         <span className="mt-0.5 inline-flex w-5 h-5 shrink-0 items-center justify-center border border-primary/40 bg-primary/5 text-primary">
                           <Check className="w-3 h-3" aria-hidden="true" />
@@ -367,26 +372,36 @@ export default async function PricingPage({ params }: Props) {
                       </li>
                     ))}
                   </ul>
+                  <p className="mt-6 border-t border-white/10 pt-4 text-xs text-neutral-500 leading-relaxed">{t("monthly.note")}</p>
+                </div>
 
-                  {o.note && (
-                    <p className="mt-6 border-t border-white/10 pt-4 text-xs text-neutral-500 leading-relaxed">{o.note}</p>
-                  )}
-
+                <div>
+                  <div className="divide-y divide-white/10 border border-white/10 bg-background-deep/60">
+                    {PACKAGES.map((p) => (
+                      <div key={p.key} className="flex items-baseline justify-between gap-4 p-5">
+                        <span className="font-logo text-lg uppercase tracking-tighter text-neutral-50">{t(`packages.${p.key}.name`)}</span>
+                        <span className="flex items-baseline gap-2">
+                          <span className="font-logo text-3xl tracking-tighter text-neutral-50 tabular-nums">
+                            <PricePattern pattern="§" value={packagePrices(p, local).monthly} />
+                          </span>
+                          <span className="font-mono text-xs text-neutral-500 whitespace-nowrap">{t("ui.perMonth")}</span>
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  {local && <p className="mt-3 font-mono text-[11px] text-neutral-500">{t("ui.localScope")}</p>}
+                  <MonthsTrack months={MONTHS} label={t("monthly.track", { months: MONTHS })} />
                   <Link
                     href="/#contact"
-                    className={`group/cta mt-8 inline-flex justify-center items-center gap-2 border-2 px-5 py-3 font-mono text-sm uppercase tracking-wider transition-all ${
-                      o.featured
-                        ? "border-primary bg-primary text-white hover:bg-primary/80"
-                        : "border-primary/50 text-primary hover:bg-primary hover:text-white"
-                    }`}
+                    className="group/cta mt-8 inline-flex w-full justify-center items-center gap-2 border-2 border-primary bg-primary px-5 py-3 font-mono text-sm uppercase tracking-wider text-white transition-all hover:bg-primary/80"
                   >
                     {t("ui.getStarted")}
                     <ArrowRight className="w-4 h-4 transition-transform group-hover/cta:translate-x-0.5" aria-hidden="true" />
                   </Link>
-                </article>
-              </Reveal>
-            ))}
-          </div>
+                </div>
+              </div>
+            </article>
+          </Reveal>
         </div>
       </section>
 
@@ -443,49 +458,42 @@ export default async function PricingPage({ params }: Props) {
             title2={t("addons.title2")}
             subtitle={t("addons.subtitle")}
           />
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {ADDON_GROUPS.map((g, gi) => (
-              <Reveal key={g.key} delay={gi * 0.06} className={g.key === "features" ? "lg:row-span-2" : ""}>
-                <div className="lucien-card h-full p-6 md:p-7">
-                  <div className="flex items-center gap-4 mb-5">
-                    <span className="font-mono text-sm text-primary">{pad2(gi + 1)}</span>
-                    <h3 className="font-logo text-base uppercase tracking-tighter text-neutral-50">{t(`addons.groups.${g.key}`)}</h3>
-                  </div>
-                  <ul className="divide-y divide-white/5">
-                    {g.items.map((item) => (
-                      <li key={item.key} className="py-3">
-                        <div className="flex items-baseline justify-between gap-4">
-                          <span className="text-sm text-neutral-300 leading-snug">{t(`addons.items.${item.key}`)}</span>
-                          <span className="shrink-0 font-mono text-xs text-primary whitespace-nowrap">{addonPrice(item.price, item.unit)}</span>
+          <Reveal>
+            <div className="lucien-card p-6 md:p-8">
+              <ul className="grid gap-x-10 md:grid-cols-2">
+                {ADDONS.map((item) => (
+                  <li key={item.key} className="py-3 border-b border-white/5">
+                    <div className="flex items-baseline justify-between gap-4">
+                      <span className="text-sm text-neutral-300 leading-snug">{t(`addons.items.${item.key}`)}</span>
+                      <span className="shrink-0 font-mono text-xs text-primary whitespace-nowrap">{addonPrice(item.price, item.unit)}</span>
+                    </div>
+                    {item.key === "localSeo" && (
+                      <details className="group/info mt-3">
+                        <summary className="flex w-fit cursor-pointer list-none items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-primary hover:text-white transition-colors [&::-webkit-details-marker]:hidden">
+                          <ChevronDown className="w-3.5 h-3.5 transition-transform group-open/info:rotate-180" aria-hidden="true" />
+                          {t("addons.localSeoInfo.summary")}
+                        </summary>
+                        <div className="mt-3 border-l border-white/10 pl-4 text-xs text-neutral-400 leading-relaxed">
+                          <p className="text-neutral-300">{t("addons.localSeoInfo.core")}</p>
+                          <ul className="mt-2 space-y-1">
+                            {LOCAL_SEO_LISTINGS.map((name) => (
+                              <li key={name} className="flex items-start gap-2">
+                                <span className="mt-[0.5em] w-1 h-1 shrink-0 bg-primary" aria-hidden="true" />
+                                {name}
+                              </li>
+                            ))}
+                          </ul>
+                          <p className="mt-2">{t("addons.localSeoInfo.extra")}</p>
+                          <p className="mt-2 text-neutral-500">{t("addons.localSeoInfo.note")}</p>
                         </div>
-                        {item.key === "localSeo" && (
-                          <details className="group/info mt-3">
-                            <summary className="flex w-fit cursor-pointer list-none items-center gap-1.5 font-mono text-[11px] uppercase tracking-wider text-primary hover:text-white transition-colors [&::-webkit-details-marker]:hidden">
-                              <ChevronDown className="w-3.5 h-3.5 transition-transform group-open/info:rotate-180" aria-hidden="true" />
-                              {t("addons.localSeoInfo.summary")}
-                            </summary>
-                            <div className="mt-3 border-l border-white/10 pl-4 text-xs text-neutral-400 leading-relaxed">
-                              <p className="text-neutral-300">{t("addons.localSeoInfo.core")}</p>
-                              <ul className="mt-2 space-y-1">
-                                {LOCAL_SEO_LISTINGS.map((name) => (
-                                  <li key={name} className="flex items-start gap-2">
-                                    <span className="mt-[0.5em] w-1 h-1 shrink-0 bg-primary" aria-hidden="true" />
-                                    {name}
-                                  </li>
-                                ))}
-                              </ul>
-                              <p className="mt-2">{t("addons.localSeoInfo.extra")}</p>
-                              <p className="mt-2 text-neutral-500">{t("addons.localSeoInfo.note")}</p>
-                            </div>
-                          </details>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+                      </details>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              {local && <p className="mt-4 font-mono text-[11px] text-neutral-500">{t("ui.localScope")}</p>}
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -552,7 +560,7 @@ export default async function PricingPage({ params }: Props) {
             <Reveal className="h-full">
               <div className="lucien-card h-full p-6 md:p-8">
                 <div className="font-mono text-xs uppercase tracking-[0.2em] text-primary">{t("process.payTitle")}</div>
-                <p className="mt-3 text-neutral-300 leading-relaxed">{t("process.payText")}</p>
+                <p className="mt-3 text-neutral-300 leading-relaxed">{t("process.payText", { months: MONTHS })}</p>
               </div>
             </Reveal>
             <Reveal delay={0.08} className="h-full">

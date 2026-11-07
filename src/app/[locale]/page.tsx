@@ -16,7 +16,8 @@ const PricingTeaser = dynamic(() => import("@/components/home/PricingTeaser").th
 const ContactProtocol = dynamic(() => import("@/components/ContactProtocol").then(m => m.ContactProtocol));
 const Footer = dynamic(() => import("@/components/Footer").then(m => m.Footer));
 
-export default async function Home() {
+export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations("FAQSection");
   const tn = await getTranslations("Navigation");
   const tv = await getTranslations("Verticals");
@@ -42,7 +43,7 @@ export default async function Home() {
       "name": t(`q${n}`),
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": t(`a${n}`, priceParams()),
+        "text": t(`a${n}`, priceParams(locale)),
       },
     })),
   };

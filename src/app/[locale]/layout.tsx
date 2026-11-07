@@ -8,8 +8,8 @@ import { CookieBanner } from "../../components/CookieBanner";
 import { AnalyticsGate } from "../../components/AnalyticsGate";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
-import { buildAlternates } from '../../lib/seo';
-import { CARE_PLANS, CURRENCY, MONTHLY, PACKAGES, START, formatUsd } from '../../data/pricing';
+import { buildAlternates, socialMeta } from '../../lib/seo';
+import { CARE_PLANS, CURRENCY, MONTHS, PACKAGES, formatUsd, localPrice, packageByKey, packagePrices, usesLocalPrices } from '../../data/pricing';
 
 // Variables are --nf-* so they don't collide with Tailwind's --font-* theme
 // tokens in globals.css, which build the full stacks from them.
@@ -46,25 +46,15 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const resolvedParams = await params;
   const locale = resolvedParams.locale;
   const t = await getTranslations({ locale, namespace: 'Metadata' });
-  const price = formatUsd(START.price);
+  // Georgian pages quote the local price (see data/pricing.ts)
+  const price = formatUsd(packagePrices(packageByKey('launch'), usesLocalPrices(locale)).price);
 
   return {
     metadataBase: new URL('https://bbgeorgiatech.com'),
     title: t('title'),
     description: t('description', { price }),
     alternates: buildAlternates(locale, ''),
-    openGraph: {
-      title: t('ogTitle'),
-      description: t('ogDescription', { price }),
-      type: "website",
-      locale: locale,
-      alternateLocale: ["en", "fr", "ka"].filter(l => l !== locale),
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: t('ogTitle'),
-      description: t('ogDescription', { price }),
-    }
+    ...socialMeta(locale, t('ogTitle'), t('ogDescription', { price })),
   };
 }
 
@@ -86,11 +76,13 @@ export default async function RootLayout({
         "@id": "https://bbgeorgiatech.com/#organization",
         "name": "BBGeorgiaTech",
         "url": "https://bbgeorgiatech.com",
-        "image": "https://bbgeorgiatech.com/icon.svg",
+        "image": "https://bbgeorgiatech.com/logo.png",
+        // Google needs a raster logo (min 112 × 112); an SVG is ignored
+        "logo": "https://bbgeorgiatech.com/logo.png",
         "description": "Fixed-price website design, development and maintenance for small businesses worldwide",
         "areaServed": "Worldwide",
         "knowsAbout": ["Website Design", "Web Development", "E-Commerce", "Website Maintenance", "SEO", "Multilingual Websites", "Small Business Websites"],
-        "priceRange": `${formatUsd(START.price)}+`,
+        "priceRange": `${formatUsd(PACKAGES[0].price)}+`,
         "currenciesAccepted": CURRENCY,
         "email": "bbgeorgiatech@gmail.com",
         "sameAs": [
@@ -111,30 +103,36 @@ export default async function RootLayout({
           "url": `https://bbgeorgiatech.com/${resolvedParams.locale}/pricing`,
           // Same numbers as /pricing (src/data/pricing.ts)
           "itemListElement": [
-            {
-              "@type": "Offer",
-              "name": "Website package: Start",
-              "itemOffered": { "@type": "Service", "name": "One-page Website" },
-              "priceSpecification": { "@type": "PriceSpecification", "minPrice": START.price, "priceCurrency": CURRENCY },
-            },
-            {
-              "@type": "Offer",
-              "name": "Launch Monthly",
-              "itemOffered": { "@type": "Service", "name": "Website Design & Development with Maintenance" },
-              "priceSpecification": {
-                "@type": "UnitPriceSpecification",
-                "price": MONTHLY.monthly,
-                "priceCurrency": CURRENCY,
-                "unitCode": "MON",
-                "billingDuration": MONTHLY.months,
-              },
-            },
-            ...PACKAGES.map((p) => ({
-              "@type": "Offer",
-              "name": `Website package: ${p.key[0].toUpperCase()}${p.key.slice(1)}`,
-              "itemOffered": { "@type": "Service", "name": "Website Design & Development" },
-              "priceSpecification": { "@type": "PriceSpecification", "minPrice": p.price, "priceCurrency": CURRENCY },
-            })),
+            ...PACKAGES.flatMap((p) => {
+              const name = `Website package: ${p.key[0].toUpperCase()}${p.key.slice(1)}`;
+              return [
+                {
+                  "@type": "Offer",
+                  "name": name,
+                  "itemOffered": { "@type": "Service", "name": "Website Design & Development" },
+                  "priceSpecification": { "@type": "PriceSpecification", "minPrice": p.price, "priceCurrency": CURRENCY },
+                },
+                {
+                  "@type": "Offer",
+                  "name": `${name}, paid monthly`,
+                  "itemOffered": { "@type": "Service", "name": "Website Design & Development with Maintenance" },
+                  "priceSpecification": {
+                    "@type": "UnitPriceSpecification",
+                    "price": p.monthly,
+                    "priceCurrency": CURRENCY,
+                    "unitCode": "MON",
+                    "billingDuration": MONTHS,
+                  },
+                },
+                {
+                  "@type": "Offer",
+                  "name": `${name}, local price for businesses registered in Georgia`,
+                  "eligibleRegion": { "@type": "Country", "name": "GE" },
+                  "itemOffered": { "@type": "Service", "name": "Website Design & Development" },
+                  "priceSpecification": { "@type": "PriceSpecification", "minPrice": localPrice(p.price), "priceCurrency": CURRENCY },
+                },
+              ];
+            }),
             {
               "@type": "Offer",
               "name": "Website care plans",

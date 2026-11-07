@@ -181,7 +181,7 @@ export const VERTICALS: Vertical[] = [
     key: "localShops",
     icon: Store,
     accent: "#fb7185",
-    recommended: "pro",
+    recommended: "business",
     features: [
       { key: "shop", icon: ShoppingCart },
       { key: "payments", icon: CreditCard },

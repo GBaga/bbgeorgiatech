@@ -4,7 +4,7 @@
   },
   "Metadata": {
     "title": "Websites for Small Businesses at a Fixed Price | BBGeorgiaTech",
-    "description": "Fixed-price websites for small businesses worldwide, from {price}. Design, development, Google visibility and care. Live in about 3 weeks. Free quote within 24 hours.",
+    "description": "Fixed-price websites for small businesses, from {price}. Design, texts, Google visibility and care. Live in about 3 weeks. Free quote in 24 hours.",
     "ogTitle": "Fixed-Price Websites for Small Businesses | BBGeorgiaTech",
     "ogDescription": "Fast, mobile-friendly websites that bring in calls, bookings and clients. From {price}, live in about 3 weeks.",
     "ogTagline": "Fixed-price websites for small businesses",
@@ -12,7 +12,6 @@
   },
   "Navigation": {
     "competencies": "Services",
-    "theEngine": "Technology",
     "systems": "Portfolio",
     "heritage": "About Us",
     "initiateProtocol": "Get a Free Quote",
@@ -39,29 +38,24 @@
     "targetValue": "Hosting, updates and care",
     "getAQuote": "Get a Free Quote",
     "initializeDeployment": "See Our Work →",
-    "pricingNote": "From {start} · or {monthly} / month",
+    "pricingNote": "From {launch} · or {monthly} / month",
     "lessIsMore": "Sometimes less is more.",
     "quoteAuthor": "Robert Browning (1855)",
     "seePricing": "See pricing"
   },
   "About": {
     "eyebrow": "About us",
-    "umbrella": "Part of the Bagauri Bonds Georgia Group",
-    "title1": "A Small Studio.",
-    "title2": "Full Attention.",
-    "intro": "BBGeorgiaTech is a small web studio founded in Georgia by Goga Bagauri, part of the Bagauri Bonds Georgia group, working with clients worldwide. We take on a few projects at a time, so every site gets our full attention and is built to last.",
-    "values": [
+    "title1": "Fixed Price. Agreed Deadline.",
+    "title2": "Your Website.",
+    "intro": "BBGeorgiaTech is the technology arm of Bagauri Bonds Georgia. We build websites for small and medium-sized businesses, so customers can find you and reach you easily. We work on only a few projects at a time. We agree on the price and the deadline up front, and if we miss the deadline, we lower the price.",
+    "stories": [
       {
-        "title": "Quality over quantity",
-        "text": "No mass production. Every project gets our best thinking and our highest standard of work."
+        "title": "Our Approach",
+        "text": "We believe in technology that is genuinely useful. That’s why we build simple, fast, easy-to-use websites that connect your business with your customers and help you earn their trust."
       },
       {
-        "title": "Simple and fast",
-        "text": "No bloat, no needless complexity: clean sites that load fast and are easy to use."
-      },
-      {
-        "title": "Modern technology",
-        "text": "Every site is custom-built on proven, modern tools, made for speed, security and growth."
+        "title": "Our Roots",
+        "text": "Bagauri is our family name, and the responsibility we take on with every project. Once it is paid in full, the website, its code and admin access are entirely yours. We help you grow it, but you always stay in control."
       }
     ],
     "techLabel": "Built with",
@@ -86,7 +80,7 @@
           "Mobile-friendly",
           "Call & WhatsApp",
           "Google Business",
-          "From 1 week"
+          "Texts included"
         ]
       },
       {
@@ -123,7 +117,7 @@
     "orMonthly": "or {monthly} / month",
     "fromMonthly": "from {price} / month",
     "details": "Details",
-    "more": "Also: logo & branding, translation, business email",
+    "more": "Also: logo, translation, online payments",
     "allAddons": "All add-ons"
   },
   "ProcessSection": {
@@ -142,15 +136,15 @@
     "title1": "Frequently Asked",
     "title2": "Questions",
     "q1": "How much does a new website cost?",
-    "a1": "Websites start from {start} for a one-page site and {launch} for a full Launch package — or {monthly} a month with Launch Monthly, which includes hosting and care. Care plans start at {care} a month. Every project gets a fixed quote within 24 hours of a free consultation; see the Pricing page for every package and add-on.",
+    "a1": "The Launch package is {launch} and Business is {business}, or pay monthly from {monthly} for {months} months with the Care plan included. Businesses registered in Georgia pay half of the one-time price. Every project gets a fixed quote within 24 hours of a free consultation; see the Pricing page for every package and add-on.",
     "q2": "Do you offer monthly maintenance?",
-    "a2": "Yes. Care plans start at {care} a month and cover hosting, SSL, daily backups, security updates and 24/7 monitoring. Care+ and Growth add monthly edits, reports and ongoing SEO. Pay yearly and get 2 months free; cancel any time with 30 days' notice.",
+    "a2": "Yes. Care plans start at {care} a month and cover hosting, SSL, daily backups, security updates and 24/7 monitoring. Care+ adds monthly edits, a report and Google Business updates. Pay yearly and get 2 months free; cancel any time with 30 days' notice.",
     "q3": "How long does it take to build a website?",
-    "a3": "Most business websites go live in about 3 weeks, from the first call to launch. A one-page site can be ready in about a week, while larger Pro projects take 5–8 weeks. Your quote includes the exact launch date.",
+    "a3": "Most business websites go live in about 3 weeks, from the first call to launch: Launch usually takes 2–3 weeks, Business 3–4, and larger custom projects 5–8. Your quote includes the exact launch date.",
     "q4": "Do you work with international clients?",
-    "a4": "Absolutely. While we have deep roots in Georgia and operate in Europe, we serve clients globally with seamless communication.",
+    "a4": "Absolutely. We're based in Georgia and work with clients in any country, in English, French or Georgian, by email, WhatsApp or video call.",
     "q5": "Can I update my own website after it's built?",
-    "a5": "Yes. For clients who want independence, we integrate a simple no-code CMS (such as Sanity.io) so you can update text, images, blog posts, and more — no technical knowledge needed. We'll also provide a short walkthrough video so you're confident from day one."
+    "a5": "Yes. With the Business package you edit texts, photos and prices yourself in a simple editor — no technical knowledge needed — and we record a short walkthrough video for you. On the Launch package, just send us your changes: they're covered by the Care+ plan."
   },
   "TestimonialsSection": {
     "title1": "Client",
@@ -241,13 +235,15 @@
     "hProjects": "Website Projects, Payment & Guarantee",
     "pProjects": "This section applies when you order a website package or care plan from BBGeorgiaTech. Your written quote or agreement sets out the exact scope, price and launch date; where it differs from this section, the quote or agreement prevails.",
     "proj": [
-      "Payment: 50% of the project price is due before work starts and the remaining 50% at launch. All prices are in US dollars (USD), in every country.",
+      "Payment: for one-time projects, 50% of the project price is due before work starts and the remaining 50% at launch. All prices are in US dollars (USD).",
+      "Local price: businesses registered in Georgia pay 50% of the listed one-time prices for packages and add-ons. Care plans are charged at the listed price. Eligibility is confirmed with the business’s identification code in the quote or agreement.",
       "On-time delivery guarantee: if we miss the agreed launch date for reasons on our side, you receive a 10% discount on the project price for each full week of delay, up to a maximum of 30%. The discount is deducted from the final payment.",
       "The launch date moves accordingly when a delay is caused on your side — for example late content, materials, feedback, approvals or payments — or by changes to the agreed scope.",
       "Partial refund: if you are not satisfied with the design concept after two rounds of revisions, you may end the project before development starts. We then refund 50% of your deposit; the rest covers the design work already done. Once development has started, the deposit is no longer refundable.",
-      "Monthly payment plan: instead of the 50/50 payment above, the Launch website and the Care plan can be paid in monthly instalments over the term shown on the pricing page, starting when work begins. The partial refund guarantee does not apply to the monthly payment plan.",
+      "Texts: packages include writing the main texts of the website, based on one questionnaire or call with you. You review and approve them before launch.",
+      "Monthly payment plan: instead of the 50/50 payment above, the Launch or Business package and the Care plan can be paid in 12 monthly instalments, starting when work begins. The partial refund guarantee does not apply to the monthly payment plan.",
       "You may cancel the monthly payment plan at any time with 30 days’ notice and you owe nothing further. On cancellation, access to the website and to the services built for you ends. Once all instalments are paid, the website belongs to you and you may continue with a care plan or host it yourself.",
-      "Ownership: after full payment, the website, its design and its code belong to you.",
+      "Ownership: after full payment, the website, its design, its code and admin access belong to you.",
       "Care plans are billed in advance, monthly or yearly (yearly includes 2 months free), and can be cancelled with 30 days’ written notice. Unused hours do not roll over to the next month.",
       "If you cancel a yearly care plan early, we refund the amount paid in proportion to the full months remaining.",
       "Portfolio: BBGeorgiaTech may show the finished website — its name, screenshots and a link — in its portfolio and marketing materials."
@@ -255,12 +251,12 @@
   },
   "DeployedSystems": {
     "title2": "Portfolio",
-    "m1": "From first conversation to live site in just 2 weeks — KC Legal is already attracting qualified consultation requests with faster load times and a conversion-focused layout.",
+    "m1": "From first conversation to live site in just 2 weeks: a fast, clear site for a law firm, built to make requesting a consultation easy.",
     "m2": "A three-language site for a renovation company working in Tbilisi, Batumi and Akhmeta. The team publishes new projects and services themselves, without code.",
     "m3": "Live booking engine, Cloudinary image delivery, and multi-currency listings — all under 1.5s on mobile. The back-office panel lets owners create invoices, manage bookings, and run daily operations entirely from a phone.",
     "m5": "A platform that runs a private corporate league's football and basketball championships: live standings, match calendar, top scorers and playoffs, updated by the organizers themselves.",
     "eyebrow": "Selected work",
-    "subtitle": "Real businesses, real results — sites that bring in calls, bookings and clients.",
+    "subtitle": "Real businesses, live sites — built to bring in calls, bookings and clients.",
     "projectsLabel": "projects",
     "visit": "Visit site",
     "paused": "On hold",
@@ -305,21 +301,21 @@
     ]
   },
   "EmailReceipt": {
-    "subject": "Transmission Received: BBGeorgiaTech",
-    "title": "Transmission Received",
+    "subject": "We've received your message: BBGeorgiaTech",
+    "title": "Message received",
     "greeting": "Hello",
-    "p1": "Thank you for reaching out to BBGeorgiaTech. We have successfully logged your project inquiry into our secure systems. Our technical architecture team will review your specifications and establish contact within 24 hours to discuss deployment.",
+    "p1": "Thank you for contacting BBGeorgiaTech. We've received your message and will reply within 24 hours to arrange a free consultation.",
     "payloadRecord": "Your message",
-    "entity": "Entity / Name:",
-    "returnVector": "Return Vector:",
-    "requirements": "Requirements:",
+    "entity": "Name / company:",
+    "returnVector": "Email:",
+    "requirements": "Your message:",
     "regards1": "Best regards,",
-    "regards2": "The BBGeorgiaTech Team",
+    "regards2": "The BBGeorgiaTech team",
     "rightsReserved": "BBGeorgiaTech. All rights reserved."
   },
   "CookieBanner": {
     "title": "Privacy & cookies",
-    "descStart": "We utilize minimal tracking arrays (Vercel Core Vitals, GA4) to optimize infrastructure performance. No intrusive profiling. Review our ",
+    "descStart": "We use a few analytics tools (Vercel Analytics, Google Analytics) to see how the site is used and keep it fast. No ad tracking or profiling. Read our ",
     "linkText": "Cookie Policy",
     "descEnd": ".",
     "acceptBtn": "Accept & continue",
@@ -328,7 +324,7 @@
   "Pricing": {
     "meta": {
       "title": "Pricing — Website Packages & Care Plans | BBGeorgiaTech",
-      "description": "Fixed-price websites for small businesses worldwide, from {launch}. Three packages, monthly care plans from {care}, add-ons and an on-time delivery guarantee."
+      "description": "Fixed-price websites from {launch}: two packages, pay once or monthly, care plans from {care}, a local price for Georgia and an on-time guarantee."
     },
     "ui": {
       "from": "from {price}",
@@ -337,13 +333,18 @@
       "getStarted": "Get started",
       "included": "Included",
       "notIncluded": "Not included",
-      "feature": "Feature"
+      "feature": "Feature",
+      "orMonthly": "or {monthly} / month × {months}",
+      "localLine": "Registered in Georgia: {price} or {monthly} / month",
+      "intlLine": "International price: {price} or {monthly} / month",
+      "localScope": "for businesses registered in Georgia",
+      "perMonth": "/ month"
     },
     "hero": {
       "eyebrow": "Pricing",
       "title1": "Clear",
       "title2": "Prices.",
-      "subtitle": "Fixed-price websites for small businesses worldwide. No hidden fees — you know the cost before we start.",
+      "subtitle": "Fixed-price websites for small businesses. Pay once or monthly — no hidden fees, and you know the cost before we start.",
       "badges": [
         "Fixed price",
         "All prices in USD",
@@ -354,51 +355,36 @@
       "eyebrow": "Packages",
       "title1": "Website",
       "title2": "Packages",
-      "subtitle": "One-time price. Pick the package that fits today — you can always grow later.",
+      "subtitle": "Two packages. Pay once, or monthly over 12 months — after the last payment the site is yours.",
       "launch": {
         "name": "Launch",
         "tagline": "A professional site that gets you found and gets you calls.",
-        "weeks": "~2 weeks",
+        "weeks": "2–3 weeks",
         "features": [
           "Up to 5 pages or one long landing page",
+          "We write the texts for you",
           "Custom design: 1 concept + 2 revisions",
           "Mobile, tablet and desktop",
           "1 language",
           "Contact form, call & WhatsApp buttons, Google Maps",
-          "Basic SEO + Google Search Console",
-          "Google Business Profile setup",
+          "Basic SEO + Google Business Profile setup",
           "30 days of free fixes after launch"
         ]
       },
       "business": {
         "name": "Business",
-        "tagline": "For businesses that want clients to book and buy online.",
+        "tagline": "For businesses that want clients to book, order or request a quote online.",
         "weeks": "3–4 weeks",
         "features": [
           "Everything in Launch",
           "Up to 12 pages",
           "2–3 languages with multilingual SEO",
+          "Online booking, connected to the tool you already use, or a multi-step quote form",
           "Edit text, photos and prices yourself (CMS)",
-          "Online booking or a multi-step quote form",
           "Blog / news section",
           "Advanced SEO, schema and AI-search readiness",
           "Analytics with call & form tracking",
           "60 days of support after launch"
-        ]
-      },
-      "pro": {
-        "name": "Pro",
-        "tagline": "Custom features, an online shop and integrations.",
-        "weeks": "5–8 weeks",
-        "features": [
-          "Everything in Business",
-          "Up to 5 languages",
-          "Online shop (~100 products) with Stripe, PayPal or bank payments",
-          "Client portal or advanced booking",
-          "CRM, email marketing and accounting integrations",
-          "Custom design system and interactive animations",
-          "Speed & security audit before launch",
-          "90 days of priority support"
         ]
       }
     },
@@ -409,47 +395,30 @@
       "rows": {
         "pages": "Pages",
         "languages": "Languages",
-        "revisions": "Design revisions",
+        "copy": "Texts written for you",
         "delivery": "Delivery time",
-        "responsive": "Mobile & tablet ready",
+        "revisions": "Design revisions",
         "contact": "Contact form, call & WhatsApp buttons",
-        "basicSeo": "Basic SEO & Search Console",
+        "seo": "SEO",
         "gbp": "Google Business Profile setup",
-        "ssl": "SSL & speed optimization",
-        "legal": "Privacy & cookie policy",
         "cms": "Self-editing (CMS)",
-        "booking": "Online booking / calendar",
-        "blog": "Blog / news",
-        "advSeo": "Advanced SEO, schema, llms.txt",
-        "analytics": "Analytics & conversion tracking",
-        "animations": "Animations",
-        "shop": "Online shop",
-        "integrations": "CRM & third-party integrations",
-        "audit": "Speed & security audit",
-        "support": "Support after launch",
-        "training": "Training session"
+        "booking": "Online booking / quote form",
+        "analytics": "Call & form tracking",
+        "support": "Support after launch"
       }
     },
     "values": {
-      "weeks2": "~2 weeks",
+      "weeks2to3": "2–3 weeks",
       "weeks3to4": "3–4 weeks",
-      "weeks5to8": "5–8 weeks",
       "addon": "Add-on",
       "basic": "Basic",
-      "light": "Light",
-      "interactive": "Interactive",
+      "advanced": "Advanced + schema",
       "days30": "30 days",
       "days60": "60 days",
-      "days90priority": "90 days, priority",
-      "min30": "30 min",
-      "hour1": "1 hour",
       "hours2": "2 h / month",
-      "hours5": "5 h / month",
       "quarterly": "Quarterly",
-      "monthly": "Monthly",
       "bd2": "2 business days",
-      "bd1": "1 business day",
-      "sameDay": "Same day (critical)"
+      "bd1": "1 business day"
     },
     "care": {
       "eyebrow": "Monthly plans",
@@ -470,10 +439,6 @@
         "carePlus": {
           "name": "Care+",
           "tagline": "Plus monthly edits and reporting."
-        },
-        "growth": {
-          "name": "Growth",
-          "tagline": "An ongoing partner for growth."
         }
       },
       "rows": {
@@ -489,10 +454,6 @@
         "report": "Monthly report: visits, leads, speed",
         "gbp": "Google Business Profile updates",
         "seoCheck": "SEO health check",
-        "content": "1 new article or landing page / month",
-        "seoWork": "Ongoing SEO: keywords & internal links",
-        "cro": "Conversion review & recommendations",
-        "call": "Strategy call (30 min)",
         "response": "Response time"
       },
       "terms": [
@@ -500,6 +461,7 @@
         "Pay yearly and get 2 months free.",
         "Cancel a yearly plan early and get a refund for the remaining months.",
         "Unused hours don't roll over to the next month.",
+        "Need ongoing SEO and new content every month? We offer it on request.",
         "Prefer to host it yourself? Without a plan, we hand over the site and its code in full."
       ]
     },
@@ -507,46 +469,21 @@
       "eyebrow": "Add-ons",
       "title1": "Extra",
       "title2": "Services",
-      "subtitle": "Add exactly what you need, to any package.",
-      "groups": {
-        "content": "Content",
-        "brand": "Design & brand",
-        "features": "Features",
-        "marketing": "SEO & marketing",
-        "technical": "Technical"
-      },
+      "subtitle": "Add what you need to either package. Anything else is quoted individually.",
       "items": {
         "extraPage": "Extra page",
-        "copywriting": "SEO copywriting",
-        "translation": "Translation & localization",
-        "stock": "Stock photo selection & editing",
-        "products": "Product upload to your shop",
-        "logo": "Logo",
-        "identity": "Brand identity: logo, colours, fonts, guide",
-        "social": "Social media templates",
-        "print": "Business card or print design",
         "language": "Extra language (setup; translation separate)",
-        "booking": "Booking / calendar integration (for Launch)",
-        "quoteForm": "Multi-step quote form",
+        "translation": "Translation & localization",
+        "booking": "Booking / calendar connection (for Launch)",
         "payments": "Online payments: Stripe, PayPal or bank",
         "shop": "Online shop on top of Business",
-        "newsletter": "Email marketing integration (Mailchimp, Brevo)",
-        "portal": "Client portal & complex features",
-        "seoAudit": "SEO audit of an existing site",
-        "localSeo": "Local SEO: Google Business optimization and listing your business on 10 maps and directories (Apple Maps, Bing, Facebook…)",
-        "tracking": "Analytics, Google Ads & Meta pixel setup",
-        "migration": "Migration from an old site, keeping SEO & redirects",
-        "email": "Domain & business email (Google Workspace, Zoho)",
-        "rush": "Rush delivery",
-        "hourly": "Hourly rate outside packages"
+        "logo": "Logo",
+        "localSeo": "Local SEO: Google Business optimization and listing your business on 10 maps and directories (Apple Maps, Bing, Facebook…)"
       },
       "units": {
         "from": "from {price}",
         "perPage": "/ page",
-        "perSet": "/ set",
-        "perProduct": "/ product",
-        "perHour": "/ hour",
-        "custom": "Custom quote"
+        "perHour": "/ hour"
       },
       "localSeoInfo": {
         "summary": "What's included",
@@ -579,7 +516,7 @@
         },
         {
           "title": "50% deposit & design",
-          "text": "We start with a design concept and refine it together with you."
+          "text": "We write the texts and design a concept, then refine it together with you."
         },
         {
           "title": "Build & review",
@@ -587,15 +524,15 @@
         },
         {
           "title": "Launch & final 50%",
-          "text": "The remaining 50% is due at launch. Then your support period begins."
+          "text": "The remaining 50% is due at launch — or your monthly payments simply continue. Then your support period begins."
         }
       ],
       "payTitle": "Payment",
-      "payText": "50% upfront, 50% at launch. The same USD prices apply in every country.",
+      "payText": "Pay once: 50% upfront, 50% at launch. Or pay monthly over {months} months. All prices are in US dollars.",
       "provideTitle": "What you provide",
       "provide": [
-        "Your logo and brand colours (or order them as an add-on)",
-        "Text for the pages (or use our copywriting)",
+        "Your logo and brand colours (or order a logo as an add-on)",
+        "Answers to a short questionnaire or a call — we write the texts",
         "Photos of your work, team or place",
         "Access to your domain — or we register one for you"
       ]
@@ -610,23 +547,27 @@
         },
         {
           "q": "Can I pay monthly instead of upfront?",
-          "a": "Yes. With Launch Monthly you pay {monthly} a month for {months} months, covering both the Launch website and the Care plan. You can cancel any time and pay nothing more; access to the site then ends. After {months} months the site is yours."
+          "a": "Yes. Launch is {monthly} a month and Business {businessMonthly} a month for {months} months, with the Care plan included. Cancel any time with 30 days’ notice and pay nothing more; access to the site then ends. After {months} payments the site is yours."
         },
         {
-          "q": "Are prices the same in every country?",
-          "a": "Yes. All prices are in US dollars, wherever your business is."
+          "q": "Is there a lower price for businesses in Georgia?",
+          "a": "Yes. Businesses registered in Georgia pay 50% of the one-time price of packages and add-ons: Launch is {localLaunch} instead of {intlLaunch}. Care plans cost the same for everyone, and all prices are in US dollars."
         },
         {
           "q": "Do I own the website?",
-          "a": "Yes. After the final payment the site, its design and its code are yours."
+          "a": "Yes. After the final payment the site, its design, its code and admin access are yours."
         },
         {
-          "q": "Do I have to take a monthly plan?",
-          "a": "No, plans are optional. Without one, we hand over the site and you host and maintain it yourself."
+          "q": "Do I need a care plan?",
+          "a": "Not when you pay upfront: without a plan we hand over the site and you host and maintain it yourself. Monthly payment plans include Care."
         },
         {
-          "q": "What if I need something that isn't listed?",
-          "a": "Tell us. We quote custom features separately, or work at our hourly rate of {rate}."
+          "q": "Do I have to write the texts myself?",
+          "a": "No. We write the main texts from a short questionnaire or a call with you, and you approve them before launch."
+        },
+        {
+          "q": "What if I need an online shop or something not listed?",
+          "a": "Tell us. Online shops, client portals and integrations are quoted individually, from {custom}. Small extras are billed at {rate}."
         },
         {
           "q": "Can I upgrade later?",
@@ -640,39 +581,29 @@
       "text": "Tell us about your business. We'll recommend the right package and send a fixed quote within 24 hours.",
       "button": "Get a free consultation"
     },
-    "easy": {
-      "eyebrow": "Easier start",
-      "title1": "Easier",
-      "title2": "Ways to Start",
-      "subtitle": "Not ready for a full package? Start small, or spread the cost over the year.",
-      "start": {
-        "name": "Start",
-        "tagline": "One page that gets you found and gets you calls — upgrade any time.",
-        "weeks": "~1 week",
-        "features": [
-          "One page with your services, photos and contact details",
-          "Call & WhatsApp buttons, Google Maps",
-          "Mobile-ready, 1 language",
-          "Google Business Profile setup",
-          "Basic SEO",
-          "Upgrade to the Launch or Business package later — pay only the difference"
-        ]
-      },
-      "monthly": {
-        "name": "Launch Monthly",
-        "tagline": "The Launch website and the Care plan together, paid monthly — no large upfront payment.",
-        "per": "/ month",
-        "term": "{months}-month plan",
-        "features": [
-          "Everything in the Launch package",
-          "Everything in Care: hosting, SSL, backups, updates and monitoring",
-          "Pay month by month, starting when work begins",
-          "After {months} months the site is yours; continue on the Care plan for {care} / month or host it yourself"
-        ],
-        "note": "Cancel any time with 30 days’ notice and pay nothing more — access to the website and the services built for you ends. The partial-refund guarantee doesn’t apply to monthly payment.",
-        "track": "After {months} payments the site is yours"
-      },
-      "badge": "Easiest start"
+    "monthly": {
+      "eyebrow": "Pay monthly",
+      "title1": "Pay Monthly,",
+      "title2": "Own It After 12",
+      "subtitle": "No large upfront payment: the package and the Care plan in one monthly price.",
+      "features": [
+        "Launch or Business, with the Care plan included: hosting, SSL, backups, updates and monitoring",
+        "Payments start when work begins",
+        "After {months} payments the site is yours; continue on Care for {care} / month or host it yourself",
+        "Cancel any time with 30 days’ notice and pay nothing more"
+      ],
+      "note": "If you cancel, access to the website and the services built for you ends. The partial-refund guarantee doesn’t apply to monthly payment.",
+      "track": "After {months} payments the site is yours",
+      "badge": "No upfront payment"
+    },
+    "local": {
+      "title": "Local price for Georgia",
+      "text": "Businesses registered in Georgia pay 50% of the one-time price of packages and add-ons. Care plans cost the same for everyone. All prices are in US dollars."
+    },
+    "custom": {
+      "title": "Need an online shop or something bigger?",
+      "text": "Online shops, client portals and integrations are quoted individually, from {price}.",
+      "cta": "Tell us what you need"
     },
     "why": {
       "eyebrow": "Why a website",
@@ -772,7 +703,7 @@
     "homeServices": {
       "meta": {
         "title": "Websites for Trades & Home Services | BBGeorgiaTech",
-        "description": "Websites for renovation companies, plumbers, electricians, cleaners and other local service businesses: call buttons, quote forms, project galleries and local SEO, from {price}."
+        "description": "Websites for trades and local services: call buttons, quote forms, project galleries and local SEO. Texts included, from {price}."
       },
       "name": "Home Services & Trades",
       "hero": {
@@ -836,7 +767,7 @@
       "faq": [
         {
           "q": "How fast can my site be live?",
-          "a": "A Launch site usually goes live in about 2 weeks after we receive your content: logo, texts and photos of your work."
+          "a": "A Launch site usually goes live in 2–3 weeks. We write the texts; you send your logo and photos of your work."
         },
         {
           "q": "Can I add new project photos myself?",
@@ -862,8 +793,8 @@
     },
     "professionalServices": {
       "meta": {
-        "title": "Websites for Law Firms, Accountants & Consultants | BBGeorgiaTech",
-        "description": "Websites for lawyers, notaries, accountants, consultants and real estate agents: practice-area pages, team profiles, consultation booking and multilingual SEO, from {price}."
+        "title": "Websites for Law Firms & Consultants | BBGeorgiaTech",
+        "description": "Websites for lawyers, accountants and consultants: practice-area pages, team profiles, consultation booking and multilingual SEO, from {price}."
       },
       "name": "Professional Services",
       "hero": {
@@ -954,7 +885,7 @@
     "healthWellness": {
       "meta": {
         "title": "Websites for Psychologists, Dentists & Clinics | BBGeorgiaTech",
-        "description": "Websites for psychologists, dentists, physiotherapists, nutritionists and private clinics: online booking, specialist profiles, privacy-first forms and local SEO, from {price}."
+        "description": "Websites for clinics, dentists and therapists: online booking, specialist profiles, privacy-first forms and local SEO, from {price}."
       },
       "name": "Health & Therapy",
       "hero": {
@@ -1045,7 +976,7 @@
     "beauty": {
       "meta": {
         "title": "Websites for Salons, Barbershops & Spas | BBGeorgiaTech",
-        "description": "Websites for hair salons, barbershops, nail studios, spas and fitness studios: 24/7 online booking, portfolio galleries, price lists and local SEO, from {price}."
+        "description": "Websites for salons, barbershops and spas: 24/7 online booking, galleries, price lists and local SEO, from {price}."
       },
       "name": "Beauty & Wellbeing",
       "hero": {
@@ -1135,8 +1066,8 @@
     },
     "hospitalityTourism": {
       "meta": {
-        "title": "Websites for Tour Operators, Hotels & Restaurants | BBGeorgiaTech",
-        "description": "Websites for tour operators, guesthouses, boutique hotels, restaurants and wineries: direct booking and inquiries, multilingual pages, fast galleries and Maps, from {price}."
+        "title": "Websites for Hotels, Tours & Restaurants | BBGeorgiaTech",
+        "description": "Websites for guesthouses, hotels, tour operators and wineries: direct bookings, multilingual pages, fast galleries and Maps, from {price}."
       },
       "name": "Hospitality & Tourism",
       "hero": {
@@ -1196,7 +1127,7 @@
           "text": "Guest reviews from Google and other platforms, displayed where travellers decide."
         }
       },
-      "recommend": "Most hospitality businesses need the Business package: 2–3 languages, booking or inquiry forms, large galleries and content you update yourself. Choose the Pro package for online payments, a full booking engine or more languages.",
+      "recommend": "Most hospitality businesses need the Business package: 2–3 languages, booking or inquiry forms, large galleries and content you update yourself. Add online payments as an add-on, or ask us for a full booking engine or more languages.",
       "faq": [
         {
           "q": "Should I leave Booking.com or Airbnb?",
@@ -1204,7 +1135,7 @@
         },
         {
           "q": "Can guests pay online?",
-          "a": "Yes. Online payments come with the Pro package or as an add-on: Stripe, PayPal or your bank's payment system."
+          "a": "Yes. Online payments are available as an add-on: Stripe, PayPal or your bank's payment system."
         },
         {
           "q": "Which languages should my site have?",
@@ -1226,8 +1157,8 @@
     },
     "creativePersonalBrands": {
       "meta": {
-        "title": "Portfolio Websites for Creatives & Personal Brands | BBGeorgiaTech",
-        "description": "Portfolio websites for photographers, videographers, designers, coaches, speakers and wedding planners: a strong personal brand, beautiful galleries and inquiry forms, from {price}."
+        "title": "Portfolio Websites for Creatives | BBGeorgiaTech",
+        "description": "Portfolio websites for photographers, designers, coaches and wedding planners: galleries, a strong personal brand and inquiry forms, from {price}."
       },
       "name": "Creative & Personal Brands",
       "hero": {
@@ -1295,11 +1226,11 @@
         },
         {
           "q": "Can I add new projects myself?",
-          "a": "Yes, with the Business package. On the Launch package, we add new work for you with the edit hours in Care+ or Growth."
+          "a": "Yes, with the Business package. On the Launch package, we add new work for you with the edit hours in Care+."
         },
         {
           "q": "Can I sell prints, presets or courses?",
-          "a": "Yes. A small shop or digital downloads come with the Pro package or as an add-on."
+          "a": "Yes. A small shop or digital downloads are available as an add-on."
         },
         {
           "q": "Do I need a logo first?",
@@ -1318,7 +1249,7 @@
     "education": {
       "meta": {
         "title": "Websites for Schools, Tutors & Course Creators | BBGeorgiaTech",
-        "description": "Websites for tutors, language schools, driving schools, music and dance schools and training centres: course schedules, online registration and payments, from {price}."
+        "description": "Websites for schools, tutors and training centres: course schedules, online registration and payments, from {price}."
       },
       "name": "Education & Courses",
       "hero": {
@@ -1378,7 +1309,7 @@
           "text": "Reach international students and expat families in their own language."
         }
       },
-      "recommend": "Most schools need the Business package: course pages and schedules you edit yourself, a registration form and 2–3 languages. Add online payments as an add-on, or choose the Pro package for a student portal or a full course platform.",
+      "recommend": "Most schools need the Business package: course pages and schedules you edit yourself, a registration form and 2–3 languages. Add online payments as an add-on; a student portal or a full course platform is quoted individually.",
       "faq": [
         {
           "q": "Can I update the schedule myself every term?",
@@ -1386,11 +1317,11 @@
         },
         {
           "q": "Can students pay online?",
-          "a": "Yes, as an add-on or with the Pro package: Stripe, PayPal or your bank's payment system."
+          "a": "Yes, as an add-on: Stripe, PayPal or your bank's payment system."
         },
         {
           "q": "Can you build an online course platform?",
-          "a": "Yes, with the Pro package: a student area with lessons, progress and access control. We quote it based on your needs."
+          "a": "Yes: a student area with lessons, progress and access control. We quote it individually, based on your needs."
         },
         {
           "q": "Will the registration form send me notifications?",
@@ -1408,8 +1339,8 @@
     },
     "localShops": {
       "meta": {
-        "title": "Websites & Online Shops for Local Shops and Producers | BBGeorgiaTech",
-        "description": "Websites and online shops for boutiques, florists, bakeries, wine, honey and cheese producers and artisans: online sales, delivery, pickup and your brand story, from {price}."
+        "title": "Online Shops for Local Shops & Producers | BBGeorgiaTech",
+        "description": "Websites and online shops for boutiques, bakeries, florists and local producers: online sales, delivery and your brand story, from {price}."
       },
       "name": "Local Shops & Producers",
       "hero": {
@@ -1469,11 +1400,11 @@
           "text": "Several languages for tourists and international customers."
         }
       },
-      "recommend": "Most shops need the Pro package: an online shop with payments, delivery options and up to 5 languages. If you only want to showcase products and take orders by phone or message, start with the Business package and add a shop later.",
+      "recommend": "Most shops need the Business package with the online shop add-on: payments, delivery options and several languages. If you only want to showcase products and take orders by phone or message, start with Business and add the shop later.",
       "faq": [
         {
           "q": "How many products can the shop have?",
-          "a": "The Pro package includes setup for around 100 products. Larger catalogues are possible — we quote them based on size."
+          "a": "The online shop add-on includes setting up around 100 products. Larger catalogues are possible — we quote them based on size."
         },
         {
           "q": "Can I manage orders and stock myself?",
@@ -1513,9 +1444,9 @@
       "eyebrow": "Pricing",
       "title1": "Clear",
       "title2": "Prices",
-      "subtitle": "Fixed prices in USD, the same in every country. Start small or pay monthly.",
+      "subtitle": "Two packages: pay once, or monthly over 12 months. After the last payment, the site is yours.",
       "all": "See all pricing",
-      "popular": "Easiest start"
+      "popular": "Pay monthly"
     }
   }
 }

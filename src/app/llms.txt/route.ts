@@ -1,5 +1,5 @@
 import en from "../../../messages/en.json";
-import { ADDON_GROUPS, CARE_PLANS, MONTHLY, PACKAGES, START, formatUsd } from "../../data/pricing";
+import { ADDONS, CARE_PLANS, CUSTOM_FROM, HOURLY, MONTHS, PACKAGES, formatUsd, localPrice } from "../../data/pricing";
 import { PROJECTS, READY_VERTICALS } from "../../data/verticals";
 
 // /llms.txt — a plain-Markdown summary for AI assistants. Generated from the
@@ -12,12 +12,11 @@ const BASE = "https://bbgeorgiatech.com/en";
 export function GET() {
   const p = en.Pricing;
   const v = en.Verticals as unknown as Record<string, { name: string; hero: { subtitle: string } }>;
-  const hourly = ADDON_GROUPS.flatMap((g) => g.items).find((i) => i.key === "hourly")?.price;
 
   const lines = [
     "# BBGeorgiaTech",
     "",
-    "> Fixed-price websites for small businesses worldwide: design, development, SEO and ongoing care. All prices in USD, the same in every country.",
+    "> Fixed-price websites for small businesses worldwide: design, development, texts, SEO and ongoing care. Two packages, paid once or monthly. All prices in USD; businesses registered in Georgia pay 50% of one-time prices.",
     "",
     "## About",
     "",
@@ -27,17 +26,17 @@ export function GET() {
     "",
     `Full details: [Pricing](${BASE}/pricing)`,
     "",
-    "### Website packages (one-time)",
+    "### Website packages",
     "",
     ...PACKAGES.map((pkg) => {
       const m = p.packages[pkg.key];
-      return `- **${m.name}** — from ${formatUsd(pkg.price)}, ${m.weeks}. ${m.tagline} Includes: ${m.features.join("; ")}.`;
+      return `- **${m.name}** — from ${formatUsd(pkg.price)} one-time, or ${formatUsd(pkg.monthly)} / month for ${MONTHS} months with the Care plan included (the site is the client's after the last payment). ${m.weeks}. ${m.tagline} Includes: ${m.features.join("; ")}.`;
     }),
+    `- **Custom projects** (online shops, client portals, integrations) — quoted individually, from ${formatUsd(CUSTOM_FROM)}.`,
     "",
-    "### Easier ways to start",
+    "### Local price for Georgia",
     "",
-    `- **${p.easy.start.name}** — from ${formatUsd(START.price)}, ${p.easy.start.weeks}. ${p.easy.start.tagline} Includes: ${p.easy.start.features.join("; ")}.`,
-    `- **${p.easy.monthly.name}** — ${formatUsd(MONTHLY.monthly)} / month for ${MONTHLY.months} months. ${p.easy.monthly.tagline} ${p.easy.monthly.note}`,
+    `${p.local.text} For example, Launch is ${formatUsd(localPrice(PACKAGES[0].price))} and Business ${formatUsd(localPrice(PACKAGES[1].price))}; paid monthly ${PACKAGES.map((pkg) => `${p.packages[pkg.key].name} ${formatUsd(pkg.localMonthly)}`).join(", ")} per month.`,
     "",
     "### Monthly care plans",
     "",
@@ -48,12 +47,16 @@ export function GET() {
     "",
     ...p.care.terms.map((t) => `- ${t}`),
     "",
+    "### Add-ons",
+    "",
+    ...ADDONS.map((a) => `- ${p.addons.items[a.key as keyof typeof p.addons.items]}: ${a.unit === "from" ? "from " : ""}${formatUsd(a.price)}${a.unit === "perPage" ? " / page" : ""}`),
+    "",
     "### Payment & guarantee",
     "",
-    `- ${p.process.payText}`,
+    `- ${p.process.payText.replace("{months}", String(MONTHS))}`,
     `- ${p.guarantee.g1Title}: ${p.guarantee.g1Text}`,
     `- ${p.guarantee.g2Title}: ${p.guarantee.g2Text}`,
-    hourly ? `- Work outside the packages: ${formatUsd(hourly)} / hour.` : "",
+    `- Work outside the packages: ${formatUsd(HOURLY)} / hour.`,
     "",
     "## Industries",
     "",

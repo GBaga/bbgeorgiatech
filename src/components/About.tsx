@@ -3,12 +3,12 @@
 import type { PointerEvent } from "react";
 import { motion } from "framer-motion";
 import { useTranslations } from "next-intl";
-import { Clock, Gem, Landmark, Layers, ShieldCheck, CalendarX, Zap } from "lucide-react";
+import { Clock, Landmark, Link2, ShieldCheck, CalendarX, Sprout } from "lucide-react";
 
-// Who we are, how we work and what we build with: one block that replaces the
-// former Philosophy, Technology and Heritage sections on the home page.
+// Who we are and what we build with: the parent company, our bonds and roots,
+// the stack and four trust badges, in one block on the home page.
 
-const VALUE_ICONS = [Gem, Zap, Layers];
+const STORY_ICONS = [Link2, Sprout];
 
 const TECH = [
   "Next.js",
@@ -38,7 +38,7 @@ function trackPointer(e: PointerEvent<HTMLDivElement>) {
 
 export function About() {
   const t = useTranslations("About");
-  const values = t.raw("values") as { title: string; text: string }[];
+  const stories = t.raw("stories") as { title: string; text: string }[];
 
   return (
     <section className="relative py-32 px-6 bg-surface border-t border-white/5 overflow-hidden">
@@ -66,7 +66,7 @@ export function About() {
           className="text-center mb-16"
         >
           <span className="text-primary font-mono text-sm tracking-widest uppercase mb-4 block">
-            {t("eyebrow")} · {t("umbrella")}
+            {t("eyebrow")}
           </span>
           <h2 className="font-logo text-3xl md:text-5xl text-neutral-50 mb-6 uppercase tracking-tighter">
             {t("title1")} <span className="text-primary">{t("title2")}</span>
@@ -76,16 +76,16 @@ export function About() {
           </p>
         </motion.div>
 
-        {/* How we work */}
+        {/* Our bonds, our roots */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-4"
+          className="grid grid-cols-1 md:grid-cols-2 gap-4"
         >
-          {values.map((v, i) => {
-            const Icon = VALUE_ICONS[i] ?? Gem;
+          {stories.map((v, i) => {
+            const Icon = STORY_ICONS[i] ?? Link2;
             return (
               <motion.div
                 key={v.title}

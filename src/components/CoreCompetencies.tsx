@@ -3,10 +3,10 @@
 import { useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { MonitorSmartphone, ShoppingCart, LifeBuoy, MapPin, ChevronRight } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "../i18n/routing";
 import { PricePattern } from "./marketing/CountUp";
-import { MONTHLY, SERVICE_PRICES, formatUsd } from "../data/pricing";
+import { formatUsd, packageByKey, packagePrices, servicePrices, usesLocalPrices } from "../data/pricing";
 
 type ServiceCopy = { title: string; desc: string; chips: string[] };
 
@@ -38,15 +38,18 @@ export function CoreCompetencies() {
   });
 
   const tp = useTranslations("Pricing");
+  const locale = useLocale();
+  const prices = servicePrices(locale);
+  const launchMonthly = packagePrices(packageByKey("launch"), usesLocalPrices(locale)).monthly;
   const copy = t.raw("services") as ServiceCopy[];
   const from = tp("ui.from", { price: "§" });
 
   // Order and prices follow the packages: site, shop, Google, care.
   const services = [
-    { icon: MonitorSmartphone, href: "/pricing#packages", price: <PricePattern pattern={from} value={SERVICE_PRICES.website} />, extra: t("orMonthly", { monthly: formatUsd(MONTHLY.monthly) }) },
-    { icon: ShoppingCart, href: "/pricing#packages", price: <PricePattern pattern={from} value={SERVICE_PRICES.shop} /> },
-    { icon: MapPin, href: "/pricing#add-ons", price: <PricePattern pattern={from} value={SERVICE_PRICES.google} /> },
-    { icon: LifeBuoy, href: "/pricing#care", price: <PricePattern pattern={t("fromMonthly", { price: "§" })} value={SERVICE_PRICES.care} /> },
+    { icon: MonitorSmartphone, href: "/pricing#packages", price: <PricePattern pattern={from} value={prices.website} />, extra: t("orMonthly", { monthly: formatUsd(launchMonthly) }) },
+    { icon: ShoppingCart, href: "/pricing#packages", price: <PricePattern pattern={from} value={prices.shop} /> },
+    { icon: MapPin, href: "/pricing#add-ons", price: <PricePattern pattern={from} value={prices.google} /> },
+    { icon: LifeBuoy, href: "/pricing#care", price: <PricePattern pattern={t("fromMonthly", { price: "§" })} value={prices.care} /> },
   ].map((s, i) => ({ ...s, ...copy[i] }));
 
   return (
