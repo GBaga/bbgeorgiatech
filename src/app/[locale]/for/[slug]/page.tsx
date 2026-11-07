@@ -7,6 +7,7 @@ import { Footer } from "../../../../components/Footer";
 import { GridLight } from "../../../../components/HeroSection";
 import { TypeBadge } from "../../../../components/marketing/TypeBadge";
 import { Reveal } from "../../../../components/marketing/Reveal";
+import { ScanCard } from "../../../../components/marketing/ScanCard";
 import { SectionHeader } from "../../../../components/marketing/SectionHeader";
 import { FaqList } from "../../../../components/marketing/FaqList";
 import { HeroBlueprint } from "../../../../components/effects/HeroBlueprint";
@@ -17,8 +18,8 @@ import { SearchTyping } from "../../../../components/effects/SearchTyping";
 import { ProjectBrowser } from "../../../../components/effects/ProjectBrowser";
 import { PricePattern } from "../../../../components/marketing/CountUp";
 import { Link } from "../../../../i18n/routing";
-import { buildAlternates } from "../../../../lib/seo";
-import { CURRENCY, PACKAGES, formatUsd, pad2 } from "../../../../data/pricing";
+import { buildAlternates, socialMeta } from "../../../../lib/seo";
+import { CURRENCY, MONTHS, formatUsd, localPrice, packageByKey, packagePrices, pad2, usesLocalPrices } from "../../../../data/pricing";
 import { PROJECTS, READY_VERTICALS, getVertical } from "../../../../data/verticals";
 
 const BASE_URL = "https://bbgeorgiatech.com";
@@ -30,15 +31,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const v = getVertical(slug);
   if (!v) return {};
   const t = await getTranslations({ locale, namespace: "Verticals" });
-  const pkg = PACKAGES.find((p) => p.key === v.recommended) ?? PACKAGES[0];
+  const view = packagePrices(packageByKey(v.recommended), usesLocalPrices(locale));
   const title = t(`${v.key}.meta.title`);
-  const description = t(`${v.key}.meta.description`, { price: formatUsd(pkg.price) });
+  const description = t(`${v.key}.meta.description`, { price: formatUsd(view.price) });
 
   return {
     title,
     description,
     alternates: buildAlternates(locale, `/for/${slug}`),
-    openGraph: { title, description, type: "website", locale },
+    ...socialMeta(locale, title, description),
   };
 }
 
@@ -53,7 +54,9 @@ export default async function VerticalPage({ params }: Props) {
 
   const k = v.key;
   const accent = v.accent;
-  const pkg = PACKAGES.find((p) => p.key === v.recommended) ?? PACKAGES[0];
+  const pkg = packageByKey(v.recommended);
+  const local = usesLocalPrices(locale);
+  const view = packagePrices(pkg, local);
   const pkgName = tp(`packages.${pkg.key}.name`);
   const spokenName = t("ui.packageName", { name: pkgName });
   const project = v.project ? PROJECTS[v.project] : undefined;
@@ -182,7 +185,7 @@ export default async function VerticalPage({ params }: Props) {
           <div className="grid gap-4 md:grid-cols-3">
             {problems.map((p, i) => (
               <Reveal key={p.title} delay={i * 0.08} className="h-full">
-                <div className="relative h-full border border-white/10 bg-background-deep p-6 md:p-8">
+                <ScanCard color={accent} className="h-full p-6 md:p-8">
                   <div aria-hidden="true" className="absolute left-0 top-0 bottom-0 w-1" style={{ backgroundColor: accent }} />
                   <div className="flex items-center gap-4 mb-6">
                     <span className="font-mono text-sm text-primary">{pad2(i + 1)}</span>
@@ -190,7 +193,7 @@ export default async function VerticalPage({ params }: Props) {
                   </div>
                   <h3 className="font-logo text-lg uppercase tracking-tighter text-neutral-50 leading-snug">{p.title}</h3>
                   <p className="mt-4 text-neutral-400 leading-relaxed">{p.text}</p>
-                </div>
+                </ScanCard>
               </Reveal>
             ))}
           </div>
@@ -303,11 +306,19 @@ export default async function VerticalPage({ params }: Props) {
                 </div>
                 <div className="lg:text-right">
                   <div className="font-logo text-4xl tracking-tighter text-neutral-50 tabular-nums">
-                    <PricePattern pattern={tp("ui.from", { price: "§" })} value={pkg.price} />
+                    <PricePattern pattern={tp("ui.from", { price: "§" })} value={view.price} />
                   </div>
                   <div className="mt-2 font-mono text-[11px] uppercase tracking-wider text-neutral-500">
                     {t("ui.oneTime")} · {tp(`packages.${pkg.key}.weeks`)}
                   </div>
+                  <div className="mt-2 font-mono text-xs text-neutral-300">
+                    {tp("ui.orMonthly", { monthly: formatUsd(view.monthly), months: MONTHS })}
+                  </div>
+                  <p className="mt-2 text-xs text-primary leading-relaxed">
+                    {local
+                      ? tp("ui.localScope")
+                      : tp("ui.localLine", { price: formatUsd(localPrice(pkg.price)), monthly: formatUsd(pkg.localMonthly) })}
+                  </p>
                   <Link
                     href="/pricing"
                     className="group/cta mt-6 inline-flex items-center gap-2 border-2 border-primary/50 px-6 py-3 font-mono text-sm uppercase tracking-wider text-primary transition-all hover:bg-primary hover:text-white"

@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { animate, motion, useMotionValue, useMotionValueEvent, useReducedMotion, useTransform } from "framer-motion";
 import { ArrowRight, ChevronRight } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "../i18n/routing";
 import { priceParams } from "../data/pricing";
 
@@ -264,6 +264,7 @@ function GrowthQuote({ quote, author }: { quote: string; author: string }) {
 
 export function HeroSection() {
   const t = useTranslations("Hero");
+  const locale = useLocale();
 
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden px-6 pt-32 pb-12 lucien-blueprint">
@@ -325,7 +326,7 @@ export function HeroSection() {
               className="group/price mt-2 sm:ml-1 inline-flex w-fit flex-wrap items-center gap-x-3 gap-y-1 font-mono text-xs text-neutral-400 hover:text-neutral-200 transition-colors"
             >
               <span className="w-1.5 h-1.5 bg-primary animate-pulse" aria-hidden="true" />
-              <span>{t("pricingNote", priceParams())}</span>
+              <span>{t("pricingNote", priceParams(locale))}</span>
               <span className="inline-flex items-center gap-1 text-primary">
                 <span className="relative">
                   {t("seePricing")}

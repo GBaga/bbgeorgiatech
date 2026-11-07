@@ -1,40 +1,68 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
+import { useRef } from "react";
+import { motion, useReducedMotion, useScroll, useTransform, type MotionValue } from "framer-motion";
+import { ArrowRight, ChevronRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "../../i18n/routing";
 import { Reveal } from "../marketing/Reveal";
 import { SectionHeader } from "../marketing/SectionHeader";
 import { CountUp } from "../marketing/CountUp";
 import { MonthsTrack } from "../effects/MonthsTrack";
-import { MONTHLY, PACKAGES, START } from "../../data/pricing";
+import { useLocale } from "next-intl";
+import { CARE_PLANS, MONTHS, formatUsd, packageByKey, packagePrices, usesLocalPrices } from "../../data/pricing";
 
-// Home: a compact pricing strip — the two easy starts plus the two main
-// packages — that hands off to /pricing for everything else.
+// One word of the "why" headline; it lights up as the heading scrolls through
+// the viewport, so the sentence "reads itself" as you scroll.
+function Word({ word, progress, range, accent }: { word: string; progress: MotionValue<number>; range: [number, number]; accent: boolean }) {
+  const reduceMotion = useReducedMotion();
+  const opacity = useTransform(progress, range, [reduceMotion ? 1 : 0.15, 1]);
+  return (
+    <motion.span style={{ opacity }} className={`inline-block mr-[0.28em] ${accent ? "text-primary" : "text-neutral-50"}`}>
+      {word}
+    </motion.span>
+  );
+}
+
+// Home: why a website matters, then what it costs. The "why" lead-in (headline,
+// one line, link to the full scenarios on /pricing) sits right before the
+// prices, then a compact pricing strip (the two easy starts plus the two main
+// packages) hands off to /pricing for everything else.
 export function PricingTeaser() {
   const t = useTranslations("Pricing");
   const th = useTranslations("Home.pricing");
+  const tw = useTranslations("Home.why");
+  const headingRef = useRef<HTMLHeadingElement>(null);
+  const { scrollYProgress } = useScroll({ target: headingRef, offset: ["start 85%", "end 45%"] });
 
-  const launch = PACKAGES.find((p) => p.key === "launch")!;
-  const business = PACKAGES.find((p) => p.key === "business")!;
-
-  const cards = [
-    { key: "start", name: t("easy.start.name"), tagline: t("easy.start.tagline"), value: START.price, from: true, meta: t("ui.oneTime"), href: "/pricing#easy-start" },
-    {
-      key: "monthly",
-      name: t("easy.monthly.name"),
-      tagline: t("easy.monthly.tagline"),
-      value: MONTHLY.monthly,
-      per: t("easy.monthly.per"),
-      meta: t("easy.monthly.term", { months: MONTHLY.months }),
-      href: "/pricing#easy-start",
-      featured: true,
-    },
-    { key: "launch", name: t("packages.launch.name"), tagline: t("packages.launch.tagline"), value: launch.price, from: true, meta: t("ui.oneTime"), href: "/pricing#packages" },
-    { key: "business", name: t("packages.business.name"), tagline: t("packages.business.tagline"), value: business.price, from: true, meta: t("ui.oneTime"), href: "/pricing#packages" },
+  const words = [
+    ...t("why.title1").split(" ").map((w) => ({ w, accent: false })),
+    ...t("why.title2").split(" ").map((w) => ({ w, accent: true })),
   ];
 
-  // "from $490" / "$490-დან" — split the localized pattern around the number
+  const locale = useLocale();
+  const local = usesLocalPrices(locale);
+  const launch = packagePrices(packageByKey("launch"), local);
+  const business = packagePrices(packageByKey("business"), local);
+  const orMonthly = (monthly: number) => t("ui.orMonthly", { monthly: formatUsd(monthly), months: MONTHS });
+
+  const cards = [
+    { key: "launch", name: t("packages.launch.name"), tagline: t("packages.launch.tagline"), value: launch.price, from: true, meta: orMonthly(launch.monthly), href: "/pricing#packages", track: true },
+    {
+      key: "business",
+      name: t("packages.business.name"),
+      tagline: t("packages.business.tagline"),
+      value: business.price,
+      from: true,
+      meta: orMonthly(business.monthly),
+      href: "/pricing#packages",
+      featured: true,
+      track: true,
+    },
+    { key: "care", name: t("care.plans.care.name"), tagline: t("care.plans.care.tagline"), value: CARE_PLANS[0].monthly, per: t("ui.perMonth"), meta: t("care.eyebrow"), href: "/pricing#care" },
+  ];
+
+  // "from $990" / "$990-დან" — split the localized pattern around the number
   // so only the number animates.
   const [fromBefore, fromAfter] = t("ui.from", { price: "§" }).split("§");
 
@@ -46,6 +74,41 @@ export function PricingTeaser() {
         style={{ background: "radial-gradient(45% 60% at 50% 100%, rgba(92,156,255,0.12), transparent)" }}
       />
       <div className="relative z-10 max-w-6xl mx-auto">
+        {/* Why a website */}
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-1.5 h-1.5 bg-primary" aria-hidden="true" />
+          <div className="font-mono text-xs tracking-[0.2em] text-primary uppercase">{t("why.eyebrow")}</div>
+        </div>
+        <h2 ref={headingRef} className="font-logo text-3xl md:text-5xl lg:text-6xl uppercase tracking-tighter leading-[1.1] max-w-5xl break-words">
+          {words.map(({ w, accent }, i) => (
+            <Word
+              key={i}
+              word={w}
+              accent={accent}
+              progress={scrollYProgress}
+              range={[i / words.length, Math.min((i + 1.5) / words.length, 1)]}
+            />
+          ))}
+        </h2>
+        <Reveal>
+          <p className="mt-8 max-w-2xl text-lg text-neutral-400 leading-relaxed">{t("why.subtitle")}</p>
+        </Reveal>
+        <Reveal className="mt-8">
+          <Link
+            href="/pricing#why"
+            className="group/link inline-flex items-center gap-3 font-mono text-sm uppercase tracking-wider text-primary hover:text-white transition-colors"
+          >
+            <span className="relative">
+              {tw("link")}
+              <span className="absolute -bottom-1 left-0 h-px w-full origin-left scale-x-0 bg-current transition-transform duration-300 group-hover/link:scale-x-100" />
+            </span>
+            <ChevronRight className="w-4 h-4 transition-transform group-hover/link:translate-x-1" aria-hidden="true" />
+          </Link>
+        </Reveal>
+
+        <div className="my-16 md:my-20 h-px bg-white/10" aria-hidden="true" />
+
+        {/* What it costs */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-2">
           <SectionHeader eyebrow={th("eyebrow")} title1={th("title1")} title2={th("title2")} subtitle={th("subtitle")} />
           <Reveal className="mb-12 md:mb-16">
@@ -59,7 +122,7 @@ export function PricingTeaser() {
           </Reveal>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-4 md:grid-cols-3">
           {cards.map((c, i) => (
             <Reveal key={c.key} delay={i * 0.08} className="h-full">
               <Link
@@ -74,7 +137,7 @@ export function PricingTeaser() {
                   <h3 className="font-logo text-lg uppercase tracking-tighter text-neutral-50">{c.name}</h3>
                   {c.featured && (
                     <span className="shrink-0 border border-primary/50 bg-primary/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-primary">
-                      {th("popular")}
+                      {t("ui.popular")}
                     </span>
                   )}
                 </div>
@@ -92,8 +155,8 @@ export function PricingTeaser() {
                   )}
                   {c.per && <span className="font-mono text-xs tracking-normal text-neutral-500 whitespace-nowrap">{c.per}</span>}
                 </div>
-                {c.key === "monthly" ? (
-                  <MonthsTrack compact months={MONTHLY.months} label={t("easy.monthly.track", { months: MONTHLY.months })} />
+                {c.track ? (
+                  <MonthsTrack compact months={MONTHS} label={t("monthly.track", { months: MONTHS })} />
                 ) : (
                   // Same height as the track, so the price rows line up across cards
                   <div className="mt-4 h-5" aria-hidden="true" />

@@ -2,12 +2,12 @@
 
 import { useState, useEffect, useRef, type PointerEvent } from "react";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
-import { Menu, X, Terminal, ChevronDown, ChevronRight } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown, ChevronRight } from "lucide-react";
 import { Link, usePathname } from "../i18n/routing";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { READY_VERTICALS } from "../data/verticals";
-import { MONTHLY, formatUsd } from "../data/pricing";
+import { formatUsd, packageByKey, packagePrices, usesLocalPrices } from "../data/pricing";
 import { CONTACT_HREF, INDUSTRIES_AFTER, NAV_LINKS, type NavKey } from "../data/navigation";
 
 const BrandIcon = () => (
@@ -33,10 +33,7 @@ const SECTION_TO_NAV: Record<string, ActiveKey | null> = {
   industries: "industries",
   process: null,
   systems: "systems",
-  why: "pricing",
   pricing: "pricing",
-  paradox: null,
-  "tech-stack": null,
   faq: null,
   heritage: "heritage",
   contact: null,
@@ -108,6 +105,7 @@ function IndustriesMenu({ active, open, setOpen }: { active: boolean; open: bool
   const tv = useTranslations("Verticals");
   const th = useTranslations("Home");
   const tp = useTranslations("Pricing");
+  const launchMonthly = packagePrices(packageByKey("launch"), usesLocalPrices(useLocale())).monthly;
   const rootRef = useRef<HTMLDivElement>(null);
   const closeTimer = useRef<number | undefined>(undefined);
 
@@ -203,7 +201,7 @@ function IndustriesMenu({ active, open, setOpen }: { active: boolean; open: bool
                 </div>
 
                 <Link
-                  href="/pricing#easy-start"
+                  href="/pricing#monthly"
                   onClick={() => setOpen(false)}
                   className="group relative flex flex-col justify-between border-l border-white/10 bg-gradient-to-b from-primary/15 to-transparent p-6 transition-colors hover:from-primary/25"
                 >
@@ -211,10 +209,10 @@ function IndustriesMenu({ active, open, setOpen }: { active: boolean; open: bool
                     <span className="inline-block border border-primary/50 bg-primary/10 px-2 py-0.5 font-mono text-[10px] uppercase tracking-wider text-primary">
                       {th("pricing.popular")}
                     </span>
-                    <div className="mt-4 font-heading text-sm font-semibold text-neutral-200">{tp("easy.monthly.name")}</div>
+                    <div className="mt-4 font-heading text-sm font-semibold text-neutral-200">{tp("packages.launch.name")}</div>
                     <div className="mt-2 flex items-baseline gap-1.5 font-logo text-3xl tracking-tighter text-neutral-50">
-                      {formatUsd(MONTHLY.monthly)}
-                      <span className="font-mono text-xs tracking-normal text-neutral-500 whitespace-nowrap">{tp("easy.monthly.per")}</span>
+                      {formatUsd(launchMonthly)}
+                      <span className="font-mono text-xs tracking-normal text-neutral-500 whitespace-nowrap">{tp("ui.perMonth")}</span>
                     </div>
                   </div>
                   <span className="mt-6 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-primary group-hover:text-white transition-colors">
@@ -318,10 +316,10 @@ export function NavigationBar() {
           <div className="hidden lg:flex items-center">
             <Link
               href={CONTACT_HREF}
-              className="flex items-center gap-2 px-6 py-2 border-2 border-primary/50 text-primary hover:bg-primary hover:text-white font-mono text-sm uppercase tracking-wider transition-all"
+              className="flex items-center gap-2 px-6 py-2 border-2 border-primary/50 text-primary hover:bg-primary hover:text-white font-mono text-sm uppercase tracking-wider [&:lang(ka)]:tracking-normal transition-all"
             >
-              <Terminal className="w-4 h-4" />
               <span>{t("initiateProtocol")}</span>
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
             <LanguageSwitcher />
           </div>
@@ -444,8 +442,8 @@ export function NavigationBar() {
                     transition={{ delay: (navLinks.length + 1) * 0.08 }}
                     className="flex items-center gap-2"
                   >
-                    <Terminal className="w-5 h-5" />
                     <span>{t("initiateProtocol")}</span>
+                    <ArrowRight className="w-5 h-5" aria-hidden="true" />
                   </motion.div>
                 </Link>
 

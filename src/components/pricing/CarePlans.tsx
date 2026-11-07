@@ -46,7 +46,7 @@ export function CarePlans() {
         </span>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-2">
         {CARE_PLANS.map((plan, i) => {
           const amount = yearly ? plan.monthly * YEARLY_MONTHS : plan.monthly;
           return (

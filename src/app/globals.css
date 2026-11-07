@@ -12,12 +12,16 @@
   --color-neutral-400: var(--neutral--navy-100);
   --color-neutral-50: var(--base--white);
   
-  --font-heading: var(--font-heading);
-  --font-inter: var(--font-body);
-  --font-mono: var(--font-mono);
-  --font-logo: var(--font-logo);
-  /* Hero chart quote: Plex Mono for Latin, Noto Sans Georgian for Georgian */
-  --font-quote: var(--font-mono), var(--font-georgian), monospace;
+  /* next/font sets the --nf-* variables (layout.tsx). The Latin fonts have no
+     Georgian glyphs, so every stack falls through to Noto Sans Georgian for
+     Georgian text; it must stay LAST (its Google CSS also ships Latin faces). */
+  --font-heading: var(--nf-heading), var(--nf-georgian), sans-serif;
+  /* Body text uses Manrope too (one family fewer to download) */
+  --font-inter: var(--nf-heading), var(--nf-georgian), sans-serif;
+  --font-mono: var(--nf-mono), var(--nf-georgian), monospace;
+  --font-logo: var(--nf-logo), var(--nf-georgian), sans-serif;
+  /* Hero chart quote */
+  --font-quote: var(--nf-mono), var(--nf-georgian), monospace;
 }
 
 :root {
@@ -149,6 +153,62 @@ body {
   position: absolute;
   inset: 0;
   background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), rgba(92, 156, 255, 0.08), transparent 60%);
+}
+
+/* ScanCard (components/marketing/ScanCard.tsx): a 1px line that glows in the
+   middle and fades at the ends. --scan-color is set per card. */
+.scan-card {
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+.scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -1px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--scan-color), transparent);
+  opacity: 0;
+  pointer-events: none;
+  transition: top 0.7s ease, opacity 0.7s ease;
+}
+
+/* Desktop: sweep on hover, card lifts and takes the line's color */
+@media (hover: hover) {
+  .scan-card:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--scan-color) 40%, transparent);
+    box-shadow: 0 20px 50px -20px color-mix(in srgb, var(--scan-color) 35%, transparent);
+  }
+
+  .scan-card:hover .scan-line {
+    top: 100%;
+    opacity: 1;
+  }
+}
+
+/* Touch: one sweep when the card scrolls into view */
+@media (hover: none) {
+  .scan-card[data-inview="true"] .scan-line {
+    animation: scan-sweep 1.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+  }
+}
+
+@keyframes scan-sweep {
+  0% { top: -1px; opacity: 0; }
+  15% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scan-line {
+    display: none;
+  }
+
+  .scan-card:hover {
+    transform: none;
+  }
 }
 
 /* Touch screens have no pointer to follow */
