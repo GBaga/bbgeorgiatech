@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, type PointerEvent } from "react";
 import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
-import { Menu, X, Terminal, ChevronDown, ChevronRight } from "lucide-react";
+import { Menu, X, ArrowRight, ChevronDown, ChevronRight } from "lucide-react";
 import { Link, usePathname } from "../i18n/routing";
 import { useTranslations } from "next-intl";
 import { LanguageSwitcher } from "./LanguageSwitcher";
@@ -33,10 +33,7 @@ const SECTION_TO_NAV: Record<string, ActiveKey | null> = {
   industries: "industries",
   process: null,
   systems: "systems",
-  why: "pricing",
   pricing: "pricing",
-  paradox: null,
-  "tech-stack": null,
   faq: null,
   heritage: "heritage",
   contact: null,
@@ -318,10 +315,10 @@ export function NavigationBar() {
           <div className="hidden lg:flex items-center">
             <Link
               href={CONTACT_HREF}
-              className="flex items-center gap-2 px-6 py-2 border-2 border-primary/50 text-primary hover:bg-primary hover:text-white font-mono text-sm uppercase tracking-wider transition-all"
+              className="flex items-center gap-2 px-6 py-2 border-2 border-primary/50 text-primary hover:bg-primary hover:text-white font-mono text-sm uppercase tracking-wider [&:lang(ka)]:tracking-normal transition-all"
             >
-              <Terminal className="w-4 h-4" />
               <span>{t("initiateProtocol")}</span>
+              <ArrowRight className="w-4 h-4" aria-hidden="true" />
             </Link>
             <LanguageSwitcher />
           </div>
@@ -444,8 +441,8 @@ export function NavigationBar() {
                     transition={{ delay: (navLinks.length + 1) * 0.08 }}
                     className="flex items-center gap-2"
                   >
-                    <Terminal className="w-5 h-5" />
                     <span>{t("initiateProtocol")}</span>
+                    <ArrowRight className="w-5 h-5" aria-hidden="true" />
                   </motion.div>
                 </Link>
 

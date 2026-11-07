@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope, IBM_Plex_Sans, IBM_Plex_Mono, Michroma, Noto_Sans_Georgian } from "next/font/google";
+import { Manrope, IBM_Plex_Mono, Michroma, Noto_Sans_Georgian } from "next/font/google";
 import "../globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -11,38 +11,33 @@ import { getMessages, getTranslations } from 'next-intl/server';
 import { buildAlternates } from '../../lib/seo';
 import { CARE_PLANS, CURRENCY, MONTHLY, PACKAGES, START, formatUsd } from '../../data/pricing';
 
+// Variables are --nf-* so they don't collide with Tailwind's --font-* theme
+// tokens in globals.css, which build the full stacks from them.
 const fontLogo = Michroma({
-  variable: "--font-logo",
+  variable: "--nf-logo",
   weight: ["400"],
   subsets: ["latin"],
 });
 
+// Headings and body text (variable font, every weight in one file)
 const fontHeading = Manrope({
-  variable: "--font-heading",
-  subsets: ["latin"],
-});
-
-const fontBody = IBM_Plex_Sans({
-  variable: "--font-body",
-  weight: ["400", "500", "600"],
+  variable: "--nf-heading",
   subsets: ["latin"],
 });
 
 const fontMono = IBM_Plex_Mono({
-  variable: "--font-mono",
-  // 300 is used by the hero chart quote
-  weight: ["300", "400", "500"],
+  variable: "--nf-mono",
+  // 300: hero chart quote, 700: bold mono labels and buttons
+  weight: ["300", "400", "700"],
   subsets: ["latin"],
 });
 
-// Georgian glyphs for the hero chart quote only (Plex Mono has none). It must
-// stay AFTER Plex Mono in the --font-quote stack: Google's CSS also ships this
-// font's Latin faces (`subsets` only controls preloading), so putting it first
-// would switch the English/French quote to Noto. Not preloaded: unicode-range
-// means the Georgian file is fetched only when Georgian text renders.
+// Georgian glyphs for every stack (none of the fonts above has them).
+// Variable font, so all weights come in one file. Not preloaded:
+// unicode-range means it's fetched only when Georgian text renders, so the
+// English and French pages never download it.
 const fontGeorgian = Noto_Sans_Georgian({
-  variable: "--font-georgian",
-  weight: ["300"],
+  variable: "--nf-georgian",
   subsets: ["georgian"],
   preload: false,
 });
@@ -51,16 +46,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const resolvedParams = await params;
   const locale = resolvedParams.locale;
   const t = await getTranslations({ locale, namespace: 'Metadata' });
+  const price = formatUsd(START.price);
 
   return {
     metadataBase: new URL('https://bbgeorgiatech.com'),
     title: t('title'),
-    description: t('description'),
-    keywords: t('keywords').split(', '),
+    description: t('description', { price }),
     alternates: buildAlternates(locale, ''),
     openGraph: {
       title: t('ogTitle'),
-      description: t('ogDescription'),
+      description: t('ogDescription', { price }),
       type: "website",
       locale: locale,
       alternateLocale: ["en", "fr", "ka"].filter(l => l !== locale),
@@ -68,7 +63,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     twitter: {
       card: "summary_large_image",
       title: t('ogTitle'),
-      description: t('ogDescription'),
+      description: t('ogDescription', { price }),
     }
   };
 }
@@ -169,7 +164,7 @@ export default async function RootLayout({
     <html
       lang={resolvedParams.locale}
       data-scroll-behavior="smooth"
-      className={`${fontLogo.variable} ${fontHeading.variable} ${fontBody.variable} ${fontMono.variable} ${fontGeorgian.variable} h-full antialiased dark`}
+      className={`${fontLogo.variable} ${fontHeading.variable} ${fontMono.variable} ${fontGeorgian.variable} h-full antialiased dark`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background-deep text-neutral-50 font-inter" suppressHydrationWarning>

@@ -20,7 +20,7 @@ import { DelayTimeline } from "../../../components/effects/DelayTimeline";
 import { ChapterRail } from "../../../components/effects/ChapterRail";
 import { PricePattern } from "../../../components/marketing/CountUp";
 import { Link } from "../../../i18n/routing";
-import { buildAlternates } from "../../../lib/seo";
+import { buildAlternates, ogImages } from "../../../lib/seo";
 import {
   ADDON_GROUPS,
   CARE_PLANS,
@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title,
     description,
     alternates: buildAlternates(locale, "/pricing"),
-    openGraph: { title, description, type: "website", locale },
+    openGraph: { title, description, type: "website", locale, images: ogImages(locale) },
   };
 }
 

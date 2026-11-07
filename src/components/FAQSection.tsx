@@ -14,7 +14,7 @@ export function FAQSection() {
 
   const faqs = [
     { q: t("q1"), a: t("a1", priceParams()), pricing: true },
-    { q: t("q2"), a: t("a2") },
+    { q: t("q2"), a: t("a2", priceParams()) },
     { q: t("q3"), a: t("a3") },
     { q: t("q4"), a: t("a4") },
     { q: t("q5"), a: t("a5") },

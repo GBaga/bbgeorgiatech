@@ -12,3 +12,10 @@ export function buildAlternates(locale: string, path: string) {
     },
   };
 }
+
+// A page that sets its own `openGraph` replaces the parent's entirely, which
+// drops the locale share image from [locale]/opengraph-image.tsx. Pages pass
+// this to keep it.
+export function ogImages(locale: string) {
+  return [{ url: `/${locale}/opengraph-image`, width: 1200, height: 630, alt: "BBGeorgiaTech" }];
+}

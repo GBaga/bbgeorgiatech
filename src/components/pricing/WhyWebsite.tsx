@@ -6,9 +6,31 @@ import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 import { Link } from "../../i18n/routing";
 import { Reveal } from "../marketing/Reveal";
+import { ScanCard } from "../marketing/ScanCard";
 import { MONTHLY, formatUsd } from "../../data/pricing";
 
 const PRESETS = [20, 50, 100, 300];
+
+// The digits of a scenario's time drop in one by one, like a clock display.
+function Clock({ time }: { time: string }) {
+  return (
+    <time className="inline-flex font-mono text-sm text-primary tabular-nums" aria-label={time}>
+      {Array.from(time).map((ch, i) => (
+        <motion.span
+          key={i}
+          aria-hidden="true"
+          initial={{ opacity: 0, y: -10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.35, delay: 0.25 + i * 0.07, ease: [0.22, 1, 0.36, 1] }}
+          className="inline-block"
+        >
+          {ch}
+        </motion.span>
+      ))}
+    </time>
+  );
+}
 const MIN = 5;
 const MAX = 500;
 
@@ -120,16 +142,16 @@ export function WhyWebsite() {
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {scenarios.map((s, i) => (
             <Reveal key={s.time} delay={(i % 3) * 0.08} className="h-full">
-              <article className="group relative h-full flex flex-col border border-white/10 bg-background-deep p-6 md:p-8 transition-colors duration-300 hover:border-white/20">
+              <ScanCard className="h-full flex flex-col p-6 md:p-8">
                 <div className="flex items-center gap-3">
                   <span className="w-1.5 h-1.5 bg-primary animate-pulse" aria-hidden="true" />
-                  <time className="font-mono text-sm text-primary tabular-nums">{s.time}</time>
+                  <Clock time={s.time} />
                   <div className="h-px flex-1 bg-white/10" aria-hidden="true" />
                 </div>
                 <h3 className="mt-6 font-logo text-lg uppercase tracking-tighter text-neutral-50 leading-snug">{s.title}</h3>
                 <p className="mt-4 flex-1 text-sm text-neutral-400 leading-relaxed">{s.text}</p>
                 <p className="mt-6 border-l-2 border-primary pl-4 font-heading font-semibold text-neutral-50 leading-snug">{s.punch}</p>
-              </article>
+              </ScanCard>
             </Reveal>
           ))}
           <Reveal delay={0.16} className="h-full">

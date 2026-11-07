@@ -3,18 +3,19 @@
     "title": "BBGeorgiaTech"
   },
   "Metadata": {
-    "title": "BBGeorgiaTech | Création, Développement et Maintenance de Sites Web",
-    "description": "Création de sites web sur mesure, développement et maintenance continue. Sites web rapides et modernes pour les entreprises en Europe, en Géorgie et à l'international. Obtenez un devis gratuit.",
-    "keywords": "Création Site Web, Développement Web Europe, Site Web B2B, Développement Next.js, Agence Web, Sites Web Sur Mesure, Bagauri Bonds",
-    "ogTitle": "BBGeorgiaTech | Création et Développement de Sites Web sur Mesure",
-    "ogDescription": "Des sites web rapides et modernes conçus pour développer votre entreprise. Fièrement membre du groupe Bagauri Bonds Georgia."
+    "title": "Sites web pour petites entreprises à prix fixe | BBGeorgiaTech",
+    "description": "Sites web à prix fixe pour petites entreprises du monde entier, dès {price}. Conception, développement, visibilité sur Google et maintenance. En ligne en 3 semaines environ. Devis gratuit sous 24 h.",
+    "ogTitle": "Sites web à prix fixe pour petites entreprises | BBGeorgiaTech",
+    "ogDescription": "Des sites rapides et adaptés au mobile qui vous apportent appels, réservations et clients. Dès {price}, en ligne en 3 semaines environ.",
+    "ogTagline": "Sites web à prix fixe pour petites entreprises",
+    "ogFacts": "Dès {price} · En ligne en 3 semaines environ · Devis gratuit sous 24 h"
   },
   "Navigation": {
     "competencies": "Services",
     "theEngine": "Technologie",
     "systems": "Portfolio",
     "heritage": "À Propos",
-    "initiateProtocol": "Obtenir un Devis Gratuit",
+    "initiateProtocol": "Devis gratuit",
     "pricing": "Tarifs",
     "contact": "Contact"
   },
@@ -30,28 +31,48 @@
     "title1": "Nous Créons",
     "title2": "Des Sites Web Qui",
     "title3": "Développent L'Entreprise.",
-    "stackLabel": "SERVICES:",
-    "stackValue": "CONCEPTION WEB // DÉVELOPPEMENT // E-COMMERCE",
-    "deploymentLabel": "LIVRAISON:",
-    "deploymentValue": "RAPIDE. GLOBALE. FIABLE.",
-    "targetLabel": "SUPPORT:",
-    "targetValue": "MAINTENANCE & SOIN CONTINUS",
-    "getAQuote": "[ Obtenir un Devis Gratuit ]",
+    "stackLabel": "Ce que nous faisons :",
+    "stackValue": "Sites web, boutiques en ligne et visibilité sur Google",
+    "deploymentLabel": "Délai :",
+    "deploymentValue": "La plupart des sites sont en ligne en 3 semaines environ",
+    "targetLabel": "Après le lancement :",
+    "targetValue": "Hébergement, mises à jour et maintenance",
+    "getAQuote": "Obtenir un devis gratuit",
     "initializeDeployment": "Voir Notre Travail →",
     "pricingNote": "À partir de {start} · ou {monthly} / mois",
     "lessIsMore": "Parfois, moins c'est plus.",
     "quoteAuthor": "Robert Browning (1855)",
     "seePricing": "Voir les tarifs"
   },
-  "BrandHeritage": {
-    "title1": "Bâti sur la Confiance.",
-    "title2": "Conçu pour l'Avenir.",
+  "About": {
+    "eyebrow": "À propos",
     "umbrella": "Fait partie du groupe Bagauri Bonds Georgia",
-    "description": "BBGeorgiaTech est la division technologique de Bagauri Bonds Georgia — une entreprise ancrée dans l'héritage géorgien, opérant à travers l'Europe. Nous combinons l'engagement de notre société mère envers des relations humaines durables avec une technologie web de pointe.",
-    "bondsTitle": "Nos Liens",
-    "bondsDesc": "Nous croyons que la technologie doit connecter, et non compliquer. Chaque site web que nous créons renforce le lien entre nos clients et leurs utilisateurs — en créant des expériences numériques personnelles, professionnelles et durables.",
-    "bagauriTitle": "Nos Racines",
-    "bagauriDesc": "Nés en Géorgie, tournés vers le monde. Le nom Bagauri représente l'héritage de notre fondateur et la tradition artisanale que nous apportons à chaque projet. Dans un monde de solutions éphémères, nous construisons des choses qui durent — et nous vous invitons à bâtir le prochain chapitre de votre histoire numérique avec nous."
+    "title1": "Un petit studio.",
+    "title2": "Toute notre attention.",
+    "intro": "BBGeorgiaTech est un petit studio web fondé en Géorgie par Goga Bagauri, membre du groupe Bagauri Bonds Georgia, qui travaille avec des clients du monde entier. Nous prenons peu de projets à la fois : chaque site reçoit toute notre attention et est conçu pour durer.",
+    "values": [
+      {
+        "title": "La qualité avant la quantité",
+        "text": "Pas de production de masse. Chaque projet reçoit notre meilleure réflexion et notre plus haut niveau d'exigence."
+      },
+      {
+        "title": "Simple et rapide",
+        "text": "Sans superflu ni complexité inutile : des sites clairs, rapides et faciles à utiliser."
+      },
+      {
+        "title": "Technologie moderne",
+        "text": "Chaque site est développé sur mesure avec des outils modernes et éprouvés, pensés pour la vitesse, la sécurité et la croissance."
+      }
+    ],
+    "techLabel": "Technologies",
+    "badge1Title": "HTTPS",
+    "badge1Val": "Sécurisé par Défaut",
+    "badge2Title": "24 Heures",
+    "badge2Val": "Réponse Rapide",
+    "badge3Title": "Bagauri Bonds",
+    "badge3Val": "Soutenu par le Groupe",
+    "badge4Title": "Résiliable à tout moment",
+    "badge4Val": "Préavis de 30 jours"
   },
   "CoreCompetencies": {
     "precisionEngineering": "Site, ventes, Google et maintenance. Au même endroit, à prix fixe.",
@@ -123,9 +144,9 @@
     "q1": "Combien coûte un nouveau site web ?",
     "a1": "Les sites commencent à {start} pour une page unique et à {launch} pour le forfait Launch complet — ou {monthly} par mois avec Launch Mensuel, hébergement et maintenance inclus. Les plans de maintenance commencent à {care} par mois. Chaque projet reçoit un devis fixe sous 24 heures après une consultation gratuite ; retrouvez tous les forfaits et options sur la page Tarifs.",
     "q2": "Proposez-vous une maintenance mensuelle ?",
-    "a2": "Oui. Nous proposons des forfaits d'assistance mensuels complets qui couvrent l'hébergement, les mises à jour de sécurité et les modifications de contenu.",
+    "a2": "Oui. Les plans de maintenance commencent à {care} par mois et couvrent l'hébergement, le SSL, les sauvegardes quotidiennes, les mises à jour de sécurité et la surveillance 24/7. Care+ et Growth ajoutent des modifications mensuelles, des rapports et un SEO continu. En annuel, 2 mois sont offerts ; résiliable à tout moment avec un préavis de 30 jours.",
     "q3": "Combien de temps faut-il pour créer un site web ?",
-    "a3": "Un site web d'entreprise standard prend généralement 3 à 4 semaines de la découverte au lancement, tandis que les plateformes e-commerce complexes peuvent prendre plus de temps.",
+    "a3": "La plupart des sites d’entreprise sont en ligne en 3 semaines environ, du premier appel au lancement. Un site d’une page peut être prêt en une semaine environ, tandis que les projets Pro plus importants prennent 5 à 8 semaines. Votre devis indique la date de lancement exacte.",
     "q4": "Travaillez-vous avec des clients internationaux ?",
     "a4": "Absolument. Bien que nous ayons des racines profondes en Géorgie et opérions en Europe, nous servons des clients dans le monde entier avec une communication fluide.",
     "q5": "Puis-je mettre à jour mon propre site web une fois qu'il est construit ?",
@@ -232,25 +253,12 @@
       "Portfolio : BBGeorgiaTech peut présenter le site réalisé — son nom, des captures d’écran et un lien — dans son portfolio et ses supports marketing."
     ]
   },
-  "TechStack": {
-    "title1": "Notre",
-    "title2": "Technologie",
-    "desc": "Nous utilisons les outils les plus récents et les plus fiables de l'industrie. Pas de modèles, pas de raccourcis — chaque site est conçu sur mesure avec une technologie moderne conçue pour la rapidité, la sécurité et la croissance.",
-    "validated": "Pile technologique éprouvée",
-    "t1Code": "Interfaces ultra-rapides",
-    "t2Code": "Logique serveur robuste",
-    "t3Code": "Stockage de données flexible",
-    "t4Code": "Bases de données évolutives",
-    "t5Code": "Hébergement mondial & CDN",
-    "t6Code": "Gestion de contenu intelligente"
-  },
   "DeployedSystems": {
     "title2": "Portfolio",
     "m1": "De la première conversation au site en ligne en seulement 2 semaines — KC Legal attire déjà des demandes de consultation qualifiées grâce à des temps de chargement plus rapides et une mise en page axée sur la conversion.",
-    "m2": "Une plateforme de rénovation trilingue (GE/EN/RU) pour Giga's Remonti — couvrant Tbilissi, Batoumi et Akhmeta. Giga supervise personnellement chaque chantier au quotidien ; le back-office Sanity CMS permet à son équipe de publier portfolios, pages de services et articles sans toucher au code. Contrats à prix fixe, garantie complète et zéro frais cachés — et le site communique cette confiance à chaque défilement.",
+    "m2": "Un site en trois langues pour une entreprise de rénovation active à Tbilissi, Batoumi et Akhmeta. L'équipe publie elle-même ses nouveaux chantiers et services, sans code.",
     "m3": "Moteur de réservation en direct, livraison d'images en temps réel via Cloudinary et annonces multi-devises — le tout en moins de 1,5s sur mobile. Le panneau de contrôle back-office permet aux propriétaires de créer des factures, de gérer les réservations et de gérer les opérations quotidiennes entièrement depuis un téléphone.",
-    "m4": "Backend API REST de niveau entreprise — NestJS, MongoDB Atlas, authentification JWT, stockage AWS S3 et limitation de débit. Construit comme une plateforme interne ; actuellement en attente pendant que le client réorganise ses opérations commerciales.",
-    "m5": "Une plateforme complète de gestion de championnats créée pour une ligue d'entreprise privée, qui gère désormais ses championnats de football et de basketball. Elle comprend des classements en temps réel, un calendrier de matchs dynamique, un classement des meilleurs buteurs, un tableau de playoffs, des mises à jour de contenu en direct via Sanity CMS et un accès sécurisé via NextAuth — le tout dans une interface sombre élégante, d'inspiration broadcast sportif.",
+    "m5": "Une plateforme qui gère les championnats de football et de basketball d'une ligue d'entreprise privée : classements en direct, calendrier, meilleurs buteurs et playoffs, mis à jour par les organisateurs eux-mêmes.",
     "eyebrow": "Réalisations",
     "subtitle": "De vraies entreprises, de vrais résultats — des sites qui génèrent appels, réservations et clients.",
     "projectsLabel": "projets",
@@ -260,54 +268,36 @@
     "c2": "Entreprise de rénovation",
     "c3": "Voyage & réservations",
     "c4": "Plateforme de ligue sportive",
-    "c5": "Plateforme backend",
     "h1": "En ligne en 2 semaines",
     "h2": "3 langues, 3 villes",
     "h3": "Moins de 1,5 s sur mobile",
-    "h4": "2 championnats, une plateforme",
-    "h5": "API REST de niveau entreprise"
-  },
-  "ParadoxOfScale": {
-    "title1": "Notre",
-    "title2": "Philosophie",
-    "quote": "La simplicité est la clé de la brillance.",
-    "p1": "Nous ne faisons pas de production de masse. Chaque projet reçoit toute notre attention, notre meilleure réflexion, et notre plus haut niveau de savoir-faire. La qualité plutôt que la quantité — toujours.",
-    "p2": "En nous concentrant sur ce qui compte vraiment, nous créons des sites web qui semblent rapides, intuitifs, et utiles. Pas de superflus, pas de complexité inutile — juste des expériences numériques épurées et puissantes qui servent vos objectifs commerciaux.",
-    "author": "— Bruce Lee",
-    "badge1Title": "HTTPS",
-    "badge1Val": "Sécurisé par Défaut",
-    "badge2Title": "24 Heures",
-    "badge2Val": "Réponse Rapide",
-    "badge3Title": "Bagauri Bonds",
-    "badge3Val": "Soutenu par le Groupe",
-    "badge4Title": "Sans Engagement",
-    "badge4Val": "Annulez à Tout Moment"
+    "h4": "2 championnats, une plateforme"
   },
   "ContactProtocol": {
     "title1": "Dites-Nous",
     "title2": "Ce Dont Vous Avez Besoin",
     "desc": "Prêt à construire quelque chose d'exceptionnel ? Parlez-nous de votre projet ci-dessous. Notre équipe vous répondra dans les 24 heures avec une consultation gratuite.",
     "desc2": "Consultation gratuite. Sans engagement. Réponse sous 24 heures.",
-    "emailLabel": "[ LIGNE_DIRECTE ]",
+    "emailLabel": "Écrivez-nous :",
     "emailValue": "bbgeorgiatech@gmail.com",
-    "encryptTitle": "CHIFFREMENT",
+    "encryptTitle": "Formulaire sécurisé",
     "encryptVal": "Connexion chiffrée HTTPS",
-    "privacyTitle": "CONFIDENTIALITÉ DES DONNÉES",
+    "privacyTitle": "Votre vie privée",
     "privacyVal": "Vos données sont en sécurité",
     "placeholder1": "Entreprise / Nom",
     "placeholder2": "Adresse e-mail",
     "placeholder3": "Parlez-nous de votre projet — de quoi avez-vous besoin ?",
-    "errorPrefix": "QUELQUE CHOSE S'EST MAL PASSÉ :",
+    "errorPrefix": "Une erreur s'est produite :",
     "errValidation": "Veuillez vérifier votre nom, votre e-mail et votre message, puis réessayer.",
     "errRateLimited": "Trop d'envois depuis cette connexion. Veuillez patienter quelques minutes puis réessayer.",
     "errSmtpOffline": "Notre boîte de réception est temporairement injoignable. Veuillez nous écrire directement.",
     "errTransmissionFailed": "L'envoi a échoué. Veuillez réessayer dans un instant.",
-    "success1": "MESSAGE ENVOYÉ ! Notre équipe vous contactera dans les 24 heures.",
+    "success1": "Message envoyé ! Nous vous répondrons sous 24 heures.",
     "success2": "En attendant, n'hésitez pas à nous écrire directement à l'adresse ci-dessus.",
-    "btnIdle": "ENVOYER_MESSAGE",
-    "btnTx": "ENVOI_EN_COURS...",
-    "btnSuccess": "MESSAGE_ENVOYÉ",
-    "btnError": "VEUILLEZ_RÉESSAYER",
+    "btnIdle": "Envoyer le message",
+    "btnTx": "Envoi en cours…",
+    "btnSuccess": "Message envoyé",
+    "btnError": "Réessayer",
     "guarantees": [
       "Garantie de délai",
       "Prix fixe",
@@ -319,7 +309,7 @@
     "title": "Transmission Reçue",
     "greeting": "Bonjour",
     "p1": "Merci d'avoir contacté BBGeorgiaTech. Nous avons enregistré avec succès votre demande de projet dans nos systèmes sécurisés. Notre équipe d'architecture technique examinera vos spécifications et vous contactera dans les 24 heures pour discuter du déploiement.",
-    "payloadRecord": "[ Enregistrement des Données ]",
+    "payloadRecord": "Votre message",
     "entity": "Entité / Nom :",
     "returnVector": "Vecteur de Retour :",
     "requirements": "Exigences :",
@@ -328,12 +318,12 @@
     "rightsReserved": "BBGeorgiaTech. Tous droits réservés."
   },
   "CookieBanner": {
-    "title": "Sys_Compliance: RGPD",
+    "title": "Confidentialité et cookies",
     "descStart": "Nous utilisons un minimum de matrices de suivi (Vercel Core Vitals, GA4) pour optimiser les performances de l'infrastructure. Pas de profilage intrusif. Consultez notre ",
     "linkText": "Politique relative aux cookies",
     "descEnd": ".",
-    "acceptBtn": "[ Accepter & Continuer ]",
-    "rejectBtn": "[ Refuser ]"
+    "acceptBtn": "Accepter et continuer",
+    "rejectBtn": "Refuser"
   },
   "Pricing": {
     "meta": {
@@ -1517,8 +1507,7 @@
       "explore": "Découvrir"
     },
     "why": {
-      "eyebrow": "Pourquoi un site",
-      "link": "Voir comment un site se rentabilise"
+      "link": "Découvrez ce qu'un site apporte à votre entreprise"
     },
     "pricing": {
       "eyebrow": "Tarifs",

@@ -3,11 +3,12 @@
     "title": "BBGeorgiaTech"
   },
   "Metadata": {
-    "title": "BBGeorgiaTech | Website Design, Development & Maintenance",
-    "description": "Custom website design, development, and ongoing maintenance. Fast, modern websites for businesses in Georgia, Europe, and globally. Get a free quote today.",
-    "keywords": "Website Design Georgia, Web Development Europe, B2B Website, Next.js Development, Web Agency, Custom Websites, Bagauri Bonds",
-    "ogTitle": "BBGeorgiaTech | Custom Website Design & Development",
-    "ogDescription": "Fast, modern websites designed to grow your business. Proudly part of the Bagauri Bonds Georgia group."
+    "title": "Websites for Small Businesses at a Fixed Price | BBGeorgiaTech",
+    "description": "Fixed-price websites for small businesses worldwide, from {price}. Design, development, Google visibility and care. Live in about 3 weeks. Free quote within 24 hours.",
+    "ogTitle": "Fixed-Price Websites for Small Businesses | BBGeorgiaTech",
+    "ogDescription": "Fast, mobile-friendly websites that bring in calls, bookings and clients. From {price}, live in about 3 weeks.",
+    "ogTagline": "Fixed-price websites for small businesses",
+    "ogFacts": "From {price} · Live in about 3 weeks · Free quote in 24 hours"
   },
   "Navigation": {
     "competencies": "Services",
@@ -30,28 +31,48 @@
     "title1": "We Build",
     "title2": "Websites That",
     "title3": "Grow Business.",
-    "stackLabel": "SERVICES:",
-    "stackValue": "WEB DESIGN // DEVELOPMENT // E-COMMERCE",
-    "deploymentLabel": "DELIVERY:",
-    "deploymentValue": "FAST. GLOBAL. RELIABLE.",
-    "targetLabel": "SUPPORT:",
-    "targetValue": "ONGOING MAINTENANCE & CARE",
-    "getAQuote": "[ Get a Free Quote ]",
+    "stackLabel": "What we do:",
+    "stackValue": "Websites, online stores and Google visibility",
+    "deploymentLabel": "Timeline:",
+    "deploymentValue": "Most sites go live in about 3 weeks",
+    "targetLabel": "After launch:",
+    "targetValue": "Hosting, updates and care",
+    "getAQuote": "Get a Free Quote",
     "initializeDeployment": "See Our Work →",
     "pricingNote": "From {start} · or {monthly} / month",
     "lessIsMore": "Sometimes less is more.",
     "quoteAuthor": "Robert Browning (1855)",
     "seePricing": "See pricing"
   },
-  "BrandHeritage": {
-    "title1": "Built on Trust.",
-    "title2": "Engineered for the Future.",
+  "About": {
+    "eyebrow": "About us",
     "umbrella": "Part of the Bagauri Bonds Georgia Group",
-    "description": "BBGeorgiaTech is the technology division of Bagauri Bonds Georgia — a company rooted in Georgian heritage, operating across Europe. We combine our parent company's commitment to lasting human relationships with cutting-edge web technology.",
-    "bondsTitle": "Our Bonds",
-    "bondsDesc": "We believe technology should connect, not complicate. Every website we build strengthens the bond between our clients and their customers — creating digital experiences that feel personal, professional, and built to last.",
-    "bagauriTitle": "Our Roots",
-    "bagauriDesc": "Georgia-born, globally minded. The name Bagauri represents our founder's heritage and the craftsmanship tradition we bring to every project. In a world of quick fixes, we build things that endure — and we invite you to build the next chapter of your digital story with us."
+    "title1": "A Small Studio.",
+    "title2": "Full Attention.",
+    "intro": "BBGeorgiaTech is a small web studio founded in Georgia by Goga Bagauri, part of the Bagauri Bonds Georgia group, working with clients worldwide. We take on a few projects at a time, so every site gets our full attention and is built to last.",
+    "values": [
+      {
+        "title": "Quality over quantity",
+        "text": "No mass production. Every project gets our best thinking and our highest standard of work."
+      },
+      {
+        "title": "Simple and fast",
+        "text": "No bloat, no needless complexity: clean sites that load fast and are easy to use."
+      },
+      {
+        "title": "Modern technology",
+        "text": "Every site is custom-built on proven, modern tools, made for speed, security and growth."
+      }
+    ],
+    "techLabel": "Built with",
+    "badge1Title": "HTTPS",
+    "badge1Val": "Secure by Default",
+    "badge2Title": "24 Hrs",
+    "badge2Val": "Consultation Reply",
+    "badge3Title": "Bagauri Bonds",
+    "badge3Val": "Group Backed",
+    "badge4Title": "Cancel anytime",
+    "badge4Val": "30 days' notice"
   },
   "CoreCompetencies": {
     "precisionEngineering": "Website, sales, Google and care. In one place, at a fixed price.",
@@ -123,9 +144,9 @@
     "q1": "How much does a new website cost?",
     "a1": "Websites start from {start} for a one-page site and {launch} for a full Launch package — or {monthly} a month with Launch Monthly, which includes hosting and care. Care plans start at {care} a month. Every project gets a fixed quote within 24 hours of a free consultation; see the Pricing page for every package and add-on.",
     "q2": "Do you offer monthly maintenance?",
-    "a2": "Yes. We offer comprehensive monthly support packages that cover hosting, security updates, and content changes so you don't have to worry about the technical details.",
+    "a2": "Yes. Care plans start at {care} a month and cover hosting, SSL, daily backups, security updates and 24/7 monitoring. Care+ and Growth add monthly edits, reports and ongoing SEO. Pay yearly and get 2 months free; cancel any time with 30 days' notice.",
     "q3": "How long does it take to build a website?",
-    "a3": "A standard business website usually takes 3-4 weeks from discovery to launch, while complex e-commerce platforms may take longer.",
+    "a3": "Most business websites go live in about 3 weeks, from the first call to launch. A one-page site can be ready in about a week, while larger Pro projects take 5–8 weeks. Your quote includes the exact launch date.",
     "q4": "Do you work with international clients?",
     "a4": "Absolutely. While we have deep roots in Georgia and operate in Europe, we serve clients globally with seamless communication.",
     "q5": "Can I update my own website after it's built?",
@@ -232,25 +253,12 @@
       "Portfolio: BBGeorgiaTech may show the finished website — its name, screenshots and a link — in its portfolio and marketing materials."
     ]
   },
-  "TechStack": {
-    "title1": "Our",
-    "title2": "Technology",
-    "desc": "We use the latest, most reliable tools in the industry. No templates, no shortcuts — every site is custom-built with modern technology designed for speed, security, and growth.",
-    "validated": "Battle-tested technology stack",
-    "t1Code": "Lightning-fast interfaces",
-    "t2Code": "Robust server logic",
-    "t3Code": "Flexible data storage",
-    "t4Code": "Scalable databases",
-    "t5Code": "Global hosting & CDN",
-    "t6Code": "Smart content management"
-  },
   "DeployedSystems": {
     "title2": "Portfolio",
     "m1": "From first conversation to live site in just 2 weeks — KC Legal is already attracting qualified consultation requests with faster load times and a conversion-focused layout.",
-    "m2": "A trilingual (GE/EN/RU) renovation platform for Giga's Remonti — serving Tbilisi, Batumi, and Akhmeta. Giga personally supervises every job on-site every day; a Sanity CMS back-office lets the team publish portfolio projects, service pages, and insights without touching code. Fixed-price contracts, full warranty, and zero hidden costs are baked into the brand — and the site communicates that trust at every scroll.",
+    "m2": "A three-language site for a renovation company working in Tbilisi, Batumi and Akhmeta. The team publishes new projects and services themselves, without code.",
     "m3": "Live booking engine, Cloudinary image delivery, and multi-currency listings — all under 1.5s on mobile. The back-office panel lets owners create invoices, manage bookings, and run daily operations entirely from a phone.",
-    "m4": "Enterprise-grade REST API backend — NestJS, MongoDB Atlas, JWT auth, AWS S3 storage, and rate limiting. Built as an internal platform; currently on hold while the client reorganizes their business operations.",
-    "m5": "A full-stack championship management platform built for a private corporate league, now running both its football and basketball championships. Features real-time standings, a dynamic match calendar, top-scorer leaderboard, playoff bracket, live Sanity CMS content updates, and NextAuth-powered secure access — all under a sleek, sports-broadcast-inspired dark UI.",
+    "m5": "A platform that runs a private corporate league's football and basketball championships: live standings, match calendar, top scorers and playoffs, updated by the organizers themselves.",
     "eyebrow": "Selected work",
     "subtitle": "Real businesses, real results — sites that bring in calls, bookings and clients.",
     "projectsLabel": "projects",
@@ -260,54 +268,36 @@
     "c2": "Renovation company",
     "c3": "Travel & bookings",
     "c4": "Sports league platform",
-    "c5": "Backend platform",
     "h1": "Live in 2 weeks",
     "h2": "3 languages, 3 cities",
     "h3": "Under 1.5s on mobile",
-    "h4": "2 championships, one platform",
-    "h5": "Enterprise-grade REST API"
-  },
-  "ParadoxOfScale": {
-    "title1": "Our",
-    "title2": "Philosophy",
-    "quote": "Simplicity is the key to brilliance.",
-    "p1": "We don't do mass production. Every project gets our full attention, our best thinking, and our highest standard of craftsmanship. Quality over quantity — always.",
-    "p2": "By focusing on what truly matters, we create websites that feel fast, intuitive, and purposeful. No bloat, no unnecessary complexity — just clean, powerful digital experiences that serve your business goals.",
-    "author": "— Bruce Lee",
-    "badge1Title": "HTTPS",
-    "badge1Val": "Secure by Default",
-    "badge2Title": "24 Hrs",
-    "badge2Val": "Consultation Reply",
-    "badge3Title": "Bagauri Bonds",
-    "badge3Val": "Group Backed",
-    "badge4Title": "No Contracts",
-    "badge4Val": "Cancel Anytime"
+    "h4": "2 championships, one platform"
   },
   "ContactProtocol": {
     "title1": "Tell Us What",
     "title2": "You Need",
     "desc": "Ready to build something great? Tell us about your project below. Our team will get back to you within 24 hours with a free consultation.",
     "desc2": "Free consultation. No commitment. Reply within 24 hours.",
-    "emailLabel": "[ DIRECT_LINE ]",
+    "emailLabel": "Email us:",
     "emailValue": "bbgeorgiatech@gmail.com",
-    "encryptTitle": "ENCRYPTION",
+    "encryptTitle": "Secure form",
     "encryptVal": "HTTPS-encrypted connection",
-    "privacyTitle": "DATA PRIVACY",
+    "privacyTitle": "Your privacy",
     "privacyVal": "Your data is safe",
     "placeholder1": "Company / Name",
     "placeholder2": "Email Address",
     "placeholder3": "Tell us about your project — what do you need?",
-    "errorPrefix": "SOMETHING WENT WRONG:",
+    "errorPrefix": "Something went wrong:",
     "errValidation": "Please check your name, email, and message and try again.",
     "errRateLimited": "Too many submissions from this connection. Please wait a few minutes and try again.",
     "errSmtpOffline": "Our inbox is temporarily unreachable. Please email us directly instead.",
     "errTransmissionFailed": "Delivery failed. Please try again in a moment.",
-    "success1": "MESSAGE SENT! Our team will reach out within 24 hours.",
+    "success1": "Message sent! We'll get back to you within 24 hours.",
     "success2": "In the meantime, feel free to reach us directly at the email above.",
-    "btnIdle": "SEND_MESSAGE",
-    "btnTx": "SENDING...",
-    "btnSuccess": "MESSAGE_SENT",
-    "btnError": "PLEASE_TRY_AGAIN",
+    "btnIdle": "Send message",
+    "btnTx": "Sending…",
+    "btnSuccess": "Message sent",
+    "btnError": "Try again",
     "guarantees": [
       "On-time guarantee",
       "Fixed price",
@@ -319,7 +309,7 @@
     "title": "Transmission Received",
     "greeting": "Hello",
     "p1": "Thank you for reaching out to BBGeorgiaTech. We have successfully logged your project inquiry into our secure systems. Our technical architecture team will review your specifications and establish contact within 24 hours to discuss deployment.",
-    "payloadRecord": "[ Payload Record ]",
+    "payloadRecord": "Your message",
     "entity": "Entity / Name:",
     "returnVector": "Return Vector:",
     "requirements": "Requirements:",
@@ -328,12 +318,12 @@
     "rightsReserved": "BBGeorgiaTech. All rights reserved."
   },
   "CookieBanner": {
-    "title": "Sys_Compliance: GDPR",
+    "title": "Privacy & cookies",
     "descStart": "We utilize minimal tracking arrays (Vercel Core Vitals, GA4) to optimize infrastructure performance. No intrusive profiling. Review our ",
     "linkText": "Cookie Policy",
     "descEnd": ".",
-    "acceptBtn": "[ Accept & Continue ]",
-    "rejectBtn": "[ Reject ]"
+    "acceptBtn": "Accept & continue",
+    "rejectBtn": "Reject"
   },
   "Pricing": {
     "meta": {
@@ -1517,8 +1507,7 @@
       "explore": "Explore"
     },
     "why": {
-      "eyebrow": "Why a website",
-      "link": "See how a website pays off"
+      "link": "See what a website brings your business"
     },
     "pricing": {
       "eyebrow": "Pricing",

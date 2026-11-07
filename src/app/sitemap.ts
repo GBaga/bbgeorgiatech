@@ -9,7 +9,7 @@ const PAGES_ADDED = '2026-11-06'
 // content actually changes. A build-time `new Date()` tells crawlers every
 // page changed on every deploy, which trains them to ignore the signal.
 const routes: { path: string; lastModified: string; changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] }[] = [
-  { path: '', lastModified: '2026-09-10', changeFrequency: 'monthly' },
+  { path: '', lastModified: '2026-11-07', changeFrequency: 'monthly' },
   { path: '/cookie-policy', lastModified: '2026-09-10', changeFrequency: 'yearly' },
   { path: '/privacy-policy', lastModified: '2026-09-10', changeFrequency: 'yearly' },
   { path: '/terms-and-conditions', lastModified: PAGES_ADDED, changeFrequency: 'yearly' },

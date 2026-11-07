@@ -212,16 +212,6 @@ export function DeployedSystems() {
       image: "/pog-football.webp",
       accent: "#22c55e",
     },
-    {
-      key: "vorigin",
-      name: "VoriginGeorgia",
-      category: t("c5"),
-      headline: t("h5"),
-      description: t("m4"),
-      stack: ["NestJS", "MongoDB Atlas", "AWS S3"],
-      image: "/vorigin-georgia.webp",
-      accent: "#8b5cf6",
-    },
   ];
 
   return (
