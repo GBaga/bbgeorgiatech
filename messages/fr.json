@@ -39,8 +39,17 @@
     "getAQuote": "Obtenir un devis gratuit",
     "initializeDeployment": "Voir Notre Travail →",
     "pricingNote": "À partir de {launch} · ou {monthly} / mois",
-    "lessIsMore": "Parfois, moins c'est plus.",
-    "quoteAuthor": "Robert Browning (1855)",
+    "circuitHint": "Choisissez votre secteur",
+    "sectors": {
+      "homeServices": "Artisans",
+      "professionalServices": "Conseil",
+      "healthWellness": "Cliniques",
+      "beauty": "Salons",
+      "hospitalityTourism": "Tourisme",
+      "creativePersonalBrands": "Créatifs",
+      "education": "Cours",
+      "localShops": "Boutiques"
+    },
     "seePricing": "Voir les tarifs"
   },
   "About": {

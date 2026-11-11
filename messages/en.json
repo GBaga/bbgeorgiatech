@@ -39,8 +39,17 @@
     "getAQuote": "Get a Free Quote",
     "initializeDeployment": "See Our Work →",
     "pricingNote": "From {launch} · or {monthly} / month",
-    "lessIsMore": "Sometimes less is more.",
-    "quoteAuthor": "Robert Browning (1855)",
+    "circuitHint": "Pick your industry",
+    "sectors": {
+      "homeServices": "Trades",
+      "professionalServices": "Advisors",
+      "healthWellness": "Clinics",
+      "beauty": "Salons",
+      "hospitalityTourism": "Tourism",
+      "creativePersonalBrands": "Creatives",
+      "education": "Courses",
+      "localShops": "Shops"
+    },
     "seePricing": "See pricing"
   },
   "About": {

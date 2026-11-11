@@ -39,8 +39,17 @@
     "getAQuote": "მიიღეთ უფასო შეფასება",
     "initializeDeployment": "იხილეთ ჩვენი ნამუშევრები →",
     "pricingNote": "საქართველოში {launch}-დან · ან {monthly} / თვე",
-    "lessIsMore": "ნაკლები, ზოგჯერ, მეტია.",
-    "quoteAuthor": "რობერტ ბრაუნინგი (1855)",
+    "circuitHint": "აირჩიეთ თქვენი დარგი",
+    "sectors": {
+      "homeServices": "ხელოსნები",
+      "professionalServices": "იურისტები",
+      "healthWellness": "კლინიკები",
+      "beauty": "სალონები",
+      "hospitalityTourism": "ტურიზმი",
+      "creativePersonalBrands": "კრეატივი",
+      "education": "კურსები",
+      "localShops": "მაღაზიები"
+    },
     "seePricing": "ფასების ნახვა"
   },
   "About": {

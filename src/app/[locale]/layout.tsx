@@ -27,8 +27,8 @@ const fontHeading = Manrope({
 
 const fontMono = IBM_Plex_Mono({
   variable: "--nf-mono",
-  // 300: hero chart quote, 700: bold mono labels and buttons
-  weight: ["300", "400", "700"],
+  // 700: bold mono labels and buttons
+  weight: ["400", "700"],
   subsets: ["latin"],
 });
 
